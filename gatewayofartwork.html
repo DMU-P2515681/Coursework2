@@ -10,26 +10,132 @@
   }
 
   h1 {
-    margin: 0;
+
     font-family: Henny Penny;
     font-size: 200px;
-    letter-spacing: -75px;
-    float: left;
+    margin: 0;
+    position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -250px;
+      margin-left: -250px;
+      margin-right: -200px;
+      height: 50px;
+     width: 400px;
+  }
+
+  h2 {
+letter-spacing: -17px;
+    font-family: Henny Penny;
+    font-size: 200px;
+    margin: 0;
+    position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -167px;
+      margin-left: -181px;
+      margin-right: -200px;
+      height: 50px;
+     width: 400px;
+  }
+
+  @media screen and (min-width: 600px){
+    h1 {
+      font-size: 400px;
+      letter-spacing: -17px;
+          font-family: Henny Penny;
+          margin: 0;
+          position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -500px;
+            margin-left: -300px;
+            margin-right: -200px;
+            height: 50px;
+           width: 400px;
+    }
+    h2 {
+      font-size: 400px;
+      letter-spacing: -17px;
+          font-family: Henny Penny;
+          margin: 0;
+          position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -332px;
+            margin-left: -144px;
+            margin-right: -200px;
+            height: 50px;
+           width: 400px;
+    }
+  }
+
+  div {
+    font-family: sans-serif;
+    font-size: 17px;
+    border: 5px solid grey;
+    border-style: outset;
+    background-color: blue;
+    opacity: 0.6;
+    color: white;
+    margin: 0;
+    position: fixed;
+    top: 72%;
+    left: 44%;
+    margin-top: -51px;
+    margin-left: -76px;
+    margin-right: -76px;
+  width: 200px;
+  height: 80px;
+  transition: width 2s, height 2s, transform 2s;
+}
+
+div:hover {
+  cursor: pointer;
+  opacity: 1;
+  width: 200px;
+  height: 80px;
+  transform: rotate(360deg);
+}
+
+  @media screen and (min-width: 600px){
+    div {
+      font-family: sans-serif;
+      font-size: 25px;
+      border: 5px solid white;
+      border-style: outset;
+      background-color: blue;
+      opacity: 0.6;
+      color: white;
+      margin: 0;
+      position: fixed;
+      top: 75%;
+      left: 44%;
+      margin-top: -51px;
+      margin-left: -76px;
+      margin-right: -76px;
+    width: 300px;
+    height: 120px;
+    background: blue;
+    transition: width 2s, height 2s, transform 2s;
 
   }
 
-  .positionletter {
-    padding-top: 223px;
+  div:hover {
+    cursor: pointer;
+    width: 300px;
+    height: 120px;
+    transform: rotate(360deg);
   }
-  .positionlettertwo {
-    padding-left: 70px;
-    padding-top: 140px;
   }
 </style>
 </head>
 <body>
-<h1 class="positionlettertwo">G</h1>
-<h1 class= "positionletter">A</h1>
+
+<h1><center>G</center></h1>
+<h2><center>A</center></h2>
+
+  <div><center><p>THE<br>GATEWAY AWAITS...</p></center></div>
 
   </body>
 </html>
