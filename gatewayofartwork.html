@@ -5,12 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gateway Of Artwork</title>
   <style>
-  body {
+  /* Referenced from W3Schools (2021) How TO - Full Page Image. Available at: https://www.w3schools.com/howto/howto_css_full_page.asp (Accessed: 1st February 2021). */
+  /* Makes the slideshow full screen */
+  body, html {
     margin: 0;
+     height: 100%;
   }
 
-  h1 {
+/* Change the opacity of the photos on the slideshow */
+.Photos {
+   opacity: 0.7;
+   height: 100%;
 
+ }
+      /* Taken and altered from /* Referenced from W3Schools (2021) How TO - Slideshow. Available at: https://www.w3schools.com/howto/howto_js_slideshow.asp (Accessed: 1st February 2021). */
+      /* Animation for slideshow fades */
+      .fadingphotos {
+        -webkit-animation-name: slides;
+        -webkit-animation-duration: 1.4s;
+        animation-name: slides;
+        animation-duration: 1.4s;
+      }
+      /* Taken and altered from W3Schools (2021)*/
+      /* The opacity the animation starts and finishes at for the photos */
+      @-webkit-keyframes slides {
+        from {opacity: 0.2}
+        to {opacity: 0.7}
+      }
+      /* Taken and altered from W3Schools (2021)*/
+      /* The opacity the animation starts and finishes at for the photos */
+      @keyframes slides {
+        from {opacity: 0.2}
+        to {opacity: 0.7}
+      }
+
+img {
+  /* Taken and altered from W3Schools (2021)*/
+  /* Images are full height */
+  height: 100%;
+}
+
+/* Position, scale and centering of the letter 'G' */
+  h1 {
     font-family: Henny Penny;
     font-size: 200px;
     margin: 0;
@@ -24,6 +60,7 @@
      width: 400px;
   }
 
+/* Position, scale and centering of the letter 'A' */
   h2 {
 letter-spacing: -17px;
     font-family: Henny Penny;
@@ -39,6 +76,33 @@ letter-spacing: -17px;
      width: 400px;
   }
 
+  /* Taken and altered from stack overflow (2021)*/
+  /* Make the 'GA' animate multicolour */
+  .multicolouredtext {
+    animation: colorRotate 5s linear 0s infinite;
+  }
+
+  /* Taken and altered from stack overflow (2021)*/
+  /* The 'GA' multicolours*/
+  @keyframes colorRotate {
+    from {
+      color: #6666ff;
+    }
+    10% {
+      color: #0099ff;
+    }
+    50% {
+      color: #00ff00;
+    }
+    75% {
+      color: #ff3399;
+    }
+    100% {
+      color: #6666ff;
+    }
+  }
+
+  /* Position, scale and centering of the letter 'G' after a certain width*/
   @media screen and (min-width: 600px){
     h1 {
       font-size: 400px;
@@ -54,6 +118,8 @@ letter-spacing: -17px;
             height: 50px;
            width: 400px;
     }
+
+/* Position, scale and centering of the letter 'A' after a certain width*/
     h2 {
       font-size: 400px;
       letter-spacing: -17px;
@@ -70,6 +136,8 @@ letter-spacing: -17px;
     }
   }
 
+/* Style for the button and text*/
+/* Taken and altered from W3Schools (2021)*/
   div {
     font-family: sans-serif;
     font-size: 17px;
@@ -90,6 +158,8 @@ letter-spacing: -17px;
   transition: width 2s, height 2s, transform 2s;
 }
 
+/* Style for the hover function of button and text*/
+/* Taken and altered from W3Schools (2021)*/
 div:hover {
   cursor: pointer;
   opacity: 1;
@@ -98,6 +168,8 @@ div:hover {
   transform: rotate(360deg);
 }
 
+/* Style for the button and text after a certain width*/
+/* Taken and altered from W3Schools (2021)*/
   @media screen and (min-width: 600px){
     div {
       font-family: sans-serif;
@@ -121,6 +193,8 @@ div:hover {
 
   }
 
+  /* Style for the button and text after a certain width*/
+  /* Taken and altered from W3Schools (2021)*/
   div:hover {
     cursor: pointer;
     width: 300px;
@@ -128,14 +202,127 @@ div:hover {
     transform: rotate(360deg);
   }
   }
+
+  /* Style for SVG dashes*/
+  /* Taken and altered from Coyier (2014)*/
+  .svgthing {
+stroke-dasharray: 100;
+animation: littledashes 25s infinite;
+}
+
+/* Style for SVG dashes*/
+/* Taken and altered from Coyier (2014)*/
+@keyframes littledashes {
+to {
+stroke-dashoffset: 1000;
+}
+}
+
+/* Position and scale for SVG*/
+svg {
+  margin-top: -220px;
+  margin-left: -130px;
+  margin-right: -200px;
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+}
+
+/* Style for SVG dashes after a certain width*/
+/* Taken and altered from Coyier (2014)*/
+@media screen and (min-width: 600px){
+  .svgthing {
+stroke-dasharray: 100;
+animation: littledashes 25s infinite;
+}
+
+/* Style for SVG dashes after a certain width*/
+/* Taken and altered from Coyier (2014)*/
+@keyframes littledashes {
+to {
+stroke-dashoffset: 1000;
+}
+}
+
+/* Position and scale for SVG after a certain width*/
+  svg {
+      position: fixed;
+    margin-top: -320px;
+    margin-left: -88px;
+    margin-right: -200px;
+      top: 37%;
+      left: 40%;
+      width: 1000px;
+  }
+}
+
 </style>
 </head>
 <body>
+<!-- Slideshow photos taken and altered from W3Schools (2021) -->
+  <span class="Photos fadingphotos">
+    <img src="images/Slideshow1.jpg" style="width:100%">
+  </span>
 
-<h1><center>G</center></h1>
-<h2><center>A</center></h2>
+  <span class="Photos fadingphotos">
+    <img src="images/Slideshow1.3.jpg" style="width:100%">
+  </span>
 
+  <span class="Photos fadingphotos">
+    <img src="images/Slideshow1.2.jpg" style="width:100%">
+  </span>
+
+  <br>
+<!-- Makes slideshow move along with JavaScript -->
+<!-- Taken and altered from W3Schools (2021) -->
+  <span style="text-align:center">
+    <span class="extra"></span>
+    <span class="extra"></span>
+    <span class="extra"></span>
+  </span>
+
+<script>
+// Taken and altered from W3Schools (2021)
+//This makes the slideshow start from the first picture
+//This displays the photos from the first photo
+var slideIndex = 0;
+showPhotos();
+//This hides all of the class "Photos"
+function showPhotos() {
+  var i;
+  var slides = document.getElementsByClassName("Photos");
+  var dots = document.getElementsByClassName("extra");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  //Displays this element
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showPhotos, 6000); // Change image every 6 seconds
+}
+</script>
+
+<!-- HTML for the logo "GA" -->
+<h1 class="multicolouredtext"><center>G</center></h1>
+<h2 class="multicolouredtext"><center>A</center></h2>
+
+<!-- HTML for button text -->
   <div><center><p>THE<br>GATEWAY AWAITS...</p></center></div>
+
+<!-- Taken and altered from Coyier (2014)-->
+  <!-- How the svg is viewed -->
+  <svg viewBox="0 0 1500 1000">
+<!-- Taken and altered from Coyier (2014)-->
+<!-- Styling and code for svg -->
+    <path class="svgthing" fill="transparent" stroke="black" stroke-width="6"  d="M681,175l90.36-23.82,88.54,11.91L928.55,175,976,132l39-26,46,12,12,29-15,43-35,57-20,36-24,56-19,30.09L923,386l-37.73-25.17,3-38.58L877,284l-35-27-45-3-48,18-28,40-17.82,48.83L700,435l11,53,29,42,31.36,24.16H836L866,520l-1.63-44.94H803.18L769,460l-15-39,6-28,42-3,47-2,38-4,93.79-23.17,41.79-30.75,26.87-7.83L1073,393l139,404,29.68,31.79,31.65,23.94L1291,878l-5.73,28.63-43.59,13.21L1185,920l-73,13-66,12-40-18-9-33,25.58-33.87L1064,847l-1-45-20-57-20-45-47-25-33-12-23,73-9,41,21,19,17,25,.87,37.64L918,875l-77.51-22.27L758,839l-26-34,7-36,32.36-8.87L808,760l31-45,20.9-60.89L869,624l-64.33,20-70.15,10.11L672,638l-64.34-37.57L561,551l-25-49V342.22L570,275l47-55Z" transform="translate(-536 -0.49)"/>
+
+  </svg>
 
   </body>
 </html>
