@@ -1,0 +1,414 @@
+body{
+  margin-top: 2vw;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1050px){
+  h1 {
+    margin: 0;
+    transform: perspective(1500px) rotateY(15deg);
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    transition: transform 1s ease 0s;
+    font-family: Henny Penny;
+    font-size: 6vw;
+    color: white;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #0BC2F8;
+    margin: 0;
+  }
+
+  .ellipse {
+    height: 20vw;
+    width: 75vw;
+  border: groove blue;
+    border-radius: 70%;
+    border-width: medium;
+    display: flex;
+   align-items: center;
+    margin: 0 auto;
+
+  }
+  h1:hover {
+    transform: perspective(3000px) rotateX(20deg) rotateY(5deg);
+  }
+  .rainbow {
+    text-align: center;
+    animation: colorRotate 6s linear 0s infinite;
+  }
+
+  .rainbow_text_animated {
+      background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: rainbow_animation 6s ease-in-out infinite;
+      background-size: 400% 100%;
+  }
+
+  @keyframes rainbow_animation {
+      0%,100% {
+          background-position: 0 0;
+      }
+
+      50% {
+          background-position: 100% 0;
+      }
+  }
+
+div{
+  font-size: 2vw;
+  font-family: sans-serif;
+  color: white;
+  margin: 0;
+  text-align: center;
+  transform: perspective(1500px) rotateY(15deg);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  transition: transform 1s ease 0s;
+}
+  .ellipsetwo {
+    height: 7vw;
+    width: 20vw;
+    border: groove black;
+   background-color: #160BF8;
+    border-radius: 70%;
+    display: grid;
+   align-items: center;
+    margin: 0 auto;
+    margin-top: -5vw;
+
+}
+
+div:hover {
+   animation: shake 0.5s;
+   animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.hamburger {
+  padding-top: 3vw;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+margin-left: 4vw;
+}
+.hamburger span {
+  align-items: left;
+  height: 4px;
+  width: 100%;
+  background: #000000;
+}
+.hamburger .meat {
+  width: 75%;
+  transition: all 200ms ease-in-out;
+}
+.hamburger .bottom-bun {
+  width: 50%;
+  transition: all 400ms ease-in-out;
+}
+.hamburger:hover span {
+  width: 100%;
+}
+.hamburger:hover .top-bun {
+  animation: burger-hover 1s infinite ease-in-out alternate;
+}
+.hamburger:hover .meat {
+  animation: burger-hover 1s infinite ease-in-out alternate forwards 200ms;
+}
+.hamburger:hover .bottom-bun {
+  animation: burger-hover 1s infinite ease-in-out alternate forwards 400ms;
+}
+
+@keyframes burger-hover {
+  0% { width: 100%; }
+  50% { width: 50%; }
+  100% { width: 100%; }
+}
+.change .top-bun {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .meat{opacity: 0;}
+
+.change .bottom-bun {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+.mysearchthing {
+  margin: 0px;
+}
+
+.mysearchthing  > span {
+  position: relative;
+  float:right;
+  display: flex;
+  align-self: center;
+  margin-top: -3vw;
+  margin-right: 3vw;
+}
+
+.mysearchthing  > span:after {
+  content: "";
+  background: black;
+  width: 4px;
+  height:10px;
+  position: absolute;
+  top: 30px;
+  right: 3px;
+  transform: rotate(140deg);
+box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+
+.mysearchthing  > span > input {
+  color: black;
+  font-size: 15px;
+  background: transparent;
+  width: 4px;
+  height: 4px;
+  padding: 11px;
+  border: solid 4px black;
+  outline: none;
+  border-radius: 30px;
+  transition: 0.8s;
+  box-shadow:  0 0 20px #0E0AF5;
+}
+
+
+.mysearchthing > span > input::placeholder {
+  color: grey;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+
+}
+
+.mysearchthing  > span > input:focus::placeholder {
+  opacity: 1;
+}
+
+.mysearchthing  > span > input:focus,
+.mysearchthing  > span > input:not(:placeholder-shown) {
+  width: 250px;
+}
+}
+
+@media screen and (min-width: 1050px){
+h1 {
+  margin: 0;
+  transform: perspective(1500px) rotateY(15deg);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  transition: transform 1s ease 0s;
+  font-family: Henny Penny;
+  font-size: 3vw;
+  color: white;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: #0BC2F8;
+  margin: 0;
+}
+
+.ellipse {
+  height: 10vw;
+  width: 38vw;
+border: groove blue;
+  border-radius: 70%;
+  border-width: medium;
+  display: flex;
+ align-items: center;
+  margin: 0 auto;
+}
+
+h1:hover {
+  transform: perspective(3000px) rotateX(20deg) rotateY(5deg);
+}
+.rainbow {
+  text-align: center;
+  animation: colorRotate 6s linear 0s infinite;
+}
+
+.rainbow_text_animated {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+div{
+  font-size: 1vw;
+  font-family: sans-serif;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+  .ellipsetwo {
+    height: 4vw;
+    width: 10vw;
+    border: groove black;
+    background-color: #160BF8;
+    border-radius: 70%;
+    display: grid;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: -2.3vw;
+}
+
+div:hover {
+  animation: shake 0.5s;
+ animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+.hamburger {
+  margin-top: -9vw;
+  margin-left: 5vw;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+}
+.hamburger span {
+  align-items: left;
+  height: 4px;
+  width: 100%;
+  background: #000000;
+}
+.hamburger .meat {
+  width: 75%;
+  transition: all 200ms ease-in-out;
+}
+.hamburger .bottom-bun {
+  width: 50%;
+  transition: all 400ms ease-in-out;
+}
+.hamburger:hover span {
+  width: 100%;
+}
+.hamburger:hover .top-bun {
+  animation: burger-hover 1s infinite ease-in-out alternate;
+}
+.hamburger:hover .meat {
+  animation: burger-hover 1s infinite ease-in-out alternate forwards 200ms;
+}
+.hamburger:hover .bottom-bun {
+  animation: burger-hover 1s infinite ease-in-out alternate forwards 400ms;
+}
+
+@keyframes burger-hover {
+  0% { width: 100%; }
+  50% { width: 50%; }
+  100% { width: 100%; }
+}
+.change .top-bun {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .meat{opacity: 0;}
+
+.change .bottom-bun {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+.mysearchthing {
+  margin: 0px;
+}
+
+.mysearchthing  > span {
+  position: relative;
+  float:right;
+  margin-right: 5.5vw;
+  margin-top: -3vw;
+}
+
+.mysearchthing  > span:after {
+  content: "";
+  background: black;
+  width: 4px;
+  height: 20px;
+  position: absolute;
+  top: 42px;
+  right: 3px;
+  transform: rotate(140deg);
+box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+
+.mysearchthing  > span > input {
+  color: black;
+  font-size: 18px;
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  padding: 11px;
+  border: solid 4px black;
+  outline: none;
+  border-radius: 30px;
+  transition: 0.8s;
+  box-shadow:  0 0 20px #0E0AF5;
+}
+
+
+.mysearchthing > span > input::placeholder {
+  color: grey;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+
+}
+
+.mysearchthing  > span > input:focus::placeholder {
+  opacity: 1;
+}
+
+.mysearchthing  > span > input:focus,
+.mysearchthing  > span > input:not(:placeholder-shown) {
+  width: 350px;
+}
+}
