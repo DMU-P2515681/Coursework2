@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <style>
-    .hamburger .out{
+    .menu.out{
       width: 70%;
       height: 100vh;
       background-color: red;
@@ -19,14 +19,14 @@
     transition: opacity 0.3s;
     color: white;
     pointer-events: none;
+    opacity: 0;
   }
-  .hamburger.out .menuItem {
+  .menu.out.menuItem {
           opacity: 1;
           pointer-events: all;
         }
 
   .hamburger {
-    margin-top: -9vw;
     margin-left: 5vw;
     display: flex;
     align-self: center;
@@ -36,7 +36,6 @@
     height: 40px;
     cursor: pointer;
     overflow: hidden;
-    opacity: 0;
   }
   .hamburger span {
     align-items: left;
@@ -84,17 +83,22 @@
     </style>
   </head>
   <body>
-    <nav class="hamburger">
+    <nav class="menu">
       <div class="menuItem out">home</div>
       <div class="menuItem">about</div>
       <div class="menuItem out">film</div>
+      <span class="hamburger" onclick="myFunction(this)" >
+    <span class="top-bun"></span>
+    <span class="meat"></span>
+    <span class="bottom-bun"></span>
+  </span>
     </nav>
     <script>
   toggleAnimation = (evt) => {
     evt.target.classList.toggle("out");
   };
   document
-    .querySelector(".hamburger")
+    .querySelector(".menu")
     .addEventListener("click", toggleAnimation);
 </script>
 <script>
