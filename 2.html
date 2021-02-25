@@ -5,106 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <style>
-    .menu.out{
-      width: 70%;
-      height: 100vh;
-      background-color: red;
-    }
-
-    .menuItem {
-    padding: 10px;
-    font-family: sans-serif;
-    font-size: 1.5em;
-    opacity: 0;
-    transition: opacity 0.3s;
-    color: white;
-    pointer-events: none;
-    opacity: 0;
-  }
-  .menu.out.menuItem {
-          opacity: 1;
-          pointer-events: all;
-        }
-
-  .hamburger {
-    margin-left: 5vw;
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 60px;
-    height: 40px;
-    cursor: pointer;
-    overflow: hidden;
-  }
-  .hamburger span {
-    align-items: left;
-    height: 4px;
-    width: 100%;
-    background: #000000;
-  }
-  .hamburger .meat {
-    width: 75%;
-    transition: all 200ms ease-in-out;
-  }
-  .hamburger .bottom-bun {
-    width: 50%;
-    transition: all 400ms ease-in-out;
-  }
-  .hamburger:hover span {
-    width: 100%;
-  }
-  .hamburger:hover .top-bun {
-    animation: burger-hover 1s infinite ease-in-out alternate;
-  }
-  .hamburger:hover .meat {
-    animation: burger-hover 1s infinite ease-in-out alternate forwards 200ms;
-  }
-  .hamburger:hover .bottom-bun {
-    animation: burger-hover 1s infinite ease-in-out alternate forwards 400ms;
-  }
-
-  @keyframes burger-hover {
-    0% { width: 100%; }
-    50% { width: 50%; }
-    100% { width: 100%; }
-  }
-  .change .top-bun {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
-  }
-
-  .change .meat{opacity: 0;}
-
-  .change .bottom-bun {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
-  }
-    </style>
-  </head>
-  <body>
-    <nav class="menu">
-      <div class="menuItem out">home</div>
-      <div class="menuItem">about</div>
-      <div class="menuItem out">film</div>
-      <span class="hamburger" onclick="myFunction(this)" >
-    <span class="top-bun"></span>
-    <span class="meat"></span>
-    <span class="bottom-bun"></span>
-  </span>
-    </nav>
-    <script>
-  toggleAnimation = (evt) => {
-    evt.target.classList.toggle("out");
-  };
-  document
-    .querySelector(".menu")
-    .addEventListener("click", toggleAnimation);
-</script>
-<script>
-function myFunction(x) {
-  x.classList.toggle("change");
+    .second-text {
+  font-size: 3.4rem;
+  position: absolute;
+  top: 8.5rem;
+  opacity: 0;
+  animation-name: rightFadeInOut;
+  animation-delay: 3s;
+  animation-duration: 6s;
+  color: #ccc;
 }
-</script>
+
+@keyframes rightFadeInOut {
+  0% {
+    position: absolute;
+    right: -3rem;
+    opacity: 0;
+  }
+
+  75% {
+    position: absolute;
+    right: 10rem;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    right: 10rem;
+  }
+}
+</style>
+<body>
+<div class="second-text">This is another example text</div>
   </body>
 </html>
