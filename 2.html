@@ -202,7 +202,32 @@ h3{
     width: 100%;
     }
     }
+    .modal {
+      position: relative;
+    }
 
+    .modal div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      font-size: 220%;
+      padding-top: 30%;
+      color: white;
+      opacity: 0;
+      text-align: center;
+      transition: opacity 0.3s;
+    }
+
+    div.show {
+      opacity: 1;
+    }
+
+    .modal img {
+      width: 100%;
+    }
 
 </style>
 </head>
@@ -211,8 +236,9 @@ h3{
   <div class="rowstuff"><!-- Stuff for the rows -->
     <div class="thecolumnstuff"><!-- Stuff for the columns -->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Stuff for the animation of the photos -->
+      <div class="modal" class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Stuff for the animation of the photos -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo1.jpg" alt="Trees with snow" style="width:100%"><!-- Importing Images -->
+          <div id="modalText">My Text</div>
         <h3>Wes Hicks</h3>
         <p class="Phototext">Alta, WY, USA</p>
       </div>
@@ -345,6 +371,14 @@ var span = document.getElementsByClassName("xbutton")[0];
 span.onclick = function() {
 modal.style.display = "none";
 }
+  </script>
+  <script>
+    toggleText = () => {
+      document.getElementById("modalText").classList.toggle("show");
+    };
+    document
+      .getElementById("modalText")
+      .addEventListener("click", toggleText);
   </script>
   </body>
 </html>
