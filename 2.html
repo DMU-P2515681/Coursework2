@@ -3,40 +3,348 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+    <!-- Link for coding for  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Gateway of Artwork</title>
     <style>
-    .second-text {
-  font-size: 3.4rem;
-  position: absolute;
-  top: 8.5rem;
-  opacity: 0;
-  animation-name: rightFadeInOut;
-  animation-delay: 1s;
-  animation-duration: 6s;
-  animation-fill-mode: forwards;
-  color: #ccc;
+    /* Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+h3{
+  font-family: Comic Sans MS;
+  padding-left: 10px;
+  font-size: 2vw;
+  margin: 10px;
 }
 
-@keyframes rightFadeInOut {
-  0% {
-    position: absolute;
-    right: -3rem;
-    opacity: 0;
-  }
+.Phototext{
+  font-family: cursive;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
 
-  75% {
-    position: absolute;
-    right: 10rem;
-    opacity: 1;
-  }
+    .rowstuff:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-  100% {
-    opacity: 0;
-    right: 10rem;
+    .rowstuff {
+  margin: 8px -16px;
+}
+    /* This adds padding between each column */
+    .rowstuff .thecolumnstuff {
+      padding: 19px;
+    }
+
+    /* Create four equal columns that floats next to each other */
+    .thecolumnstuff{
+      float: left;
+      width: 25%;
+    }
+
+
+    /* Styling for content for the text */
+    .photocontent {
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+/* Styling for the image */
+    img {
+      width: 390px;
+      height: 300px;
+    }
+
+    /* This makes a two column-layout instead of four columns */
+    @media screen and (min-width: 1050px) {
+      /* Styling for content for the text */
+      .photocontent {
+        /* Taken and altered from W3Schools (2021) CSS resize Property. Available from: https://www.w3schools.com/cssref/css3_pr_resize.asp (Accessed: 1st March 2021) */
+        /* Enlarges text */
+        resize: vertical;
+       overflow: scroll;
+      }
+      /* This adds padding between each column */
+      .rowstuff .thecolumnstuff {
+        /* Taken and altered from W3Schools (2021) CSS resize Property. Available from: https://www.w3schools.com/cssref/css3_pr_resize.asp (Accessed: 1st March 2021) */
+        /* enlarges photo */
+        resize: horizontal;
+       overflow: auto;
+      }
+    }
+
+    /* This tells the browser when to display the resize property */
+@media screen and (min-width: 700px) {
+  /* Styling for content for the text */
+  .photocontent {
+    /* Taken and altered from W3Schools (2021) CSS resize Property. Available from: https://www.w3schools.com/cssref/css3_pr_resize.asp (Accessed: 1st March 2021) */
+    /* Enlarges text */
+    resize: vertical;
+   overflow: scroll;
+  }
+  /* This adds padding between each column */
+  .rowstuff .thecolumnstuff {
+    /* Taken and altered from W3Schools (2021) CSS resize Property. Available from: https://www.w3schools.com/cssref/css3_pr_resize.asp (Accessed: 1st March 2021) */
+    /* enlarges photo */
+    resize: horizontal;
+   overflow: auto;
   }
 }
+
+    /* This makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+      .thecolumnstuff {
+        width: 50%;
+      }
+    }
+
+    /* This makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .thecolumnstuff {
+        width: 100%;
+      }
+    }
+
+    /* Modal CSS taken and altered from W3Schools (2021) How TO - Modal Images. Available from: https://www.w3schools.com/howto/howto_css_modal_images.asp (Accessed: 8th March 2021) */
+    #myphotos {
+      border-radius: 5px;
+      cursor: pointer;
+    transition: 0.3s all ease;
+    }
+
+    #myphotos:hover {
+    transform: scale(0.9);
+    }
+
+    .themodalstuff {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+    }
+
+    .modalcontentstuff {
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: 90%;
+    max-width: 700px;
+    }
+
+    #thephototext {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+    }
+
+    .modalcontentstuff,
+    #thephototext {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+    }
+
+    .xbutton {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    }
+
+    .xbutton:hover,
+    .xbutton:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+    @media only screen and (max-width: 700px) {
+    .modalcontentstuff  {
+    width: 100%;
+    }
+    }
+
+
 </style>
+</head>
 <body>
-<div class="second-text">This is another example text</div>
+  <!-- Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) -->
+  <div class="rowstuff"><!-- Stuff for the rows -->
+    <div class="thecolumnstuff"><!-- Stuff for the columns -->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Stuff for the animation of the photos -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo1.jpg" alt="Trees with snow" style="width:100%"><!-- Importing Images -->
+        <h3>Wes Hicks</h3>
+        <p class="Phototext">Alta, WY, USA</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo2.jpg" alt="Sunset and Rocks" style="width:100%">
+        <h3>Dave Hoefler</h3>
+        <p class="Phototext">Madison, WI, USA</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo3.jpg" alt="Waves on shore" style="width:100%">
+        <h3>Lina Silivanova</h3>
+        <p class="Phototext">Chania, Greece</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo4.jpg" alt="Mountains" style="width:100%">
+        <h3>Mike Palmowski</h3>
+        <p class="Phototext">Location: Unknown</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo5.jpg" alt="Red trees in night sky" style="width:100%">
+        <h3>Brad Fickeisen</h3>
+        <p class="Phototext">Dixie National Forest, Cedar City, United States</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo6.jpg" alt="Birds on branches" style="width:100%">
+        <h3>Olivier Guillard</h3>
+        <p class="Phototext">Am Tierpark, Berlin, Germany</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo7.jpg" alt="Waterfall" style="width:100%">
+        <h3>Brad Fickeisen</h3>
+        <p class="Phototext">Vermont, United States</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo8.jpg" alt="Sunrise in clouds" style="width:100%">
+        <h3>Zach Plank</h3>
+        <p class="Phototext">Virginia, USA</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo9.jpg" alt="Yellow buds in branches" style="width:100%">
+        <h3>Kolya Korzh</h3>
+        <p class="Phototext">Location: Unknown</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo10.jpg" alt="Green leaves" style="width:100%" >
+        <h3>laura Adai</h3>
+        <p class="Phototext">Frost</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo11.jpg" alt="Cliff botton" style="width:100%">
+        <h3>Jordan Whitfield</h3>
+        <p class="Phototext">Providence Canyon, Lumpkin, USA</p>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo12.jpg" alt="Bonfire" style="width:100%">
+        <h3>Tengyart</h3>
+        <p class="Phototext">Russia</p>
+      </div>
+    </div>
+  </div>
+  <div id="themodal" class="themodalstuff ">
+  <span class="xbutton">&times;</span>
+  <img class="modalcontentstuff" id="img01">
+  <div id="thephototext"></div>
+</div>
+  <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+  <!-- Coding for the animation for the videos -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Taken and altered from snowmonkey (2017) Several Modal Images on page. Available from: https://stackoverflow.com/questions/47798971/several-modal-images-on-page (Accessed: 8th March 2021) -->
+  <script>
+  // this references the modal.
+var modal = document.getElementById('themodal');
+// this variable gets all images
+var images = document.getElementsByClassName('myPhotosTwo');
+// this gets the modal image
+var modalImg = document.getElementById("img01");
+// this gets the "alt" caption in the modal
+var captionText = document.getElementById("thephototext");
+
+// Go through images with  custom class
+for (var i = 0; i < images.length; i++) {
+var img = images[i];
+// attaches click listener for the image
+img.onclick = function(evt) {
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+}
+// variable for "x" button.
+var span = document.getElementsByClassName("xbutton")[0];
+
+span.onclick = function() {
+modal.style.display = "none";
+}
+  </script>
   </body>
 </html>
