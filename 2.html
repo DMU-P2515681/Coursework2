@@ -236,9 +236,9 @@ h3{
   <div class="rowstuff"><!-- Stuff for the rows -->
     <div class="thecolumnstuff"><!-- Stuff for the columns -->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="modal" class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Stuff for the animation of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Stuff for the animation of the photos -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo1.jpg" alt="Trees with snow" style="width:100%"><!-- Importing Images -->
-          <div id="modalText">My Text</div>
+        <div id="modalText">This is an elephant</div>
         <h3>Wes Hicks</h3>
         <p class="Phototext">Alta, WY, USA</p>
       </div>
@@ -332,7 +332,7 @@ h3{
       </div>
     </div>
   </div>
-  <div id="themodal" class="themodalstuff ">
+  <div id="themodal" class="modal themodalstuff ">
   <span class="xbutton">&times;</span>
   <img class="modalcontentstuff" id="img01">
   <div id="thephototext"></div>
@@ -374,10 +374,10 @@ modal.style.display = "none";
   </script>
   <script>
     toggleText = () => {
-      document.getElementById("modalText").classList.toggle("show");
+      document.getElementById("thephototext").classList.toggle("show");
     };
     document
-      .getElementById("modalText")
+      .getElementById("thephototext")
       .addEventListener("click", toggleText);
   </script>
   </body>
