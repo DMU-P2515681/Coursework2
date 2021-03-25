@@ -5,21 +5,31 @@ body{
   margin-bottom: 0;
 }
 
+
 @media screen and (max-width: 1050px){
+    /* Gateway of Artwork heading = hover 3D Transform */
+    /* Referenced from Polypane (2021) Beautiful CSS 3D Transform Examples. Available from: https://polypane.app/css-3d-transform-examples/ (Accessed: 10th February 2021). */
+    /* Styling for "Gateway of Artwork" */
   h1 {
     margin: 0;
+    /* Referenced from Polypane (2021) Beautiful CSS 3D Transform Examples. Available from: https://polypane.app/css-3d-transform-examples/ (Accessed: 10th February 2021). */
+    /* Styling for transformation */
     transform: perspective(1500px) rotateY(15deg);
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     transition: transform 1s ease 0s;
+
     font-family: Henny Penny;
     font-size: 6vw;
     color: white;
+    /* Referenced and adapted from geeksforgeeks (2020) CSS | Font Border. Available from: https://www.geeksforgeeks.org/css-font-border/ (Accessed: 11th February 2021).*/
+    /* Styling for blue text outline */
     -webkit-text-stroke-width: 0.1px;
     -webkit-text-stroke-color: #0BC2F8;
-    margin: 0;
+
   }
 
+/* Styling for big ellipse */
   .ellipse {
     height: 20vw;
     width: 75vw;
@@ -31,14 +41,22 @@ body{
     margin: 0 auto;
 
   }
+
+  /* Referenced from Polypane (2021) Beautiful CSS 3D Transform Examples. Available from: https://polypane.app/css-3d-transform-examples/  (Accessed: 10th February 2021). */
+  /* Styling for transformation */
   h1:hover {
     transform: perspective(3000px) rotateX(20deg) rotateY(5deg);
   }
+
+  /* Referenced from Holland, A. (2019) Rainbow text animation using only CSS. Available from: https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css (Accessed: 10th February 2021). */
+  /* Styling for rainbow animation */
   .rainbow {
     text-align: center;
     animation: colorRotate 6s linear 0s infinite;
   }
 
+/* Referenced from Holland, A. (2019) Rainbow text animation using only CSS. Available from: https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css (Accessed: 10th February 2021). */
+/* Styling for rainbow animation */
   .rainbow_text_animated {
       background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
       -webkit-background-clip: text;
@@ -48,6 +66,8 @@ body{
       background-size: 400% 100%;
   }
 
+/* Referenced and altered from Holland, A. (2019) Rainbow text animation using only CSS. Available from: https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css (Accessed: 10th February 2021). */
+/* Styling for rainbow animation */
   @keyframes rainbow_animation {
       0%,100% {
           background-position: 0 0;
@@ -58,17 +78,16 @@ body{
       }
   }
 
-div{
+/* Styling for Page Settings */
+.ellipsetwo{
   font-size: 2vw;
   font-family: sans-serif;
   color: white;
   margin: 0;
   text-align: center;
-  transform: perspective(1500px) rotateY(15deg);
-  border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  transition: transform 1s ease 0s;
 }
+
+/* Styling for the smaller elipse */
   .ellipsetwo {
     height: 7vw;
     width: 20vw;
@@ -82,11 +101,15 @@ div{
 
 }
 
-div:hover {
+/* Referenced from W3Schools (2021) How TO - Shake an Image. Available at: https://www.w3schools.com/howto/howto_css_shake_image.asp (Accessed: 11th February 2021). */
+/* Styling for shake of ellipse */
+.elipsetwo:hover {
    animation: shake 0.5s;
    animation-iteration-count: infinite;
 }
 
+/* Referenced from W3Schools (2021) How TO - Shake an Image. Available at: https://www.w3schools.com/howto/howto_css_shake_image.asp (Accessed: 11th February 2021). */
+/* Styling for shake of ellipse */
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -100,73 +123,25 @@ div:hover {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
-.hamburger {
-  padding-top: 3vw;
-  display: flex;
-  align-self: center;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 40px;
-  height: 20px;
-  cursor: pointer;
-margin-left: 4vw;
-}
-.hamburger span {
-  align-items: left;
-  height: 4px;
-  width: 100%;
-  background: #000000;
-}
-.hamburger .meat {
-  width: 75%;
-  transition: all 200ms ease-in-out;
-}
-.hamburger .bottom-bun {
-  width: 50%;
-  transition: all 400ms ease-in-out;
-}
-.hamburger:hover span {
-  width: 100%;
-}
-.hamburger:hover .top-bun {
-  animation: burger-hover 1s infinite ease-in-out alternate;
-}
-.hamburger:hover .meat {
-  animation: burger-hover 1s infinite ease-in-out alternate forwards 200ms;
-}
-.hamburger:hover .bottom-bun {
-  animation: burger-hover 1s infinite ease-in-out alternate forwards 400ms;
-}
 
-@keyframes burger-hover {
-  0% { width: 100%; }
-  50% { width: 50%; }
-  100% { width: 100%; }
-}
-.change .top-bun {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.change .meat{opacity: 0;}
-
-.change .bottom-bun {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
-}
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
 .mysearchthing {
   margin: 0px;
 }
 
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Styling for position and display of search button */
 .mysearchthing  > span {
   position: relative;
   float:right;
   display: flex;
   align-self: center;
-  margin-top: -3vw;
+  margin-top: 2vw;
   margin-right: 3vw;
 }
 
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Styling for position and display of search button after clicked*/
 .mysearchthing  > span:after {
   content: "";
   background: black;
@@ -177,9 +152,10 @@ margin-left: 4vw;
   right: 3px;
   transform: rotate(140deg);
 box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-
 }
 
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Styling for input of information */
 .mysearchthing  > span > input {
   color: black;
   font-size: 15px;
@@ -194,100 +170,78 @@ box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
   box-shadow:  0 0 20px #0E0AF5;
 }
 
-
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Instructions for search button */
 .mysearchthing > span > input::placeholder {
   color: grey;
   opacity: 0;
   transition: opacity 150ms ease-out;
-
 }
 
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Opacity of text for search */
 .mysearchthing  > span > input:focus::placeholder {
   opacity: 1;
 }
 
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Width of how much search expands*/
 .mysearchthing  > span > input:focus,
 .mysearchthing  > span > input:not(:placeholder-shown) {
   width: 250px;
 }
-}
 
-@media screen and (min-width: 1050px){
-h1 {
-  margin: 0;
-  transform: perspective(1500px) rotateY(15deg);
-  border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  transition: transform 1s ease 0s;
+/* Styling for Portrait of Photos */
+h2 {
   font-family: Henny Penny;
-  font-size: 3vw;
-  color: white;
-  -webkit-text-stroke-width: 0.1px;
-  -webkit-text-stroke-color: #0BC2F8;
+  padding-top: 3vw;
+  letter-spacing: 3px;
+  font-size: 8vw;
+  text-shadow: -1px -1px 1px #fff, 2px 2px 2px #000;
+	color: #90785C;
   margin: 0;
 }
 
-.ellipse {
+/* Styling for the subheading */
+.subheading {
+  margin: 0;
+  padding-top: 18vw;
+  font-family: Comic Sans MS;
+  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+  font-size: 4vw;
+  color: white;
+-webkit-text-stroke-width: 0.5px;/* Styling for the text stroke */
+-webkit-text-stroke-color: black;
+}
+
+/* Styling for the speech synthesis button*/
+.speech {
+  border-radius: 10px;
+  font-size: 5vw;
+  color: white;
   height: 10vw;
-  width: 38vw;
-border: groove blue;
-  border-radius: 70%;
-  border-width: medium;
-  display: flex;
- align-items: center;
-  margin: 0 auto;
+  font-family: serif;
+  float:right;
+  margin-right: 10vw;
+  margin-top: 4vw;
+  text-shadow: 2px 2px 4px #000000;
+  background: #160BF8;
+  /* Referenced and adapted from Eric (no date). Bevel Box (Box Shadow). Available at: https://jsfiddle.net/MadLittleMods/r32rL/ (Accessed: 20th March 2021). */
+  border: 3px solid #000000;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+  box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+  cursor: pointer;
 }
 
-h1:hover {
-  transform: perspective(3000px) rotateX(20deg) rotateY(5deg);
-}
-.rainbow {
-  text-align: center;
-  animation: colorRotate 6s linear 0s infinite;
-}
-
-.rainbow_text_animated {
-    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: rainbow_animation 6s ease-in-out infinite;
-    background-size: 400% 100%;
-}
-
-@keyframes rainbow_animation {
-    0%,100% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 100% 0;
-    }
-}
-div{
-  font-size: 1vw;
-  font-family: sans-serif;
-  color: white;
-  margin: 0;
-  text-align: center;
-}
-  .ellipsetwo {
-    height: 4vw;
-    width: 10vw;
-    border: groove black;
-    background-color: #160BF8;
-    border-radius: 70%;
-    display: grid;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: -2.3vw;
-}
-
-div:hover {
+/* Referenced from W3Schools (2021) How TO - Shake an Image. Available at: https://www.w3schools.com/howto/howto_css_shake_image.asp (Accessed: 11th February 2021). */
+/* Styling for shake of Speech Button */
+.speech:hover{
   animation: shake 0.5s;
  animation-iteration-count: infinite;
 }
 
+/* Referenced from W3Schools (2021) How TO - Shake an Image. Available at: https://www.w3schools.com/howto/howto_css_shake_image.asp (Accessed: 11th February 2021). */
+/* Styling for shake of Speech Buttin*/
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -302,65 +256,153 @@ div:hover {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+/* Styling for slideshow button*/
+.SlideshowButton {
+  border-radius: 10px;
+  font-size: 5vw;
+  color: white;
+  height: 10vw;
+  width: 37vw;
+  font-family: serif;
+  float:left;
+  margin-left: 10vw;
+  margin-top: 4vw;
+  text-shadow: 2px 2px 4px #000000;
+  border: 3px solid #000000;
+  /* Referenced from Colorion (no date) Gradient Buttons. Available at: https://gradientbuttons.colorion.co/ (Accessed: 20th March 2021). */
+  background-size: 200% auto;
+  transition: 0.5s;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+  box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+ background-image: linear-gradient(to right, #160BF8 0%, #36F410  51%, #160BF8 100%)
 
-.hamburger {
-  margin-top: -9vw;
-  margin-left: 5vw;
+}
+
+/* Referenced from Colorion (no date) Gradient Buttons. Available at: https://gradientbuttons.colorion.co/ (Accessed: 20th March 2021). */
+.SlideshowButton:hover {
+  background-position: right center; /* change the direction of the gradient */
+  }
+}
+
+/* Everything from the above, but for desktop view */
+@media screen and (min-width: 1050px){
+h1 {
+  margin: 0;
+  /* Referenced from Polypane (2021) Beautiful CSS 3D Transform Examples. Available from: https://polypane.app/css-3d-transform-examples/  (Accessed: 10th February 2021). */
+  /* Styling for the website title */
+  transform: perspective(1500px) rotateY(15deg);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  transition: transform 1s ease 0s;
+  font-family: Henny Penny;
+  font-size: 3vw;
+  color: white;
+
+  /* Referenced and adapted from geeksforgeeks (2020) CSS | Font Border. Available from: https://www.geeksforgeeks.org/css-font-border/ (Accessed: 11th February 2021). */
+  /* Styling for the text stroke */
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: #0BC2F8;
+  margin: 0;
+}
+
+  /* Styling for the text stroke */
+.ellipse {
+  height: 10vw;
+  width: 38vw;
+border: groove blue;
+  border-radius: 70%;
+  border-width: medium;
   display: flex;
-  align-self: center;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 60px;
-  height: 40px;
-  cursor: pointer;
-}
-.hamburger span {
-  align-items: left;
-  height: 4px;
-  width: 100%;
-  background: #000000;
-}
-.hamburger .meat {
-  width: 75%;
-  transition: all 200ms ease-in-out;
-}
-.hamburger .bottom-bun {
-  width: 50%;
-  transition: all 400ms ease-in-out;
-}
-.hamburger:hover span {
-  width: 100%;
-}
-.hamburger:hover .top-bun {
-  animation: burger-hover 1s infinite ease-in-out alternate;
-}
-.hamburger:hover .meat {
-  animation: burger-hover 1s infinite ease-in-out alternate forwards 200ms;
-}
-.hamburger:hover .bottom-bun {
-  animation: burger-hover 1s infinite ease-in-out alternate forwards 400ms;
+ align-items: center;
+  margin: 0 auto;
 }
 
-@keyframes burger-hover {
-  0% { width: 100%; }
-  50% { width: 50%; }
-  100% { width: 100%; }
-}
-.change .top-bun {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
+/* Referenced from Polypane (2021) Beautiful CSS 3D Transform Examples. Available from: https://polypane.app/css-3d-transform-examples/  (Accessed: 10th February 2021). */
+h1:hover {
+  transform: perspective(3000px) rotateX(20deg) rotateY(5deg);
 }
 
-.change .meat{opacity: 0;}
-
-.change .bottom-bun {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
+/* Referenced from Holland (2019) Rainbow text animation using only CSS. Available from: https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css (Accessed: 10th February 2021). */
+/* Styling for rainbow animation */
+.rainbow {
+  text-align: center;
+  animation: colorRotate 6s linear 0s infinite;
 }
+
+/* Referenced from Holland (2019) Rainbow text animation using only CSS. Available from: https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css (Accessed: 10th February 2021). */
+/* Styling for rainbow animation */
+.rainbow_text_animated {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+/* Referenced from Holland (2019) Rainbow text animation using only CSS. Available from: https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css (Accessed: 10th February 2021). */
+/* Styling for rainbow animation */
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+/* Font CSS for Elipse Two */
+.ellipsetwo{
+  font-size: 1vw;
+  font-family: sans-serif;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+/* This code is for the second elipse */
+  .ellipsetwo {
+    height: 4vw;
+    width: 10vw;
+    border: groove black;
+    background-color: #160BF8;
+    border-radius: 70%;
+    display: grid;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: -2.3vw;
+}
+
+/* Referenced from W3Schools (2021) How TO - Shake an Image. Available at: https://www.w3schools.com/howto/howto_css_shake_image.asp (Accessed: 11st February 2021). */
+.ellipsetwo:hover {
+  animation: shake 0.5s;
+ animation-iteration-count: infinite;
+}
+
+/* Referenced from W3Schools (2021) How TO - Shake an Image. Available at: https://www.w3schools.com/howto/howto_css_shake_image.asp (Accessed: 11st February 2021). */
+/* Styling for ellipse shake */
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Margin for search button */
 .mysearchthing {
   margin: 0px;
 }
 
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Position of search button */
 .mysearchthing  > span {
   position: relative;
   float:right;
@@ -368,6 +410,8 @@ div:hover {
   margin-top: -3vw;
 }
 
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Styling of search button */
 .mysearchthing  > span:after {
   content: "";
   background: black;
@@ -381,12 +425,14 @@ box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 
 }
 
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Styling for the interior of the search */
 .mysearchthing  > span > input {
   color: black;
   font-size: 18px;
   background: transparent;
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   padding: 11px;
   border: solid 4px black;
   outline: none;
@@ -395,20 +441,386 @@ box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
   box-shadow:  0 0 20px #0E0AF5;
 }
 
-
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Styling for the text "Search the Gateway" */
 .mysearchthing > span > input::placeholder {
   color: grey;
   opacity: 0;
   transition: opacity 150ms ease-out;
-
 }
 
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Styling for the typing input */
 .mysearchthing  > span > input:focus::placeholder {
   opacity: 1;
 }
 
+/* Referenced and adapted from Ichinose, T (2018). SEARCH BOX. Available at: https://freefrontend.com/css-search-boxes/ (Accessed: 13th February 2021). */
+/* Width of the search expanding */
 .mysearchthing  > span > input:focus,
 .mysearchthing  > span > input:not(:placeholder-shown) {
   width: 350px;
 }
+
+/* Styling for Portfolio of Photos */
+h2 {
+  font-family: Henny Penny;
+  padding-top: 5vw;
+  letter-spacing: 3px;
+  font-size: 5.5vw;
+  text-shadow: -1px -1px 1px #fff, 3px 3px 3px #000; /* Referenced and adapted from Midwinter, D (2011). Embossed Text Effect. Available at: https://www.midwinter-dg.com/permalink-7-great-css-based-text-effects-using-the-text-shadow-property_2011-03-03.html (Accessed: 20th March 2021). */
+	color: #90785C;
+  margin: 0;
+}
+/* Styling for Website explaination */
+.subheading {
+  margin: 0;
+  padding-top: 2vw;
+  font-family: Comic Sans MS;
+  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+  font-size: 2vw;
+  color: white;
+-webkit-text-stroke-width: 2px; /* Referenced and adapted from Coyier, C (2010). Adding Stroke to Web Text. Available at: https://css-tricks.com/adding-stroke-to-web-text/ (Accessed: 20th March 2021). */
+-webkit-text-stroke-color: black;
+}
+/* Styling for the speech synthesis button*/
+.speech {
+  border-radius: 10px;
+  font-size: 5vw;
+  color: white;
+  height: 10vw;
+  font-family: serif;
+  float:right;
+  margin-right: 10vw;
+  margin-top: 4vw;
+  text-shadow: 2px 2px 4px #000000;
+  background: #160BF8;
+  /* Referenced and adapted from Eric (no date). Bevel Box (Box Shadow). Available at: https://jsfiddle.net/MadLittleMods/r32rL/ (Accessed: 20th March 2021). */
+  border: 3px solid #000000;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+  box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+  cursor: pointer;
+}
+
+/* Referenced from W3Schools (2021) How TO - Shake an Image. Available at: https://www.w3schools.com/howto/howto_css_shake_image.asp (Accessed: 11th February 2021). */
+/* Styling for shake of Speech Button */
+.speech:hover{
+  animation: shake 0.5s;
+ animation-iteration-count: infinite;
+}
+
+/* Referenced from W3Schools (2021) How TO - Shake an Image. Available at: https://www.w3schools.com/howto/howto_css_shake_image.asp (Accessed: 11th February 2021). */
+/* Styling for shake of Speech Buttin*/
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Styling for slideshow button*/
+.SlideshowButton {
+  border-radius: 10px;
+  font-size: 5vw;
+  color: white;
+  height: 10vw;
+  width: 37vw;
+  font-family: serif;
+  float:left;
+  margin-left: 10vw;
+  margin-top: 4vw;
+  text-shadow: 2px 2px 4px #000000;
+  border: 3px solid #000000;
+  /* Referenced from Colorion (no date) Gradient Buttons. Available at: https://gradientbuttons.colorion.co/ (Accessed: 20th March 2021). */
+  background-size: 200% auto;
+  transition: 0.5s;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+  box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+ background-image: linear-gradient(to right, #160BF8 0%, #36F410  51%, #160BF8 100%)
+
+}
+
+/* Referenced from Colorion (no date) Gradient Buttons. Available at: https://gradientbuttons.colorion.co/ (Accessed: 20th March 2021). */
+.SlideshowButton:hover {
+  background-position: right center; /* change the direction of the gradient */
+  }
+}
+
+/* Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+/* Styling for heading three */
+h3{
+font-family: Comic Sans MS;
+padding-left: 15px;
+padding-bottom: 10px;
+font-size: 2vw;
+margin: 0;
+color: black;
+text-align: left;
+}
+
+/* Styling for Photos text */
+.Phototext{
+font-family: cursive;
+padding-left: 18px;
+margin-bottom: 10px;
+margin: 0;
+color: black;
+text-align: left;
+}
+/* Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) */
+.rowstuff:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.rowstuff {
+margin: 8px -16px;
+padding-top: 30vw;
+}
+/* This adds padding between each column */
+.rowstuff .thecolumnstuff {
+  padding: 19px;
+}
+
+/* Create four equal columns that floats next to each other */
+.thecolumnstuff{
+  float: left;
+  width: 25%;
+}
+
+
+/* Styling for content for the text */
+.photocontent {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Styling for the image */
+img {
+  width: 390px;
+  height: 300px;
+}
+
+/* This makes a two column-layout instead of four columns */
+@media screen and (min-width: 1050px) {
+  /* Styling for content for the text */
+  .photocontent {
+    /* Taken and altered from W3Schools (2021) CSS resize Property. Available from: https://www.w3schools.com/cssref/css3_pr_resize.asp (Accessed: 1st March 2021) */
+    /* Enlarges text */
+    resize: vertical;
+   overflow: scroll;
+  }
+  /* This adds padding between each column */
+  .rowstuff .thecolumnstuff {
+    /* Taken and altered from W3Schools (2021) CSS resize Property. Available from: https://www.w3schools.com/cssref/css3_pr_resize.asp (Accessed: 1st March 2021) */
+    /* enlarges photo */
+    resize: horizontal;
+   overflow: auto;
+  }
+}
+
+/* This tells the browser when to display the resize property */
+@media screen and (min-width: 700px) {
+/* Styling for content for the text */
+.photocontent {
+/* Taken and altered from W3Schools (2021) CSS resize Property. Available from: https://www.w3schools.com/cssref/css3_pr_resize.asp (Accessed: 1st March 2021) */
+/* Enlarges text */
+resize: vertical;
+overflow: scroll;
+}
+/* This adds padding between each column */
+.rowstuff .thecolumnstuff {
+/* Taken and altered from W3Schools (2021) CSS resize Property. Available from: https://www.w3schools.com/cssref/css3_pr_resize.asp (Accessed: 1st March 2021) */
+/* enlarges photo */
+resize: horizontal;
+overflow: auto;
+}
+}
+
+/* This makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .thecolumnstuff {
+    width: 50%;
+  }
+}
+
+/* This makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .thecolumnstuff {
+    width: 100%;
+  }
+}
+
+/* Modal CSS taken and altered from W3Schools (2021) How TO - Modal Images. Available from: https://www.w3schools.com/howto/howto_css_modal_images.asp (Accessed: 8th March 2021) */
+/* Styling for the photos */
+#myphotos {
+  border-radius: 5px;
+  cursor: pointer;
+transition: 0.3s all ease;
+}
+
+#myphotos:hover {
+transform: scale(0.9);
+}
+/* Modal CSS taken and altered from W3Schools (2021) How TO - Modal Images. Available from: https://www.w3schools.com/howto/howto_css_modal_images.asp (Accessed: 8th March 2021) */
+.themodalstuff {
+display: none;
+/* Hidden by default */
+position: fixed;
+/* Stay in place */
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+/* Full width */
+height: 100%;
+/* Full height */
+overflow: auto;
+/* Enable scroll if needed */
+background-color: rgb(0, 0, 0);
+/* Fallback color */
+background-color: rgba(0, 0, 0, 0.9);
+/* Black w/ opacity */
+}
+/* Modal CSS taken and altered from W3Schools (2021) How TO - Modal Images. Available from: https://www.w3schools.com/howto/howto_css_modal_images.asp (Accessed: 8th March 2021) */
+.modalcontentstuff {
+margin: auto;
+display: block;
+width: 80%;
+height: 100%;
+max-width: 700px;
+}
+/* Modal CSS taken and altered from W3Schools (2021) How TO - Modal Images. Available from: https://www.w3schools.com/howto/howto_css_modal_images.asp (Accessed: 8th March 2021) */
+/* Styling for animation for modal transition */
+.modalcontentstuff,
+#thephototext {
+animation-name: zoom;
+animation-duration: 0.6s;
+}
+/* Settings for styling the modal */
+@-webkit-keyframes zoom {
+from {-webkit-transform:scale(0)}
+to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+from {transform:scale(0)}
+to {transform:scale(1)}
+}
+/* Modal CSS taken and altered from W3Schools (2021) How TO - Modal Images. Available from: https://www.w3schools.com/howto/howto_css_modal_images.asp (Accessed: 8th March 2021) */
+/* Styling for x button */
+.xbutton {
+position: absolute;
+top: 15px;
+right: 35px;
+color: #f1f1f1;
+font-size: 40px;
+font-weight: bold;
+transition: 0.3s;
+}
+/* Modal CSS taken and altered from W3Schools (2021) How TO - Modal Images. Available from: https://www.w3schools.com/howto/howto_css_modal_images.asp (Accessed: 8th March 2021) */
+/* Styling for x button when hovered on*/
+.xbutton:hover,
+.xbutton:focus {
+color: #bbb;
+text-decoration: none;
+cursor: pointer;
+}
+/* Modal content stuff settings up unntil 700 pixels */
+@media only screen and (max-width: 700px) {
+.modalcontentstuff  {
+width: 100%;
+}
+}
+
+/* Style for modal pop up on photos */
+.modal div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 220%;
+  padding-top: 30%;
+  color: white;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.3s;
+}
+/* SHowing text when clicked */
+div.show {
+  opacity: 1;
+}
+/* Styling for modal image*/
+.modal img {
+  width: 100%;
+}
+
+.fa-heart {
+  padding: 10px;
+  padding-left: 14px;
+  color: black;
+  margin: 0;
+}
+
+.mySlides {
+  display:none;
+  height: 58vw;
+  margin-top: 20vw;
+}
+
+
+.edit {
+  background-color: black;
+  opacity: 70%;
+  color: white;
+  font-weight: bold;
+  font-size: 72px;
+  position: absolute;
+  top: 25vw;
+  left: 16px;
+   border: 5px solid white;
+}
+
+.edits {
+  background-color: black;
+  opacity: 70%;
+  color: white;
+  font-weight: bold;
+  font-size: 72px;
+position: absolute;
+  top: 25vw;
+  right: 16px;
+   border: 5px solid white;
+}
+
+.edit:hover{
+  opacity: 100%;
+}
+
+.edits:hover{
+  opacity: 100%;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
 }
