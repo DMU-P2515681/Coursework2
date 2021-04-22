@@ -3,6 +3,7 @@ body{
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
+  transition: all 0.5s;
 }
 
 
@@ -20,8 +21,7 @@ body{
     transition: transform 1s ease 0s;
 
     font-family: Henny Penny;
-    font-size: 6vw;
-    color: white;
+    font-size: 5.8vw;
     /* Referenced and adapted from geeksforgeeks (2020) CSS | Font Border. Available from: https://www.geeksforgeeks.org/css-font-border/ (Accessed: 11th February 2021).*/
     /* Styling for blue text outline */
     -webkit-text-stroke-width: 0.1px;
@@ -82,7 +82,6 @@ body{
 .ellipsetwo{
   font-size: 2vw;
   font-family: sans-serif;
-  color: white;
   margin: 0;
   text-align: center;
 }
@@ -209,7 +208,6 @@ h2 {
   font-family: Comic Sans MS;
   text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
   font-size: 4vw;
-  color: white;
 -webkit-text-stroke-width: 0.5px;/* Styling for the text stroke */
 -webkit-text-stroke-color: black;
 }
@@ -218,7 +216,6 @@ h2 {
 .speech {
   border-radius: 10px;
   font-size: 5vw;
-  color: white;
   height: 10vw;
   font-family: serif;
   float:right;
@@ -259,8 +256,7 @@ h2 {
 /* Styling for slideshow button*/
 .SlideshowButton {
   border-radius: 10px;
-  font-size: 5vw;
-  color: white;
+  font-size: 4vw;
   height: 10vw;
   width: 37vw;
   font-family: serif;
@@ -354,11 +350,12 @@ h1:hover {
 }
 /* Font CSS for Elipse Two */
 .ellipsetwo{
-  font-size: 1vw;
+  font-size: 1.5vw;
   font-family: sans-serif;
   color: white;
   margin: 0;
   text-align: center;
+  padding-left: 25px;
 }
 /* This code is for the second elipse */
   .ellipsetwo {
@@ -528,7 +525,7 @@ h2 {
 /* Styling for slideshow button*/
 .SlideshowButton {
   border-radius: 10px;
-  font-size: 5vw;
+  font-size: 4vw;
   color: white;
   height: 10vw;
   width: 37vw;
@@ -581,6 +578,7 @@ margin-bottom: 10px;
 margin: 0;
 color: black;
 text-align: left;
+font-size: 13px;
 }
 /* Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) */
 .rowstuff:after {
@@ -591,7 +589,7 @@ text-align: left;
 
 .rowstuff {
 margin: 8px -16px;
-padding-top: 30vw;
+padding-top: 20vw;
 }
 /* This adds padding between each column */
 .rowstuff .thecolumnstuff {
@@ -783,7 +781,7 @@ div.show {
 .mySlides {
   display:none;
   height: 58vw;
-  margin-top: 20vw;
+  margin-top: 26vw;
 }
 
 
@@ -792,7 +790,7 @@ div.show {
   opacity: 70%;
   color: white;
   font-weight: bold;
-  font-size: 72px;
+  font-size: 30px;
   position: absolute;
   top: 25vw;
   left: 16px;
@@ -804,7 +802,7 @@ div.show {
   opacity: 70%;
   color: white;
   font-weight: bold;
-  font-size: 72px;
+  font-size: 30px;
 position: absolute;
   top: 25vw;
   right: 16px;
@@ -823,4 +821,18 @@ position: absolute;
   position: relative;
   text-align: center;
   color: white;
+}
+
+.audio {
+  width: 40vw;
+  height: 40vw;
+  margin: 0;
+  margin-left: 15px;
+  margin-top: 15px;
+  background-image: url("../images/audioimage.png");/* image from albumoftheyear (2020) */
+  background-size: cover;
+  display: flex; /* centre play and pause button on image */
+  justify-content: center;
+  align-items: center; /* play and pause button on image original size*/
+  float: left;
 }
