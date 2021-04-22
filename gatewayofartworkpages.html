@@ -574,18 +574,21 @@ var x = document.getElementById("myAudio");
 document.getElementById("myImage").addEventListener("click", playAudio);
 let isPlaying = false;
 
-function playAudio() {
+function playAudio(evt) {
+  let speakerImage = evt.target.parentNode;
   console.log('dd');
 
     if (isPlaying) {
       x.pause();
       isPlaying = false;
      document.getElementById("myImage").src = "images/button.jpg";
+      speakerImage.classList.remove("bounce");
 }
        else  {
         x.play();
         document.getElementById("myImage").src = "images/pausebutton.png";
         isPlaying = true;
+         speakerImage.classList.add("bounce");
        }
 }
 
