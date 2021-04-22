@@ -5,14 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gateway Of Artwork</title>
     <link href='css/styles.css' rel='stylesheet' type='text/css' />
+    <link id="themeStyleSheets" href='css/lighttheme.css' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://kit.fontawesome.com/db2294f48a.js" crossorigin="anonymous"></script>
   </head>
   <body>
   <header>
-      <!-- html for title-->
+      <!-- html for title and theme switcher-->
     <h1 align="center"  class="rainbow rainbow_text_animated ellipse ">GATEWAY OF ARTWORK</h1>
-    <div class="ellipsetwo" align="center"><b>PAGE<br>SETTINGS</b></div>
+    <select id="theSwitcher" class="ellipsetwo" align="center">
+     <option value="lighttheme">LIGHT</option>
+     <option value="darktheme">DARK</option>
+     <option value="yellowtheme">YELLOW</option>
+     <option value="lightbluetheme">BLUE</option>
+     <option value="lightgreentheme">L-GREEN</option>
+     <option value="greentheme">D-GREEN</option>
+
+     <option value="tinytheme">Tiny</option>
+     <option value="smalltheme">Small</option>
+     <option value="normaltheme" selected>Normal</option>
+     <option value="largetheme">Large</option>
+     <option value="extralarge">Massive</option>
+    </select>
+<!-- Javascript for theme switcher-->
+    <script>
+    switchSetting = () => {
+      let gotoTheme = document.getElementById('theSwitcher').value;
+      let styleSheet = document
+      .getElementById('themeStyleSheets')
+      .setAttribute('href', 'css/' + gotoTheme + '.css');
+    };
+
+     document.getElementById("theSwitcher").addEventListener("change", switchSetting);
+    </script>
+
   <!-- html for search button -->
 <span data-aos="fade-in" data-aos-duration="2000" class="mysearchthing">
   <span>
@@ -55,18 +81,11 @@ listenBtn.addEventListener('click', (e) => { //Tells the browser to play the spe
     </script>
   </section>
   <section>
-<div data-aos="fade-in" data-aos-duration="2000" class="container">
-    <img class="mySlides" src="images/Slideshow1.3.jpg" style="width:100%">
-    <img class="mySlides" src="images/Slideshow1.2.jpg" style="width:100%">
-
-
-    <button class="left edit" data-aos="slide-right" data-aos-duration="1000" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="right edits" data-aos="slide-left" data-aos-duration="1000" onclick="plusDivs(1)">&#10095;</button>
-    </div>
+<div id="slideshow" data-aos="fade-in" data-aos-duration="2000" class="container"></div>
 
   <script>
 var slideIndex = 1;
-showDivs(slideIndex);
+//showDivs(slideIndex);
 
 function plusDivs(n) {
   showDivs(slideIndex += n);
@@ -87,18 +106,18 @@ function showDivs(n) {
   <section>
     <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
     <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Nature</button>
-    <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoice'>Speech: Click Me</button>
+    <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceNature'>Speech: Click Me</button>
     <!-- Coding for Speech Synthesis Buttons -->
 
 <!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
     <script>
-      const listenBtn = document.getElementById('myvoice'); //Takes id from HTML
+      const listenBtnNature = document.getElementById('myvoiceNature'); //Takes id from HTML
 
-listenBtn.addEventListener('click', (e) => { //Tells the browser to play the speech when button is clicked
+listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play the speech when button is clicked
   e.preventDefault();
 
   const msg = new SpeechSynthesisUtterance( //Tells the browser what the message is
-    "Slideshow"
+    "Nature"
   );
   window.speechSynthesis.speak(msg); //Tells the browser to run this function
 
@@ -235,7 +254,344 @@ listenBtn.addEventListener('click', (e) => { //Tells the browser to play the spe
     <div id="thephototext"></div>
     <span class="xbutton">&times;</span>
   </div>
+</section>
+<section>
+  <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
+  <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Architecture</button>
+  <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceArchitecture'>Speech: Click Me</button>
+  <!-- Coding for Speech Synthesis Buttons -->
 
+<!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
+  <script>
+    const listenBtnArchitecture = document.getElementById('myvoiceArchitecture'); //Takes id from HTML
+
+listenBtnArchitecture.addEventListener('click', (e) => { //Tells the browser to play the speech when button is clicked
+e.preventDefault();
+
+const msg = new SpeechSynthesisUtterance( //Tells the browser what the message is
+  "Architecture"
+);
+window.speechSynthesis.speak(msg); //Tells the browser to run this function
+
+});
+  </script>
+</section>
+  <section>
+    <!-- Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) -->
+    <div class="rowstuff"><!-- Stuff for the rows -->
+      <div class="thecolumnstuff"><!-- Stuff for the columns -->
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Stuff for the animation of the photos -->
+          <img class="myPhotosTwo" id="myphotos" src="images/Photo13.jpg" alt="Curvey Building" style="width:100%"><!-- Importing Images -->
+<!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+          <h3>larec</h3>
+          <p class="Phototext">Moscow, Россия</p>
+          <i id="Photo13Like" class="far fa-heart"></i>
+          <span id="Photo13LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo14.jpg" alt="Sunset and Rocks" style="width:100%">
+          <h3>Davi Rezende</h3>
+          <p class="Phototext">31 Melinda St, Toronto, ON M5E 1H5, Canada</p>
+          <i id="Photo14Like" class="far fa-heart"></i>
+          <span id="Photo14LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo15.jpg" alt="Waves on shore" style="width:100%">
+          <h3>Filippo Bortolotto</h3>
+          <p class="Phototext">Sottomarina, Chioggia, VE, Italia</p>
+          <i id="Photo15Like" class="far fa-heart"></i>
+          <span id="Photo15LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo16.jpg" alt="Mountains" style="width:100%">
+          <h3>Alfons Morales</h3>
+          <p class="Phototext">Barcelona</p>
+          <i id="Photo16Like" class="far fa-heart"></i>
+          <span id="Photo16LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo17.jpg" alt="Red trees in night sky" style="width:100%">
+          <h3>Sacha T'Sas</h3>
+          <p class="Phototext">Brussels, Belgium</p>
+          <i id="Photo17Like" class="far fa-heart"></i>
+          <span id="Photo17LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo18.jpg" alt="Birds on branches" style="width:100%">
+          <h3>alevision.co</h3>
+          <p class="Phototext">Palacio de Cristal, Madrid, Spain</p>
+          <i id="Photo18Like" class="far fa-heart"></i>
+          <span id="Photo18LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo19.jpg" alt="Waterfall" style="width:100%">
+          <h3>Warren Wong</h3>
+          <p class="Phototext">Western University, London, Canada</p>
+          <i id="Photo19Like" class="far fa-heart"></i>
+          <span id="Photo19LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo20.jpg" alt="Sunrise in clouds" style="width:100%">
+          <h3>Ivan Tsaregorodtsev</h3>
+          <p class="Phototext">Barangaroo, Barangaroo, Australia</p>
+          <i id="Photo20Like" class="far fa-heart"></i>
+          <span id="Photo20LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo21.jpg" alt="Yellow buds in branches" style="width:100%">
+          <h3>Ismail Merad</h3>
+          <p class="Phototext">Dubai - United Arab Emirates</p>
+          <i id="Photo21Like" class="far fa-heart"></i>
+          <span id="Photo21LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo22.jpg" alt="Green leaves" style="width:100%" >
+          <h3>Ayelt van Veen</h3>
+          <p class="Phototext">High Rise Utrecht</p>
+          <i id="Photo22Like" class="far fa-heart"></i>
+          <span id="Photo22LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo23.jpg" alt="Cliff botton" style="width:100%">
+          <h3>olaf wisser</h3>
+          <p class="Phototext">Bordeaux, France</p>
+          <i id="Photo23Like" class="far fa-heart"></i>
+          <span id="Photo23LikeCount"></span>
+        </div>
+      </div>
+      <div class="thecolumnstuff">
+        <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo24.jpg" alt="Bonfire" style="width:100%">
+          <h3>Pang Yuhao</h3>
+          <p class="Phototext">Jewel Changi, Singapore</p>
+          <i id="Photo24Like" class="far fa-heart"></i>
+          <span id="Photo24LikeCount"></span>
+        </div>
+      </div>
+    </div>
+    <div id="themodal" class="modal themodalstuff ">
+    <img class="modalcontentstuff" id="img01">
+    <div id="thephototext"></div>
+    <span class="xbutton">&times;</span>
+  </div>
+</section>
+<section>
+  <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
+  <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Street Photography</button>
+  <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceStreetPhotography'>Speech: Click Me</button>
+  <!-- Coding for Speech Synthesis Buttons -->
+
+<!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
+  <script>
+    const listenBtnStreetPhotography= document.getElementById('myvoiceStreetPhotography'); //Takes id from HTML
+
+listenBtnStreetPhotography.addEventListener('click', (e) => { //Tells the browser to play the speech when button is clicked
+e.preventDefault();
+
+const msg = new SpeechSynthesisUtterance( //Tells the browser what the message is
+  "Street Photography"
+);
+window.speechSynthesis.speak(msg); //Tells the browser to run this function
+
+});
+  </script>
+</section>
+<section>
+  <!-- Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) -->
+  <div class="rowstuff"><!-- Stuff for the rows -->
+    <div class="thecolumnstuff"><!-- Stuff for the columns -->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Stuff for the animation of the photos -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo25.jpg" alt="Curvey Building" style="width:100%"><!-- Importing Images -->
+<!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <h3>Eirik Skarstein</h3>
+        <p class="Phototext">Hanoi, Vietnam</p>
+        <i id="Photo25Like" class="far fa-heart"></i>
+        <span id="Photo25LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo26.jpg" alt="Sunset and Rocks" style="width:100%">
+        <h3>Charly Pn</h3>
+        <p class="Phototext">Bordeaux, France</p>
+        <i id="Photo26Like" class="far fa-heart"></i>
+        <span id="Photo26LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo27.jpg" alt="Waves on shore" style="width:100%">
+        <h3>Joshua Lawrence</h3>
+        <p class="Phototext">Location: Unknown</p>
+        <i id="Photo27Like" class="far fa-heart"></i>
+        <span id="Photo27LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo28.jpg" alt="Mountains" style="width:100%">
+        <h3>Chi Hung Wong</h3>
+        <p class="Phototext">Mong Kok, 香港</p>
+        <i id="Photo28Like" class="far fa-heart"></i>
+        <span id="Photo28LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo29.jpg" alt="Red trees in night sky" style="width:100%">
+        <h3>Laura Chouette</h3>
+        <p class="Phototext">London, Vereinigtes Königreich</p>
+        <i id="Photo29Like" class="far fa-heart"></i>
+        <span id="Photo29LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo30.jpg" alt="Birds on branches" style="width:100%">
+        <h3>Dan Cutler</h3>
+        <p class="Phototext">Orlando, FL, USA</p>
+        <i id="Photo30Like" class="far fa-heart"></i>
+        <span id="Photo30LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo31.jpg" alt="Waterfall" style="width:100%">
+        <h3>ichsan wicaksono</h3>
+        <p class="Phototext">Splindit Malang, Kauman, Kota Malang, Jawa Timur, Indonesia</p>
+        <i id="Photo31Like" class="far fa-heart"></i>
+        <span id="Photo31LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo32.jpg" alt="Sunrise in clouds" style="width:100%">
+        <h3>Hakan Nural</h3>
+        <p class="Phototext">Ikebukuro, Toshima City, Tokyo, Japan</p>
+        <i id="Photo32Like" class="far fa-heart"></i>
+        <span id="Photo32LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo33.jpg" alt="Yellow buds in branches" style="width:100%">
+        <h3>P.Y. L.</h3>
+        <p class="Phototext">San Francisco, CA, USA</p>
+        <i id="Photo33Like" class="far fa-heart"></i>
+        <span id="Photo33LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo34.jpg" alt="Green leaves" style="width:100%" >
+        <h3>Swapnil Deshpandey</h3>
+        <p class="Phototext">Connaught Place, New Delhi, Delhi, India</p>
+        <i id="Photo34Like" class="far fa-heart"></i>
+        <span id="Photo34LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo35.jpg" alt="Cliff botton" style="width:100%">
+        <h3>Brandon Nelson</h3>
+        <p class="Phototext">Lombard Street, San Francisco, United States</p>
+        <i id="Photo35Like" class="far fa-heart"></i>
+        <span id="Photo35LikeCount"></span>
+      </div>
+    </div>
+    <div class="thecolumnstuff">
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo36.jpg" alt="Bonfire" style="width:100%">
+        <h3>Burçin Ergünt</h3>
+        <p class="Phototext">London, UK</p>
+        <i id="Photo36Like" class="far fa-heart"></i>
+        <span id="Photo36LikeCount"></span>
+      </div>
+    </div>
+  </div>
+  <div id="themodal" class="modal themodalstuff ">
+  <img class="modalcontentstuff" id="img01">
+  <div id="thephototext"></div>
+  <span class="xbutton">&times;</span>
+</div>
+</section>
+<section>
+  <div class="audio">
+  <img id="myImage" src="images/button.jpg" alt="play button" style="width:20%" "height:20%">
+</div>
+<audio id="myAudio">
+<source src="audios/CCS.ogg" type="audio/ogg">
+<source src="audios/CCS.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<script>
+
+var x = document.getElementById("myAudio");
+document.getElementById("myImage").addEventListener("click", playAudio);
+let isPlaying = false;
+
+function playAudio() {
+  console.log('dd');
+
+    if (isPlaying) {
+      x.pause();
+      isPlaying = false;
+     document.getElementById("myImage").src = "images/button.jpg";
+}
+       else  {
+        x.play();
+        document.getElementById("myImage").src = "images/pausebutton.png";
+        isPlaying = true;
+       }
+}
+
+</script>
+</section>
+<section>
   <!-- Taken and altered from snowmonkey (2017) Several Modal Images on page. Available from: https://stackoverflow.com/questions/47798971/several-modal-images-on-page (Accessed: 8th March 2021) -->
   <script>
       // this references the modal.
@@ -273,7 +629,45 @@ listenBtn.addEventListener('click', (e) => { //Tells the browser to play the spe
           .addEventListener("click", toggleText);
       </script>
   <script>
-  let photos = ["Photo1", "Photo2", "Photo3", "Photo4", "Photo5", "Photo6", "Photo7", "Photo8", "Photo9", "Photo10", "Photo11", "Photo12"];
+  //this section is for the like button thing
+  let photos = ["Photo1", "Photo2", "Photo3", "Photo4", "Photo5", "Photo6", "Photo7", "Photo8", "Photo9", "Photo10", "Photo11", "Photo12", "Photo13", "Photo14", "Photo15", "Photo16", "Photo17", "Photo18", "Photo19",
+"Photo20", "Photo21", "Photo22", "Photo23", "Photo24", "Photo25", "Photo26", "Photo27", "Photo28", "Photo29", "Photo30", "Photo31", "Photo32", "Photo33", "Photo34", "Photo35", "Photo36"];
+
+  photosSortingFunction = (a, b) => {
+    if(a.likeCount < b.likeCount){
+      return 1;
+    }
+    return -1;
+  }
+
+  sortOutSlideshow = () => {
+    let likeList = [];
+    for(let i = 0; i < photos.length; i++){
+      let thisPhotoLikeCount = localStorage.getItem(photos[i] + "LikeCount");
+      let thisPhoto = {photoName: photos[i], likeCount: thisPhotoLikeCount};
+      likeList.push(thisPhoto);
+    }
+    likeList.sort(photosSortingFunction);
+
+    console.log(likeList);
+
+    let html = "";
+    for(let i = 0; i < 4; i++){
+      let thisPhoto = likeList[i];
+      html += "<img class='mySlides' src='images/" + thisPhoto.photoName + ".jpg' style='width:100%'>";
+    }
+    html += '<button class="left edit" data-aos="slide-right" data-aos-duration="1000" onclick="plusDivs(-1)">&#10094;</button><button class="right edits" data-aos="slide-left" data-aos-duration="1000" onclick="plusDivs(1)">&#10095;</button>';
+    document.getElementById('slideshow').innerHTML = html;
+    showDivs(slideIndex)
+    //console.log(html);
+
+  }
+
+    /*<img class="mySlides" src="images/Slideshow1.3.jpg" style="width:100%">
+
+    <button class="left edit" data-aos="slide-right" data-aos-duration="1000" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="right edits" data-aos="slide-left" data-aos-duration="1000" onclick="plusDivs(1)">&#10095;</button> */
+  sortOutSlideshow();
 
   toggleLike = (evt) => {
     console.log(evt.target);
@@ -319,18 +713,7 @@ listenBtn.addEventListener('click', (e) => { //Tells the browser to play the spe
 updateLikeButtons();
   </script>
   </section>
-<script>
-let photos = ["Photo1", "Photo2", "Photo3", "Photo4", "Photo5", "Photo6", "Photo7", "Photo8", "Photo9", "Photo10", "Photo11", "Photo12"];
-photos.sort();
-console.log(photos);
 
-
-let array1 = [1, 2, 3, 4];
-array1.sort();
-console.log(array1);
-
-arr.sort(LikeCount)
-</script>
 
   <footer>
   </footer>
