@@ -582,13 +582,13 @@ function playAudio(evt) {
       x.pause();
       isPlaying = false;
      document.getElementById("myImage").src = "images/button.jpg";
-      speakerImage.classList.remove("bounce");
+      speakerImage.classList.remove("bouncing");
 }
        else  {
         x.play();
         document.getElementById("myImage").src = "images/pausebutton.png";
         isPlaying = true;
-         speakerImage.classList.add("bounce");
+         speakerImage.classList.add("bouncing");
        }
 }
 
