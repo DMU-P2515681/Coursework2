@@ -6,22 +6,21 @@ body{
   transition: all 0.5s;
 }
 
-@keyframes bounce {
+@keyframes bouncing {
 	0% {
-		top: 0;
+		transform: translateY(0);
 	}
 	50% {
-		top: -30px;
+		transform: translateY(-50px);
 	}
 	100% {
-		top: 0;
+		transform: translateY(0);
 	}
 }
 
 .bouncing {
-	animation: bounce 0.5s infinite;
+	animation: bouncing 0.5s infinite;
 }
-
 
 @media screen and (max-width: 1050px){
     /* Gateway of Artwork heading = hover 3D Transform */
