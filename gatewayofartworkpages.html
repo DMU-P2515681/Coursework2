@@ -1,53 +1,94 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html><!-- html document -->
+<html lang="en" dir="ltr"><!-- English language -->
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gateway Of Artwork</title>
-    <link href='css/styles.css' rel='stylesheet' type='text/css' />
-    <link id="themeStyleSheets" href='css/lighttheme.css' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://kit.fontawesome.com/db2294f48a.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8"><!-- character encoding for the HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- View for mobile and desktop -->
+    <title>Gateway Of Artwork</title> <!-- Title of webpage -->
+    <link href='css/styles.css' rel='stylesheet' type='text/css' />  <!-- Link to separate stylesheet -->
+    <!-- Taught by Thom Corah -->
+    <link id="themeStyleSheets" href='css/lighttheme.css' rel='stylesheet' type='text/css' /> <!-- Link and id for Light/dark mode for assessibility -->
+    <!--  Referenced from michalsnik (2018) Animate on scroll library. Available at: https://github.com/michalsnik/aos#animations (Accessed: 10th March 2021). -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- Link to aos animations -->
+    <!--  Referenced from W3Schools(2021) Font Awesome. Available at: https://www.w3schools.com/howto/howto_css_social_media_buttons.asp (Accessed: 6th May 2021). -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  Referenced from Fonntawesone (2021) Font Awesome. Available at: https://fontawesome.com/ (Accessed: 10th April 2021). -->
+    <script src="https://kit.fontawesome.com/db2294f48a.js" crossorigin="anonymous"></script> <!-- Font Awesone kit code for heart icon -->
   </head>
   <body>
   <header>
-      <!-- html for title and theme switcher-->
-    <h1 align="center"  class="rainbow rainbow_text_animated ellipse ">GATEWAY OF ARTWORK</h1>
-    <select id="theSwitcher" class="ellipsetwo" align="center">
-     <option value="lighttheme">LIGHT</option>
-     <option value="darktheme">DARK</option>
-     <option value="yellowtheme">YELLOW</option>
-     <option value="lightbluetheme">BLUE</option>
-     <option value="lightgreentheme">L-GREEN</option>
-     <option value="greentheme">D-GREEN</option>
+    <!-- Loading screen-->
+    <div id="loadingScreen">
+      <p class="loadingtext"><b>Artwork</b></p><!-- Word used on loading screen as the page is an art page-->
+​    <img class="heart" src="images/LoadingPage.png" alt="Heart Rainbow" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
+    <p class="loadingtext1"><b>Loading</b></p><!-- Word used on loading screen as the page is an art page-->
+  </div>
+    <!-- Javascript for loading screen -->
+  <script>
+ removeLoadingScreen = () => { // This is a function that will make the div dissapear.
+    document.getElementById('loadingScreen').style.display = "none";} // Grabs the ID from the html with a default display.
+    setTimeout(removeLoadingScreen, 2000); // Use setTimeout to run the loading page when the page loads.
 
-     <option value="tinytheme">Tiny</option>
-     <option value="smalltheme">Small</option>
-     <option value="normaltheme" selected>Normal</option>
-     <option value="largetheme">Large</option>
-     <option value="extralarge">Massive</option>
+  </script>
+
+      <!-- html for title and theme switcher-->
+      <!-- Taught by Thom Corah.-->
+      <!-- What I changed: Added more coloured themes as well as sizing themes -->
+    <h1 align="center"  class="rainbow rainbow_text_animated ellipse ">GATEWAY OF ARTWORK</h1>
+    <select id="theSwitcher" class="ellipsetwo" align="center"><!-- ID of button that is going to be clicked on (smaller ellipse). "Select" element gives a dropdown.-->
+     <option value="lighttheme">LIGHT</option> <!-- Option element has a value and what is displayed (lighttheme).-->
+     <option value="darktheme">DARK</option><!-- Option element has a value and what is displayed (darktheme).-->
+     <option value="yellowtheme">YELLOW</option><!-- Option element has a value and what is displayed (yellowtheme).-->
+     <option value="lightbluetheme">BLUE</option><!-- Option element has a value and what is displayed (lightbluetheme).-->
+     <option value="lightgreentheme">L-GREEN</option><!-- Option element has a value and what is displayed (lightgreentheme).-->
+     <option value="greentheme">D-GREEN</option><!-- Option element has a value and what is displayed (darkgreentheme).-->
+
+<!-- html for sizing theme switcher.-->
+     <option value="tinytheme">Tiny</option><!-- Option element has a value and what is displayed (tinytheme).-->
+     <option value="smalltheme">Small</option><!-- Option element has a value and what is displayed (smalltheme).-->
+     <option value="normaltheme" selected>Normal</option><!-- Option element has a value and what is displayed (normaltheme). "Selected" attribute is the default theme the website should display-->
+     <option value="largetheme">Large</option><!-- Option element has a value and what is displayed (largetheme).-->
+     <option value="extralarge">Massive</option><!-- Option element has a value and what is displayed (massivetheme).-->
     </select>
 <!-- Javascript for theme switcher-->
+<!-- Taught by Thom Corah.-->
+<!-- DIRECT CODE.-->
     <script>
-    switchSetting = () => {
-      let gotoTheme = document.getElementById('theSwitcher').value;
+    switchSetting = () => {  // Toggle the theme
+      let gotoTheme = document.getElementById('theSwitcher').value;  // Tells the browser what the current theme is and what value it now has.
       let styleSheet = document
-      .getElementById('themeStyleSheets')
-      .setAttribute('href', 'css/' + gotoTheme + '.css');
+      .getElementById('themeStyleSheets') // Collecting ID of all stylesheets.
+      .setAttribute('href', 'css/' + gotoTheme + '.css');// CSS plus adding the value of the target theme then back to CSS.
     };
 
-     document.getElementById("theSwitcher").addEventListener("change", switchSetting);
+     document.getElementById("theSwitcher").addEventListener("change", switchSetting); // Get a reference to ID, add an event listener to it to change whenever the user determines. Run function that toggles the theme.
     </script>
 
-  <!-- html for search button -->
-<span data-aos="fade-in" data-aos-duration="2000" class="mysearchthing">
-  <span>
-    <input type="text" placeholder="Search the Gateway. . .">
-  </span>
-</span>
-</span>
+    <div id="mySidenav" class="sidenav"><!-- ID and Class for navigation bar -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- JavaScript for the close button. When it is clicked, the button closes. -->
+      <a class="theslide" href="#section1">Slideshow</a><!-- Link to section 1 for the navigation bar -->
+      <a class="thenature" href="#section2">Nature</a><!-- Link to section 2 for the navigation bar-->
+      <a class="thearchitecture" href="#section3">Architecture</a><!-- Link to section 3 for the navigation bar-->
+      <a class="thest" href="#section4">Street Photography</a><!-- Link to section 4 for the navigation bar-->
+      <a class="thetap" href="#section5">Textures and Patterns</a><!-- Link to section 5 for the navigation bar-->
+      <a class="theror" href="#section6">Rhythm of Relaxation</a><!-- Link to section 6 for the navigation bar-->
+      <a class="thequiz" href="#section7">Quiz</a><!-- Link to section 7 for the navigation bar-->
+      <a class="thevideo" href="#section8">Video</a><!-- Link to section 8 for the navigation bar-->
+    </div>
+    <span class="ham" style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776;</span><!-- JavaScript for the open button. When it is clicked, the opens closes. Size of the button is 50 pixels.-->
+
+    <script>
+    function openNav() { // Toggles the navigation bar to open.
+      document.getElementById("mySidenav").style.width = "250px"; // Gets the element by the ID used in the html with the width of the sidenav being 250 pixels.
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)"; // background colour of the rest of the screen when the navigation bar opens.
+    }
+
+    function closeNav() { // Toggles the navigation bar to close.
+      document.getElementById("mySidenav").style.width = "0"; // Gets the element by the ID used in the html with the width of the sidenav being 0 pixels when closed.
+      document.body.style.backgroundColor = "white"; // background colour when the navigation bar closes.
+    }
+    </script>
 <!-- Coding for the subheadings -->
-  <p class="subheading" align="center" data-aos="slide-left" data-aos-duration="1000"><b><u>The Number One Art Website to View Content From Different Artists.</u></b><p>
+  <p class="subheading" align="center" data-aos="slide-left" data-aos-duration="1000"><b><u>The Number One Art Website to View Content From Different Artists.</u></b><p><!-- Underlined and bold text. -->
   </header>
   <section>
 
@@ -59,13 +100,14 @@
           AOS.init();
         </script>
   </section>
-  <section>
+  <section id="section1">
     <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
-    <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Slideshow</button>
-    <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoice'>Speech: Click Me</button>
+    <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Slideshow</button><!-- The video of inspiration button will fade right with a duration of 1 second. -->
+    <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoice'>Speech: Click Me</button><!-- The button will fade right with a duration of 1 second. The ID will be connected to the JavaScript which will be the button that the speech synthesis will click on. -->
     <!-- Coding for Speech Synthesis Buttons -->
 
 <!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
+<!-- What I changed: Changed the identifier so it is unique to this button -->
     <script>
       const listenBtn = document.getElementById('myvoice'); //Takes id from HTML
 
@@ -103,13 +145,14 @@ function showDivs(n) {
 }
 </script>
 </section>
-  <section>
+  <section id="section2">
     <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
-    <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Nature</button>
-    <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceNature'>Speech: Click Me</button>
+    <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Nature</button><!-- The video of inspiration button will fade right with a duration of 1 second. -->
+    <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceNature'>Speech: Click Me</button><!-- The button will fade right with a duration of 1 second. The ID will be connected to the JavaScript which will be the button that the speech synthesis will click on. -->
     <!-- Coding for Speech Synthesis Buttons -->
 
 <!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
+<!-- What I changed: Changed the identifier so it is unique to this button -->
     <script>
       const listenBtnNature = document.getElementById('myvoiceNature'); //Takes id from HTML
 
@@ -126,126 +169,149 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
   </section>
   <section>
     <!-- Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) -->
-    <div class="rowstuff"><!-- Stuff for the rows -->
-      <div class="thecolumnstuff"><!-- Stuff for the columns -->
+    <div class="rowstuff"><!-- Class for the rows of the portfolio-->
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Stuff for the animation of the photos -->
-          <img class="myPhotosTwo" id="myphotos" src="images/Photo1.jpg" alt="Trees with snow" style="width:100%"><!-- Importing Images -->
-<!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-          <h3>Wes Hicks</h3>
-          <p class="Phototext">Alta, WY, USA</p>
-          <i id="Photo1Like" class="far fa-heart"></i>
-          <span id="Photo1LikeCount"></span>
+        <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+          <img class="myPhotosTwo" id="myphotos" src="images/Photo1.jpg" alt="Wes Hicks - Alta, WY, USA" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Wes Hicks</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Alta, WY, USA</p> <!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo1Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo -->
+          <span id="Photo1LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"> <!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo2.jpg" alt="Sunset and Rocks" style="width:100%">
-          <h3>Dave Hoefler</h3>
-          <p class="Phototext">Madison, WI, USA</p>
-          <i id="Photo2Like" class="far fa-heart"></i>
-          <span id="Photo2LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo2.jpg" alt="Dave Hoefler - Madison, WI, USA" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Dave Hoefler</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Madison, WI, USA</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo2Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo2LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"> <!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo3.jpg" alt="Waves on shore" style="width:100%">
-          <h3>Lina Silivanova</h3>
-          <p class="Phototext">Chania, Greece</p>
-          <i id="Photo3Like" class="far fa-heart"></i>
-          <span id="Photo3LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo3.jpg" alt="Lina Silivanova - Chania, Greece" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Lina Silivanova</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Chania, Greece</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo3Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo3LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo4.jpg" alt="Mountains" style="width:100%">
-          <h3>Mike Palmowski</h3>
-          <p class="Phototext">Location: Unknown</p>
-          <i id="Photo4Like" class="far fa-heart"></i>
-          <span id="Photo4LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo4.jpg" alt="Mike Palmowski - Location: Unknown" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Mike Palmowski</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Location: Unknown</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo4Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo4LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo5.jpg" alt="Red trees in night sky" style="width:100%">
-          <h3>Brad Fickeisen</h3>
-          <p class="Phototext">Dixie National Forest, Cedar City, United States</p>
-          <i id="Photo5Like" class="far fa-heart"></i>
-          <span id="Photo5LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo5.jpg" alt="Brad Fickeisen - Dixie National Forest, Cedar City, United States" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Brad Fickeisen</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Dixie National Forest, Cedar City, United States</p> <!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo5Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo5LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo6.jpg" alt="Birds on branches" style="width:100%">
-          <h3>Olivier Guillard</h3>
-          <p class="Phototext">Am Tierpark, Berlin, Germany</p>
-          <i id="Photo6Like" class="far fa-heart"></i>
-          <span id="Photo6LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo6.jpg" alt="Olivier Guillard - Am Tierpark, Berlin, Germany" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Olivier Guillard</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Am Tierpark, Berlin, Germany</p> <!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo6Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo6LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo7.jpg" alt="Waterfall" style="width:100%">
-          <h3>Brad Fickeisen</h3>
-          <p class="Phototext">Vermont, United States</p>
-          <i id="Photo7Like" class="far fa-heart"></i>
-          <span id="Photo7LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo7.jpg" alt="Brad Fickeisen - Vermont, United States" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Brad Fickeisen</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Vermont, United States</p> <!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo7Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo7LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo8.jpg" alt="Sunrise in clouds" style="width:100%">
-          <h3>Zach Plank</h3>
-          <p class="Phototext">Virginia, USA</p>
-          <i id="Photo8Like" class="far fa-heart"></i>
-          <span id="Photo8LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo8.jpg" alt="Zach Plank - Virginia, USA" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Zach Plank</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Virginia, USA</p> <!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo8Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo8LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo9.jpg" alt="Yellow buds in branches" style="width:100%">
-          <h3>Kolya Korzh</h3>
-          <p class="Phototext">Location: Unknown</p>
-          <i id="Photo9Like" class="far fa-heart"></i>
-          <span id="Photo9LikeCount"></span>
+        <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo9.jpg" alt="Kolya Korzh - Location: Unknown" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Kolya Korzh</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Location: Unknown</p> <!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo9Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo9LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo10.jpg" alt="Green leaves" style="width:100%" >
-          <h3>laura Adai</h3>
-          <p class="Phototext">Frost</p>
-          <i id="Photo10Like" class="far fa-heart"></i>
-          <span id="Photo10LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo10.jpg" alt="laura Adai - Frost" style="width:100%" ><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>laura Adai</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Frost</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo10Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo10LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo11.jpg" alt="Cliff botton" style="width:100%">
-          <h3>Jordan Whitfield</h3>
-          <p class="Phototext">Providence Canyon, Lumpkin, USA</p>
-          <i id="Photo11Like" class="far fa-heart"></i>
-          <span id="Photo11LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo11.jpg" alt="Jordan Whitfield - Providence Canyon, Lumpkin, USA" style="width:100%"> <!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Jordan Whitfield</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Providence Canyon, Lumpkin, USA</p> <!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo11Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo11LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo12.jpg" alt="Bonfire" style="width:100%">
-          <h3>Tengyart</h3>
-          <p class="Phototext">Russia</p>
-          <i id="Photo12Like" class="far fa-heart"></i>
-          <span id="Photo12LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo12.jpg" alt="Tengyart - Russia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Tengyart</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Russia</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo12Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo12LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
     </div>
@@ -255,13 +321,14 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
     <span class="xbutton">&times;</span>
   </div>
 </section>
-<section>
+<section id="section3">
   <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
-  <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Architecture</button>
-  <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceArchitecture'>Speech: Click Me</button>
+  <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Architecture</button><!-- The video of inspiration button will fade right with a duration of 1 second. -->
+  <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceArchitecture'>Speech: Click Me</button><!-- The button will fade right with a duration of 1 second. The ID will be connected to the JavaScript which will be the button that the speech synthesis will click on. -->
   <!-- Coding for Speech Synthesis Buttons -->
 
 <!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
+<!-- What I changed: Changed the identifier so it is unique to this button -->
   <script>
     const listenBtnArchitecture = document.getElementById('myvoiceArchitecture'); //Takes id from HTML
 
@@ -278,126 +345,149 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
 </section>
   <section>
     <!-- Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) -->
-    <div class="rowstuff"><!-- Stuff for the rows -->
-      <div class="thecolumnstuff"><!-- Stuff for the columns -->
+    <div class="rowstuff"><!-- Class for the rows of the portfolio-->
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Stuff for the animation of the photos -->
-          <img class="myPhotosTwo" id="myphotos" src="images/Photo13.jpg" alt="Curvey Building" style="width:100%"><!-- Importing Images -->
-<!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-          <h3>larec</h3>
-          <p class="Phototext">Moscow, Россия</p>
-          <i id="Photo13Like" class="far fa-heart"></i>
-          <span id="Photo13LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+          <img class="myPhotosTwo" id="myphotos" src="images/Photo13.jpg" alt="larec - Moscow, Россия" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>larec</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Moscow, Россия</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo13Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo13LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo14.jpg" alt="Sunset and Rocks" style="width:100%">
-          <h3>Davi Rezende</h3>
-          <p class="Phototext">31 Melinda St, Toronto, ON M5E 1H5, Canada</p>
-          <i id="Photo14Like" class="far fa-heart"></i>
-          <span id="Photo14LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo14.jpg" alt="Davi Rezende - 31 Melinda St, Toronto, ON M5E 1H5, Canada" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Davi Rezende</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">31 Melinda St, Toronto, ON M5E 1H5, Canada</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo14Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo14LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo15.jpg" alt="Waves on shore" style="width:100%">
-          <h3>Filippo Bortolotto</h3>
-          <p class="Phototext">Sottomarina, Chioggia, VE, Italia</p>
-          <i id="Photo15Like" class="far fa-heart"></i>
-          <span id="Photo15LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo15.jpg" alt="Filippo Bortolotto - Sottomarina, Chioggia, VE, Italia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Filippo Bortolotto</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Sottomarina, Chioggia, VE, Italia</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo15Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo15LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo16.jpg" alt="Mountains" style="width:100%">
-          <h3>Alfons Morales</h3>
-          <p class="Phototext">Barcelona</p>
-          <i id="Photo16Like" class="far fa-heart"></i>
-          <span id="Photo16LikeCount"></span>
+        <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo16.jpg" alt="Alfons Morales - Barcelona" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Alfons Morales</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Barcelona</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo16Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo16LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo17.jpg" alt="Red trees in night sky" style="width:100%">
-          <h3>Sacha T'Sas</h3>
-          <p class="Phototext">Brussels, Belgium</p>
-          <i id="Photo17Like" class="far fa-heart"></i>
-          <span id="Photo17LikeCount"></span>
+        <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo17.jpg" alt="Sacha T'Sas - Brussels, Belgium" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Sacha T'Sas</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Brussels, Belgium</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo17Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo17LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo18.jpg" alt="Birds on branches" style="width:100%">
-          <h3>alevision.co</h3>
-          <p class="Phototext">Palacio de Cristal, Madrid, Spain</p>
-          <i id="Photo18Like" class="far fa-heart"></i>
-          <span id="Photo18LikeCount"></span>
+        <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo18.jpg" alt="alevision.co - Palacio de Cristal, Madrid, Spain" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>alevision.co</h3> <!-- Name of Artists of photos -->
+          <p class="Phototext">Palacio de Cristal, Madrid, Spain</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo18Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo18LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo19.jpg" alt="Waterfall" style="width:100%">
-          <h3>Warren Wong</h3>
-          <p class="Phototext">Western University, London, Canada</p>
-          <i id="Photo19Like" class="far fa-heart"></i>
-          <span id="Photo19LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo19.jpg" alt="Warren Wong - Western University, London, Canada" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Warren Wong</h3><!-- Name of Artists of photos -->
+          <p class="Phototext">Western University, London, Canada</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo19Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo19LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo20.jpg" alt="Sunrise in clouds" style="width:100%">
-          <h3>Ivan Tsaregorodtsev</h3>
-          <p class="Phototext">Barangaroo, Barangaroo, Australia</p>
-          <i id="Photo20Like" class="far fa-heart"></i>
-          <span id="Photo20LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo20.jpg" alt="Ivan Tsaregorodtsev - Barangaroo, Barangaroo, Australia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Ivan Tsaregorodtsev</h3><!-- Name of Artists of photos -->
+          <p class="Phototext">Barangaroo, Barangaroo, Australia</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo20Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo20LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo21.jpg" alt="Yellow buds in branches" style="width:100%">
-          <h3>Ismail Merad</h3>
-          <p class="Phototext">Dubai - United Arab Emirates</p>
-          <i id="Photo21Like" class="far fa-heart"></i>
-          <span id="Photo21LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo21.jpg" alt="Ismail Merad - Dubai - United Arab Emirates" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Ismail Merad</h3><!-- Name of Artists of photos -->
+          <p class="Phototext">Dubai - United Arab Emirates</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo21Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo21LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo22.jpg" alt="Green leaves" style="width:100%" >
-          <h3>Ayelt van Veen</h3>
-          <p class="Phototext">High Rise Utrecht</p>
-          <i id="Photo22Like" class="far fa-heart"></i>
-          <span id="Photo22LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo22.jpg" alt="Ayelt van Veen - High Rise Utrecht" style="width:100%" ><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Ayelt van Veen</h3><!-- Name of Artists of photos -->
+          <p class="Phototext">High Rise Utrecht</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo22Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo22LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo23.jpg" alt="Cliff botton" style="width:100%">
-          <h3>olaf wisser</h3>
-          <p class="Phototext">Bordeaux, France</p>
-          <i id="Photo23Like" class="far fa-heart"></i>
-          <span id="Photo23LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo23.jpg" alt="olaf wisser - Bordeaux, France" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>olaf wisser</h3><!-- Name of Artists of photos -->
+          <p class="Phototext">Bordeaux, France</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo23Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo23LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
-      <div class="thecolumnstuff">
+      <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo24.jpg" alt="Bonfire" style="width:100%">
-          <h3>Pang Yuhao</h3>
-          <p class="Phototext">Jewel Changi, Singapore</p>
-          <i id="Photo24Like" class="far fa-heart"></i>
-          <span id="Photo24LikeCount"></span>
+          <!-- Class for the content of the photos -->
+        <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo24.jpg" alt="Pang Yuhao - Jewel Changi, Singapore" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+          <h3>Pang Yuhao</h3><!-- Name of Artists of photos -->
+          <p class="Phototext">Jewel Changi, Singapore</p><!-- Name of the location of the photos -->
+          <!-- Taught by Thom Corah -->
+          <i id="Photo24Like" class="far fa-heart"></i> <!-- html for non filled in heart and ID for like for individual photo-->
+          <span id="Photo24LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
         </div>
       </div>
     </div>
@@ -407,13 +497,14 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
     <span class="xbutton">&times;</span>
   </div>
 </section>
-<section>
+<section id="section4">
   <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
-  <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Street Photography</button>
-  <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceStreetPhotography'>Speech: Click Me</button>
+  <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Street Photography</button><!-- The video of inspiration button will fade right with a duration of 1 second. -->
+  <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceStreetPhotography'>Speech: Click Me</button><!-- The button will fade right with a duration of 1 second. The ID will be connected to the JavaScript which will be the button that the speech synthesis will click on. -->
   <!-- Coding for Speech Synthesis Buttons -->
 
 <!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
+<!-- What I changed: Changed the identifier so it is unique to this button -->
   <script>
     const listenBtnStreetPhotography= document.getElementById('myvoiceStreetPhotography'); //Takes id from HTML
 
@@ -430,126 +521,150 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
 </section>
 <section>
   <!-- Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) -->
-  <div class="rowstuff"><!-- Stuff for the rows -->
-    <div class="thecolumnstuff"><!-- Stuff for the columns -->
+  <div class="rowstuff"><!-- Class for the rows of the portfolio-->
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Stuff for the animation of the photos -->
-        <img class="myPhotosTwo" id="myphotos" src="images/Photo25.jpg" alt="Curvey Building" style="width:100%"><!-- Importing Images -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo25.jpg" alt="Eirik Skarstein - Hanoi, Vietnam" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
 <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-        <h3>Eirik Skarstein</h3>
-        <p class="Phototext">Hanoi, Vietnam</p>
-        <i id="Photo25Like" class="far fa-heart"></i>
-        <span id="Photo25LikeCount"></span>
+        <h3>Eirik Skarstein</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Hanoi, Vietnam</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo25Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo -->
+        <span id="Photo25LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo26.jpg" alt="Sunset and Rocks" style="width:100%">
-        <h3>Charly Pn</h3>
-        <p class="Phototext">Bordeaux, France</p>
-        <i id="Photo26Like" class="far fa-heart"></i>
-        <span id="Photo26LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo26.jpg" alt="Charly Pn - Bordeaux, France" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Charly Pn</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Bordeaux, France</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo26Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo26LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo27.jpg" alt="Waves on shore" style="width:100%">
-        <h3>Joshua Lawrence</h3>
-        <p class="Phototext">Location: Unknown</p>
-        <i id="Photo27Like" class="far fa-heart"></i>
-        <span id="Photo27LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo27.jpg" alt="Joshua Lawrence - Location: Unknown" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Joshua Lawrence</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Location: Unknown</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo27Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo27LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo28.jpg" alt="Mountains" style="width:100%">
-        <h3>Chi Hung Wong</h3>
-        <p class="Phototext">Mong Kok, 香港</p>
-        <i id="Photo28Like" class="far fa-heart"></i>
-        <span id="Photo28LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo28.jpg" alt="Chi Hung Wong - Mong Kok, 香港" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Chi Hung Wong</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Mong Kok, 香港</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo28Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo -->
+        <span id="Photo28LikeCount"></span> <!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo29.jpg" alt="Red trees in night sky" style="width:100%">
-        <h3>Laura Chouette</h3>
-        <p class="Phototext">London, Vereinigtes Königreich</p>
-        <i id="Photo29Like" class="far fa-heart"></i>
-        <span id="Photo29LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo29.jpg" alt="Laura Chouette - London, Vereinigtes Königreich" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Laura Chouette</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">London, Vereinigtes Königreich</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo29Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo29LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo30.jpg" alt="Birds on branches" style="width:100%">
-        <h3>Dan Cutler</h3>
-        <p class="Phototext">Orlando, FL, USA</p>
-        <i id="Photo30Like" class="far fa-heart"></i>
-        <span id="Photo30LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo30.jpg" alt="Dan Cutler - Orlando, FL, USA" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Dan Cutler</h3> <!-- Name of Artists of photos -->
+        <p class="Phototext">Orlando, FL, USA</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo30Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo30LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo31.jpg" alt="Waterfall" style="width:100%">
-        <h3>ichsan wicaksono</h3>
-        <p class="Phototext">Splindit Malang, Kauman, Kota Malang, Jawa Timur, Indonesia</p>
-        <i id="Photo31Like" class="far fa-heart"></i>
-        <span id="Photo31LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo31.jpg" alt="ichsan wicaksono - Splindit Malang, Kauman, Kota Malang, Jawa Timur, Indonesia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>ichsan wicaksono</h3> <!-- Name of Artists of photos -->
+        <p class="Phototext">Splindit Malang, Kauman, Kota Malang, Jawa Timur, Indonesia</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo31Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo31LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo32.jpg" alt="Sunrise in clouds" style="width:100%">
-        <h3>Hakan Nural</h3>
-        <p class="Phototext">Ikebukuro, Toshima City, Tokyo, Japan</p>
-        <i id="Photo32Like" class="far fa-heart"></i>
-        <span id="Photo32LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo32.jpg" alt="Hakan Nural - Ikebukuro, Toshima City, Tokyo, Japan" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Hakan Nural</h3> <!-- Name of Artists of photos -->
+        <p class="Phototext">Ikebukuro, Toshima City, Tokyo, Japan</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo32Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo32LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo33.jpg" alt="Yellow buds in branches" style="width:100%">
-        <h3>P.Y. L.</h3>
-        <p class="Phototext">San Francisco, CA, USA</p>
-        <i id="Photo33Like" class="far fa-heart"></i>
-        <span id="Photo33LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo33.jpg" alt="P.Y. L. - San Francisco, CA, USA" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>P.Y. L.</h3> <!-- Name of Artists of photos -->
+        <p class="Phototext">San Francisco, CA, USA</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo33Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo33LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo34.jpg" alt="Green leaves" style="width:100%" >
-        <h3>Swapnil Deshpandey</h3>
-        <p class="Phototext">Connaught Place, New Delhi, Delhi, India</p>
-        <i id="Photo34Like" class="far fa-heart"></i>
-        <span id="Photo34LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo34.jpg" alt="Swapnil Deshpandey - Connaught Place, New Delhi, Delhi, India" style="width:100%" ><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Swapnil Deshpandey</h3> <!-- Name of Artists of photos -->
+        <p class="Phototext">Connaught Place, New Delhi, Delhi, India</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo34Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo34LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo35.jpg" alt="Cliff botton" style="width:100%">
-        <h3>Brandon Nelson</h3>
-        <p class="Phototext">Lombard Street, San Francisco, United States</p>
-        <i id="Photo35Like" class="far fa-heart"></i>
-        <span id="Photo35LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo35.jpg" alt="Brandon Nelson - Lombard Street, San Francisco, United States" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Brandon Nelson</h3> <!-- Name of Artists of photos -->
+        <p class="Phototext">Lombard Street, San Francisco, United States</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo35Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo35LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
-    <div class="thecolumnstuff">
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
-      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000">
-      <img class="myPhotosTwo" id="myphotos" src="images/Photo36.jpg" alt="Bonfire" style="width:100%">
-        <h3>Burçin Ergünt</h3>
-        <p class="Phototext">London, UK</p>
-        <i id="Photo36Like" class="far fa-heart"></i>
-        <span id="Photo36LikeCount"></span>
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo36.jpg" alt="Burçin Ergünt - London, UK" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Burçin Ergünt</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">London, UK</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo36Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo36LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
       </div>
     </div>
   </div>
@@ -559,15 +674,225 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
   <span class="xbutton">&times;</span>
 </div>
 </section>
+<section id="section5">
+  <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
+  <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Textures And Patterns</button><!-- The video of inspiration button will fade right with a duration of 1 second. -->
+  <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceTexturesAndPatterns'>Speech: Click Me</button><!-- The button will fade right with a duration of 1 second. The ID will be connected to the JavaScript which will be the button that the speech synthesis will click on. -->
+  <!-- Coding for Speech Synthesis Buttons -->
+
+<!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
+<!-- What I changed: Changed the identifier so it is unique to this button -->
+  <script>
+    const listenBtnTexturesAndPatterns= document.getElementById('myvoiceTexturesAndPatterns'); //Takes id from HTML
+
+listenBtnTexturesAndPatterns.addEventListener('click', (e) => { //Tells the browser to play the speech when button is clicked
+e.preventDefault();
+
+const msg = new SpeechSynthesisUtterance( //Tells the browser what the message is
+  "Textures And Patterns"
+);
+window.speechSynthesis.speak(msg); //Tells the browser to run this function
+
+});
+  </script>
+</section>
 <section>
-  <div class="audio">
-  <img id="myImage" src="images/button.jpg" alt="play button" style="width:20%" "height:20%">
+  <!-- Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) -->
+  <div class="rowstuff"><!-- Class for the rows of the portfolio-->
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+        <img class="myPhotosTwo" id="myphotos" src="images/Photo37.jpg" alt="Shayan Ghiasvand - Azadi Square, Tehran, Iran" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Shayan Ghiasvand</h3> <!-- Name of Artists of photos -->
+        <p class="Phototext">Azadi Square, Tehran, Iran</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo37Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo37LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo38.jpg" alt="Sensei Minimal - ΟΑΚΑ, Marousi, Greece" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Sensei Minimal</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">ΟΑΚΑ, Marousi, Greece</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo38Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo38LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo39.jpg" alt="Marek Okon - Shinjuku, Tokyo, Japan" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Marek Okon</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Shinjuku, Tokyo, Japan</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo39Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo39LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo40.jpg" alt="Jordi Moncasi - Madrid, España" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Jordi Moncasi</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Madrid, España</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo40Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo40LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo41.jpg" alt="Roman Shilin - Bali, Indonesia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Roman Shilin</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Bali, Indonesia</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo41Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo41LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo42.jpg" alt="Malena Gonzalez Serena - Palermo, Buenos Aires, Argentina" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3 class="adjustedtext">Malena Gonzalez Serena</h3> <!-- Name of Artists of photos -->
+        <p class="Phototext">Palermo, Buenos Aires, Argentina</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo42Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo -->
+        <span id="Photo42LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo43.jpg" alt="Saxon White - Batemans Bay NSW, Australia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Saxon White</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Batemans Bay NSW, Australia</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo43Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo43LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo44.jpg" alt="ISLA BOY X - Puerto Peñasco, Sonora, Mexico" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>ISLA BOY X</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Puerto Peñasco, Sonora, Mexico</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo44Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo44LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo45.jpg" alt="Ryunosuke Kikuno - calgary" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Ryunosuke Kikuno</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">calgary</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo45Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo45LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo46.jpg" alt="David Werbrouck - Lyon, France" style="width:100%" ><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>David Werbrouck</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Lyon, France</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo46Like" class="far fa-heart"></i><!-- html for non filled in heart -->
+        <span id="Photo46LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo47.jpg" alt="Scott Webb - Ryerson Students' Union, Toronto, Canada" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Scott Webb</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Ryerson Students' Union, Toronto, Canada</p> <!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo47Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo47LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+    <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
+      <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
+        <!-- Class for the content of the photos -->
+      <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+      <img class="myPhotosTwo" id="myphotos" src="images/Photo48.jpg" alt="Tadeu Jnr - Feira da Banana, Brazil" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
+        <h3>Tadeu Jnr</h3><!-- Name of Artists of photos -->
+        <p class="Phototext">Feira da Banana, Brazil</p><!-- Name of the location of the photos -->
+        <!-- Taught by Thom Corah -->
+        <i id="Photo48Like" class="far fa-heart"></i><!-- html for non filled in heart and ID for like for individual photo-->
+        <span id="Photo48LikeCount"></span><!-- span that displays the number of times the photo has been liked -->
+      </div>
+    </div>
+  </div>
+  <div id="themodal" class="modal themodalstuff ">
+  <img class="modalcontentstuff" id="img01">
+  <div id="thephototext"></div>
+  <span class="xbutton">&times;</span>
+</div>
+</section>
+<section id="section6">
+  <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
+  <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton">Rhythm of Relaxation</button><!-- The video of inspiration button will fade right with a duration of 1 second. -->
+  <button data-aos="fade-left" data-aos-duration="1000" class="speech" type="button" id='myvoiceRhythmOfRelaxation'>Speech: Click Me</button><!-- The button will fade right with a duration of 1 second. The ID will be connected to the JavaScript which will be the button that the speech synthesis will click on. -->
+  <!-- Coding for Speech Synthesis Buttons -->
+
+<!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
+<!-- What I changed: Changed the identifier so it is unique to this button -->
+  <script>
+    const listenBtnRhythmOfRelaxation= document.getElementById('myvoiceRhythmOfRelaxation'); //Takes id from HTML
+
+listenBtnRhythmOfRelaxation.addEventListener('click', (e) => { //Tells the browser to play the speech when button is clicked
+e.preventDefault();
+
+const msg = new SpeechSynthesisUtterance( //Tells the browser what the message is
+  "Rhythm of Relaxation"
+);
+window.speechSynthesis.speak(msg); //Tells the browser to run this function
+
+});
+  </script>
+</section>
+<section class="accompanyingtext">
+  <p data-aos="fade-up" data-aos-duration="1000" style="font-size:3vw;" align="center">Listen To Some Calming Music To Relax Those Nerves</p>
+</section>
+<section>
+  <div data-aos="fade-right" data-aos-duration="3000" class="audio">
+  <img id="myImage" src="images/button.png" alt="play button" style="width:20%" "height:20%">
 </div>
 <audio id="myAudio">
-<source src="audios/CCS.ogg" type="audio/ogg">
-<source src="audios/CCS.mp3" type="audio/mpeg">
+<source src="audio/sound1.ogg" type="audio/ogg">
+<source src="audio/sound1.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
+<div data-aos="fade-left" data-aos-duration="3000" class="audio">
+<img id="myImages" src="images/button.png" alt="play button" style="width:20%" "height:20%">
+</div>
+<audio id="myAudios">
+<source src="audio2/sound2.ogg" type="audio/ogg">
+<source src="audio2/sound2.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</section>
 <script>
 
 var x = document.getElementById("myAudio");
@@ -581,7 +906,7 @@ function playAudio(evt) {
     if (isPlaying) {
       x.pause();
       isPlaying = false;
-     document.getElementById("myImage").src = "images/button.jpg";
+     document.getElementById("myImage").src = "images/button.png";
       speakerImage.classList.remove("bouncing");
 }
        else  {
@@ -591,10 +916,257 @@ function playAudio(evt) {
          speakerImage.classList.add("bouncing");
        }
 }
-
 </script>
+<script>
+
+var x = document.getElementById("myAudios");
+document.getElementById("myImages").addEventListener("click", playAudios);
+let isPlaying1 = false;
+
+function playAudios(evt) {
+  let speakerImage = evt.target.parentNode;
+  console.log('dd');
+
+    if (isPlaying1) {
+      x.pause();
+      isPlaying1 = false;
+     document.getElementById("myImages").src = "images/button.png";
+      speakerImage.classList.remove("bouncing");
+}
+       else  {
+        x.play();
+        document.getElementById("myImages").src = "images/pausebutton.png";
+        isPlaying1 = true;
+         speakerImage.classList.add("bouncing");
+       }
+}
+</script>
+<section id="section7">
+  <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
+  <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton adjust">Quiz</button><!-- The video of inspiration button will fade right with a duration of 1 second. -->
+  <button data-aos="fade-left" data-aos-duration="1000" class="speech adjust" type="button" id='myvoiceQuiz'>Speech: Click Me</button><!-- The button will fade right with a duration of 1 second. The ID will be connected to the JavaScript which will be the button that the speech synthesis will click on. -->
+  <!-- Coding for Speech Synthesis Buttons -->
+
+<!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
+<!-- What I changed: Changed the identifier so it is unique to this button -->
+  <script>
+    const listenBtnQuiz= document.getElementById('myvoiceQuiz'); //Takes id from HTML
+
+listenBtnQuiz.addEventListener('click', (e) => { //Tells the browser to play the speech when button is clicked
+e.preventDefault();
+
+const msg = new SpeechSynthesisUtterance( //Tells the browser what the message is
+  "Quiz"
+);
+window.speechSynthesis.speak(msg); //Tells the browser to run this function
+
+});
+  </script>
 </section>
-<section>
+<section class="accompanyingtext">
+  <p data-aos="fade-up" data-aos-duration="1000" style="font-size:5vw;" align="center">Photography<u><b>Quiz</b></u> - Test Your <u><b>Memory</b></u></p>
+  <p data-aos="fade-up" data-aos-duration="1000" style="font-size:3vw;" align="center">Now, lets see what you've learnt!</p>
+</section>
+<section class="one">
+  <div data-aos="fade-up" data-aos-duration="3000" class="quizcontainer" id="quiz">
+    <div class="quizrectangle">
+      <h5 id="question">Question is loading...</h5>
+      <ul>
+        <li>
+          <input type="radio" name="answer" id="a" class="answer" />
+          <label for="a" id="a_text">Answer...</label>
+        </li>
+        <li>
+          <input type="radio" name="answer" id="b" class="answer" />
+          <label for="b" id="b_text">Answer...</label>
+        </li>
+        <li>
+          <input type="radio" name="answer" id="c" class="answer" />
+          <label for="c" id="c_text">Answer...</label>
+        </li>
+        <li>
+          <input type="radio" name="answer" id="d" class="answer" />
+          <label for="d" id="d_text">Answer...</label>
+        </li>
+      </ul>
+    </div>
+    <button class="quizbutton" id="submit">Submit</button>
+  </div>
+</section>
+<script>
+const quizData = [
+{
+question: "Where is the location that Sacha T'Sas took their photo?", // This generates question one for the quiz.
+a: "New York, America", // This generates multiple choice question (A) for the quiz.
+b: "London, UK", // This generates multiple choice question (B) for the quiz.
+c: "Brussels, Belgium", // This generates multiple choice question (C) for the quiz.
+d: "Paris, France", // This generates multiple choice question (D) for the quiz.
+correct: "c", // This tells the browser what the correct question for the quiz.
+},
+{
+question: "Who took the first photo in the Architecture section?", // This generates question two for the quiz.
+a: "Larec", // This generates multiple choice question (A) for the quiz.
+b: "Brad Fickeisen", // This generates multiple choice question (B) for the quiz.
+c: "Wes Hicks", // This generates multiple choice question (C) for the quiz.
+d: "Warren Wong", // This generates multiple choice question (D) for the quiz.
+correct: "a", // This tells the browser what the correct question for the quiz.
+},
+{
+question: "How many photos include people?", // This generates question three for the quiz.
+a: "8", // This generates multiple choice question (A) for the quiz.
+b: "3", // This generates multiple choice question (B) for the quiz.
+c: "1", // This generates multiple choice question (C) for the quiz.
+d: "10", // This generates multiple choice question (D) for the quiz.
+correct: "b", // This tells the browser what the correct question for the quiz.
+},
+{
+question: "How many photos feature the colour red?", // This generates question four for the quiz.
+a: "2", // This generates multiple choice question (A) for the quiz.
+b: "12", // This generates multiple choice question (B) for the quiz.
+c: "9", // This generates multiple choice question (C) for the quiz.
+d: "6", // This generates multiple choice question (D) for the quiz.
+correct: "c", // This tells the browser what the correct question for the quiz.
+},
+];
+
+const quiz = document.getElementById("quiz");
+const answerElements = document.querySelectorAll(".answer");
+const questionElement = document.getElementById("question");
+const a_text = document.getElementById("a_text");
+const b_text = document.getElementById("b_text");
+const c_text = document.getElementById("c_text");
+const d_text = document.getElementById("d_text");
+const submitButton = document.getElementById("submit");
+
+let currentQuiz = 0;
+let score = 0;
+
+const deselectAnswers = () => {
+answerElements.forEach((answer) => (answer.checked = false));
+};
+
+const getSelected = () => {
+let answer;
+answerElements.forEach((answerElement) => {
+if (answerElement.checked) answer = answerElement.id;
+});
+return answer;
+};
+
+const loadQuiz = () => {
+deselectAnswers();
+const currentQuizData = quizData[currentQuiz];
+questionElement.innerText = currentQuizData.question;
+a_text.innerText = currentQuizData.a;
+b_text.innerText = currentQuizData.b;
+c_text.innerText = currentQuizData.c;
+d_text.innerText = currentQuizData.d;
+};
+
+loadQuiz();
+
+submitButton.addEventListener("click", () => {
+const answer = getSelected();
+if (answer) {
+if (answer === quizData[currentQuiz].correct) score++;
+currentQuiz++;
+if (currentQuiz < quizData.length) loadQuiz();
+else {
+  quiz.innerHTML = `
+        <h6>Congratulations! You answered ${score}/${quizData.length} questions correctly. Well Done!!!</h6>
+        <button class="quizrestart" onclick="history.go(0)">RESTART</button>
+    `
+}
+}
+});
+</script>
+<section id="section8">
+  <!-- Coding for the Slideshow and Speech Synthesis Buttons -->
+  <button data-aos="fade-right" data-aos-duration="1000" class="SlideshowButton adjust topofbuttons">Videos of Inspiration</button> <!-- The video of inspiration button will fade right with a duration of 1 second. -->
+  <button data-aos="fade-left" data-aos-duration="1000" class="speech adjust topofbuttons" type="button" id='myvoiceInspiration'>Speech: Click Me</button> <!-- The button will fade right with a duration of 1 second. The ID will be connected to the JavaScript which will be the button that the speech synthesis will click on. -->
+  <!-- Coding for Speech Synthesis Buttons -->
+
+<!-- iamnonso (2020) Using Google Text-To-Speech in Javascript. Available from: https://stackoverflow.com/questions/15653145/using-google-text-to-speech-in-javascript (Accessed: 20th March 2021) -->
+<!-- What I changed: Changed the identifier so it is unique to this button -->
+  <script>
+    const listenBtnInspiration= document.getElementById('myvoiceInspiration'); //Takes id from HTML.
+
+listenBtnInspiration.addEventListener('click', (e) => { //Tells the browser to play the speech when button is clicked.
+e.preventDefault();
+
+const msg = new SpeechSynthesisUtterance( //Tells the browser what the message is.
+  "Videos of Inspiration" // What will be spoken when the button us clicked.
+);
+window.speechSynthesis.speak(msg); //Tells the browser to run this function
+
+});
+  </script>
+</section>
+<!-- Code available from: Kolev, N. (no date). Available from: https://codepen.io/nickisix/pen/qBbzpRy (Accessed: 20th March 2021) -->
+<!-- What I changed: Added a webm video just in case the browser doesn't work for mp4. A poster was also added as well as a tag saying why the video won't load if the browser doesn't support it for assessibility. -->
+<section class="fix"> <!-- Fix the margins in the sections-->
+  <p data-aos="fade-up" data-aos-duration="1000" style="font-size:3vw;" align="center"><i>View two beautiful artistic videos below.</i></p>
+</section>
+<section class="margins"><!-- Class to add a margin to the section to add space between the last section and this one -->
+  <div data-aos="fade-left" data-aos-duration="3000" class="video-container"> <!-- Animation to fade left to add an artistic effect with a duration for three section-->
+  <a class="video-slider, videobox"> <!-- Editing for video box and slides -->
+    <div class="video-slide"> <!-- Class for video slides-->
+      <video width="100%" controls poster="images/Logo.jpg"> <!-- Links to poster with a width of 100% which will fill up the width from the video. -->
+          <!-- RELAX (2021) 30 Seconds Relaxing video #relax #meditation. 26th April. Available from: https://www.youtube.com/watch?v=dAyj90Szixs (Accessed: 5th May 2021). -->
+          <source src="videos/Video1.mp4" type="video/mp4" /><!-- MP4 video link to video used -->
+          <!-- RELAX (2021) 30 Seconds Relaxing video #relax #meditation. 26th April. Available from: https://www.youtube.com/watch?v=dAyj90Szixs (Accessed: 5th May 2021). -->
+          <source src="videos/Video1.webm" type="video/webm"><!-- Webm video link to video used -->
+          Sorry, your browser does not support the video tag. Download the video. <!-- Why the video won't load if the browser doesn't support it for assessibility. -->
+            <a href="videos/Video1.mp4">Download the video here if your browser does not support the video tag.</a> <!-- Why the video won't load if the browser doesn't support it for assessibility. -->
+      </video>
+    </div>
+    <div class="video-slide"><!-- Class for video slides-->
+      <video width="100%" controls poster=""><!-- Links to poster with a width of 100% which will fill up the width from the video. -->
+        <!-- MV, A (2020) 30 seconds of relaxation | 30 seconds of relaxing music | 30 seconds of relaxing video. 9th May. Available from: https://www.youtube.com/watch?v=2R09tQxheSQ (Accessed: 5th May 2021). -->
+          <source src="videos/Video2.mp4" type="video/mp4" /> <!-- MP4 video link to video used -->
+            <source src="videos/Video2.webm" type="video/webm" /> <!-- Webm video link to video used -->
+          Sorry, your browser does not support the video tag. Download the video. <!-- Why the video won't load if the browser doesn't support it for assessibility. -->
+            <a href="videos/Video2.mp4">Download the video here if your browser does not support the video tag.</a> <!-- Why the video won't load if the browser doesn't support it for assessibility. -->
+      </video>
+    </div>
+  </a>
+
+
+  <button class="video-slider-btn left-side" onclick="plusDiv(-1)">&#10094;</button> <!-- Video arrow and its code (left one) with instructions to the browser when clicked on -->
+  <button class="video-slider-btn right-side" onclick="plusDiv(1)">&#10095;</button> <!-- Video arrow and its code (right one) with instructions to the browser when clicked on -->
+</div>
+</section>
+
+<script>
+var slideSomething = 1;
+showDiv(slideSomething);
+
+function plusDiv(n) {
+  showDiv(slideSomething += n);
+}
+
+function showDiv(n) {
+  var i,
+      x = document.getElementsByClassName("video-slide"),
+      y = document.getElementsByTagName("video");
+
+  if (n > x.length) {
+    slideSomething = 1
+  }
+
+  if (n < 1) {
+    slideSomething = x.length
+  }
+
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+    y[i].pause();
+  }
+
+  x[slideSomething-1].style.display = "block";
+
+}
+</script>
   <!-- Taken and altered from snowmonkey (2017) Several Modal Images on page. Available from: https://stackoverflow.com/questions/47798971/several-modal-images-on-page (Accessed: 8th March 2021) -->
   <script>
       // this references the modal.
@@ -632,9 +1204,11 @@ function playAudio(evt) {
           .addEventListener("click", toggleText);
       </script>
   <script>
-  //this section is for the like button thing
+  // Taught by Thom Corah.
+  //Created a variable and gave it a name.
   let photos = ["Photo1", "Photo2", "Photo3", "Photo4", "Photo5", "Photo6", "Photo7", "Photo8", "Photo9", "Photo10", "Photo11", "Photo12", "Photo13", "Photo14", "Photo15", "Photo16", "Photo17", "Photo18", "Photo19",
-"Photo20", "Photo21", "Photo22", "Photo23", "Photo24", "Photo25", "Photo26", "Photo27", "Photo28", "Photo29", "Photo30", "Photo31", "Photo32", "Photo33", "Photo34", "Photo35", "Photo36"];
+"Photo20", "Photo21", "Photo22", "Photo23", "Photo24", "Photo25", "Photo26", "Photo27", "Photo28", "Photo29", "Photo30", "Photo31", "Photo32", "Photo33", "Photo34", "Photo35", "Photo36", "Photo37", "Photo38", "Photo39",
+"Photo40", "Photo41", "Photo42", "Photo43", "Photo44", "Photo45", "Photo46", "Photo47", "Photo48" ]; //Created an array of each of the photo names which will also be used for the names of data that will be stored in the browser
 
   photosSortingFunction = (a, b) => {
     if(a.likeCount < b.likeCount){
@@ -665,61 +1239,119 @@ function playAudio(evt) {
     //console.log(html);
 
   }
-
-    /*<img class="mySlides" src="images/Slideshow1.3.jpg" style="width:100%">
-
-    <button class="left edit" data-aos="slide-right" data-aos-duration="1000" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="right edits" data-aos="slide-left" data-aos-duration="1000" onclick="plusDivs(1)">&#10095;</button> */
+// Taught by Thom Corah.
+// DIRECT CODE.
   sortOutSlideshow();
+// Everytime someone taps on a like button, it runs the following function.
+  toggleLike = (evt) => { // Get run whenever any like button is clicked.
+    console.log(evt.target); // Shows in the browser what is being clicked on.
+    let photoName = evt.target.id.substring(0, evt.target.id.length - 4); // Uses ID of what has been clicked on. Takes the portion of a word by taking the last 4 letters off. Finds out what image it is.
+    if (evt.target.classList.contains('fas')){ // If the class list contains the filled in button, it has been liked.
+      evt.target.classList.remove("fas"); // If the button has been liked, remove it.
+      localStorage.setItem(photoName + "Liked", false); // It will store that the photo has been unliked.
+    } else { // If the button does not contain the fill.
+      evt.target.classList.add("fas"); // If it has not been liked then it is added.
+      localStorage.setItem(photoName + "Liked", true); // "photoName" - unique to the particular image wiith a true value.
 
-  toggleLike = (evt) => {
-    console.log(evt.target);
-    let photoName = evt.target.id.substring(0, evt.target.id.length - 4);
-    if (evt.target.classList.contains('fas')){
-      evt.target.classList.remove("fas");
-      localStorage.setItem(photoName + "Liked", false);
-    } else {
-      evt.target.classList.add("fas");
-      localStorage.setItem(photoName + "Liked", true);
-
-      let likedCount = localStorage.getItem(photoName + "LikeCount");
-      likedCount++;
+      let likedCount = localStorage.getItem(photoName + "LikeCount"); // Process to get the like count. Pulling out the value of local storage from the like count.
+      likedCount++; // Added one to it.
       document.getElementById(
         photoName + "LikeCount"
-      ).innerText = likedCount;
-      localStorage.setItem(photoName + "LikeCount", likedCount);
+      ).innerText = likedCount; // Update the display and the new value of like count.
+      localStorage.setItem(photoName + "LikeCount", likedCount); // Saving the new number back into local storage.
     }
 
   };
-
-  updateLikeButtons = () => {
-  for (let i = 0; i < photos.length; i++) {
+// Taught by Thom Corah.
+// DIRECT CODE.
+  updateLikeButtons = () => { //Goes through each of the images.
+  for (let i = 0; i < photos.length; i++) { // The count will start off at 0 and will keep looping as long as i is less than the number of things in the photo. Each time it goes round, one will be added to i.
+// Adds an event listener to its like button.
     document
-    .getElementById(photos[i] + "Like")
-    .addEventListener("click", toggleLike);
-
-    let photoLiked = localStorage.getItem(photos[i] + "Liked");
-    if (photoLiked == "true") {
-      document.getElementById(photos[i] + "Like").classList.add("fas");
+    .getElementById(photos[i] + "Like") // Access images by referencing the array (photos) and using i (counter variable). "Like" will make up the ID.
+    .addEventListener("click", toggleLike); // Browser will listen out for a click which will toggle (activate) the like.
+// Checks in local storage to see if the images have already been liked
+    let photoLiked = localStorage.getItem(photos[i] + "Liked"); // Getting the name of the image, with "liked" as this is what is being used for storing,
+    if (photoLiked == "true") { // If the image is liked.
+      document.getElementById(photos[i] + "Like").classList.add("fas"); // This gets the like button and adds "fas" to the class list.
     }
-
-    let likeCount = localStorage.getItem(photos[i] + "LikeCount");
+// Checks how many times it has been liked and updates the display with the like count
+    let likeCount = localStorage.getItem(photos[i] + "LikeCount"); // Getting the name of the image, with "like count" as this is what is being used for storing,
     if(likeCount){
-      document.getElementById(photos[i] + "LikeCount").innerText = likeCount;
+      document.getElementById(photos[i] + "LikeCount").innerText = likeCount; // Display the number of likes (1 or more) in an appropriate place. ID is the name of the image. Set the innerText to be the value of likeCount to display.
     }else {
-      document.getElementById(photos[i] + "LikeCount").innerText = "0";
+      document.getElementById(photos[i] + "LikeCount").innerText = "0"; // If the image is null or 0, then it needs to be 0.
       localStorage.setItem(photos[i] + "LikeCount", 0);
     }
   }
 };
-
-updateLikeButtons();
+// Taught by Thom Corah.
+// DIRECT CODE.
+updateLikeButtons(); // Tells the browser to run the function.
   </script>
-  </section>
 
 
   <footer>
-  </footer>
+    <!--  Referenced from W3Schools(2021) How TO - Three Column Layout. Available at: https://www.w3schools.com/howto/howto_css_three_columns.asp (Accessed: 6th May 2021). -->
+    <h2 class="copyright" align="center" style="font-size:40px">Gateway of Artwork</h2><!-- Heading for the "Gateway of Artwork," positioned in the centre, with a font size with 40 pixels-->
+    <div class="row"> <!-- Class for the row stuff -->
+    <div class="column" align="center"> <!-- Class for the column stuff with text aligned to the centre -->
+      <p><b>NATURE</b></p> <!-- Bold, text in footer; used to show one of the sections of the page-->
+      <p><b>VIDEOS OF INSPIRATION</b></p> <!-- Bold, text in footer; used to show one of the sections of the page-->
+    </div>
+    <div class="column" align="center"><!-- Class for the column stuff with text aligned to the centre -->
+      <p><b>ARCHITECTURE</b></p> <!-- Bold, text in footer; used to show one of the sections of the page-->
+      <p><b>RHYTHM OF RELAXATION</b></p> <!-- Bold, text in footer; used to show one of the sections of the page-->
+      <p><b>QUIZ</b></p> <!-- Bold, text in footer; used to show one of the sections of the page-->
+    </div>
+    <div class="column" align="center"><!-- Class for the column stuff with text aligned to the centre -->
+      <p><b>TEXTURES AND PATTERNS</b></p> <!-- Bold, text in footer; used to show one of the sections of the page-->
+      <p><b>STREET PHOTOGRAPHY</b></p> <!-- Bold, text in footer; used to show one of the sections of the page-->
+    </div>
+  </div>
+  <div align="center"><!-- Align all the elements in the div in the centre -->
+<p class="copyright"><b><u>Follow us:</u></b></p><!-- This is html for "follow us" which is in bold and underlined so audiences can notice it easily. -->
 
+  <!--  Referenced from W3Schools(2021) Font Awesome. Available at: https://www.w3schools.com/howto/howto_css_social_media_buttons.asp (Accessed: 6th May 2021). -->
+  <!--  DIRECT CODE -->
+<a href="#" class="fa fa-facebook"></a><!-- Facebook Icon -->
+<a href="#" class="fa fa-twitter"></a><!-- Twitter Icon -->
+<a href="#" class="fa fa-youtube"></a><!-- YouTube Icon -->
+<a href="#" class="fa fa-instagram"></a><!-- Instagram Icon -->
+<a href="#" class="fa fa-pinterest"></a><!-- Pintrest Icon -->
+<a href="#" class="fa fa-snapchat-ghost"></a><!-- Snapchat Icon -->
+<div>
+<p class="copyright" align="center">© 2021 Gateway of Artwork</p><!-- This is html for the copyright logo  at the bottom of the page; seen on most websites -->
+</footer>
+<!--  Referenced from W3Schools(2021) How TO - Scroll Back To Top Button. Available at: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp (Accessed: 6th May 2021). -->
+<!-- processing click events on a given element (the function) -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> <!--  DIRECT CODE -->
+
+<script>
+//Get the button
+// DIRECT CODE
+// Referenced from W3Schools(2021) How TO - Scroll Back To Top Button. Available at: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp (Accessed: 6th May 2021).
+var mybutton = document.getElementById("myBtn"); // Getting element from ID which is the button
+
+// Referenced from W3Schools(2021) How TO - Scroll Back To Top Button. Available at: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp (Accessed: 6th May 2021).
+// When the user scrolls down 20px from the top of the document, show the button
+// DIRECT CODE
+window.onscroll = function() {scrollFunction()};
+// DIRECT CODE
+// Referenced from W3Schools(2021) How TO - Scroll Back To Top Button. Available at: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp (Accessed: 6th May 2021).
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) { // When the button is scrolled to 20px and beyond,
+    mybutton.style.display = "block"; // The button will be displayed as a block.
+  } else { // Otherwise
+    mybutton.style.display = "none"; // The button will not be displayed.
+  }
+}
+// Referenced from W3Schools(2021) How TO - Scroll Back To Top Button. Available at: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp (Accessed: 6th May 2021).
+// DIRECT CODE
+function topFunction() {// When the user clicks on the button
+  document.body.scrollTop = 0;//scroll to the top of the document
+  document.documentElement.scrollTop = 0;//scroll to the top of the document
+}
+</script>
   </body>
 </html>

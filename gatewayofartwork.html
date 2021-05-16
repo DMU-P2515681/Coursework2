@@ -1,328 +1,342 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- html document -->
+<html lang="en"> <!-- English language -->
  <head>
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gateway Of Artwork</title>
+  <meta charset="utf-8"> <!-- character encoding for the HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- View for mobile and desktop -->
+  <title>Gateway Of Artwork</title> <!-- Title of webpage -->
   <style>
   /* Referenced from W3Schools (2021) How TO - Full Page Image. Available at: https://www.w3schools.com/howto/howto_css_full_page.asp (Accessed: 1st February 2021). */
+  /* What I changed: Removed any margins */
   /* Makes the slideshow full screen */
   body, html {
-    margin: 0;
-     height: 100%;
+    margin: 0; /* Removed any margins so that photos are full width*/
+     height: 100%; /* Height of slideshow so that the photos are full screen */
   }
 
-/* Change the opacity of the photos on the slideshow */
+/* Styling of photos */
 .Photos {
-   opacity: 0.7;
-   height: 100%;
+   opacity: 0.7; /* Change the opacity of the photos on the slideshow; making them transparent */
+   height: 100%; /* Height of slideshow so that the photos are full screen */
 
  }
-      /* Taken and altered from /* Referenced from W3Schools (2021) How TO - Slideshow. Available at: https://www.w3schools.com/howto/howto_js_slideshow.asp (Accessed: 1st February 2021). */
+      /* Taken and altered from W3Schools (2021) How TO - Slideshow. Available at: https://www.w3schools.com/howto/howto_js_slideshow.asp (Accessed: 1st February 2021). */
+      /* WHat I changed: Made animation duration from 1.5 seconds to 1.4 seconds */
       /* Animation for slideshow fades */
       .fadingphotos {
-        -webkit-animation-name: slides;
-        -webkit-animation-duration: 1.4s;
-        animation-name: slides;
-        animation-duration: 1.4s;
+        -webkit-animation-name: slides; /* Name of the animation */
+        -webkit-animation-duration: 1.4s; /* Duration of each slide before changing. This was chosen to viewer can see each photo for enough time */
+        animation-name: slides; /* Name of the animation */
+        animation-duration: 1.4s; /* Duration of each slide before changing. This was chosen to viewer can see each photo for enough time */
       }
-      /* Taken and altered from W3Schools (2021)*/
-      /* The opacity the animation starts and finishes at for the photos */
-      @-webkit-keyframes slides {
-        from {opacity: 0.2}
-        to {opacity: 0.7}
+      /* Taken and altered from W3Schools (2021) How TO - Slideshow. Available at: https://www.w3schools.com/howto/howto_js_slideshow.asp (Accessed: 1st February 2021). */
+      /* The opacity the transition of the start and finish for the photos */
+      /* What I changed: The opacity of the transition */
+      /* Animation for slideshow fades */
+      @-webkit-keyframes slides {  /* This creates a smooth transition between slides*/
+        from {opacity: 0.2} /* The opacity of the photos starts off low */
+        to {opacity: 0.7} /* The opacity of the photos get higher */
       }
-      /* Taken and altered from W3Schools (2021)*/
+        /* Taken and altered from W3Schools (2021) How TO - Slideshow. Available at: https://www.w3schools.com/howto/howto_js_slideshow.asp (Accessed: 1st February 2021). */
       /* The opacity the animation starts and finishes at for the photos */
-      @keyframes slides {
-        from {opacity: 0.2}
-        to {opacity: 0.7}
+      /* What I changed: The opacity of the transition */
+      @keyframes slides { /* This creates a smooth transition between slides*/
+        from {opacity: 0.2} /* The opacity of the photos starts off low */
+        to {opacity: 0.7} /* The opacity of the photos get higher */
       }
 
+/* Styling for images */
 img {
-  /* Taken and altered from W3Schools (2021)*/
-  /* Images are full height */
-  height: 100%;
+  height: 100%; /* Images are full height to make it full screen */
 }
 
 /* Position, scale and centering of the letter 'G' */
   h1 {
-    font-family: Henny Penny;
-    font-size: 200px;
-    margin: 0;
-    position: fixed;
-      top: 50%;
-      left: 50%;
-      margin-top: -250px;
-      margin-left: -250px;
-      margin-right: -200px;
-      height: 50px;
-     width: 400px;
+    font-family: Henny Penny; /* Artistic font chosen to represent theme of website */
+    font-size: 200px; /* Font size chosen (big) */
+    margin: 0; /* No margins on letter */
+    position: fixed; /* Fixed position; stays in one place */
+      top: 50%; /* vertical positioning of letter; centring the letter */
+      left: 50%; /* horizontal positioning of letter; centring the letter */
+      margin-top: -250px; /* margin on top of letter; helping to centre the letter */
+      margin-left: -250px; /* margin on left of letter; helping to centre the letter */
+      margin-right: -200px; /* margin on right of letter; helping to centre the letter */
+      height: 50px; /* height of letter */
+     width: 400px; /* width of letter */
   }
 
 /* Position, scale and centering of the letter 'A' */
   h2 {
-letter-spacing: -17px;
-    font-family: Henny Penny;
-    font-size: 200px;
-    margin: 0;
-    position: fixed;
-      top: 50%;
-      left: 50%;
-      margin-top: -167px;
-      margin-left: -181px;
-      margin-right: -200px;
-      height: 50px;
-     width: 400px;
+    letter-spacing: -17px; /* Spacing betwen the letter to position it as prefered */
+    font-family: Henny Penny; /* Artistic font chosen to represent theme of website */
+    font-size: 200px; /* Font size chosen (big) */
+    margin: 0; /* No margins on letter */
+    position: fixed; /* Fixed position; stays in one place */
+    top: 50%; /* vertical positioning of letter; centring the letter */
+    left: 50%; /* horizontal positioning of letter; centring the letter */
+    margin-top: -167px; /* margin on top of letter; helping to centre the letter */
+    margin-left: -181px; /* margin on left of letter; helping to centre the letter */
+    margin-right: -200px; /* margin on right of letter; helping to centre the letter */
+    height: 50px; /* height of letter */
+    width: 400px; /* width of letter */
   }
 
-  /* Taken and altered from stack overflow (2021)*/
+  /* Taken and altered from stack overflow (2021) Rainbow text animation using only CSS. Available from: https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css (Accessed: 2nd February 2021). */
   /* Make the 'GA' animate multicolour */
+  /* DIRECTLY COPIED CODE */
   .multicolouredtext {
-    animation: colorRotate 5s linear 0s infinite;
+    animation: colorRotate 5s linear 0s infinite; /* Colour switch animation will go on continuously; adding art to the title */
   }
 
-  /* Taken and altered from stack overflow (2021)*/
+  /* Taken from stack overflow (2021) Rainbow text animation using only CSS. Available from: https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css (Accessed: 2nd February 2021). */
+  /* DIRECTLY COPIED CODE */
   /* The 'GA' multicolours*/
-  @keyframes colorRotate {
+  @keyframes colorRotate { /* Keyframes in place to change colour of animation*/
     from {
-      color: #6666ff;
+      color: #6666ff; /* Starts with this colour */
     }
     10% {
-      color: #0099ff;
+      color: #0099ff; /* Then switches to this colour */
     }
     50% {
-      color: #00ff00;
+      color: #00ff00; /* Then switches to this colour halfway through the animation */
     }
     75% {
-      color: #ff3399;
+      color: #ff3399; /* Then switches to this colour */
     }
     100% {
-      color: #6666ff;
+      color: #6666ff;/* Then finishes with this colour and repeats */
     }
   }
 
   /* Position, scale and centering of the letter 'G' after a certain width*/
   @media screen and (min-width: 600px){
     h1 {
-      font-size: 400px;
-      letter-spacing: -17px;
-          font-family: Henny Penny;
-          margin: 0;
-          position: fixed;
-            top: 50%;
-            left: 50%;
-            margin-top: -500px;
-            margin-left: -300px;
-            margin-right: -200px;
-            height: 50px;
-           width: 400px;
+      font-size: 400px; /* Font size chosen (big) */
+      letter-spacing: -17px; /* Spacing betwen the letter to position it as prefered */
+          font-family: Henny Penny; /* Artistic font chosen to represent theme of website */
+          margin: 0; /* No margins on letter */
+          position: fixed; /* Fixed position; stays in one place */
+            top: 50%; /* vertical positioning of letter; centring the letter */
+            left: 50%; /* horizontal positioning of letter; centring the letter */
+            margin-top: -500px; /* margin on top of letter; helping to centre the letter */
+            margin-left: -300px; /* margin on left of letter; helping to centre the letter */
+            margin-right: -200px; /* margin on right of letter; helping to centre the letter */
+            height: 50px; /* height of letter */
+           width: 400px; /* width of letter */
     }
 
-/* Position, scale and centering of the letter 'A' after a certain width*/
+/* Position, scale and centering of the letter 'A' after a certain width (desktop)*/
     h2 {
-      font-size: 400px;
-      letter-spacing: -17px;
-          font-family: Henny Penny;
-          margin: 0;
-          position: fixed;
-            top: 50%;
-            left: 50%;
-            margin-top: -332px;
-            margin-left: -144px;
-            margin-right: -200px;
-            height: 50px;
-           width: 400px;
+      font-size: 400px; /* Font size chosen (big) */
+      letter-spacing: -17px; /* Spacing betwen the letter to position it as prefered */
+      font-family: Henny Penny; /* Artistic font chosen to represent theme of website */
+      margin: 0; /* No margins on letter */
+      position: fixed; /* Fixed position; stays in one place */
+      top: 50%; /* vertical positioning of letter; centring the letter */
+      left: 50%; /* horizontal positioning of letter; centring the letter */
+      margin-top: -332px; /* margin on top of letter; helping to centre the letter */
+      margin-left: -144px; /* margin on left of letter; helping to centre the letter */
+      margin-right: -200px; /* margin on right of letter; helping to centre the letter */
+      height: 50px; /* height of letter */
+      width: 400px; /* width of letter */
     }
   }
 
 /* Style for the button and text*/
-/* Taken and altered from W3Schools (2021)*/
+/* Taken and altered from W3Schools (2021) CSS Buttons. Available from: https://www.w3schools.com/css/css3_buttons.asp (Accessed: 2nd February 2021). */
+/* What I changed: Added font family, changed font size, added a border, border style, changed background colour, added an opacity, removed any margins, made the position fixed, added a top/left and a margin top/left and right, width, height and transition */
   div {
-    font-family: sans-serif;
-    font-size: 17px;
-    border: 5px solid grey;
-    border-style: outset;
-    background-color: blue;
-    opacity: 0.6;
-    color: white;
-    margin: 0;
-    position: fixed;
-    top: 72%;
-    left: 44%;
-    margin-top: -51px;
-    margin-left: -76px;
-    margin-right: -76px;
-  width: 200px;
-  height: 80px;
-  transition: width 2s, height 2s, transform 2s;
+    font-family: sans-serif; /* Modern font to connote theme */
+    font-size: 17px;  /* Font size appropriate for button */
+    border: 5px solid grey;  /* Small solid grey border; adding an outline to button */
+    border-style: outset;  /* 3D border; adding 3D to button */
+    background-color: blue; /* Background colour of button; for all able people */
+    opacity: 0.6; /* Opacity of button; making it transparent */
+    color: white; /* Colour of text */
+    margin: 0; /* Remove of margin of button */
+    position: fixed; /* Fixed position; stays in one place */
+    top: 72%; /* vertical positioning of letter; centring the letter */
+    left: 44%; /* horizontal positioning of letter; centring the letter */
+    margin-top: -51px; /* margin on top of letter; helping to centre the letter */
+    margin-left: -76px; /* margin on left of letter; helping to centre the letter */
+    margin-right: -76px; /* margin on right of letter; helping to centre the letter */
+    width: 200px; /* width of button*/
+    height: 80px; /* height of button */
+    /* Taken from W3Schools (2021) CSS Transitions. Available from: https://www.w3schools.com/css/css3_transitions.asp (Accessed: 2nd February 2021) */
+    /* What I changed: Took off their width, height and colour */
+    transition: width 2s, height 2s, transform 2s; /* transition of button and its duration. Chosen to add fun to the website */
 }
 
+/* Taken from W3Schools (2021) CSS Transitions. Available from: https://www.w3schools.com/css/css3_transitions.asp (Accessed: 2nd February 2021) */
 /* Style for the hover function of button and text*/
-/* Taken and altered from W3Schools (2021)*/
+/* What I changed: Width, height, transform and added an opacity and a cursor */
 div:hover {
-  cursor: pointer;
-  opacity: 1;
-  width: 200px;
-  height: 80px;
-  transform: rotate(360deg);
+  cursor: pointer; /* Pointer button when cursor is hovered over the button */
+  opacity: 1; /* Opacity changes when cursor is hovered over the button */
+  width: 200px; /* width of button*/
+  height: 80px; /* height of button */
+  transform: rotate(360deg); /* rotates the entire way round */
 }
 
 /* Style for the button and text after a certain width*/
-/* Taken and altered from W3Schools (2021)*/
+/* What I changed: Added font family, changed font size, added a border, border style, changed background colour, added an opacity, removed any margins, made the position fixed, added a top/left and a margin top/left and right, width, height and transition */
   @media screen and (min-width: 600px){
     div {
-      font-family: sans-serif;
-      font-size: 25px;
-      border: 5px solid white;
-      border-style: outset;
-      background-color: blue;
-      opacity: 0.6;
-      color: white;
-      margin: 0;
-      position: fixed;
-      top: 75%;
-      left: 44%;
-      margin-top: -51px;
-      margin-left: -76px;
-      margin-right: -76px;
-    width: 300px;
-    height: 120px;
-    background: blue;
-    transition: width 2s, height 2s, transform 2s;
-
+      font-family: sans-serif; /* Modern font to connote theme */
+      font-size: 25px; /* Font size appropriate for button */
+      border: 5px solid white;  /* Small solid white border; adding an outline to button */
+      border-style: outset; /* 3D border; adding 3D to button */
+      background-color: blue; /* Background colour of button; for all able people */
+      opacity: 0.6; /* Opacity of button; making it transparent */
+      color: white; /* Colour of text */
+      margin: 0; /* Remove of margin of button */
+      position: fixed; /* Fixed position; stays in one place */
+      top: 75%; /* vertical positioning of letter; centring the letter */
+      left: 44%; /* horizontal positioning of letter; centring the letter */
+      margin-top: -51px; /* margin on top of letter; helping to centre the letter */
+      margin-left: -76px; /* margin on left of letter; helping to centre the letter */
+      margin-right: -76px; /* margin on right of letter; helping to centre the letter */
+      width: 300px; /* width of button*/
+      height: 120px; /* height of button */
+      background: blue; /* Background colour of button; for all able people */
+      /* Taken from W3Schools (2021) CSS Transitions. Available from: https://www.w3schools.com/css/css3_transitions.asp (Accessed: 2nd February 2021)*/
+      /* What I changed: Took off their width, height and colour */
+      transition: width 2s, height 2s, transform 2s; /* transition of button and its duration. Chosen to add fun to the website */
   }
 
-  /* Style for the button and text after a certain width*/
-  /* Taken and altered from W3Schools (2021)*/
+  /* Taken from W3Schools (2021) CSS Transitions. Available from: https://www.w3schools.com/css/css3_transitions.asp (Accessed: 2nd February 2021) */
+  /* Style for the hover function of button and text*/
+  /* What I changed: Width, height, transform and a cursor */
   div:hover {
-    cursor: pointer;
-    width: 300px;
-    height: 120px;
-    transform: rotate(360deg);
+    cursor: pointer; /* Pointer button when cursor is hovered over the button */
+    width: 300px; /* width of button*/
+    height: 120px; /* height of button */
+    transform: rotate(360deg); /* rotates the entire way round */
   }
   }
 
-  /* Style for SVG dashes*/
-  /* Taken and altered from Coyier (2014)*/
+  /* Style for SVG dashes */
+  /* DIRECTLY COPIED CODE */
+  /* Taken and altered from Coyier (2014) How SVG Line Animation Works. Available from: https://css-tricks.com/svg-line-animation-works/ (Accessed 3rd February 2021) */
   .svgthing {
-stroke-dasharray: 100;
-animation: littledashes 25s infinite;
+stroke-dasharray: 100; /* Length of dashes */
+animation: littledashes 25s infinite;  /* Animated the dashes continuously */
 }
 
-/* Style for SVG dashes*/
-/* Taken and altered from Coyier (2014)*/
-@keyframes littledashes {
+/* DIRECTLY COPIED CODE */
+/* Taken from Coyier (2014) How SVG Line Animation Works. Available from: https://css-tricks.com/svg-line-animation-works/ (Accessed 3rd February 2021) */
+@keyframes littledashes { /* Style for SVG dashes*/
 to {
-stroke-dashoffset: 1000;
+stroke-dashoffset: 1000; /* Length of dashes */
 }
 }
 
 /* Position and scale for SVG*/
 svg {
-  margin-top: -220px;
-  margin-left: -130px;
-  margin-right: -200px;
-  position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 500px;
+  margin-top: -220px;  /* margin on top of svg; helping to centre the svg */
+  margin-left: -130px; /* margin on left of svg; helping to centre the svg */
+  margin-right: -200px; /* margin on right of svg; helping to centre the svg */
+  position: fixed; /* Fixed position; stays in one place */
+    top: 50%; /* vertical positioning of svg; centring the svg */
+    left: 50%; /* horizontal positioning of svg; centring the svg */
+    width: 500px; /* width of svg */
 }
 
 /* Style for SVG dashes after a certain width*/
-/* Taken and altered from Coyier (2014)*/
 @media screen and (min-width: 600px){
+  /* Taken and altered from Coyier (2014) How SVG Line Animation Works. Available from: https://css-tricks.com/svg-line-animation-works/ (Accessed 3rd February 2021) */
   .svgthing {
-stroke-dasharray: 100;
-animation: littledashes 25s infinite;
+stroke-dasharray: 100; /* Length of dashes */
+animation: littledashes 25s infinite; /* Animated the dashes continuously */
 }
 
 /* Style for SVG dashes after a certain width*/
-/* Taken and altered from Coyier (2014)*/
+/* Taken and altered from Coyier (2014) How SVG Line Animation Works. Available from: https://css-tricks.com/svg-line-animation-works/ (Accessed 3rd February 2021) */
 @keyframes littledashes {
 to {
-stroke-dashoffset: 1000;
+stroke-dashoffset: 1000; /* Length of dashes */
 }
 }
 
 /* Position and scale for SVG after a certain width*/
   svg {
-      position: fixed;
-    margin-top: -320px;
-    margin-left: -88px;
-    margin-right: -200px;
-      top: 37%;
-      left: 40%;
-      width: 1000px;
+      position: fixed; /* Fixed position; stays in one place */
+      margin-top: -320px; /* margin on top of svg; helping to centre the svg */
+      margin-left: -88px; /* margin on left of svg; helping to centre the svg */
+      margin-right: -200px; /* margin on right of svg; helping to centre the svg */
+      top: 37%; /* vertical positioning of svg; centring the svg */
+      left: 40%; /* horizontal positioning of svg; centring the svg */
+      width: 1000px; /* width of svg */
   }
 }
-
 </style>
 </head>
 <body>
-<!-- Slideshow photos taken and altered from W3Schools (2021) -->
-  <span class="Photos fadingphotos">
-    <img src="images/Slideshow1.jpg" style="width:100%">
+<!-- Taken and altered from W3Schools (2021) How TO - Slideshow. Available at: https://www.w3schools.com/howto/howto_js_slideshow.asp (Accessed: 1st February 2021). -->
+<!-- Slideshow photos  -->
+  <span class="Photos fadingphotos"> <!-- Styling for slidshow  -->
+    <img src="images/Slideshow1.jpg" style="width:100%"> <!-- Slidshow image, artistic image chosen -->
   </span>
 
-  <span class="Photos fadingphotos">
-    <img src="images/Slideshow1.3.jpg" style="width:100%">
+  <span class="Photos fadingphotos"> <!-- Styling for slidshow  -->
+    <img src="images/Slideshow1.3.jpg" style="width:100%"> <!-- Slidshow image, artistic image chosen -->
   </span>
 
-  <span class="Photos fadingphotos">
-    <img src="images/Slideshow1.2.jpg" style="width:100%">
+  <span class="Photos fadingphotos"><!-- Styling for slidshow  -->
+    <img src="images/Slideshow1.2.jpg" style="width:100%"> <!-- Slidshow image, artistic image chosen -->
   </span>
 
   <br>
 <!-- Makes slideshow move along with JavaScript -->
-<!-- Taken and altered from W3Schools (2021) -->
+<!-- Taken and altered from W3Schools (2021) How TO - Slideshow. Available from: https://www.w3schools.com/howto/howto_js_slideshow.asp (Accessed 3rd February 2021)  -->
+<!-- DIRECT CODE -->
   <span style="text-align:center">
-    <span class="extra"></span>
-    <span class="extra"></span>
-    <span class="extra"></span>
+    <span class="extra"></span> <!-- Class name for span for JavaScript -->
+    <span class="extra"></span> <!-- Class name for span for JavaScript -->
+    <span class="extra"></span> <!-- Class name for span for JavaScript -->
   </span>
-
 <script>
-// Taken and altered from W3Schools (2021)
-//This makes the slideshow start from the first picture
-//This displays the photos from the first photo
-var slideIndex = 0;
-showPhotos();
-//This hides all of the class "Photos"
-function showPhotos() {
-  var i;
-  var slides = document.getElementsByClassName("Photos");
-  var dots = document.getElementsByClassName("extra");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+//Taken and altered from W3Schools (2021) How TO - Slideshow. Available from: https://www.w3schools.com/howto/howto_js_slideshow.asp (Accessed 3ed February 2021)
+//This makes the slideshow start from the first picture.
+// DIRECT CODE.
+var slideIndex = 0; //This displays the photos from the first photo
+showPhotos(); // Then call showPhotos() to display the first image.
+// This hides all of the class "Photos"
+function showPhotos() { // When the user clicks one of the buttons call showPhotos().
+  var i; // Setting a variable for the slideshow.
+  var slides = document.getElementsByClassName("Photos"); // Gets photos from the class names assigned to it.
+  var dots = document.getElementsByClassName("extra"); // Gets dots from the class names assigned to it to move the slideshow.
+  for (i = 0; i < slides.length; i++) { // Creates a continuous loop which is a positive increment.
+    slides[i].style.display = "none"; // Display none. This hides entire element.
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  slideIndex++; // adds one to) its operand and returns a value.
+  if (slideIndex > slides.length) {slideIndex = 1} // This resets to the first slide when last slide is reached.
+  for (i = 0; i < dots.length; i++) { // Creates a continuous loop which is a positive increment.
+    dots[i].className = dots[i].className.replace(" active", ""); // Replaces class name to active.
   }
   //Displays this element
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  setTimeout(showPhotos, 6000); // Change image every 6 seconds
+  slides[slideIndex-1].style.display = "block"; // Slideshow is a block element. This fills out the entire line.
+  dots[slideIndex-1].className += " active"; // Gets class name and displays element.
+  setTimeout(showPhotos, 6000); // Change image every 6 seconds.
 }
 </script>
 
 <!-- HTML for the logo "GA" -->
-<h1 class="multicolouredtext"><center>G</center></h1>
-<h2 class="multicolouredtext"><center>A</center></h2>
+<h1 class="multicolouredtext"><center>G</center></h1><!-- html for the letter G. Centring it in the middle with a class name for the CSS. This is the first main heading. -->
+<h2 class="multicolouredtext"><center>A</center></h2><!-- html for the letter A. Centring it in the middle with a class name for the CSS. This is the second main heading. -->
 
 <!-- HTML for button text -->
-  <div><center><p>THE<br>GATEWAY AWAITS...</p></center></div>
-
-<!-- Taken and altered from Coyier (2014)-->
+<a href="gatewayofartworkpages.html"> <!-- This is the link to the second page which the viewer will be taken to when the button is clicked. -->
+  <div><center><p>THE<br>GATEWAY AWAITS...</p></center></div> <!-- This is the text that is on the button which is centred into the middle of the button. -->
+</a>
+<!-- Taken and altered from Coyier (2014) How SVG Line Animation Works. Available from: https://css-tricks.com/svg-line-animation-works/ (Accessed 3rd February 2021)-->
   <!-- How the svg is viewed -->
-  <svg viewBox="0 0 1500 1000">
-<!-- Taken and altered from Coyier (2014)-->
-<!-- Styling and code for svg -->
+  <!-- What I changed: The viewbox. -->
+  <svg viewBox="0 0 1500 1000"> <!-- Width and height of SVG -->
+<!-- Taken and altered from Coyier (2014) How SVG Line Animation Works. Available from: https://css-tricks.com/svg-line-animation-works/ (Accessed 3rd February 2021)-->
+<!-- Styling and code for svg, class of svg to edit it. Colour of SVG and width of the dashes of SVG. -->
     <path class="svgthing" fill="transparent" stroke="black" stroke-width="6"  d="M681,175l90.36-23.82,88.54,11.91L928.55,175,976,132l39-26,46,12,12,29-15,43-35,57-20,36-24,56-19,30.09L923,386l-37.73-25.17,3-38.58L877,284l-35-27-45-3-48,18-28,40-17.82,48.83L700,435l11,53,29,42,31.36,24.16H836L866,520l-1.63-44.94H803.18L769,460l-15-39,6-28,42-3,47-2,38-4,93.79-23.17,41.79-30.75,26.87-7.83L1073,393l139,404,29.68,31.79,31.65,23.94L1291,878l-5.73,28.63-43.59,13.21L1185,920l-73,13-66,12-40-18-9-33,25.58-33.87L1064,847l-1-45-20-57-20-45-47-25-33-12-23,73-9,41,21,19,17,25,.87,37.64L918,875l-77.51-22.27L758,839l-26-34,7-36,32.36-8.87L808,760l31-45,20.9-60.89L869,624l-64.33,20-70.15,10.11L672,638l-64.34-37.57L561,551l-25-49V342.22L570,275l47-55Z" transform="translate(-536 -0.49)"/>
 
   </svg>
-
   </body>
 </html>
