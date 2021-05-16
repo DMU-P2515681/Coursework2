@@ -1,3 +1,4 @@
+/*Referenced from Galloway, J (2009) Stack Overflow. Available from: https://stackoverflow.com/questions/1156278/how-can-i-scale-an-entire-web-page-with-css (Accessed: 20th April 2021)*/
 body {
   zoom: 0.7;
     -moz-transform: scale(0.5);
