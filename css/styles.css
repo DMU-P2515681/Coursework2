@@ -716,16 +716,21 @@ h2 { /* Second heading */
    height: 590px; /* height of video */
    position: relative; /* relative to its normal position */
   }
+
+  /* Referenced from Kolev (no date) Video Slider. Available at: https://codepen.io/nickisix/pen/qBbzpRy (Accessed: 5th May 2021). */
   /* Video Slider */
   .video-slider { /* styling for video slides */
     display: none; /* no display property */
   }
+
+  /* Referenced from Kolev (no date) Video Slider. Available at: https://codepen.io/nickisix/pen/qBbzpRy (Accessed: 5th May 2021). */
   /* Individual Slide: Container */
   .video-slide { /* styling for video slide */
     position: relative; /* relative to its normal position */
     margin: 0 auto; /* automatic margin*/
   }
 
+/* Referenced from Kolev (no date) Video Slider. Available at: https://codepen.io/nickisix/pen/qBbzpRy (Accessed: 5th May 2021). */
   /* Navigation */
   .video-slider-btn { /* styling for video slider buttons */
     border: none; /* no border for buttons */
@@ -762,6 +767,7 @@ h2 { /* Second heading */
     transform: translate(0%,-50%); /* defines 2D translation */
     -ms-transform: translate(0%,-50%); /* defines 2D translation (ms)*/
   }
+
 
   .margins { /* margins of video */
     margin-top: 2vh; /* margin of video top */
