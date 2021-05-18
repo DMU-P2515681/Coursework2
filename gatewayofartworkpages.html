@@ -31,7 +31,7 @@
   </script>
 
       <!-- html for title and theme switcher-->
-      <!-- Taught by Thom Corah.-->
+      <!-- Taught by Thom Corah. Multimedia 2 (no date) Light/dark theme switcher. Available at: https://vle.dmu.ac.uk/webapps/blackboard/content/contentWrapper.jsp?content_id=_5129777_1&displayName=Linked+File&navItem=content&attachment=true&course_id=_561963_1&tab_group=courses&href=https%3A%2F%2Fdmureplay.cloud.panopto.eu%2FPanopto%2FPages%2FViewer.aspx%3Fid%3D886deb5a-4e8c-4982-9dfb-acef00f5db72 (Accessed 15th May 2021). -->
       <!-- What I changed: Added more coloured themes as well as sizing themes -->
     <h1 align="center"  class="rainbow rainbow_text_animated ellipse ">GATEWAY OF ARTWORK</h1>
     <select id="theSwitcher" class="ellipsetwo" align="center"><!-- ID of button that is going to be clicked on (smaller ellipse). "Select" element gives a dropdown.-->
@@ -50,7 +50,7 @@
      <option value="extralarge">Massive</option><!-- Option element has a value and what is displayed (massivetheme).-->
     </select>
 <!-- Javascript for theme switcher-->
-<!-- Taught by Thom Corah.-->
+<!-- Taught by Thom Corah Multimedia 2 (no date) Light/dark theme switcher. Available at: https://vle.dmu.ac.uk/webapps/blackboard/content/contentWrapper.jsp?content_id=_5129777_1&displayName=Linked+File&navItem=content&attachment=true&course_id=_561963_1&tab_group=courses&href=https%3A%2F%2Fdmureplay.cloud.panopto.eu%2FPanopto%2FPages%2FViewer.aspx%3Fid%3D886deb5a-4e8c-4982-9dfb-acef00f5db72 (Accessed 15th May 2021). .-->
 <!-- DIRECT CODE.-->
     <script>
     switchSetting = () => {  // Toggle the theme
@@ -62,7 +62,9 @@
 
      document.getElementById("theSwitcher").addEventListener("change", switchSetting); // Get a reference to ID, add an event listener to it to change whenever the user determines. Run function that toggles the theme.
     </script>
-
+<!-- W3Schools (2021). Animated Sidenav Example. Available from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav (Accessed: 10th May 2021). -->
+<!-- Another method that was considered for the navigation bar was to create a horizontal navigation bar which, when clicked, scrolls to each section. This would have been just as effective
+however, the idea of the hidden menu (so the website is less busy) was more appealling and the muktiple colours fitted the theme of the webiste. -->
     <div id="mySidenav" class="sidenav"><!-- ID and Class for navigation bar -->
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- JavaScript for the close button. When it is clicked, the button closes. -->
       <a class="theslide" href="#section1">Slideshow</a><!-- Link to section 1 for the navigation bar -->
@@ -76,6 +78,7 @@
     </div>
     <span class="ham" style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776;</span><!-- JavaScript for the open button. When it is clicked, the opens closes. Size of the button is 50 pixels.-->
 
+<!-- W3Schools (2021). Animated Sidenav Example. Available from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav (Accessed: 10th May 2021). -->
     <script>
     function openNav() { // Toggles the navigation bar to open.
       document.getElementById("mySidenav").style.width = "250px"; // Gets the element by the ID used in the html with the width of the sidenav being 250 pixels.
@@ -97,7 +100,7 @@
         <!-- Coding for the animation for the videos -->
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
-          AOS.init();
+          AOS.init(); // runs aos
         </script>
   </section>
   <section id="section1">
@@ -125,23 +128,25 @@ listenBtn.addEventListener('click', (e) => { //Tells the browser to play the spe
   <section>
 <div id="slideshow" data-aos="fade-in" data-aos-duration="2000" class="container"></div>
 
+  <!-- W3Schools (2021) W3.CSS Slideshow. Available at: https://www.w3schools.com/w3css/w3css_slideshow.asp (Accessed 10th May 2021). -->
+  <!-- DIRECTLY COPIED CODE-->
   <script>
-var slideIndex = 1;
+var slideIndex = 1; // set slide index to 1
 //showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+function plusDivs(n) { // subtracts one or  adds one to the slideIndex.
+  showDivs(slideIndex += n); // displays the first image
 }
 
-function showDivs(n) {
+function showDivs(n) { // hides (display="none")
   var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
+  var x = document.getElementsByClassName("mySlides"); //all elements with the class name "mySlides"
+  if (n > x.length) {slideIndex = 1} // If slide index is higher than number of elements.
+  if (n < 1) {slideIndex = x.length} // if slide index is highter than number of elements it is set to 0.
+  for (i = 0; i < x.length; i++) { // If the slideIndex is less than 1 it is set to number of elements (x.length).
     x[i].style.display = "none";
   }
-  x[slideIndex-1].style.display = "block";
+  x[slideIndex-1].style.display = "block"; //displays block element with the given slide index.
 }
 </script>
 </section>
@@ -168,12 +173,16 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
     </script>
   </section>
   <section>
+    <!-- To create these columns and tables, there was another method that was considered to create this which was flexbox. The reason as to why
+  flexbox was considered was because it provides a convenient way to achieve a grid layout for the website. This was created and practiced with, however, it was found that the column method was
+easier to understand and could be altered accordingly with minimum confusion. -->
     <!-- Taken and altered from W3Schools (2021) CSS Image Gallery. Available from: https://www.w3schools.com/css/css_image_gallery.asp (Accessed: 1st March 2021) -->
     <div class="rowstuff"><!-- Class for the rows of the portfolio-->
       <div class="thecolumnstuff"><!-- Class for the columns of the portfolio-->
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+          <!--Hicks, W (2021) Unsplash. Available at: https://unsplash.com/photos/RarQDC4DpNE (Accessed 15th May 2021). -->
           <img class="myPhotosTwo" id="myphotos" src="images/Photo1.jpg" alt="Wes Hicks - Alta, WY, USA" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Wes Hicks</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Alta, WY, USA</p> <!-- Name of the location of the photos -->
@@ -186,6 +195,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Hoefler, D (2020) Unsplash. Available at: https://unsplash.com/photos/MW4PUyNwMfM (Accessed 15th May 2021). -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo2.jpg" alt="Dave Hoefler - Madison, WI, USA" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Dave Hoefler</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Madison, WI, USA</p><!-- Name of the location of the photos -->
@@ -198,6 +208,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Silivanova, L (2021) Unsplash. Available at: https://unsplash.com/photos/uzIqGHLWcks (Accessed 15th May 2021). -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo3.jpg" alt="Lina Silivanova - Chania, Greece" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Lina Silivanova</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Chania, Greece</p><!-- Name of the location of the photos -->
@@ -210,6 +221,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Palmowski (2021) Unsplash. Available at: https://unsplash.com/photos/-qLrtgyqPeI (Accessed 15th May 2021).  -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo4.jpg" alt="Mike Palmowski - Location: Unknown" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Mike Palmowski</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Location: Unknown</p><!-- Name of the location of the photos -->
@@ -222,6 +234,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+       <!--Fickeisen, B (2021) Unsplash. Available at: https://unsplash.com/photos/g31xUUbN_Go (Accessed 15th May 2021).  -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo5.jpg" alt="Brad Fickeisen - Dixie National Forest, Cedar City, United States" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Brad Fickeisen</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Dixie National Forest, Cedar City, United States</p> <!-- Name of the location of the photos -->
@@ -234,6 +247,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Guillard, O (2018) Pink Pelicans. Available at: https://unsplash.com/photos/U7gYTkyiqD0 (Accessed 15th May 2021)..  -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo6.jpg" alt="Olivier Guillard - Am Tierpark, Berlin, Germany" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Olivier Guillard</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Am Tierpark, Berlin, Germany</p> <!-- Name of the location of the photos -->
@@ -246,6 +260,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Fickeisen, B (2021) Unsplash. Available at: https://unsplash.com/photos/lB7oXUGgMP8 (Accessed 15th May 2021). -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo7.jpg" alt="Brad Fickeisen - Vermont, United States" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Brad Fickeisen</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Vermont, United States</p> <!-- Name of the location of the photos -->
@@ -258,6 +273,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Plank, Z (2021) Unsplash. Available at: https://unsplash.com/photos/3JJf6Tp8xAY (Accessed 15th May 2021).  -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo8.jpg" alt="Zach Plank - Virginia, USA" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Zach Plank</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Virginia, USA</p> <!-- Name of the location of the photos -->
@@ -270,6 +286,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Kozah, K (2021) Unsplash. Available at: https://unsplash.com/photos/Pv3QPi5yRjk (Accessed 15th May 2021). -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo9.jpg" alt="Kolya Korzh - Location: Unknown" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Kolya Korzh</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Location: Unknown</p> <!-- Name of the location of the photos -->
@@ -282,6 +299,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Adai, L (2021) Frost. Available at: https://unsplash.com/photos/UkqUEMb7GTA (Accessed 15th May 2021).  -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo10.jpg" alt="laura Adai - Frost" style="width:100%" ><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>laura Adai</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Frost</p><!-- Name of the location of the photos -->
@@ -294,6 +312,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Whitfield, J (2021) Frost. Available at: https://unsplash.com/photos/3KRYZnTyYmQ  (Accessed 15th May 2021).   -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo11.jpg" alt="Jordan Whitfield - Providence Canyon, Lumpkin, USA" style="width:100%"> <!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Jordan Whitfield</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Providence Canyon, Lumpkin, USA</p> <!-- Name of the location of the photos -->
@@ -306,6 +325,7 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Tengyart (2021) Vertical background with burning flames and sparks for the website, design and social media. Vertical background with a night fire and sparks close-up. Available at: https://unsplash.com/photos/X8DALn4RJaA  (Accessed 15th May 2021).    -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo12.jpg" alt="Tengyart - Russia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Tengyart</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Russia</p><!-- Name of the location of the photos -->
@@ -315,10 +335,10 @@ listenBtnNature.addEventListener('click', (e) => { //Tells the browser to play t
         </div>
       </div>
     </div>
-    <div id="themodal" class="modal themodalstuff ">
-    <img class="modalcontentstuff" id="img01">
-    <div id="thephototext"></div>
-    <span class="xbutton">&times;</span>
+    <div id="themodal" class="modal themodalstuff "><!-- The Modal -->
+    <img class="modalcontentstuff" id="img01"><!-- Modal Content (The Image) -->
+    <div id="thephototext"></div><!-- Modal Caption (Image Text) -->
+    <span class="xbutton">&times;</span><!-- The Close Button -->
   </div>
 </section>
 <section id="section3">
@@ -350,6 +370,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--larec, (2021) Unsplash. Available at: https://unsplash.com/photos/NEIkWUoghYI (Accessed 15th May 2021).   -->
           <img class="myPhotosTwo" id="myphotos" src="images/Photo13.jpg" alt="larec - Moscow, Россия" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>larec</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Moscow, Россия</p><!-- Name of the location of the photos -->
@@ -362,6 +383,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+ <!--Rezende, D (2019) Unsplash. Available at: https://unsplash.com/photos/rz7cau8dpx0  (Accessed 15th May 2021).   -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo14.jpg" alt="Davi Rezende - 31 Melinda St, Toronto, ON M5E 1H5, Canada" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Davi Rezende</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">31 Melinda St, Toronto, ON M5E 1H5, Canada</p><!-- Name of the location of the photos -->
@@ -374,6 +396,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Unsplash (no date) Unsplash. Available at: https://unsplash.com/photos/_26mgCUWn3A  (Accessed 15th May 2021).   -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo15.jpg" alt="Filippo Bortolotto - Sottomarina, Chioggia, VE, Italia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Filippo Bortolotto</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Sottomarina, Chioggia, VE, Italia</p><!-- Name of the location of the photos -->
@@ -386,6 +409,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Morales, A (2019) Unsplash. Available at: https://unsplash.com/photos/Sz4RucWOoAM (Accessed 15th May 2021).    -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo16.jpg" alt="Alfons Morales - Barcelona" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Alfons Morales</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Barcelona</p><!-- Name of the location of the photos -->
@@ -398,6 +422,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--T’Sas (2020) April 2020. Available at: https://unsplash.com/photos/Y_rImTjXAIE  (Accessed 15th May 2021).   -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo17.jpg" alt="Sacha T'Sas - Brussels, Belgium" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Sacha T'Sas</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Brussels, Belgium</p><!-- Name of the location of the photos -->
@@ -410,6 +435,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--alevision.co (2019) A historical, glass structure; museum, gallery. Available at: https://unsplash.com/photos/eDMQgYbKhiU (Accessed 15th May 2021).  -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo18.jpg" alt="alevision.co - Palacio de Cristal, Madrid, Spain" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>alevision.co</h3> <!-- Name of Artists of photos -->
           <p class="Phototext">Palacio de Cristal, Madrid, Spain</p><!-- Name of the location of the photos -->
@@ -422,6 +448,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Wong, W (2018) Unsplash. Available at: https://unsplash.com/photos/xzqpkQsg04E (Accessed 15th May 2021). -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo19.jpg" alt="Warren Wong - Western University, London, Canada" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Warren Wong</h3><!-- Name of Artists of photos -->
           <p class="Phototext">Western University, London, Canada</p><!-- Name of the location of the photos -->
@@ -434,6 +461,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Tsaregorodtsev, I (2021) Anadara, Barangaroo bathing in sunset. Available at: https://unsplash.com/photos/PfkAGS1HLPE  (Accessed 15th May 2021). -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo20.jpg" alt="Ivan Tsaregorodtsev - Barangaroo, Barangaroo, Australia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Ivan Tsaregorodtsev</h3><!-- Name of Artists of photos -->
           <p class="Phototext">Barangaroo, Barangaroo, Australia</p><!-- Name of the location of the photos -->
@@ -446,6 +474,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Merad, I (2021) Dubai Burj Khalifa Skyline. Available at: https://unsplash.com/photos/esgGaHjf3VY  (Accessed 15th May 2021). -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo21.jpg" alt="Ismail Merad - Dubai - United Arab Emirates" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Ismail Merad</h3><!-- Name of Artists of photos -->
           <p class="Phototext">Dubai - United Arab Emirates</p><!-- Name of the location of the photos -->
@@ -458,6 +487,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Veen, A (2019) High Rise Utrecht. Available at: https://unsplash.com/photos/mbtm_sstPUc  (Accessed 15th May 2021).  -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo22.jpg" alt="Ayelt van Veen - High Rise Utrecht" style="width:100%" ><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Ayelt van Veen</h3><!-- Name of Artists of photos -->
           <p class="Phototext">High Rise Utrecht</p><!-- Name of the location of the photos -->
@@ -470,6 +500,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Wisser, O. (2019) Unsplash. Available at: https://unsplash.com/photos/IV1j85jam2A (Accessed 15th May 2021).   -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo23.jpg" alt="olaf wisser - Bordeaux, France" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>olaf wisser</h3><!-- Name of Artists of photos -->
           <p class="Phototext">Bordeaux, France</p><!-- Name of the location of the photos -->
@@ -482,6 +513,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
           <!-- Class for the content of the photos -->
         <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Yuhao, P (2021) Did you believe this is actually an airport? Available at: https://unsplash.com/photos/EjvaknMYDDs   (Accessed 15th May 2021).   -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo24.jpg" alt="Pang Yuhao - Jewel Changi, Singapore" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
           <h3>Pang Yuhao</h3><!-- Name of Artists of photos -->
           <p class="Phototext">Jewel Changi, Singapore</p><!-- Name of the location of the photos -->
@@ -491,10 +523,10 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
         </div>
       </div>
     </div>
-    <div id="themodal" class="modal themodalstuff ">
-    <img class="modalcontentstuff" id="img01">
-    <div id="thephototext"></div>
-    <span class="xbutton">&times;</span>
+    <div id="themodal" class="modal themodalstuff "><!-- The Modal -->
+    <img class="modalcontentstuff" id="img01"> <!-- Modal Content (The Image) -->
+    <div id="thephototext"></div>  <!-- Modal Caption (Image Text) -->
+    <span class="xbutton">&times;</span>  <!-- The Close Button -->
   </div>
 </section>
 <section id="section4">
@@ -526,6 +558,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Skarstein, E (2021) Unsplash. Available at: https://unsplash.com/photos/TeeSdbW058I (Accessed 15th May 2021).  -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo25.jpg" alt="Eirik Skarstein - Hanoi, Vietnam" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
 <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <h3>Eirik Skarstein</h3><!-- Name of Artists of photos -->
@@ -539,6 +572,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Pn, C (2021) Unsplash. Available at: https://unsplash.com/photos/H1GtkEUdPwY  (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo26.jpg" alt="Charly Pn - Bordeaux, France" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Charly Pn</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Bordeaux, France</p><!-- Name of the location of the photos -->
@@ -551,6 +585,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Lawrence, J (2021) Unsplash. Available at: https://unsplash.com/photos/KVDx8dHyxXA (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo27.jpg" alt="Joshua Lawrence - Location: Unknown" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Joshua Lawrence</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Location: Unknown</p><!-- Name of the location of the photos -->
@@ -563,6 +598,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Wong, C (2021) Mong Kok at night. Available at: https://unsplash.com/photos/7z_TmCWC5C0 (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo28.jpg" alt="Chi Hung Wong - Mong Kok, 香港" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Chi Hung Wong</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Mong Kok, 香港</p><!-- Name of the location of the photos -->
@@ -575,6 +611,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Chouette, L (2020) Unsplash. Available at: https://unsplash.com/photos/l4V9IhMTM0Q  (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo29.jpg" alt="Laura Chouette - London, Vereinigtes Königreich" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Laura Chouette</h3><!-- Name of Artists of photos -->
         <p class="Phototext">London, Vereinigtes Königreich</p><!-- Name of the location of the photos -->
@@ -587,6 +624,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Cutler, D (2021) Don't Trip, its not real. Available at: https://unsplash.com/photos/WsBtj3RL0fs (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo30.jpg" alt="Dan Cutler - Orlando, FL, USA" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Dan Cutler</h3> <!-- Name of Artists of photos -->
         <p class="Phototext">Orlando, FL, USA</p><!-- Name of the location of the photos -->
@@ -599,6 +637,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Wicaksono, I (2021) Unsplash. Available at: https://unsplash.com/photos/1lDEwtNYoGA  (Accessed 15th May 2021).  -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo31.jpg" alt="ichsan wicaksono - Splindit Malang, Kauman, Kota Malang, Jawa Timur, Indonesia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>ichsan wicaksono</h3> <!-- Name of Artists of photos -->
         <p class="Phototext">Splindit Malang, Kauman, Kota Malang, Jawa Timur, Indonesia</p><!-- Name of the location of the photos -->
@@ -611,6 +650,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Nural, H. (2021) Unsplash. Available at: https://unsplash.com/photos/UWKzfVAVADU  (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo32.jpg" alt="Hakan Nural - Ikebukuro, Toshima City, Tokyo, Japan" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Hakan Nural</h3> <!-- Name of Artists of photos -->
         <p class="Phototext">Ikebukuro, Toshima City, Tokyo, Japan</p><!-- Name of the location of the photos -->
@@ -623,6 +663,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--P.Y.L (2021) a person with a red umbrella standing between the grey pillars. Available at: https://unsplash.com/photos/PPDTiBptMGY (Accessed 15th May 2021).    -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo33.jpg" alt="P.Y. L. - San Francisco, CA, USA" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>P.Y. L.</h3> <!-- Name of Artists of photos -->
         <p class="Phototext">San Francisco, CA, USA</p><!-- Name of the location of the photos -->
@@ -635,6 +676,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Deshpandey, S (2020) Wall art, Graffiti wall art. Available at: https://unsplash.com/photos/szPgz3mcGVs (Accessed 15th May 2021).  -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo34.jpg" alt="Swapnil Deshpandey - Connaught Place, New Delhi, Delhi, India" style="width:100%" ><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Swapnil Deshpandey</h3> <!-- Name of Artists of photos -->
         <p class="Phototext">Connaught Place, New Delhi, Delhi, India</p><!-- Name of the location of the photos -->
@@ -647,6 +689,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Nelson, B (2018) While visiting San Francisco, i thought an aerial view of this crazy street would look cool. Turned out to be an awesome shot! Available from: https://unsplash.com/photos/2smDZopBMso (Accessed: 14th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo35.jpg" alt="Brandon Nelson - Lombard Street, San Francisco, United States" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Brandon Nelson</h3> <!-- Name of Artists of photos -->
         <p class="Phototext">Lombard Street, San Francisco, United States</p><!-- Name of the location of the photos -->
@@ -659,6 +702,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Ergunt, B (2021) Unsplash. Available at: https://unsplash.com/photos/wDhve7p-Lao (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo36.jpg" alt="Burçin Ergünt - London, UK" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Burçin Ergünt</h3><!-- Name of Artists of photos -->
         <p class="Phototext">London, UK</p><!-- Name of the location of the photos -->
@@ -668,10 +712,10 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       </div>
     </div>
   </div>
-  <div id="themodal" class="modal themodalstuff ">
-  <img class="modalcontentstuff" id="img01">
-  <div id="thephototext"></div>
-  <span class="xbutton">&times;</span>
+  <div id="themodal" class="modal themodalstuff "><!-- The Modal -->
+  <img class="modalcontentstuff" id="img01"><!-- Modal Content (The Image) -->
+  <div id="thephototext"></div><!-- Modal Caption (Image Text) -->
+  <span class="xbutton">&times;</span> <!-- The Close Button -->
 </div>
 </section>
 <section id="section5">
@@ -703,6 +747,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Ghiasvand, S (2021) Unsplash. Available at: https://unsplash.com/photos/_wR-ovLx7Os (Accessed 15th May 2021).  -->
         <img class="myPhotosTwo" id="myphotos" src="images/Photo37.jpg" alt="Shayan Ghiasvand - Azadi Square, Tehran, Iran" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Shayan Ghiasvand</h3> <!-- Name of Artists of photos -->
         <p class="Phototext">Azadi Square, Tehran, Iran</p><!-- Name of the location of the photos -->
@@ -715,6 +760,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Minimal, S (2017) Part of Santiago Calatrava’s Athens Stadium Renovation in Black & White against a clear sky in Greece. Available at: https://unsplash.com/photos/uGkII7S8b6k  (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo38.jpg" alt="Sensei Minimal - ΟΑΚΑ, Marousi, Greece" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Sensei Minimal</h3><!-- Name of Artists of photos -->
         <p class="Phototext">ΟΑΚΑ, Marousi, Greece</p><!-- Name of the location of the photos -->
@@ -727,6 +773,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Okon, M. (2021) Unsplash. Available at: https://unsplash.com/photos/P3eXSibgP0g (Accessed 15th May 2021).  -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo39.jpg" alt="Marek Okon - Shinjuku, Tokyo, Japan" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Marek Okon</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Shinjuku, Tokyo, Japan</p><!-- Name of the location of the photos -->
@@ -739,6 +786,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Moncasi, J (2020) Unsplash. Available at: https://unsplash.com/photos/_15GbZt4fRk  (Accessed 15th May 2021). -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo40.jpg" alt="Jordi Moncasi - Madrid, España" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Jordi Moncasi</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Madrid, España</p><!-- Name of the location of the photos -->
@@ -751,6 +799,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Shilin, R. (2021) Unsplash. Available at: https://unsplash.com/photos/tz5nQprs4L4  (Accessed 15th May 2021).  -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo41.jpg" alt="Roman Shilin - Bali, Indonesia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Roman Shilin</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Bali, Indonesia</p><!-- Name of the location of the photos -->
@@ -763,6 +812,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Serena, M (2021) Unsplash. Available at: https://unsplash.com/photos/qYQfjohOBeI  (Accessed 15th May 2021).  -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo42.jpg" alt="Malena Gonzalez Serena - Palermo, Buenos Aires, Argentina" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3 class="adjustedtext">Malena Gonzalez Serena</h3> <!-- Name of Artists of photos -->
         <p class="Phototext">Palermo, Buenos Aires, Argentina</p><!-- Name of the location of the photos -->
@@ -775,6 +825,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--White, S (2021) Inlet 3. Available at: https://unsplash.com/photos/br33X9mYv_g (Accessed 15th May 2021). -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo43.jpg" alt="Saxon White - Batemans Bay NSW, Australia" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Saxon White</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Batemans Bay NSW, Australia</p><!-- Name of the location of the photos -->
@@ -787,6 +838,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--ISLA BOY X. (2020) _aqua di vid. Available at: https://unsplash.com/photos/JUgRA3QBS4A  (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo44.jpg" alt="ISLA BOY X - Puerto Peñasco, Sonora, Mexico" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>ISLA BOY X</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Puerto Peñasco, Sonora, Mexico</p><!-- Name of the location of the photos -->
@@ -799,6 +851,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Kikuno, R (2021) Unsplash. Available at: https://unsplash.com/photos/pxV_OzetYX4  (Accessed 15th May 2021).  -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo45.jpg" alt="Ryunosuke Kikuno - calgary" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Ryunosuke Kikuno</h3><!-- Name of Artists of photos -->
         <p class="Phototext">calgary</p><!-- Name of the location of the photos -->
@@ -811,6 +864,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Werbrouck, D (2021) Somewhere in Lyon, France. Available at: https://unsplash.com/photos/mMiQ3qMSZIE (Accessed 15th May 2021).    -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo46.jpg" alt="David Werbrouck - Lyon, France" style="width:100%" ><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>David Werbrouck</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Lyon, France</p><!-- Name of the location of the photos -->
@@ -823,6 +877,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Webb, S (2016) Unsplash. Available at: https://unsplash.com/photos/A-7Y4M0-e0M  (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo47.jpg" alt="Scott Webb - Ryerson Students' Union, Toronto, Canada" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Scott Webb</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Ryerson Students' Union, Toronto, Canada</p> <!-- Name of the location of the photos -->
@@ -835,6 +890,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       <!-- Taken from michalsnik (2018) aos. Available from: https://github.com/michalsnik/aos#animations (Accessed: 1st March 2021) -->
         <!-- Class for the content of the photos -->
       <div class="photocontent" data-aos="fade-up" data-aos-duration="2000"><!-- Fade up for the animation of the photos as well as a 2 seconds duration -->
+<!--Jnr, T (2018) Unsplash. Available at: https://unsplash.com/photos/WAooZds_LrI (Accessed 15th May 2021).   -->
       <img class="myPhotosTwo" id="myphotos" src="images/Photo48.jpg" alt="Tadeu Jnr - Feira da Banana, Brazil" style="width:100%"><!-- Importing Images as well as full width of image. "alt" attribite is used for modal to show name of photo -->
         <h3>Tadeu Jnr</h3><!-- Name of Artists of photos -->
         <p class="Phototext">Feira da Banana, Brazil</p><!-- Name of the location of the photos -->
@@ -844,10 +900,13 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       </div>
     </div>
   </div>
-  <div id="themodal" class="modal themodalstuff ">
-  <img class="modalcontentstuff" id="img01">
-  <div id="thephototext"></div>
-  <span class="xbutton">&times;</span>
+
+  <!-- W3Schools (2021). How TO - Modal Images. Available from: https://www.w3schools.com/howto/howto_css_modal_images.asp (Accessed: 14th May 2021). -->
+  <!-- DIRECTLY COPIED CODE -->
+  <div id="themodal" class="modal themodalstuff "> <!-- The Modal -->
+  <img class="modalcontentstuff" id="img01">  <!-- Modal Content (The Image) -->
+  <div id="thephototext"></div> <!-- Modal Caption (Image Text) -->
+  <span class="xbutton">&times;</span>   <!-- The Close Button -->
 </div>
 </section>
 <section id="section6">
@@ -872,72 +931,73 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
 });
   </script>
 </section>
-<section class="accompanyingtext">
-  <p data-aos="fade-up" data-aos-duration="1000" style="font-size:3vw;" align="center">Listen To Some Calming Music To Relax Those Nerves</p>
+<section class="accompanyingtext"> <!-- class for this section -->
+  <p data-aos="fade-up" data-aos-duration="1000" style="font-size:3vw;" align="center">Listen To Some Calming Music To Relax Those Nerves</p><!-- html for subheading for the section-->
 </section>
 <section>
-  <div data-aos="fade-right" data-aos-duration="3000" class="audio">
-  <img id="myImage" src="images/button.png" alt="play button" style="width:20%" "height:20%">
+  <div data-aos="fade-right" data-aos-duration="3000" class="audio"> <!-- container for the audio button -->
+  <img id="myImage" src="images/button.png" alt="play button" style="width:20%" "height:20%"><!-- Tyksiak (2021) Music Icon Music Notes Icon Audio Icon PNG. Available at: https://favpng.com/png_view/music-icon-music-notes-icon-audio-icon-png/sDv1S5uv (Accessed 15th May 2021).  -->
 </div>
 <audio id="myAudio">
-<source src="audio/sound1.ogg" type="audio/ogg">
-<source src="audio/sound1.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
+<source src="audio/sound1.ogg" type="audio/ogg"> <!--Meditate (2019) music 30 seconds,For relaxing. 27th Nov. Available at: https://www.youtube.com/watch?v=JPhsHalmwlQ  (Accessed 10th May 2021).  -->
+<source src="audio/sound1.mp3" type="audio/mpeg"> <!--Meditate (2019) music 30 seconds,For relaxing. 27th Nov. Available at: https://www.youtube.com/watch?v=JPhsHalmwlQ  (Accessed 10th May 2021).  -->
+Your browser does not support the audio element.<!-- If audio doesn't load -->
 </audio>
 <div data-aos="fade-left" data-aos-duration="3000" class="audio">
-<img id="myImages" src="images/button.png" alt="play button" style="width:20%" "height:20%">
+<img id="myImages" src="images/button.png" alt="play button" style="width:20%" "height:20%"><!-- Tyksiak (2021) Music Icon Music Notes Icon Audio Icon PNG. Available at: https://favpng.com/png_view/music-icon-music-notes-icon-audio-icon-png/sDv1S5uv (Accessed 15th May 2021).  -->
 </div>
 <audio id="myAudios">
-<source src="audio2/sound2.ogg" type="audio/ogg">
-<source src="audio2/sound2.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
+<source src="audio2/sound2.ogg" type="audio/ogg"><!-- Smart Earth Community (2020) 30 Seconds of Relaxing Sound. 27th Mar. Available at: https://www.youtube.com/watch?v=QNlQXx2Zg8A (Accessed 15th May 2021). -->
+<source src="audio2/sound2.mp3" type="audio/mpeg"><!-- Smart Earth Community (2020) 30 Seconds of Relaxing Sound. 27th Mar. Available at: https://www.youtube.com/watch?v=QNlQXx2Zg8A (Accessed 15th May 2021). -->
+Your browser does not support the audio element. <!-- If audio doesn't load -->
 </audio>
 </section>
 <script>
 
-var x = document.getElementById("myAudio");
-document.getElementById("myImage").addEventListener("click", playAudio);
-let isPlaying = false;
+var x = document.getElementById("myAudio"); //get audio element by id
+document.getElementById("myImage").addEventListener("click", playAudio); // function to play audio when clicked
+let isPlaying = false; // if its not true that the audio is playing.
 
-function playAudio(evt) {
-  let speakerImage = evt.target.parentNode;
+function playAudio(evt) { // function for the audio to play
+  let speakerImage = evt.target.parentNode;  // the image is the parent
   console.log('dd');
 
-    if (isPlaying) {
-      x.pause();
-      isPlaying = false;
-     document.getElementById("myImage").src = "images/button.png";
-      speakerImage.classList.remove("bouncing");
+    if (isPlaying) { // if the audio is paused
+      x.pause(); // function to run the pause button
+      isPlaying = false; //if audio isn't playing
+      // finds the pause button.
+     document.getElementById("myImage").src = "images/button.png"; // Pngfind (2019) Play Button Png Image - Circle, Transparent Png. Available at: https://www.pngfind.com/mpng/iTbobo_play-button-png-image-circle-transparent-png/ (Accessed 15th May 2021).
+      speakerImage.classList.remove("bouncing"); // no bounce animation on image
 }
-       else  {
-        x.play();
-        document.getElementById("myImage").src = "images/pausebutton.png";
-        isPlaying = true;
-         speakerImage.classList.add("bouncing");
+       else  { //or
+        x.play(); // when audio is played
+        document.getElementById("myImage").src = "images/pausebutton.png"; //Pikpng (2019) Png File Svg - Pause Button Icon Png Clipart. Available at: https://www.pikpng.com/pngvi/TmiJTi_png-file-svg-pause-button-icon-png-clipart/  (Accessed 15th May 2021).
+        isPlaying = true; //the audio is playing
+         speakerImage.classList.add("bouncing"); // therefore the animation will bounce.
        }
 }
 </script>
 <script>
 
-var x = document.getElementById("myAudios");
-document.getElementById("myImages").addEventListener("click", playAudios);
-let isPlaying1 = false;
+var x = document.getElementById("myAudios");//get audio element by id
+document.getElementById("myImages").addEventListener("click", playAudios);// function to play audio when clicked
+let isPlaying1 = false; // if its not true that the audio is playing.
 
-function playAudios(evt) {
-  let speakerImage = evt.target.parentNode;
+function playAudios(evt) { // function for the audio to play
+  let speakerImage = evt.target.parentNode; // the image is the parent
   console.log('dd');
 
-    if (isPlaying1) {
-      x.pause();
-      isPlaying1 = false;
-     document.getElementById("myImages").src = "images/button.png";
-      speakerImage.classList.remove("bouncing");
+    if (isPlaying1) {// if the audio is paused
+      x.pause(); // function to run the pause button
+      isPlaying1 = false; //if audio isn't playing
+     document.getElementById("myImages").src = "images/button.png"; //Pngfind (2019) Play Button Png Image - Circle, Transparent Png. Available at: https://www.pngfind.com/mpng/iTbobo_play-button-png-image-circle-transparent-png/ (Accessed 15th May 2021).
+      speakerImage.classList.remove("bouncing"); // no bounce animation on image
 }
-       else  {
-        x.play();
-        document.getElementById("myImages").src = "images/pausebutton.png";
-        isPlaying1 = true;
-         speakerImage.classList.add("bouncing");
+       else  { //or
+        x.play(); // when audio is played
+        document.getElementById("myImages").src = "images/pausebutton.png"; //Pikpng (2019) Png File Svg - Pause Button Icon Png Clipart. Available at: https://www.pikpng.com/pngvi/TmiJTi_png-file-svg-pause-button-icon-png-clipart/  (Accessed 15th May 2021).
+        isPlaying1 = true; //the audio is playing
+         speakerImage.classList.add("bouncing"); // therefore the animation will bounce.
        }
 }
 </script>
@@ -963,36 +1023,39 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
 });
   </script>
 </section>
-<section class="accompanyingtext">
-  <p data-aos="fade-up" data-aos-duration="1000" style="font-size:5vw;" align="center">Photography<u><b>Quiz</b></u> - Test Your <u><b>Memory</b></u></p>
-  <p data-aos="fade-up" data-aos-duration="1000" style="font-size:3vw;" align="center">Now, lets see what you've learnt!</p>
+<section class="accompanyingtext"> <!-- Class for section -->
+  <p data-aos="fade-up" data-aos-duration="1000" style="font-size:5vw;" align="center">Photography<u><b>Quiz</b></u> - Test Your <u><b>Memory</b></u></p> <!-- Html for heading of quiz, bold so everyone can see it easily as well as underlined to show importance. -->
+  <p data-aos="fade-up" data-aos-duration="1000" style="font-size:3vw;" align="center">Now, lets see what you've learnt!</p><!-- Html for subheading of quiz. Put in the centre to catch the users eye. -->
 </section>
+<!-- Solygambas (no date) Quiz App. Available at: https://codepen.io/solygambas/details/PoGvZEW (Accessed 10th May 2021). -->
 <section class="one">
   <div data-aos="fade-up" data-aos-duration="3000" class="quizcontainer" id="quiz">
+    <!-- DIRECTLY COPIED CODE -->
     <div class="quizrectangle">
-      <h5 id="question">Question is loading...</h5>
+      <h5 id="question">Question is loading...</h5> <!-- Heading to show that the question is loading -->
       <ul>
         <li>
-          <input type="radio" name="answer" id="a" class="answer" />
-          <label for="a" id="a_text">Answer...</label>
+          <input type="radio" name="answer" id="a" class="answer" /><!-- html for radio buttons with class names to edit it -->
+          <label for="a" id="a_text">Answer...</label><!-- html for answer option to go with the radio button with class names to edit it -->
         </li>
         <li>
-          <input type="radio" name="answer" id="b" class="answer" />
-          <label for="b" id="b_text">Answer...</label>
+          <input type="radio" name="answer" id="b" class="answer" /><!-- html for radio buttons with class names to edit it -->
+          <label for="b" id="b_text">Answer...</label><!-- html for answer option to go with the radio button with class names to edit it -->
         </li>
         <li>
-          <input type="radio" name="answer" id="c" class="answer" />
-          <label for="c" id="c_text">Answer...</label>
+          <input type="radio" name="answer" id="c" class="answer" /><!-- html for radio buttons with class names to edit it -->
+          <label for="c" id="c_text">Answer...</label><!-- html for answer option to go with the radio button with class names to edit it -->
         </li>
         <li>
-          <input type="radio" name="answer" id="d" class="answer" />
-          <label for="d" id="d_text">Answer...</label>
+          <input type="radio" name="answer" id="d" class="answer" /><!-- html for radio buttons with class names to edit it -->
+          <label for="d" id="d_text">Answer...</label><!-- html for answer option to go with the radio button with class names to edit it -->
         </li>
       </ul>
     </div>
-    <button class="quizbutton" id="submit">Submit</button>
+    <button class="quizbutton" id="submit">Submit</button><!-- html for submit buttons with class names to edit it -->
   </div>
 </section>
+<!-- Solygambas (no date) Quiz App. Available at: https://codepen.io/solygambas/details/PoGvZEW (Accessed 10th May 2021). -->
 <script>
 const quizData = [
 {
@@ -1029,52 +1092,59 @@ correct: "c", // This tells the browser what the correct question for the quiz.
 },
 ];
 
-const quiz = document.getElementById("quiz");
-const answerElements = document.querySelectorAll(".answer");
-const questionElement = document.getElementById("question");
-const a_text = document.getElementById("a_text");
-const b_text = document.getElementById("b_text");
-const c_text = document.getElementById("c_text");
-const d_text = document.getElementById("d_text");
-const submitButton = document.getElementById("submit");
+// Solygambas (no date) Quiz App. Available at: https://codepen.io/solygambas/details/PoGvZEW (Accessed 10th May 2021).
+const quiz = document.getElementById("quiz"); // Element for the whole quiz.
+const answerElements = document.querySelectorAll(".answer"); // grabs all the radio buttons.
+const questionElement = document.getElementById("question"); // Where the question gets written.
+const a_text = document.getElementById("a_text"); // This is an element for the options of answers.
+const b_text = document.getElementById("b_text"); // This is an element for the options of answers.
+const c_text = document.getElementById("c_text"); // This is an element for the options of answers.
+const d_text = document.getElementById("d_text"); // This is an element for the options of answers.
+const submitButton = document.getElementById("submit"); // Element for the submit button.
 
+// Solygambas (no date) Quiz App. Available at: https://codepen.io/solygambas/details/PoGvZEW (Accessed 10th May 2021).
 let currentQuiz = 0;
 let score = 0;
 
-const deselectAnswers = () => {
-answerElements.forEach((answer) => (answer.checked = false));
+// Solygambas (no date) Quiz App. Available at: https://codepen.io/solygambas/details/PoGvZEW (Accessed 10th May 2021).
+const deselectAnswers = () => { // This checks and unchecks the answers.
+answerElements.forEach((answer) => (answer.checked = false)); // this applies to each answer.
 };
 
-const getSelected = () => {
-let answer;
-answerElements.forEach((answerElement) => {
-if (answerElement.checked) answer = answerElement.id;
+// Solygambas (no date) Quiz App. Available at: https://codepen.io/solygambas/details/PoGvZEW (Accessed 10th May 2021).
+const getSelected = () => { // Goes through all the radio buttons
+let answer; // creates a blank variable.
+answerElements.forEach((answerElement) => { // this goes through each one and when it finds the one that is checked,
+if (answerElement.checked) answer = answerElement.id; // it sets that answer variable to the value of the id that is being checked.
 });
-return answer;
+return answer; // sends it back.
 };
 
-const loadQuiz = () => {
-deselectAnswers();
-const currentQuizData = quizData[currentQuiz];
-questionElement.innerText = currentQuizData.question;
-a_text.innerText = currentQuizData.a;
-b_text.innerText = currentQuizData.b;
-c_text.innerText = currentQuizData.c;
-d_text.innerText = currentQuizData.d;
+// Solygambas (no date) Quiz App. Available at: https://codepen.io/solygambas/details/PoGvZEW (Accessed 10th May 2021).
+const loadQuiz = () => { // function for loading quiz.
+deselectAnswers(); // deselects any selected answers using the fuction on the line prior.
+const currentQuizData = quizData[currentQuiz]; // data for the current question.
+questionElement.innerText = currentQuizData.question; // question property for what has been grabbed.
+a_text.innerText = currentQuizData.a; // text name followed by answers. Grabs the object and puts it in the screen in the correct place.
+b_text.innerText = currentQuizData.b; // text name followed by answers. Grabs the object and puts it in the screen in the correct place.
+c_text.innerText = currentQuizData.c; // text name followed by answers. Grabs the object and puts it in the screen in the correct place.
+d_text.innerText = currentQuizData.d; // text name followed by answers. Grabs the object and puts it in the screen in the correct place.
 };
 
-loadQuiz();
+// Solygambas (no date) Quiz App. Available at: https://codepen.io/solygambas/details/PoGvZEW (Accessed 10th May 2021).
+loadQuiz(); // Runs and loads the first question
 
-submitButton.addEventListener("click", () => {
-const answer = getSelected();
+// Solygambas (no date) Quiz App. Available at: https://codepen.io/solygambas/details/PoGvZEW (Accessed 10th May 2021).
+submitButton.addEventListener("click", () => { //
+const answer = getSelected(); // Checks what has been selected.
 if (answer) {
-if (answer === quizData[currentQuiz].correct) score++;
-currentQuiz++;
-if (currentQuiz < quizData.length) loadQuiz();
-else {
+if (answer === quizData[currentQuiz].correct) score++; // Checks what the score is at the end
+currentQuiz++; // Gets to score a point.
+if (currentQuiz < quizData.length) loadQuiz();// if you didn't get to the end it loads the quiz again.
+else { // If user has reached the end.
   quiz.innerHTML = `
-        <h6>Congratulations! You answered ${score}/${quizData.length} questions correctly. Well Done!!!</h6>
-        <button class="quizrestart" onclick="history.go(0)">RESTART</button>
+        <h6>Congratulations! You answered ${score}/${quizData.length} questions correctly. Well Done!!!</h6> <!-- This explains the score that has been given-->
+        <button class="quizrestart" onclick="history.go(0)">RESTART</button><!-- This restarts the quiz after completion.-->
     `
 }
 }
@@ -1121,7 +1191,7 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
       </video>
     </div>
     <div class="video-slide"><!-- Class for video slides-->
-      <video width="100%" controls poster=""><!-- Links to poster with a width of 100% which will fill up the width from the video. -->
+      <video width="100%" controls poster="images/Logo.jpg"><!-- Links to poster with a width of 100% which will fill up the width from the video. -->
         <!-- MV, A (2020) 30 seconds of relaxation | 30 seconds of relaxing music | 30 seconds of relaxing video. 9th May. Available from: https://www.youtube.com/watch?v=2R09tQxheSQ (Accessed: 5th May 2021). -->
           <source src="videos/Video2.mp4" type="video/mp4" /> <!-- MP4 video link to video used -->
             <source src="videos/Video2.webm" type="video/webm" /> <!-- Webm video link to video used -->
@@ -1131,43 +1201,48 @@ window.speechSynthesis.speak(msg); //Tells the browser to run this function
     </div>
   </a>
 
-
+<!--Kolev, N (no date) Video Slider. Available at: https://codepen.io/nickisix/pen/qBbzpRy (Accessed 10th May 2021). -->
+<!--DIRECTLY COPIED CODE -->
   <button class="video-slider-btn left-side" onclick="plusDiv(-1)">&#10094;</button> <!-- Video arrow and its code (left one) with instructions to the browser when clicked on -->
   <button class="video-slider-btn right-side" onclick="plusDiv(1)">&#10095;</button> <!-- Video arrow and its code (right one) with instructions to the browser when clicked on -->
 </div>
 </section>
 
+<!--Kolev, N (no date) Video Slider. Available at: https://codepen.io/nickisix/pen/qBbzpRy (Accessed 10th May 2021). -->
+<!--DIRECTLY COPIED CODE -->
 <script>
-var slideSomething = 1;
-showDiv(slideSomething);
 
-function plusDiv(n) {
-  showDiv(slideSomething += n);
+var slideSomething = 1; //starts slide from the first slide
+showDiv(slideSomething); // function to show slide
+
+function plusDiv(n) { // add div
+  showDiv(slideSomething += n); // takes element from line prior and adds it.
 }
 
-function showDiv(n) {
+function showDiv(n) { // function to show videos
   var i,
-      x = document.getElementsByClassName("video-slide"),
-      y = document.getElementsByTagName("video");
+      x = document.getElementsByClassName("video-slide"), // shows styling by getting element from class name
+      y = document.getElementsByTagName("video"); // shows videos by getting element from class name
 
-  if (n > x.length) {
-    slideSomething = 1
+  if (n > x.length) { // if slide is a certain length
+    slideSomething = 1 //slide will show the first video
   }
 
-  if (n < 1) {
-    slideSomething = x.length
+  if (n < 1) { //if one if greater than n
+    slideSomething = x.length //the slideshow till show the second slideshow
   }
 
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-    y[i].pause();
+  for (i = 0; i < x.length; i++) { // for the length of the slideshow.
+    x[i].style.display = "none"; // this shows the default display for the slideshow
+    y[i].pause(); //this is the javascript for the pause button for the video
   }
 
-  x[slideSomething-1].style.display = "block";
+  x[slideSomething-1].style.display = "block"; // default display for videos.
 
 }
 </script>
   <!-- Taken and altered from snowmonkey (2017) Several Modal Images on page. Available from: https://stackoverflow.com/questions/47798971/several-modal-images-on-page (Accessed: 8th March 2021) -->
+<!-- Directly copied code-->
   <script>
       // this references the modal.
     var modal = document.getElementById('themodal');
@@ -1178,30 +1253,32 @@ function showDiv(n) {
     // this gets the "alt" caption in the modal
     var captionText = document.getElementById("thephototext");
 
-    // Go through images with  custom class
-    for (var i = 0; i < images.length; i++) {
+
+    for (var i = 0; i < images.length; i++) { // Go through images with  custom class
     var img = images[i];
     // attaches click listener for the image
     img.onclick = function(evt) {
-      modal.style.display = "block";
-      modalImg.src = this.src;
-      captionText.innerHTML = this.alt;
+      modal.style.display = "block"; //displays the modal as a block element.
+      modalImg.src = this.src; // connecting the image and the alt attribute.
+      captionText.innerHTML = this.alt; // uses the alt attribute as the text that shows on the image
     }
     }
-    // variable for "x" button.
-    var span = document.getElementsByClassName("xbutton")[0];
+    var span = document.getElementsByClassName("xbutton")[0]; // variable for "x" button.
 
-    span.onclick = function() {
-    modal.style.display = "none";
+    span.onclick = function() { // When the modal is clicked,
+    modal.style.display = "none"; // the modal is displayed with the default display.
     }
       </script>
+
+
+ <!-- Taught by Thom Corah -->
       <script>
-        toggleText = () => {
-          document.getElementById("thephototext").classList.toggle("show");
+        toggleText = () => { // function to toggle the text
+          document.getElementById("thephototext").classList.toggle("show"); // this then shows the text.
         };
         document
-          .getElementById("thephototext")
-          .addEventListener("click", toggleText);
+          .getElementById("thephototext") // grabs the element by the id
+          .addEventListener("click", toggleText); // tells the browser that on click, the text toggles.
       </script>
   <script>
   // Taught by Thom Corah.
@@ -1210,38 +1287,39 @@ function showDiv(n) {
 "Photo20", "Photo21", "Photo22", "Photo23", "Photo24", "Photo25", "Photo26", "Photo27", "Photo28", "Photo29", "Photo30", "Photo31", "Photo32", "Photo33", "Photo34", "Photo35", "Photo36", "Photo37", "Photo38", "Photo39",
 "Photo40", "Photo41", "Photo42", "Photo43", "Photo44", "Photo45", "Photo46", "Photo47", "Photo48" ]; //Created an array of each of the photo names which will also be used for the names of data that will be stored in the browser
 
-  photosSortingFunction = (a, b) => {
-    if(a.likeCount < b.likeCount){
-      return 1;
+// Given two items. If the like count of a is smaller than b:
+  photosSortingFunction = (a, b) => { // Pairs. Is one greater than the other. Takes it out in a list and compares each pair.
+    if(a.likeCount < b.likeCount){ // Takes it out in a list and compares each pair
+      return 1; //Switches round if its not in the correct order.
     }
-    return -1;
+    return -1; //Switches round if its not in the correct order (do the opposite)
   }
 
   sortOutSlideshow = () => {
-    let likeList = [];
-    for(let i = 0; i < photos.length; i++){
-      let thisPhotoLikeCount = localStorage.getItem(photos[i] + "LikeCount");
-      let thisPhoto = {photoName: photos[i], likeCount: thisPhotoLikeCount};
-      likeList.push(thisPhoto);
+    let likeList = []; // Create an empty array. Goes through each photo and finds out from the local storage how many likes it has. Creates an object woth name of photo and number of likes and saves it to a new array.
+    for(let i = 0; i < photos.length; i++){ // As long as i is less than 0. This goes through each photo in the array with the name of every photo.
+      let thisPhotoLikeCount = localStorage.getItem(photos[i] + "LikeCount"); // Uses the name of the photo interested. Gets information by looking at array and position i.
+      let thisPhoto = {photoName: photos[i], likeCount: thisPhotoLikeCount}; // creates a new object. Name of the photo, number of likes.
+      likeList.push(thisPhoto); // adds the previous line to the array that was created (Let likeList).
     }
-    likeList.sort(photosSortingFunction);
+    likeList.sort(photosSortingFunction); // Adding a function to sort.
 
     console.log(likeList);
 
-    let html = "";
-    for(let i = 0; i < 4; i++){
-      let thisPhoto = likeList[i];
-      html += "<img class='mySlides' src='images/" + thisPhoto.photoName + ".jpg' style='width:100%'>";
+    let html = ""; // created a variable which is an empty string.
+    for(let i = 0; i < 4; i++){ // loop that goes around four times.
+      let thisPhoto = likeList[i]; // Plucks out the most likes and adds a bit of text in the html variable.
+      html += "<img class='mySlides' src='images/" + thisPhoto.photoName + ".jpg' style='width:100%'>"; // Adds an image element with the name of the photo. Creates image element and adds it to a string of html.
     }
-    html += '<button class="left edit" data-aos="slide-right" data-aos-duration="1000" onclick="plusDivs(-1)">&#10094;</button><button class="right edits" data-aos="slide-left" data-aos-duration="1000" onclick="plusDivs(1)">&#10095;</button>';
-    document.getElementById('slideshow').innerHTML = html;
-    showDivs(slideIndex)
+    html += '<button class="left edit" data-aos="slide-right" data-aos-duration="1000" onclick="plusDivs(-1)">&#10094;</button><button class="right edits" data-aos="slide-left" data-aos-duration="1000" onclick="plusDivs(1)">&#10095;</button>'; // Adds buttons for navigating.
+    document.getElementById('slideshow').innerHTML = html; // Gets the slideshow element and puts some html into it.
+    showDivs(slideIndex) // Runs the slideshow with the show divs function.
     //console.log(html);
 
   }
 // Taught by Thom Corah.
 // DIRECT CODE.
-  sortOutSlideshow();
+  sortOutSlideshow(); // when the page loads, it will run this.
 // Everytime someone taps on a like button, it runs the following function.
   toggleLike = (evt) => { // Get run whenever any like button is clicked.
     console.log(evt.target); // Shows in the browser what is being clicked on.
