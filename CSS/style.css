@@ -1,0 +1,223 @@
+
+
+/* Taken from W3docs (no date) How to Create an Overlay Using CSS. Available at: https://www.w3docs.com/snippets/css/how-to-create-an-overlay-using-css.html (Accessed: 7 February 2023). */
+/* Adds an overlay to the background image */
+body:after { /* this element will add the overlay after the background image */
+  content: ""; /* used with 'after:' to insert generated content */
+  display: block; /* block element, fills the width of the screen */
+  position: fixed; /* This keeps the overlay in the same place */
+  top: 0; /* No top adjustments */
+  left: 0; /* No left adjustments */
+  height: 100%; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+  z-index: 10; /* Stack order of the element  */
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1; /* Puts the overlay layer under the logo */
+}
+
+/* Taken from Coyier, C. (2014) Quick CSS Trick: How To Center an Object Exactly In The Center. Available at: https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/ (Accessed: 7 February 2023). */
+/* Positioning of the logo container */
+.logocontainer {  /* Container for the logo */
+  position: fixed; /* This keeps the logo in the centre of the page */
+  top: 50%; /* adjusts the vertical position of the image */
+  left: 50%; /* adjusts the horizontal position of the image */
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%); /* moves the container along the x and y axis */
+}
+
+/* Code for positioning the logo and to animate it. */
+.logo {
+  height: 100%; /* height of the logo */
+  width: 100%; /* width of the logo */
+  text-align: center; /*aligns logo in the centre*/
+  display: block; /* block element, fills the width of the screen */
+  /* Taken and altered from CodeBoxx (2022) Rotate & Spin An Image In HTML CSS (Simple Examples). Available at: https://code-boxx.com/rotate-spin-image-html-css/ (Accessed: 9 February 2023). */
+  /* What was changed: Set the animation timing function to ease-in-out. Changed the animation name to make the code understandable for personal use */
+  animation-name: spinninglogo; /* naming the animation which connects to the keyframe instructions */
+  animation-duration: 5s; /* how long the animation lasts for*/
+  animation-iteration-count: infinite; /* This makes sure that the logo doesn't stop spinning */
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: ease-in-out; /* Decides what the animation will look like. The animation starts to ease in then ends by easing out */
+  
+}
+
+/* Taken from CodeBoxx (2022) Rotate & Spin An Image In HTML CSS (Simple Examples). Available at: https://code-boxx.com/rotate-spin-image-html-css/ (Accessed: 9 February 2023). */
+/* Animation instructions for the logo to spin. */
+@keyframes spinninglogo {
+  from { transform: rotate(0deg) } /* The animation begins at 0 degrees */
+  to { transform: rotate(360deg) } /* The animation transforms/rotates 360 degrees */
+}
+
+
+.parallax-layer {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100%; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+}
+
+  /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
+  /* Code explaination referenced from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* CSS for the custom cursor effect */
+  * { /* Default styles for the cursor */
+  cursor: none; /* Sets default cursor to none */
+  margin: 0; /* No margins */
+  padding: 0; /* No paddings */
+  box-sizing: border-box; /* The box sizing is 0, set to border-box */
+}
+
+  /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
+/* Styling for the big (background) cursor */
+ /* What was changed: Added a background image, customising the cursor. Added a repeat and background position. The width, height and border radius was changed */
+.cursor {
+  /* This image replaces the cursor  */
+  /* Reference for bullying logo thats in the website logo: Clipart (2022) NO SMOKING LOGOS. Available at: http://www.clipartbest.com/no-smoking-logos (Accessed: 14 November 2022).*/
+  background-image: url(../Images/CursorImage.png); /* StickPNG (2023) Download Click Hand Tap transparent PNG. Available at: http://www.stickpng.com/img/icons-logos-emojis/click-here-buttons/click-hand-tap (Accessed: 12 February 2023).  */
+  background-repeat: no-repeat; /* Stops the background from repeating */
+  background-position: center; /* Centres the image */
+  width: 90px; /* Width of cursor */
+  height: 90px; /* Height of cursor */
+  border-radius: 50%; /* Makes the border of the cursor into a circle */
+  border: 1px solid black; /* Settings for the border of the cursor. 1px = Thin line, solid colour, colour is black */
+  transition: all 200ms ease-out; /* Takes 200 milliseconds whilst performing an ease-out */
+  position: fixed; /* Cursor won't move relative the the viewport when scrolled */
+  pointer-events: none; /* The cursor will not effect any other elements under it */
+  left: 0; /* Left position = 0 */
+  top: 0; /* Right position = 0 */
+  transform: translate(calc(-50% + 15px), -50%); /* Transform the cursor to translate, moves based on X and Y, -50% + 15px = X axis and -15% = Y axis */
+}
+
+  /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
+/* Styling for the small (foreground) cursor */
+ /* What was changed: Changed the border-radius. */
+.cursor2 { 
+  width: 20px; /* Width of cursor */
+  height: 20px; /* Height of cursor */
+  border-radius: 50%; /* The border of the cursor into a circle */
+  background-color: black; /* Colour of cursor */
+  opacity: .3; /* How transparent the cursor colour is */
+  position: fixed; /* Cursor won't move relative the the viewport when scrolled */
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  pointer-events: none; /* The cursor will not effect any other elements under it */
+  transition: width .3s, height .3s, opacity .3s; /* The cursor will take .3 seconds for the width, height and opacity to animate */
+}
+
+  /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
+/* Styling for when the cursor is hovered over an element */
+ /* What was changed: A background image was added to give the user instructions when the mouse hovers on a link, background positioning, repeating, width, height and border-radius was added. */
+/* What was changed: The background colour was also changed. */
+ .hover {
+  width: 120px; /* Width of the cursor when its hovered */
+  height: 140px; /* Height of the cursor when its hovered */
+  border-radius: 40%; /* Makes the border of the cursor into an oval */
+  /* This image is what the cursor animates too when hovered */
+  background-image: url(../Images/Clickhere.png); /* StickPNG (2023) Download Click Hand Tap transparent PNG. Available at: http://www.stickpng.com/img/icons-logos-emojis/click-here-buttons/click-hand-tap (Accessed: 12 February 2023).  */
+  background-color: antiquewhite; /* Background colour of the cursor when hovered */
+  background-repeat: no-repeat; /* Stops the background from repeating */
+  background-position: center; /* Centres the image */
+}
+
+  /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
+/* Styling for when the small (foreground) cursor is clicked */
+.cursorinnerhover {
+  width: 90px; /* Width of cursor when user clicks*/
+  height: 90px; /* Height of cursor when user clicks */
+  opacity: .5; /* Opacity of the colour of the cursor when clicked */
+}
+
+/* Styling for the text to speech container */
+.textspeechcontainer {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  border: 2px solid black; /* solid black border, slightly thick */
+  top: 50%; /* Top position = 50 */
+  left: 82%;  /* Left position = 82 */
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  background-color: white; /* Background colour is white */
+  padding-bottom: 10px;  /* Padding inside the container: 10 pixels */
+  max-width: 12%; /* Maximum width: 12% */
+}
+
+/* Styling for the text to speech logo */
+.texttospeech {
+  margin-left: auto; /* Space around the left element: Auto */
+  margin-right: auto; /* Space around the right element: Auto */
+  display: block; /* block element, fills the width of the screen */
+  padding-bottom: 10px; /* Padding inside the container: 10 pixels on bottom */
+  padding-top: 10px; /* Padding inside the container: 10 pixels on top */
+}
+
+/* Heading styling for 'text to speech' instruction */
+h2 {
+  font-family: sans-serif; /* San Serif font */
+  text-align: center; /* text align in the centre */
+  font-size: 20px; /* Font size: 20 pixels */
+}
+
+/* Styling for volume container */
+.volumeoncontainer {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  top: 50%; /* Top position = 50 */
+  left: 18%; /* Left position = 18 */
+  background-color: white; /* Background colour is white */
+  border: 2px solid black; /* solid black border, slightly thick */
+  max-width: 12%; /* Maximum width: 12% */
+  padding-bottom: 10px; /* Padding inside the container: 10 pixels on bottom */
+}
+
+/* Styling for volume on image */
+.volumeonimage {
+  margin-left: auto; /* Space around the left element: Auto */
+  margin-right: auto; /* Space around the right element: Auto */
+  display: block; /* block element, fills the width of the screen */
+  padding-top: 20px; /* Padding inside the container: 20 pixels on top */
+}
+
+/* Heading styling for 'volume on' instruction */
+h3 {
+  font-family: sans-serif; /* San Serif font of the page */
+  text-align: center; /* text align in the centre */
+  font-size: 25px; /* Font size: 25 pixels */
+}
+
+/* Styling for logo instruction image container */
+.logoinstructioncontainer {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  top: 85%; /* Top position = 85 */
+  left: 60%; /* Left position = 60 */
+}
+
+/* Styling of text for the logo instruction */
+.maininstruction {
+  font-family: sans-serif; /* San Serif font */
+  text-align: center; /* text align in the centre of the page */
+  top: 21%; /* Top position = 21 */
+  left: 4%; /* Left position = 4 */
+  font-size: 1.6vw; /* Font size: 1.6 view width */
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+}
