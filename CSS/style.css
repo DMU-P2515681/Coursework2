@@ -1,4 +1,912 @@
+@media only screen and (max-width: 700px) {
 
+ 
+/*---------------------
+HAMBURGER MENU
+----------------------*/
+
+
+.hamburger-menu {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  padding-left: 15px;
+  width: 10%;
+  height: 60px;
+  cursor: pointer;
+  z-index: 9998;
+  background:#EBEBEB;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.bar,
+.bar:after,
+.bar:before {
+  width: 30px;
+  height: 3px;
+}
+
+.bar {
+  position: relative;
+  transform: translateY(10px);
+  background: black;
+  transition: all 0ms 300ms;
+}
+
+.bar.animate {
+  background: rgba(255, 255, 255, 0);
+}
+
+.bar:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  background: black;
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  background: black;
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:after {
+  top: 0;
+  transform: rotate(45deg);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:before {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/*---------------------
+Mobiles Menu 
+----------------------*/
+	/*---------------------
+	Mobiles Menu - Design 
+	----------------------*/
+
+.mobile-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu li {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0;
+  overflow: hidden;
+  padding: 5px;
+  position: relative;
+  text-align: left;
+  text-transform: uppercase;
+  padding-left:15px;
+}
+
+.mobile-menu li:first-child {
+  margin-top: 70px;
+}
+
+.mobile-menu li:hover {
+  background: #CCCCCC;
+}
+
+.mobile-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+	/*---------------------
+	Mobiles Menu - Slide IN 
+	----------------------*/
+
+.mobile-menu {
+  top: 0;
+  max-width: 250px;
+  left: -100%;
+  width: 100%;
+  background: #EBEBEB;
+  color: black;
+  height: 100%;
+  position: fixed;
+  z-index: 9997;
+  overflow-y: auto;
+  -webkit-transform: translate3d(0, 0, 205px);
+  -moz-transform: translate3d(0, 0, 205px);
+  transform: translate3d(0, 0, 205px);
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.mobile-menu.active {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+	/*---------------------
+	Mobiles Menu - Dropdown Submenu
+	----------------------*/
+
+.has-children:hover{
+	cursor:hand;
+}
+
+.children {
+	display:none;	
+}
+
+.mobile-menu .children li:first-child {
+  margin-top: 0px;
+}
+
+.icon-arrow {
+	position: absolute;
+	display: block;
+	font-size: 0.7em;
+	color: black;
+	top: 5px;
+	right: 10px;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg); 
+	transition: .6s;
+  -webkit-transition: .6s;
+  -moz-transition: .6s;	 
+}
+  
+.icon-arrow:after {
+    content: "\25BC";
+}
+
+.icon-arrow.open {
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg); 
+  transition: .6s;
+  -webkit-transition: .6s;
+  -moz-transition: .6s; 		
+}
+
+  /* Taken from W3docs (no date) How to Create an Overlay Using CSS. Available at: https://www.w3docs.com/snippets/css/how-to-create-an-overlay-using-css.html (Accessed: 7 February 2023). */
+/* Adds an overlay to the background image */
+body:after { /* this element will add the overlay after the background image */
+  content: ""; /* used with 'after:' to insert generated content */
+  display: block; /* block element, fills the width of the screen */
+  position: fixed; /* This keeps the overlay in the same place */
+  top: 0; /* No top adjustments */
+  left: 0; /* No left adjustments */
+  height: 100%; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+  z-index: 10; /* Stack order of the element  */
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0; /* Puts the overlay layer under the logo */
+}
+
+/* Taken from Coyier, C. (2014) Quick CSS Trick: How To Center an Object Exactly In The Center. Available at: https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/ (Accessed: 7 February 2023). */
+/* Positioning of the logo container */
+.logocontainer {  /* Container for the logo */
+  position: absolute; /* This keeps the logo in the centre of the page */
+  top: 48%; /* adjusts the vertical position of the image */
+  left: 35%; /* adjusts the horizontal position of the image */
+  right: 10%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%); /* moves the container along the x and y axis */
+  z-index: 1;
+}
+
+/* Code for positioning the logo and to animate it. */
+.logo {
+  height: 150%;
+  width: 150%; /* width of the logo */
+  text-align: center; /*aligns logo in the centre*/
+  display: block; /* block element, fills the width of the screen */
+  /* Taken and altered from CodeBoxx (2022) Rotate & Spin An Image In HTML CSS (Simple Examples). Available at: https://code-boxx.com/rotate-spin-image-html-css/ (Accessed: 9 February 2023). */
+  /* What was changed: Set the animation timing function to ease-in-out. Changed the animation name to make the code understandable for personal use */
+  animation-name: spinninglogo; /* naming the animation which connects to the keyframe instructions */
+  animation-duration: 5s; /* how long the animation lasts for*/
+  animation-iteration-count: infinite; /* This makes sure that the logo doesn't stop spinning */
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: ease-in-out; /* Decides what the animation will look like. The animation starts to ease in then ends by easing out */
+  
+}
+
+/* Taken from CodeBoxx (2022) Rotate & Spin An Image In HTML CSS (Simple Examples). Available at: https://code-boxx.com/rotate-spin-image-html-css/ (Accessed: 9 February 2023). */
+/* Animation instructions for the logo to spin. */
+@keyframes spinninglogo {
+  from { transform: rotate(0deg) } /* The animation begins at 0 degrees */
+  to { transform: rotate(360deg) } /* The animation transforms/rotates 360 degrees */
+}
+
+
+.parallax-layer {
+  
+  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+}
+
+.parallax-layer2 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/playground.jpg); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+  
+}
+
+.parallax-layer3 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/Pencils.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+  
+}
+ 
+
+.parallax-layer4 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/Classroom.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+  
+}
+ 
+ 
+.parallax-layer5 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/CommonRoom.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+  
+}
+ 
+
+.parallax-layer6 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/EmmasHouse.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+  
+}
+ 
+
+.parallax-layer7 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/TeacherOffice.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+  
+}
+ 
+
+.parallax-layer8 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+  
+}
+  /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
+  /* Code explaination referenced from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* CSS for the custom cursor effect */
+  * { /* Default styles for the cursor */
+  cursor: none; /* Sets default cursor to none */
+  margin: 0; /* No margins */
+  padding: 0; /* No paddings */
+  box-sizing: border-box; /* The box sizing is 0, set to border-box */
+}
+
+/* Styling for the text to speech container */
+.textspeechcontainer {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  top: 10%; /* Top position = 50 */
+  left: 82%;  /* Left position = 82 */
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  background-color: white; /* Background colour is white */
+  padding-bottom: 10px;  /* Padding inside the container: 10 pixels */
+  max-width: 1%; /* Maximum width: 12% */
+  z-index: 1; /* sets the z-order of the positioned element */
+}
+
+/* Styling for the text to speech logo */
+.texttospeech {
+  margin-left: auto; /* Space around the left element: Auto */
+  margin-right: auto; /* Space around the right element: Auto */
+  display: block; /* block element, fills the width of the screen */
+  padding-bottom: 5px; /* Padding inside the container: 10 pixels on bottom */
+  padding-top: 10px; /* Padding inside the container: 10 pixels on top */
+  width: 40%;
+  height: 40%;
+}
+
+/* Heading styling for 'text to speech' instruction */
+h2 {
+  font-family: sans-serif; /* San Serif font */
+  text-align: center; /* text align in the centre */
+  font-size: 3vw; /* Font size: 20 pixels */
+}
+
+/* Styling for volume container */
+.volumeoncontainer {
+  z-index: 1; /* sets the z-order of the positioned element */
+  position: absolute;
+  top: 4%; /* Top position = 50 */
+  right: 60%;  /* Left position = 82 */
+  padding-bottom: 10px;  /* Padding inside the container: 10 pixels */
+  z-index: 1; /* sets the z-order of the positioned element */
+  border: none; /* Removes borders from around the button */
+  cursor: pointer; /* Changes the button to a hand icon */
+  appearance: none; /* Removes any platform-specific styling for buttons */
+  background-color: inherit; /* Inherets the background colour of parent element */
+}
+
+/* Styling for volume on image */
+.volumeonimage {
+  margin-left: auto; /* Space around the left element: Auto */
+  margin-right: auto; /* Space around the right element: Auto */
+  display: block; /* block element, fills the width of the screen */
+  padding-bottom: 5px; /* Padding inside the container: 10 pixels on bottom */
+  width: 50%;
+  height: 50%;
+}
+
+/* Heading styling for 'volume on' instruction */
+h3 {
+  font-family: sans-serif; /* San Serif font of the page */
+  text-align: center; /* text align in the centre */
+  font-size: 3vw; /* Font size: 25 pixels */
+}
+
+/* Styling for logo instruction image container */
+.logoinstructioncontainer {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  top: 85%; /* Top position = 85 */
+  left: 50%; /* Left position = 60 */
+  z-index: 1; /* sets the z-order of the positioned element */
+  width: 100%;
+  text-align: center;
+}
+
+/* Styling of text for the logo instruction */
+.maininstruction {
+  font-family: sans-serif; /* San Serif font */
+  text-align: center; /* text align in the centre of the page */
+  top: 21%; /* Top position = 21 */
+  left: 30%; /* Left position = 4 */
+  font-size: 4vw; /* Font size: 1.6 view width */
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+}
+
+/* Styling of the 'button' logo */
+.button {
+  border: none; /* Removes borders from around the button */
+  cursor: pointer; /* Changes the button to a hand icon */
+  appearance: none; /* Removes any platform-specific styling for buttons */
+  background-color: inherit; /* Inherets the background colour of parent element */
+}
+.confetti-button {
+   z-index: 1; /* sets the z-order of the positioned element */
+  position: absolute;
+  top: 4%; /* Top position = 50 */
+  left: 60%;  /* Left position = 82 */
+  padding-bottom: 10px;  /* Padding inside the container: 10 pixels */
+  z-index: 1; /* sets the z-order of the positioned element */
+  border: none; /* Removes borders from around the button */
+  cursor: pointer; /* Changes the button to a hand icon */
+  appearance: none; /* Removes any platform-specific styling for buttons */
+  background-color: inherit; /* Inherets the background colour of parent element */
+}
+.confetti-button:focus { outline: 0; } /* Focus state of the button. Removes the keyboard default outline */
+
+.confetti-button:before, .confetti-button:after { /* Styles for the before and after pseudo-elements of the button */
+  position: absolute; /*positioned relative to the nearest positioned ancestor */
+  content: ''; 
+  width: 150%; /* width 150% of the button element */
+  height: 150%; /* height 150% of the button element */
+  transition: all ease-in-out 0.5s; /* transition effect for style changes. Eases in and out with duration of 0.5 seconds */
+  background-repeat: no-repeat; /* Doesn't repeat the background */
+  top: 50%; /* Top position = 50 */
+  left: 0%; /* Left position = 0 */
+  
+}
+.confetti-button:before { /* styles for the before pseudo-element */
+  display: none; /* Initially hidden */
+  top: -100%; /* positions it off the top edge of the button */
+  background-image: radial-gradient(circle, #ff0000 20%, transparent 20%), /* Adds a background image made up of multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, transparent 20%, #ff0000 20%, transparent 30%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%); /* Multiple radial gradients that create a confetti effect. */
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 
+   10% 10%, 18% 18%; /* Multiple radial gradients that create a confetti effect. */
+}
+ .confetti-button:after { /* styles for the after pseudo-element */
+  display: none;  /* Initially hidden */
+  bottom: -100%;/* positions it off the bottom edge of the button */
+  background-image: radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0081 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, transparent 10%, #ff0000 15%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%); /* Multiple radial gradients that create a confetti effect. */
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%; /* Multiple radial gradients that create a confetti effect. */
+}
+
+.confetti-button:active { /* Defines the specific styles for the active state of the button (when it's being clicked or touched) */
+  transform: scale(0.9); /* Scales the button down to 90% */
+  background-color: #63fe03; /* Background colour of button when clicked */
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2); /* Semi-Transparent background with pink colour */
+}
+
+.confetti-button.animate:before { /* specific styles for the before pseudo-element when the button has the class "animate" added to it */
+  display: block; /* for visibility */
+  animation: topBubbles ease-in-out 0.75s forwards; /* Moves the background image position to create a confetti effect */
+}
+
+.confetti-button.animate:after { /* specific styles for the after pseudo-element when the button has the class "animate" added to it */
+  display: block; /* for visibility */
+  animation: bottomBubbles ease-in-out 0.75s forwards; /* Moves the background image position to create a confetti effect */
+}
+ @keyframes
+topBubbles {  0% { /* Three different bubble graphics are positioned along the top of the element */
+/* All bubbles positioned in the same location */
+ background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 
+ 55% 90%, 70% 90%;
+}
+
+/* move to new positions*/ 
+ 50% {
+ background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 
+ 65% 20%, 90% 30%;
+}
+
+/* move to new positions*/ 
+ 100% {
+ background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%,
+  65% 10%, 90% 20%;
+ background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; /* All disappear by having their size set to 0 */
+}
+}
+
+@keyframes
+bottomBubbles {  0% { /* seven different bubble graphics are positioned along the bottom of the element */
+  /* All bubbles positioned in the same location */
+ background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+}
+
+/* move to new positions*/ 
+ 50% {
+ background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+}
+
+/* move to new positions*/ 
+ 100% {
+ background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+ background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; /* All disappear by having their size set to 0 */
+}
+}
+
+.NavPaper { 
+z-index: 2; 
+position: -webkit-sticky;
+position: sticky;
+top: 0;
+}
+
+
+.textover{
+  position: relative;
+width: 90vw;
+margin: auto;
+z-index: 1;
+}
+
+.textover img {
+  width: 100%;
+  height: 100%;
+  padding-top: 6%;
+}
+
+.textover p {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 13%;
+  padding-left: 10%; 
+  padding-right: 3%;
+  text-align: left;
+  color: black;
+  font-size: 3.8vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.tts {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  width: 100% !important;
+  height: 102% !important;
+  padding-top: 64% !important;
+  padding-left: 83%;
+  color: black;
+  font-size: 4.2vw;
+  z-index: 1;
+}
+
+.tts2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  width: 100% !important;
+  height: 100% !important;
+  padding-top: 55% !important;
+  padding-left: 83%;
+  color: black;
+  font-size: 4.2vw;
+  z-index: 1;
+}
+
+.tts3 {
+  position: absolute;
+  top: 20%;
+  bottom: 0;
+  left: 0; 
+  width: 102% !important;
+  height: 75% !important;
+  padding-top: 50% !important;
+  padding-left: 83%;
+  color: black;
+  font-size: 4.2vw;
+  z-index: 1;
+}
+
+h4 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 17%;
+  padding-left: 15%; 
+  padding-right: 10%;
+  text-align: center;
+  color: black;
+  font-size: 13vw;
+  font-family: 'Cabin Sketch';
+}
+
+h5 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 40%;
+  padding-left: 15%; 
+  padding-right: 10%;
+  text-align: center;
+  color: black;
+  font-size: 13vw;
+  font-family: 'Cabin Sketch';
+}
+
+h6 {
+font-family: 'Cabin Sketch';
+text-align: center;
+font-size: 8vw;
+padding: 0%;
+margin: 0%;
+}
+
+.decider {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  top: -170% !important;
+  bottom: 0;
+  left: 25%;
+  width: 60% !important;
+  height: 250% !important;
+  color: black;
+  font-size: 4.2vw;
+  z-index: 1;
+  padding: 0%;
+}
+
+.deciderinstructions {
+  position: absolute;
+  top: -200% !important;
+  left: 0; 
+  padding-left: 40% !important;
+  padding-bottom: -30%;
+  color: black;
+  font-size: 8vw !important;
+  z-index: 2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.deciderimage {
+  width: 90% !important;
+  margin: auto;
+ padding-left: 10vw;
+ padding-top: 5vw !important;
+}
+
+.deciderimage2 {
+  width: 90% !important;
+  margin: auto;
+ padding-left: 10vw;
+ padding-top: 4vw !important;
+}
+
+html {
+  height: 100%;
+}
+
+
+.avatar {
+  height: 7vw;
+  position: relative;
+  width: 55vw;
+  left: 18%;
+  right: 20%;
+  bottom: 0%;
+  margin: 0%;
+  margin-top: 0%;
+  margin-left: 0%;
+  padding: 0%;
+  margin-bottom: 0px;
+}
+
+.avatar img {
+  border-radius: 9999px;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  margin: 0%;
+}
+
+@keyframes cycle-colors {
+  0% { border-color: hsl(0, 100%, 50%); }
+  25% { border-color: hsl(90, 100%, 50%); }
+  50% { border-color: hsl(180, 100%, 50%); }
+  75% { border-color: hsl(270, 100%, 50%); }
+  100% { border-color: hsl(360, 100%, 50%); }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.avatar::before,
+.avatar::after {
+  animation: pulse 2s linear infinite;
+  border: #ff0000 solid 8px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  content: ' ';
+  height: 250%;
+  left: -20%;
+  opacity: .6;
+  position: absolute;
+  top: -160%;
+  transform: scale(0.714);
+  width: 140%;
+  z-index: 1;
+  margin: 0%; 
+}
+
+.avatar::after {
+  animation-delay: 1s;
+  margin: 0%;
+}
+
+.avatar:hover img {
+  margin: 0%;
+}
+
+.avatar:hover::before,
+.avatar:hover::after {
+  animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+  margin: 0%;
+}
+
+.avatar:hover::after {
+  animation-delay: .5s;
+  margin: 0%;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 700px) {
 
 /* Taken from W3docs (no date) How to Create an Overlay Using CSS. Available at: https://www.w3docs.com/snippets/css/how-to-create-an-overlay-using-css.html (Accessed: 7 February 2023). */
 /* Adds an overlay to the background image */
@@ -12,17 +920,18 @@ body:after { /* this element will add the overlay after the background image */
   width: 100%; /* covers the width of the page screen */
   z-index: 10; /* Stack order of the element  */
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: -1; /* Puts the overlay layer under the logo */
+  z-index: 0; /* Puts the overlay layer under the logo */
 }
 
 /* Taken from Coyier, C. (2014) Quick CSS Trick: How To Center an Object Exactly In The Center. Available at: https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/ (Accessed: 7 February 2023). */
 /* Positioning of the logo container */
 .logocontainer {  /* Container for the logo */
-  position: fixed; /* This keeps the logo in the centre of the page */
+  position: absolute; /* This keeps the logo in the centre of the page */
   top: 50%; /* adjusts the vertical position of the image */
   left: 50%; /* adjusts the horizontal position of the image */
   /* bring your own prefixes */
   transform: translate(-50%, -50%); /* moves the container along the x and y axis */
+  z-index: 1;
 }
 
 /* Code for positioning the logo and to animate it. */
@@ -59,18 +968,43 @@ body:after { /* this element will add the overlay after the background image */
   background-position: center;
   
   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
-   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   
    background-position: center; /* Centres the image */
   
    /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
    background-attachment: fixed; /* the image will not scroll with the page */
-   height: 100%; /* covers the height of the page screen */
+   height: 100vh; /* covers the height of the page screen */
   width: 100%; /* covers the width of the page screen */
 
   /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
   /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
   transform: translateZ(0); /* transforming an element along the Z Axis */
   z-index: -1; /* Puts the overlay layer under the logo */
+}
+
+.parallax-layer2 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/playground.jpg); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+  
 }
 
   /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
@@ -102,6 +1036,7 @@ body:after { /* this element will add the overlay after the background image */
   left: 0; /* Left position = 0 */
   top: 0; /* Right position = 0 */
   transform: translate(calc(-50% + 15px), -50%); /* Transform the cursor to translate, moves based on X and Y, -50% + 15px = X axis and -15% = Y axis */
+  z-index: 1; /* sets the z-order of the positioned element */
 }
 
   /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
@@ -117,6 +1052,7 @@ body:after { /* this element will add the overlay after the background image */
   transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
   pointer-events: none; /* The cursor will not effect any other elements under it */
   transition: width .3s, height .3s, opacity .3s; /* The cursor will take .3 seconds for the width, height and opacity to animate */
+  z-index: 1; /* sets the z-order of the positioned element */
 }
 
   /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
@@ -152,6 +1088,7 @@ body:after { /* this element will add the overlay after the background image */
   background-color: white; /* Background colour is white */
   padding-bottom: 10px;  /* Padding inside the container: 10 pixels */
   max-width: 12%; /* Maximum width: 12% */
+  z-index: 1; /* sets the z-order of the positioned element */
 }
 
 /* Styling for the text to speech logo */
@@ -161,6 +1098,7 @@ body:after { /* this element will add the overlay after the background image */
   display: block; /* block element, fills the width of the screen */
   padding-bottom: 10px; /* Padding inside the container: 10 pixels on bottom */
   padding-top: 10px; /* Padding inside the container: 10 pixels on top */
+  width: 60%
 }
 
 /* Heading styling for 'text to speech' instruction */
@@ -180,6 +1118,7 @@ h2 {
   border: 2px solid black; /* solid black border, slightly thick */
   max-width: 12%; /* Maximum width: 12% */
   padding-bottom: 10px; /* Padding inside the container: 10 pixels on bottom */
+  z-index: 1; /* sets the z-order of the positioned element */
 }
 
 /* Styling for volume on image */
@@ -203,6 +1142,7 @@ h3 {
   transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
   top: 85%; /* Top position = 85 */
   left: 60%; /* Left position = 60 */
+  z-index: 1; /* sets the z-order of the positioned element */
 }
 
 /* Styling of text for the logo instruction */
@@ -215,9 +1155,118 @@ h3 {
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
 }
 
-button {
-  border: none;
-  cursor: pointer;
-  appearance: none;
-  background-color: inherit;
+/* Styling of the 'button' logo */
+.button {
+  border: none; /* Removes borders from around the button */
+  cursor: pointer; /* Changes the button to a hand icon */
+  appearance: none; /* Removes any platform-specific styling for buttons */
+  background-color: inherit; /* Inherets the background colour of parent element */
+}
+.confetti-button {
+   z-index: 1; /* sets the z-order of the positioned element */
+  position: absolute;
+  box-shadow: 0 2px 25px rgba(255, 0, 0, 0.5);
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  border: 2px solid black; /* solid black border, slightly thick */
+  top: 38%; /* Top position = 50 */
+  left: 76%;  /* Left position = 82 */
+  background-color: white; /* Background colour is white */
+  padding-bottom: 10px;  /* Padding inside the container: 10 pixels */
+  max-width: 12%; /* Maximum width: 12% */
+  z-index: 1; /* sets the z-order of the positioned element */
+}
+.confetti-button:focus { outline: 0; } /* Focus state of the button. Removes the keyboard default outline */
+
+.confetti-button:before, .confetti-button:after { /* Styles for the before and after pseudo-elements of the button */
+  position: absolute; /*positioned relative to the nearest positioned ancestor */
+  content: ''; 
+  width: 150%; /* width 150% of the button element */
+  height: 150%; /* height 150% of the button element */
+  transition: all ease-in-out 0.5s; /* transition effect for style changes. Eases in and out with duration of 0.5 seconds */
+  background-repeat: no-repeat; /* Doesn't repeat the background */
+  top: 50%; /* Top position = 50 */
+  left: 0%; /* Left position = 0 */
+  
+}
+.confetti-button:before { /* styles for the before pseudo-element */
+  display: none; /* Initially hidden */
+  top: -100%; /* positions it off the top edge of the button */
+  background-image: radial-gradient(circle, #ff0000 20%, transparent 20%), /* Adds a background image made up of multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, transparent 20%, #ff0000 20%, transparent 30%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%); /* Multiple radial gradients that create a confetti effect. */
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 
+   10% 10%, 18% 18%; /* Multiple radial gradients that create a confetti effect. */
+}
+ .confetti-button:after { /* styles for the after pseudo-element */
+  display: none;  /* Initially hidden */
+  bottom: -100%;/* positions it off the bottom edge of the button */
+  background-image: radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0081 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, transparent 10%, #ff0000 15%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%), /* Multiple radial gradients that create a confetti effect. */
+   radial-gradient(circle, #ff0000 20%, transparent 20%); /* Multiple radial gradients that create a confetti effect. */
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%; /* Multiple radial gradients that create a confetti effect. */
+}
+
+.confetti-button:active { /* Defines the specific styles for the active state of the button (when it's being clicked or touched) */
+  transform: scale(0.9); /* Scales the button down to 90% */
+  background-color: #63fe03; /* Background colour of button when clicked */
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2); /* Semi-Transparent background with pink colour */
+}
+
+.confetti-button.animate:before { /* specific styles for the before pseudo-element when the button has the class "animate" added to it */
+  display: block; /* for visibility */
+  animation: topBubbles ease-in-out 0.75s forwards; /* Moves the background image position to create a confetti effect */
+}
+
+.confetti-button.animate:after { /* specific styles for the after pseudo-element when the button has the class "animate" added to it */
+  display: block; /* for visibility */
+  animation: bottomBubbles ease-in-out 0.75s forwards; /* Moves the background image position to create a confetti effect */
+}
+ @keyframes
+topBubbles {  0% { /* Three different bubble graphics are positioned along the top of the element */
+/* All bubbles positioned in the same location */
+ background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 
+ 55% 90%, 70% 90%;
+}
+
+/* move to new positions*/ 
+ 50% {
+ background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 
+ 65% 20%, 90% 30%;
+}
+
+/* move to new positions*/ 
+ 100% {
+ background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%,
+  65% 10%, 90% 20%;
+ background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; /* All disappear by having their size set to 0 */
+}
+}
+
+@keyframes
+bottomBubbles {  0% { /* seven different bubble graphics are positioned along the bottom of the element */
+  /* All bubbles positioned in the same location */
+ background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+}
+
+/* move to new positions*/ 
+ 50% {
+ background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+}
+
+/* move to new positions*/ 
+ 100% {
+ background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+ background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; /* All disappear by having their size set to 0 */
+}
+}
 }
