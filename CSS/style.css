@@ -233,10 +233,77 @@ body:after { /* this element will add the overlay after the background image */
   to { transform: rotate(360deg) } /* The animation transforms/rotates 360 degrees */
 }
 
+.theend {
+  font-family: Cabin Sketch;
+  font-size: 10vw;
+}
 
-.parallax-layer {
+.speechreviewcontainer {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  left: 40%;  /* Left position = 82 */
+  top: 2452%;
+  padding: 10px;  /* Padding inside the container: 10 pixels */
+  z-index: 5; /* sets the z-order of the positioned element */
   
-  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+}
+
+.speechreviewcontainers {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  left: 40%;  /* Left position = 82 */
+  top: 2487%;
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  padding: 10px;  /* Padding inside the container: 10 pixels */
+  z-index: 5; /* sets the z-order of the positioned element */
+  margin: 0;
+}
+
+.speechreviewcontainerss {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  left: 40%;  /* Left position = 82 */
+  top: 2443%;
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  padding: 10px;  /* Padding inside the container: 10 pixels */
+  z-index: 1; /* sets the z-order of the positioned element */
+  margin: 0;
+}
+
+.speechreview {
+  width: 80%;
+}
+
+.reviewtext {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+font-size: 4vw;
+left: 13%;
+top: 15%;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+z-index: 5; /* sets the z-order of the positioned element */
+
+}
+
+.reviewtext2 {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  color: white;
+font-size: 5vw;
+left: 10%;
+top: 45%;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+background-color: black; /* Background colour is white */
+padding-left: 6%;
+padding-right: 5%;
+z-index: 5; /* sets the z-order of the positioned element */
+
+}
+
+.sec {
+  height: 100vh !important;
+}
+
+
+
+.parallax-layer{
   background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
   background-size: 103% 102%; /* Image will cover the entire page element */
   background-position: center;
@@ -255,55 +322,32 @@ body:after { /* this element will add the overlay after the background image */
   transform: translateZ(0); /* transforming an element along the Z Axis */
   z-index: -1; /* Puts the overlay layer under the logo */
 }
+.parallax-layer1 {
+  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+}
 
 .parallax-layer2 {
   /* Instructions for making the background image move upon mouse movement */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
   background-image: url(../Images/playground.jpg); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
-  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
-  background-size: 103% 102%; /* Image will cover the entire page element */
-  background-position: center;
-  
+
+
   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
    position: absolute; /* positioning the image relative to the nearest positioned ancestor */
-   background-position: center; /* Centres the image */
-  
-   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
-   background-attachment: fixed; /* the image will not scroll with the page */
-   height: 100vh; /* covers the height of the page screen */
-  width: 100%; /* covers the width of the page screen */
-
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
-  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
-  transform: translateZ(0); /* transforming an element along the Z Axis */
-  z-index: -1; /* Puts the overlay layer under the logo */
-  
+ 
 }
 
 .parallax-layer3 {
-  /* Instructions for making the background image move upon mouse movement */
-  margin: 0; /* No margin on the 0 */
-   /* background image for parallax layer*/
-  background-image: url(../Images/Pencils.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
-  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
-  background-size: 103% 102%; /* Image will cover the entire page element */
-  background-position: center;
-  
-  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
-   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
-   background-position: center; /* Centres the image */
-  
-   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
-   background-attachment: fixed; /* the image will not scroll with the page */
-   height: 100vh; /* covers the height of the page screen */
-  width: 100%; /* covers the width of the page screen */
-
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
-  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
-  transform: translateZ(0); /* transforming an element along the Z Axis */
-  z-index: -1; /* Puts the overlay layer under the logo */
-  
+    /* Instructions for making the background image move upon mouse movement */
+    margin: 0; /* No margin on the 0 */
+    /* background image for parallax layer*/
+   background-image: url(../Images/Pencils.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+ 
+   
+   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+    position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+    background-position: center; /* Centres the image */
 }
  
 
@@ -312,24 +356,9 @@ body:after { /* this element will add the overlay after the background image */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
   background-image: url(../Images/Classroom.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
-  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
-  background-size: 103% 102%; /* Image will cover the entire page element */
-  background-position: center;
-  
-  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
    position: absolute; /* positioning the image relative to the nearest positioned ancestor */
    background-position: center; /* Centres the image */
-  
-   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
-   background-attachment: fixed; /* the image will not scroll with the page */
-   height: 100vh; /* covers the height of the page screen */
-  width: 100%; /* covers the width of the page screen */
-
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
-  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
-  transform: translateZ(0); /* transforming an element along the Z Axis */
-  z-index: -1; /* Puts the overlay layer under the logo */
-  
 }
  
  
@@ -338,24 +367,9 @@ body:after { /* this element will add the overlay after the background image */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
   background-image: url(../Images/CommonRoom.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
-  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
-  background-size: 103% 102%; /* Image will cover the entire page element */
-  background-position: center;
-  
   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
-   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
-   background-position: center; /* Centres the image */
-  
-   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
-   background-attachment: fixed; /* the image will not scroll with the page */
-   height: 100vh; /* covers the height of the page screen */
-  width: 100%; /* covers the width of the page screen */
-
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
-  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
-  transform: translateZ(0); /* transforming an element along the Z Axis */
-  z-index: -1; /* Puts the overlay layer under the logo */
-  
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  background-position: center; /* Centres the image */
 }
  
 
@@ -364,24 +378,9 @@ body:after { /* this element will add the overlay after the background image */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
   background-image: url(../Images/EmmasHouse.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
-  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
-  background-size: 103% 102%; /* Image will cover the entire page element */
-  background-position: center;
-  
   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
-   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
-   background-position: center; /* Centres the image */
-  
-   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
-   background-attachment: fixed; /* the image will not scroll with the page */
-   height: 100vh; /* covers the height of the page screen */
-  width: 100%; /* covers the width of the page screen */
-
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
-  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
-  transform: translateZ(0); /* transforming an element along the Z Axis */
-  z-index: -1; /* Puts the overlay layer under the logo */
-  
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  background-position: center; /* Centres the image */
 }
  
 
@@ -390,24 +389,9 @@ body:after { /* this element will add the overlay after the background image */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
   background-image: url(../Images/TeacherOffice.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
-  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
-  background-size: 103% 102%; /* Image will cover the entire page element */
-  background-position: center;
-  
   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
-   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
-   background-position: center; /* Centres the image */
-  
-   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
-   background-attachment: fixed; /* the image will not scroll with the page */
-   height: 100vh; /* covers the height of the page screen */
-  width: 100%; /* covers the width of the page screen */
-
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
-  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
-  transform: translateZ(0); /* transforming an element along the Z Axis */
-  z-index: -1; /* Puts the overlay layer under the logo */
-  
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  background-position: center; /* Centres the image */
 }
  
 
@@ -416,24 +400,6 @@ body:after { /* this element will add the overlay after the background image */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
   background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
-  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
-  background-size: 103% 102%; /* Image will cover the entire page element */
-  background-position: center;
-  
-  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
-   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
-   background-position: center; /* Centres the image */
-  
-   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
-   background-attachment: fixed; /* the image will not scroll with the page */
-   height: 100vh; /* covers the height of the page screen */
-  width: 100%; /* covers the width of the page screen */
-
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
-  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
-  transform: translateZ(0); /* transforming an element along the Z Axis */
-  z-index: -1; /* Puts the overlay layer under the logo */
-  
 }
   /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
   /* Code explaination referenced from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
@@ -528,7 +494,7 @@ h3 {
 }
 
 /* Styling of the 'button' logo */
-.button {
+.Skipbutton{
   border: none; /* Removes borders from around the button */
   cursor: pointer; /* Changes the button to a hand icon */
   appearance: none; /* Removes any platform-specific styling for buttons */
@@ -885,6 +851,67 @@ html {
   margin: 0%;
 }
 
+/* Styling for the text to speech container */
+.theendcontainer {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  border: 10px solid red; /* solid black border, slightly thick */
+  left: 50%;  /* Left position = 82 */
+  top: 2420%;
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  background-color: white; /* Background colour is white */
+  padding: 10px;  /* Padding inside the container: 10 pixels */
+  z-index: 1; /* sets the z-order of the positioned element */
+}
+
+/* Taught by Thom Corah */
+       #loadingScreen {
+        background-image: url(../Images/School3.png); 
+        background-color: white; /* Background colour */
+        position: fixed; /* Fixed on top of everything else */
+        top: 0; /* default for top*/
+        width: 100vw; /* width of loading screen */
+        height: 100vh; /* height of loading screen */
+        z-index: 1000; /* stack order of arrows */
+        background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+        background-size: 103% 102%; /* Image will cover the entire page element */
+        background-position: center;
+      }
+      
+      
+      /* Styling of "loading" */
+      .loadingtext1 {
+        font-family: Cabin Sketch;  /* Type of font */
+        text-align: center; /* Alignment middle of text */
+        font-size: 8vh; /* Font size of text */
+        margin: 0; /* No margin of text */
+        margin-top: 7vh; /* Margin top for text */
+        padding: 0; /* No padding for text */
+      }
+      
+      /* Styling for heart image */
+      .spin {
+        height: 26vh; /* Height of heart image */
+        max-width: 40vw; /* Width of heart image */
+        margin-top: 7vh; /* Margin top of heart image */
+        margin-left: 30vw; /* Margin left of heart image */
+        margin-right: 30vw;  /* Margin right of heart image */
+        animation-name: spinning;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        /* linear | ease | ease-in | ease-out | ease-in-out */
+        animation-timing-function: ease-in-out;
+      }
+      
+      
+      /* Taken from CodeBoxx (2022) Rotate & Spin An Image In HTML CSS (Simple Examples). Available at: https://code-boxx.com/rotate-spin-image-html-css/ (Accessed: 9 February 2023). */
+      /* Animation instructions for the logo to spin. */
+      @keyframes spinning {
+        from { transform: rotate(0deg) } /* The animation begins at 0 degrees */
+        to { transform: rotate(360deg) } /* The animation transforms/rotates 360 degrees */
+      }
+
+      
+      
 }
 
 
@@ -923,6 +950,522 @@ body:after { /* this element will add the overlay after the background image */
   z-index: 0; /* Puts the overlay layer under the logo */
 }
 
+
+ .textover{
+  position: relative;
+width: 74vw;
+height: 20vw;
+margin: auto;
+z-index: 1;
+}
+
+.textover img {
+  width: 75vw;
+  height: 20vw;
+  padding-top: 6%;
+}
+
+.textover p {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 10%;
+  padding-left: 10%; 
+  padding-right: 3%;
+  text-align: left;
+  color: black;
+  font-size: 1.2vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#id {
+padding-bottom: 7vw!important;
+}
+
+.tts {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  width: 105% !important;
+  height: 120% !important;
+  padding-top: 24% !important;
+padding-left: 95%;
+  color: black;
+  font-size: 4.2vw;
+  z-index: 1;
+}
+
+.tts2 {
+  position: absolute;
+  top: 25% !important;
+  bottom: 0;
+  left: 0; 
+  width: 50% !important;
+  height: 70% !important;
+  padding-left: 35%;
+  color: black;
+  font-size: 4.2vw;
+  z-index: 1;
+}
+
+.tts3 {
+  position: absolute;
+  top: 125%;
+left: 90%;
+  width: 15% !important;
+  height: 70% !important;
+  font-size: 4.2vw;
+  z-index: 1;
+}
+
+.decider {
+  position: absolute;
+  top: -190%;
+left: 5%;
+  width: 90% !important;
+  height: 290% !important;
+  font-size: 4.2vw;
+  z-index: 1;
+}
+
+.decider2 {
+  position: absolute;
+  top: -200%;
+left: 5%;
+  width: 90% !important;
+  height: 290% !important;
+  font-size: 4.2vw;
+  z-index: 1;
+}
+
+.deciderinstructions {
+  top: -180% !important;
+  left: 25% !important;
+  color: black;
+  font-size: 4vw !important;
+  z-index: 2;
+  font-family: Arial, Helvetica, sans-serif;
+  float: right;
+}
+
+.deciderinstructions2 {
+  left: 18% !important;
+  top: -180% !important;
+  color: black;
+  font-size: 4vw !important;
+  z-index: 2;
+  font-family: Arial, Helvetica, sans-serif;
+  float: right;
+}
+
+.deciderimage2 {
+  top: 0.3vw !important;
+  width: 45% !important;
+  height: 120% !important;
+  margin: 0;
+  left: 40vw !important;
+  padding: 0;
+  display: grid;
+  position: relative;
+}
+
+.deciderimage {
+  top: -10vw !important;
+  width: 45% !important;
+  height: 120% !important;
+  position: relative;
+}
+.sec {
+  height: 100vh !important;
+}
+h4 {
+  position: absolute;
+  top: -15% !important;
+  bottom: 0;
+  left: -30% !important;
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 15%; 
+  padding-right: 10%;
+  text-align: center;
+  color: black;
+  font-size: 6vw;
+  font-family: 'Cabin Sketch';
+}
+
+h5 {
+  position: absolute;
+  top: 85% !important;
+  bottom: 0;
+  left: 25% !important;
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 15%; 
+  padding-right: 10%;
+  text-align: center;
+  color: black;
+  font-size: 6vw;
+  font-family: 'Cabin Sketch';
+}
+
+h6 {
+font-family: 'Cabin Sketch';
+text-align: center;
+font-size: 4vw;
+margin: 0%;
+}
+
+/* Styling for the text to speech container */
+.theendcontainer {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  border: 10px solid red; /* solid black border, slightly thick */
+  left: 50%;  /* Left position = 82 */
+  top: 2450%;
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  background-color: white; /* Background colour is white */
+  padding: 10px;  /* Padding inside the container: 10 pixels */
+  z-index: 1; /* sets the z-order of the positioned element */
+}
+
+.theend {
+  font-family: Cabin Sketch;
+  font-size: 10vw;
+}
+
+.speechreviewcontainer {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  right: -9%;  /* Left position = 82 */
+  top: 2483%;
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  padding: 10px;  /* Padding inside the container: 10 pixels */
+  z-index: 1; /* sets the z-order of the positioned element */
+}
+
+.speechreviewcontainers {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  right: -35%;  /* Left position = 82 */
+  top: 2483%;
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  padding: 10px;  /* Padding inside the container: 10 pixels */
+  z-index: 1; /* sets the z-order of the positioned element */
+  margin: 0;
+}
+
+.speechreviewcontainerss {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  right: -22%;  /* Left position = 82 */
+  top: 2420%;
+  transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
+  padding: 10px;  /* Padding inside the container: 10 pixels */
+  z-index: 1; /* sets the z-order of the positioned element */
+  margin: 0;
+}
+
+.speechreview {
+  width: 40%;
+}
+
+.reviewtext {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+font-size: 2vw;
+left: 5%;
+top: 10%;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.reviewtext2 {
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  color: white;
+font-size: 2vw;
+left: 4%;
+top: 45%;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+background-color: black; /* Background colour is white */
+padding-left: 6%;
+padding-right: 5%;
+}
+
+.avatar {
+  top: 10%;
+  height: 3vw;
+  position: relative;
+  width: 20vw;
+  left: 60%;
+  right: 20%;
+  bottom: 0%;
+  margin: 0%;
+  margin-top: 0%;
+  margin-left: 0%;
+  padding: 0%;
+  margin-bottom: 0px;
+}
+
+.avatar2 {
+  height: 3vw;
+  position: relative;
+  width: 20vw;
+  left: -150%;
+  right: 20%;
+  bottom: 0%;
+  margin: 0%;
+  margin-top: 0%;
+  margin-left: 0%;
+  padding: 0%;
+  margin-bottom: 0px;
+}
+
+.avatar img {
+  border-radius: 9999px;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  margin: 0%;
+}
+
+@keyframes cycle-colors {
+  0% { border-color: hsl(0, 100%, 50%); }
+  25% { border-color: hsl(90, 100%, 50%); }
+  50% { border-color: hsl(180, 100%, 50%); }
+  75% { border-color: hsl(270, 100%, 50%); }
+  100% { border-color: hsl(360, 100%, 50%); }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.avatar::before,
+.avatar::after {
+  animation: pulse 2s linear infinite;
+  border: #ff0000 solid 8px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  content: ' ';
+  height: 250%;
+  left: -20%;
+  opacity: .6;
+  position: absolute;
+  top: -160%;
+  transform: scale(0.714);
+  width: 140%;
+  z-index: 1;
+  margin: 0%; 
+}
+
+.avatar::after {
+  animation-delay: 1s;
+  margin: 0%;
+}
+
+.avatar:hover img {
+  margin: 0%;
+}
+
+.avatar:hover::before,
+.avatar:hover::after {
+  animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+  margin: 0%;
+}
+
+.avatar:hover::after {
+  animation-delay: .5s;
+  margin: 0%;
+}
+  /*---------------------
+HAMBURGER MENU
+----------------------*/
+
+
+.hamburger-menu {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  padding-left: 15px;
+  width: 10%;
+  height: 60px;
+  cursor: pointer;
+  z-index: 9998;
+  background:#EBEBEB;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.bar,
+.bar:after,
+.bar:before {
+  width: 30px;
+  height: 3px;
+}
+
+.bar {
+  position: relative;
+  transform: translateY(10px);
+  background: black;
+  transition: all 0ms 300ms;
+}
+
+.bar.animate {
+  background: rgba(255, 255, 255, 0);
+}
+
+.bar:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  background: black;
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  background: black;
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:after {
+  top: 0;
+  transform: rotate(45deg);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:before {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/*---------------------
+Mobiles Menu 
+----------------------*/
+	/*---------------------
+	Mobiles Menu - Design 
+	----------------------*/
+
+.mobile-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu li {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0;
+  overflow: hidden;
+  padding: 5px;
+  position: relative;
+  text-align: left;
+  text-transform: uppercase;
+  padding-left:15px;
+}
+
+.mobile-menu li:first-child {
+  margin-top: 70px;
+}
+
+.mobile-menu li:hover {
+  background: #CCCCCC;
+}
+
+.mobile-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+	/*---------------------
+	Mobiles Menu - Slide IN 
+	----------------------*/
+
+.mobile-menu {
+  top: 0;
+  max-width: 250px;
+  left: -100%;
+  width: 100%;
+  background: #EBEBEB;
+  color: black;
+  height: 100%;
+  position: fixed;
+  z-index: 9997;
+  overflow-y: auto;
+  -webkit-transform: translate3d(0, 0, 205px);
+  -moz-transform: translate3d(0, 0, 205px);
+  transform: translate3d(0, 0, 205px);
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.mobile-menu.active {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+	/*---------------------
+	Mobiles Menu - Dropdown Submenu
+	----------------------*/
+
+.has-children:hover{
+	cursor:hand;
+}
+
+.children {
+	display:none;	
+}
+
+.mobile-menu .children li:first-child {
+  margin-top: 0px;
+}
+
+.icon-arrow {
+	position: absolute;
+	display: block;
+	font-size: 0.7em;
+	color: black;
+	top: 5px;
+	right: 10px;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg); 
+	transition: .6s;
+  -webkit-transition: .6s;
+  -moz-transition: .6s;	 
+}
+  
+.icon-arrow:after {
+    content: "\25BC";
+}
+
+.icon-arrow.open {
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg); 
+  transition: .6s;
+  -webkit-transition: .6s;
+  -moz-transition: .6s; 		
+}
+
+
+
+
 /* Taken from Coyier, C. (2014) Quick CSS Trick: How To Center an Object Exactly In The Center. Available at: https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/ (Accessed: 7 February 2023). */
 /* Positioning of the logo container */
 .logocontainer {  /* Container for the logo */
@@ -950,6 +1493,14 @@ body:after { /* this element will add the overlay after the background image */
   
 }
 
+/* Styling of the 'button' logo */
+.Skipbutton{
+  border: none; /* Removes borders from around the button */
+  cursor: pointer; /* Changes the button to a hand icon */
+  appearance: none; /* Removes any platform-specific styling for buttons */
+  background-color: inherit; /* Inherets the background colour of parent element */
+}
+
 /* Taken from CodeBoxx (2022) Rotate & Spin An Image In HTML CSS (Simple Examples). Available at: https://code-boxx.com/rotate-spin-image-html-css/ (Accessed: 9 February 2023). */
 /* Animation instructions for the logo to spin. */
 @keyframes spinninglogo {
@@ -957,55 +1508,6 @@ body:after { /* this element will add the overlay after the background image */
   to { transform: rotate(360deg) } /* The animation transforms/rotates 360 degrees */
 }
 
-
-.parallax-layer {
-  /* Instructions for making the background image move upon mouse movement */
-  margin: 0; /* No margin on the 0 */
-   /* background image for parallax layer*/
-  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
-  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
-  background-size: 103% 102%; /* Image will cover the entire page element */
-  background-position: center;
-  
-  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
-   
-   background-position: center; /* Centres the image */
-  
-   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
-   background-attachment: fixed; /* the image will not scroll with the page */
-   height: 100vh; /* covers the height of the page screen */
-  width: 100%; /* covers the width of the page screen */
-
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
-  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
-  transform: translateZ(0); /* transforming an element along the Z Axis */
-  z-index: -1; /* Puts the overlay layer under the logo */
-}
-
-.parallax-layer2 {
-  /* Instructions for making the background image move upon mouse movement */
-  margin: 0; /* No margin on the 0 */
-   /* background image for parallax layer*/
-  background-image: url(../Images/playground.jpg); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
-  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
-  background-size: 103% 102%; /* Image will cover the entire page element */
-  background-position: center;
-  
-  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
-   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
-   background-position: center; /* Centres the image */
-  
-   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
-   background-attachment: fixed; /* the image will not scroll with the page */
-   height: 100vh; /* covers the height of the page screen */
-  width: 100%; /* covers the width of the page screen */
-
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
-  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
-  transform: translateZ(0); /* transforming an element along the Z Axis */
-  z-index: -1; /* Puts the overlay layer under the logo */
-  
-}
 
   /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
   /* Code explaination referenced from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
@@ -1036,7 +1538,7 @@ body:after { /* this element will add the overlay after the background image */
   left: 0; /* Left position = 0 */
   top: 0; /* Right position = 0 */
   transform: translate(calc(-50% + 15px), -50%); /* Transform the cursor to translate, moves based on X and Y, -50% + 15px = X axis and -15% = Y axis */
-  z-index: 1; /* sets the z-order of the positioned element */
+  z-index: 2; /* sets the z-order of the positioned element */
 }
 
   /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
@@ -1052,7 +1554,7 @@ body:after { /* this element will add the overlay after the background image */
   transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
   pointer-events: none; /* The cursor will not effect any other elements under it */
   transition: width .3s, height .3s, opacity .3s; /* The cursor will take .3 seconds for the width, height and opacity to animate */
-  z-index: 1; /* sets the z-order of the positioned element */
+  z-index: 2; /* sets the z-order of the positioned element */
 }
 
   /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
@@ -1077,6 +1579,13 @@ body:after { /* this element will add the overlay after the background image */
   height: 90px; /* Height of cursor when user clicks */
   opacity: .5; /* Opacity of the colour of the cursor when clicked */
 }
+.NavPaper { 
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 10vw !important;
+  width: 10vw !important;
+  }
 
 /* Styling for the text to speech container */
 .textspeechcontainer {
@@ -1135,6 +1644,7 @@ h3 {
   text-align: center; /* text align in the centre */
   font-size: 25px; /* Font size: 25 pixels */
 }
+
 
 /* Styling for logo instruction image container */
 .logoinstructioncontainer {
@@ -1269,4 +1779,154 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
  background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; /* All disappear by having their size set to 0 */
 }
 }
+
+
+.parallax-layer {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+}
+
+.parallax-layer1 {
+  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+}
+
+.parallax-layer2 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/playground.jpg); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+
+
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+ 
+}
+
+.parallax-layer3 {
+    /* Instructions for making the background image move upon mouse movement */
+    margin: 0; /* No margin on the 0 */
+    /* background image for parallax layer*/
+   background-image: url(../Images/Pencils.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+ 
+   
+   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+    position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+    background-position: center; /* Centres the image */
+}
+ 
+
+.parallax-layer4 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/Classroom.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+   background-position: center; /* Centres the image */
+}
+ 
+ 
+.parallax-layer5 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/CommonRoom.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  background-position: center; /* Centres the image */
+}
+ 
+
+.parallax-layer6 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/EmmasHouse.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  background-position: center; /* Centres the image */
+}
+ 
+
+.parallax-layer7 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/TeacherOffice.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  background-position: center; /* Centres the image */
+}
+ 
+
+.parallax-layer8 {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  background-position: center; /* Centres the image */
+}
+
+       /* Taught by Thom Corah */
+       #loadingScreen {
+        background-image: url(../Images/School3.png); 
+        background-color: white; /* Background colour */
+        position: fixed; /* Fixed on top of everything else */
+        top: 0; /* default for top*/
+        width: 100vw; /* width of loading screen */
+        height: 100vh; /* height of loading screen */
+        z-index: 1000; /* stack order of arrows */
+        background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+        background-size: 103% 102%; /* Image will cover the entire page element */
+        background-position: center;
+      }
+      
+      
+      /* Styling of "loading" */
+      .loadingtext1 {
+        font-family: Cabin Sketch;  /* Type of font */
+        text-align: center; /* Alignment middle of text */
+        font-size: 8vh; /* Font size of text */
+        margin: 0; /* No margin of text */
+        margin-top: 7vh; /* Margin top for text */
+        padding: 0; /* No padding for text */
+      }
+      
+      /* Styling for heart image */
+      .spin {
+        height: 70vh; /* Height of heart image */
+        max-width: 40vw; /* Width of heart image */
+        margin-top: 7vh; /* Margin top of heart image */
+        margin-left: 30vw; /* Margin left of heart image */
+        margin-right: 30vw;  /* Margin right of heart image */
+        animation-name: spinning;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        /* linear | ease | ease-in | ease-out | ease-in-out */
+        animation-timing-function: ease-in-out;
+      }
+      
+      
+    
 }
