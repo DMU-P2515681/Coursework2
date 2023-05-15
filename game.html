@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   body {
+	margin: 0;
+   }
+
+   #sky {
+	height: 50px;
+   }
+
+header {
+	margin-bottom: 1rem;
+}
+
+h1 {
+	font-weight: 200;
+	margin-bottom: 1rem;
+}
+
+h1:before {
+	content:"EASELJS ";
+	font-weight: bold;
+}
+
+header p {
+	margin: 0;
+	padding: 1em;
+	background: rgba(250, 252, 255, 0.7);
+}
+
+.content, canvas {
+	background: white;
+}
+
+.content {
+	width: 960px;
+	height: 400px;
+	overflow: hidden;
+}
+
+.loading {
+	position: relative;
+}
+
+
+
+#error {
+	display:none;
+	width: 960px;
+	text-align: left;
+	padding: 10px;
+}
+
+#mobile {
+    display:none;
+    width: 960px;
+    text-align: left;
+    padding: 10px;
+}
+
+body.embedded header {
+	display: none;
+}
+
+body.embedded {
+	margin: 0;
+}
+
+       /* Taught by Thom Corah */
+	   #loadingScreen {
+  background-image: url(../Images/School3.png); 
+  background-color: white; /* Background colour */
+  position: fixed; /* Fixed on top of everything else */
+  top: 0; /* default for top*/
+  width: 100vw; /* width of loading screen */
+  height: 100vh; /* height of loading screen */
+  z-index: 1000; /* stack order of arrows */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+}
+
+
+/* Styling of "loading" */
+.loadingtext1 {
+  font-family: Cabin Sketch;  /* Type of font */
+  text-align: center; /* Alignment middle of text */
+  font-size: 8vh; /* Font size of text */
+  margin: 0; /* No margin of text */
+  margin-top: 7vh; /* Margin top for text */
+  padding: 0; /* No padding for text */
+}
+
+/* Styling for heart image */
+.spin {
+  height: 70vh; /* Height of heart image */
+  max-width: 40vw; /* Width of heart image */
+  margin-top: 7vh; /* Margin top of heart image */
+  margin-left: 30vw; /* Margin left of heart image */
+  margin-right: 30vw;  /* Margin right of heart image */
+  animation-name: spinning;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: ease-in-out;
+}
+
+
+/* Taken from CodeBoxx (2022) Rotate & Spin An Image In HTML CSS (Simple Examples). Available at: https://code-boxx.com/rotate-spin-image-html-css/ (Accessed: 9 February 2023). */
+/* Animation instructions for the logo to spin. */
+@keyframes spinning {
+  from { transform: rotate(0deg) } /* The animation begins at 0 degrees */
+  to { transform: rotate(360deg) } /* The animation transforms/rotates 360 degrees */
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 16px;
+}
+
+a:hover {
+  background-color: red;
+  color: black;
+}
+
+.previous {
+  background-color: white;
+  border: 6px solid red; /* solid black border, slightly thick */
+  color: black;
+}
+
+
+.round {
+  border-radius: 50%;
+  width: 5vw;
+  
+}
+
+.adjustment {
+  padding-left: 9vw !important;
+  padding-bottom: 2vw !important;
+  position: absolute;
+  left: 2%;
+  top: 4%;
+
+}
+
+.hex {
+ font-size: 3vw;
+ padding-left: 30% !important;
+}
+    </style>
+</head>
+
+<div class="adjustment">
+    <a href="frontcover.html" class="previous round"><span class="hex">&#8249;</span></a>
+    </div>
+
+<body onload="init();">
+    <div class="Canvas" width="0%"> 
+    <canvas id="testCanvas" width="1680" height="980">
+
+    </canvas>  
+    </div>
+
+	 <!-- Loading screen-->
+     <div id="loadingScreen">
+		<img  class="spin"src="Images/Logo.png" alt="Logo" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
+	  <p class="loadingtext1"><b>LOADING...</b></p><!-- Word used on loading screen as the page is an art page-->
+	</div>
+	  <!-- Javascript for loading screen -->
+	<script>
+   removeLoadingScreen = () => { // This is a function that will make the div dissapear.
+	  document.getElementById('loadingScreen').style.display = "none";} // Grabs the ID from the html with a default display.
+	  setTimeout(removeLoadingScreen, 4000); // Use setTimeout to run the loading page when the page loads.
+  
+	</script>
+</body >
+
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script id="editable">
+	var stage, w, h, loader;
+	var sky, grant, ground, hill, hill2;
+
+	function init() {
+		examples.showDistractor();
+		stage = new createjs.StageGL("testCanvas");
+
+		// grab canvas width and height for later calculations:
+		w = stage.canvas.width;
+		h = stage.canvas.height;
+
+		manifest = [
+			{src: "GirlRunning.png", id: "grant"},
+            {src: "Lindsay.png", id: "Lindsay"},
+			{src: "GameWall.png", id: "sky"},
+			{src: "Fence.png", id: "hill"},
+		];
+
+		loader = new createjs.LoadQueue(false);
+		loader.addEventListener("complete", handleComplete);
+		loader.loadManifest(manifest, true, "/Images/");
+	}
+
+	function handleComplete() {
+		examples.hideDistractor();
+
+		sky = new createjs.Shape();
+		sky.graphics.beginBitmapFill(loader.getResult("sky")).drawRect(0, 0, w, h);
+		//By default swapping between Stage for StageGL will not allow for vector drawing operation such as BitmapFill, useless you cache your shape.
+		sky.cache(0, 0, w, h);
+
+
+		hill = new createjs.Bitmap(loader.getResult("hill"));
+		hill.setTransform(Math.random() * w, h - hill.image.height, 4, 4);
+		hill.alpha = 0.5;
+
+		grant = new createjs.Bitmap(loader.getResult("grant"));
+
+
+		stage.addChild(sky, hill, grant);
+		stage.addEventListener("stagemousedown", handleJumpStart);
+
+		createjs.Ticker.timingMode = createjs.Ticker.RAF;
+		createjs.Ticker.addEventListener("tick", tick);
+	}
+
+	function handleJumpStart() {
+		
+	}
+
+	function tick(event) {
+		var deltaS = event.delta / 1000;
+		var position = grant.x + 150 * deltaS;
+
+		var grantW = grant.getBounds().width * grant.scaleX;
+		grant.x = (position >= w + grantW) ? -grantW : position;
+
+		hill.x = (hill.x - deltaS * 30);
+		if (hill.x + hill.image.width * hill.scaleX <= 0) {
+			hill.x = w;
+		}
+		
+
+		stage.update(event);
+	}
+</script>
+<script>
+    (function() {
+	if (document.body) { setupEmbed(); }
+	else { document.addEventListener("DOMContentLoaded", setupEmbed); }
+	
+	function setupEmbed() {
+		if (window.top != window) {
+			document.body.className += " embedded";
+		}
+	}
+	
+	var o = window.examples = {};
+	o.showDistractor = function(id) {
+		var div = id ? document.getElementById(id) : document.querySelector("div canvas").parentNode;
+		div.className += " loading";
+	};
+	
+	o.hideDistractor = function() {
+		var div = document.querySelector(".loading");
+		div.className = div.className.replace(/\bloading\b/);
+	};
+})();
+</script>
+</html>

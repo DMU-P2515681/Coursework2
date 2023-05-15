@@ -1,0 +1,543 @@
+<!DOCTYPE html>  <!-- HTML 5 doctype -->
+<html lang="en">  <!-- The language for the HTML5 is English -->
+<head> <!-- Head section: non visible elements -->
+    <meta charset="UTF-8"><!-- Encoding characters -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatible for internet explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport properties. Ensures that the page is rendered properly on different devices. -->
+    <title>Document</title> <!-- Title of HTML page which will be displayed in the browser. -->
+    
+      <!-- Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023).  -->
+     <!--  Font Awesome Icons. -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+    /><!-- Link to the Font Awesome Icons library. -->
+   
+          <!-- Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023).  -->
+     <!--  Google Fonts. -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    /> <!-- Link to the Google Fonts Stylesheet -->
+    <style>
+
+@media only screen and (max-width: 700px) {
+  /* Taken from W3docs (no date) How to Create an Overlay Using CSS. Available at: https://www.w3docs.com/snippets/css/how-to-create-an-overlay-using-css.html (Accessed: 7 February 2023). */
+/* Adds an overlay to the background image */
+body:after { /* this element will add the overlay after the background image */
+  content: ""; /* used with 'after:' to insert generated content */
+  display: block; /* block element, fills the width of the screen */
+  position: fixed; /* This keeps the overlay in the same place */
+  top: 0; /* No top adjustments */
+  left: 0; /* No left adjustments */
+  height: 168% !important; /* covers the height of the page screen */
+  width: 114% !important; /* covers the width of the page screen */
+  z-index: 10; /* Stack order of the element  */
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1; /* Puts the overlay layer under the logo */
+}
+}
+
+body {
+  /* Instructions for making the background image move upon mouse movement */
+  margin: 0; /* No margin on the 0 */
+   /* background image for parallax layer*/
+  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center;
+  
+  /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
+   
+   background-position: center; /* Centres the image */
+  
+   /* Referenced from W3Schools (2023) CSS background-attachment Property. Available at: https://www.w3schools.com/cssref/pr_background-attachment.php (Accessed: 9 February 2023). */
+   background-attachment: fixed; /* the image will not scroll with the page */
+   height: 100vh; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+
+  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+  /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
+  transform: translateZ(0); /* transforming an element along the Z Axis */
+  z-index: -1; /* Puts the overlay layer under the logo */
+}
+
+/* Taken from W3docs (no date) How to Create an Overlay Using CSS. Available at: https://www.w3docs.com/snippets/css/how-to-create-an-overlay-using-css.html (Accessed: 7 February 2023). */
+/* Adds an overlay to the background image */
+body:after { /* this element will add the overlay after the background image */
+  content: ""; /* used with 'after:' to insert generated content */
+  display: block; /* block element, fills the width of the screen */
+  position: fixed; /* This keeps the overlay in the same place */
+  top: 0; /* No top adjustments */
+  left: 0; /* No left adjustments */
+  height: 140%; /* covers the height of the page screen */
+  width: 100%; /* covers the width of the page screen */
+  z-index: 10; /* Stack order of the element  */
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1; /* Puts the overlay layer under the logo */
+}
+
+         .addsign {
+            position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+            top: 3%; /* Top position = 3 */
+            left: 76%;  /* Left position = 76 */
+            z-index: 1; /* sets the z-order of the positioned element */
+            
+         }
+
+         /* Taught by Thom Corah from lectures.*/
+         /* Styling of the submitted review cards */
+        .reviewCard {
+            padding: 10px;/* 10 pixels padding inside card*/
+            background-color: white;/* Colour of card */
+            border: 3px solid darkgrey; /* The border is dark grey; 3 pixels wide */
+            margin: 10px; /* The margin around the card is 10 pixels */
+            width: 20vw; /* Width of review card */
+            border-radius: 4px; /* The edges of the rectangle are rounded by 4 pixels */
+            float: left; /* The cards are floated to the left */
+            position: relative; /* Positioned relative to the normal position. */
+            left: 4%; /* The cards are 4 percent away from the left of the screen. */
+  
+        }
+
+/* Taught by Thom Corah */
+/* Styling for loading screen */
+#loadingScreen {
+  background-image: url(../Images/School3.png); /* Loading screen image */
+  background-color: white; /* Background colour */
+  position: fixed; /* Fixed on top of everything else */
+  top: 0; /* default for top*/
+  width: 100vw; /* width of loading screen */
+  height: 100vh; /* height of loading screen */
+  z-index: 1000; /* stack order of arrows */
+  background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
+  background-size: 103% 102%; /* Image will cover the entire page element */
+  background-position: center; /* Loading screen is centred */
+}
+
+
+/* Taught by Thom Corah */
+/* Styling of "loading..." */
+.loadingtext1 {
+  font-family: Cabin Sketch;  /* Type of font */
+  text-align: center; /* Alignment middle of text */
+  font-size: 8vh; /* Font size of text */
+  margin: 0; /* No margin of text */
+  margin-top: 7vh; /* Margin top for text */
+  padding: 0; /* No padding for text */
+}
+
+/* Taught by Thom Corah */
+/* Styling for logo image */
+.spin {
+  height: 70vh; /* Height of heart image */
+  max-width: 40vw; /* Width of heart image */
+  margin-top: 7vh; /* Margin top of heart image */
+  margin-left: 30vw; /* Margin left of heart image */
+  margin-right: 30vw;  /* Margin right of heart image */
+  animation-name: spinning; /* Name of animation */
+  animation-duration: 3s; /* The animation was three seconds long */
+  animation-iteration-count: infinite; /* The animation doesn't end */
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: ease-in-out; /* The animation will ease in then ease out */
+}
+
+
+/* Taken from CodeBoxx (2022) Rotate & Spin An Image In HTML CSS (Simple Examples). Available at: https://code-boxx.com/rotate-spin-image-html-css/ (Accessed: 9 February 2023). */
+/* Animation instructions for the logo to spin. */
+@keyframes spinning {
+  from { transform: rotate(0deg) } /* The animation begins at 0 degrees */
+  to { transform: rotate(360deg) } /* The animation transforms/rotates 360 degrees */
+}
+
+
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: red;
+  color: black;
+}
+
+.previous {
+  background-color: white;
+  border: 6px solid red; /* solid black border, slightly thick */
+  color: black;
+}
+
+
+.round {
+  border-radius: 50%;
+  width: 3vw;
+  
+}
+
+.adjustment {
+  padding-left: 9vw !important;
+  padding-bottom: 2vw !important;
+
+}
+
+.hex {
+ font-size: 3vw;
+ padding-left: 30% !important;
+}
+
+.ments {
+  text-align: center;
+}
+
+#nameofuser {
+  font-size: 5vw;
+  text-align: center;
+  border: 6px solid black; /* solid black border, slightly thick */
+
+}
+
+#reviewtext {
+  text-align: center;
+  font-size: 2vw;
+  border: 6px solid black; /* solid black border, slightly thick */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.revcon {
+  padding: 2vw;
+}
+
+#reviewbutton {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 35px 42px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.buttondiv {
+  padding-bottom: 2vw;
+}
+
+#reviews{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.wrapper {
+  font-size: 1.2ee;
+  width: 25em;
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 20%;
+  background-color: #ffffff;
+  border-radius: 0.5em;
+  padding: 4em 2em;
+  box-shadow: 0 1.25em 2.5em rgba(18, 0, 76, 0.15);
+  border: 6px solid green; /* solid black border, slightly thick */
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.fa-star {
+  font-size: 1.5em;
+  color: #ffd700;
+}
+.number {
+  display: block;
+  text-align: center;
+}
+#submit {
+  display: block;
+  position: relative;
+  background: linear-gradient(#fe3b5a, #fd7914);
+  border: none;
+  padding: 0.8em 2em;
+  color: #ffffff;
+  font-size: 1.2em;
+  border-radius: 2em;
+  margin: 1em auto 0 auto;
+  cursor: pointer;
+}
+#submit:disabled {
+  cursor: not-allowed;
+}
+#message {
+  text-align: center;
+  margin-bottom: 2em;
+}
+#submit-section {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  place-items: center;
+  border-radius: 0.5em;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: grid;
+}
+
+#submit-message {
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+}
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+
+  
+     <!-- Loading screen-->
+     <div id="loadingScreen">
+      <img  class="spin"src="Images/Logo.png" alt="Logo" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
+    <p class="loadingtext1"><b>LOADING...</b></p><!-- Word used on loading screen as the page is an art page-->
+  </div>
+    <!-- Javascript for loading screen -->
+  <script>
+ removeLoadingScreen = () => { // This is a function that will make the div dissapear.
+    document.getElementById('loadingScreen').style.display = "none";} // Grabs the ID from the html with a default display.
+    setTimeout(removeLoadingScreen, 4000); // Use setTimeout to run the loading page when the page loads.
+
+  </script>
+
+
+<!-- Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023).  -->
+<div class="wrapper"><!-- Container for the review page -->
+  <p id="message">Rate Your Experience</p><!-- ID for the text -->
+  <div class="container"><!-- Container for all of the stars -->
+    <div class="star-container inactive"> <!-- Container for the first star -->
+      <i class="fa-regular fa-star"></i><!-- Star icons -->
+      <span class="number">1</span> <!-- class for the number 1  -->
+    </div>
+    <div class="star-container inactive"><!-- Container for the second star -->
+      <i class="fa-regular fa-star"></i><!-- Star icons -->
+      <span class="number">2</span> <!-- class for the number 2  -->
+    </div>
+    <div class="star-container inactive"><!-- Container for the third star -->
+      <i class="fa-regular fa-star"></i><!-- Star icons -->
+      <span class="number">3</span> <!-- class for the number 3  -->
+    </div>
+    <div class="star-container inactive"><!-- Container for the fourth star -->
+      <i class="fa-regular fa-star"></i><!-- Star icons -->
+      <span class="number">4</span> <!-- class for the number 4  -->
+    </div>
+    <div class="star-container inactive"><!-- Container for the fifth star -->
+      <i class="fa-regular fa-star"></i><!-- Star icons -->
+      <span class="number">5</span> <!-- class for the number 5  -->
+    </div>
+  </div>
+  <button id="submit" disabled>Submit</button><!-- ID for the submit button -->
+  <div id="submit-section" class="hide"><!-- Container, ID and class for the text that appears after the buttn has been submitted-->
+    <p id="submit-message">Thank you for leaving a review! <br><b>From WAH Team</b></p><!-- Submit message ID and the submission message. -->
+  </div>
+</div>
+
+
+<div class="adjustment">
+<a href="frontcover.html" class="previous round"><span class="hex">&#8249;</span></a>
+</div>
+
+ <!-- Taught by Thom Corah. -->
+<div class="ments" id="reviewsContainer"> <!-- ID in a div called reviewsContainer and a class called 'ments' for the div  -->
+    <input type="text" id="nameofuser" name="username" value="Insert Name Here."><!-- An input was created for text with an ID. The value that will be shown on screen is "Insert Name Here." The name logged is the username. -->
+
+    <form class="revcon"> <!-- A class for the second form -->
+        <textarea id="reviewtext" name="textforreview" rows="4" cols="50">Insert Review Here.</textarea> <!-- A text box was created with an ID called reviewtext. The name logged is the username. It consists of 4 rows and 50 columns.  -->
+      </form>
+
+      <div class="buttondiv"><!-- class for the button  -->
+      <button type="button" class="button" id="reviewbutton">SUBMIT</button><!-- A button was created with a class and ID with the text 'submit.'  -->
+    </div>
+</div>
+
+
+ <!-- Taught by Thom Corah from lectures -->
+<div id="reviews"></div> <!-- ID for the reviews -->
+
+
+ <!-- Taught by Thom Corah from lectures -->
+ <!-- Taken from PouchDB (no date) Download. Available at: https://pouchdb.com/download.html (Accessed: 22 March 2023)-->
+    <script src="//cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script> <!-- Link to activate PouchDB  -->
+<script>
+  var db = new PouchDB('reviews'); // PouchDb is assigned to a variable.
+
+  // Taught by Thom Corah from lectures.
+  getReviews(); // Calls the getReviews function.
+
+  // Taught by Thom Corah from lectures.
+  document.getElementById("reviewbutton").addEventListener("click", addReview); // Adds an event listener to the ID and when the click event is triggered it activates the addReview.
+  function addReview(evt){ // Function that has an object as a parameter.
+    evt.preventDefault(); // Calls the method on 'evt' which prevents the action being triggered. 
+  let newReview = {// Declares a variable and assigns it with several properties.
+    _id: new Date().toISOString(), // newReview assigned to ID. 
+    user: document.getElementById("nameofuser").value, // User: comes from the ID 'nameofuser' 
+    text: document.getElementById("reviewtext").value, // Text: comes from the ID 'reviewtext' 
+    date: new Date().toDateString(),// newReview assigned to date. 
+    stars: 5, // Values of 5 stars. 
+  }
+console.log(newReview); // outputs the function to the web.
+  db.put(newReview); // PouchDB saves the object in the 'reviews' database.
+}
+
+// Taught by Thom Corah from lectures.
+function getReviews(){ // Created a function called getReviews.
+    db.allDocs({include_docs: true}, showReviews); // PouchDB's documents are given to the showReviews function.
+}
+
+// Taught by Thom Corah from lectures.
+function showReviews(err, docs) { // A function that has two parameters.
+    console.log(docs.rows); // Created a function called getReviews.
+    for(let i = 0; i<docs.rows.length; i++){ // For loop, rows array of the docs object. The loop continues as long as i is less than the length of the rows array. 
+        let thisDoc = docs.rows[i].doc; // Assigns the property to the variable.
+        console.log(thisDoc.user); // Logs the user property of the document to the console.
+        let reviewCard = document.createElement('div'); // The div element is assigned to reviewCard.
+        let username = document.createElement('h3'); // H3 is assigned to username.
+        username.textContent = thisDoc.user; // Sets the property element to the property value of the thisDoc object.
+        reviewCard.append(username); // Appends the username element of the reviewCard.
+        let reviewText = document.createElement('p'); // P element is assigned to the variable.
+        reviewText.textContent = thisDoc.text; // Sets textContent of the reviewText to the value of the text property of the thisDoc object.
+        reviewCard.append(reviewText); // reviewText appended of the reviewCard element.
+        reviewCard.classList.add('reviewCard'); // reviewCard CSS is added to the element.
+        document.getElementById('reviews').append(reviewCard);// Reviews are retrieved from the document and appends the reviewCard element.
+    }
+}
+</script>
+
+
+
+<!-- Script -->
+<script>
+    let starContainer = document.querySelectorAll(".star-container");// Selects all the elements with the star-container class name and assigns them to the variable.
+const submitButton = document.querySelector("#submit");// The submit ID is assigned to the variable.
+const message = document.querySelector("#message");//Selects the ID and assigns it to the variable 'message.'
+const submitSection = document.querySelector("#submit-section"); // ID is selected and assigns the submitSection variable.
+//Events For touch and mouse
+let events = {
+mouse: {//Object events for the mouse
+over: "click", // Event type.
+},
+touch: {//Object events for the touch
+over: "touchstart", // Event type.
+},
+};
+
+let deviceType = "";// Empty string variable used to store the type of device detected.
+//Detect touch device
+const isTouchDevice = () => { // Defining a function.
+try {
+//We try to create TouchEvent (it would fail for desktops and throw error)
+document.createEvent("TouchEvent"); // The function attempts to create a touch event. 
+deviceType = "touch"; // Seta the variable to touch.
+return true;// Returns if true.
+} catch (e) { // If error occurs 
+deviceType = "mouse"; // Sets device type to mouse.
+return false; // Returns if false.
+}
+};
+isTouchDevice();
+starContainer.forEach((element, index) => {
+element.addEventListener(events[deviceType].over, () => {
+submitButton.disabled = false;
+if (element.classList.contains("inactive")) {
+  //Fill Star
+  ratingUpdate(0, index, true);
+} else {
+  //Regular stars (remove color)
+  ratingUpdate(index, starContainer.length - 1, false);
+}
+});
+});
+const ratingUpdate = (start, end, active) => {
+for (let i = start; i <= end; i++) {
+if (active) {
+  starContainer[i].classList.add("active");
+  starContainer[i].classList.remove("inactive");
+  starContainer[i].firstElementChild.className = "fa-star fa-solid";
+} else {
+  starContainer[i].classList.remove("active");
+  starContainer[i].classList.add("inactive");
+  starContainer[i].firstElementChild.className = "fa-star fa-regular";
+}
+}
+//Message
+let activeElements = document.getElementsByClassName("active");
+if (activeElements.length > 0) {
+switch (activeElements.length) {
+  case 1:
+    message.innerText = "Terrible";
+    break;
+  case 2:
+    message.innerText = "Bad";
+    break;
+  case 3:
+    message.innerText = "Satisfied";
+    break;
+  case 4:
+    message.innerText = "Good";
+    break;
+  case 5:
+    message.innerText = "Excellent";
+    break;
+}
+} else {
+message.innerText = "";
+}
+};
+submitButton.addEventListener("click", () => {
+submitSection.classList.remove("hide");
+submitSection.classList.add("show");
+submitButton.disabled = true;
+});
+window.onload = () => {
+submitButton.disabled = true;
+submitSection.classList.add("hide");
+};
+</script>
+</body>
+</html>

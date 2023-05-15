@@ -12,6 +12,18 @@
 </head>
 <body>
   <header> 
+      <!-- Loading screen-->
+      <div id="loadingScreen">
+        <img  class="spin"src="Images/Logo.png" alt="Logo" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
+      <p class="loadingtext1"><b>LOADING...</b></p><!-- Word used on loading screen as the page is an art page-->
+    </div>
+      <!-- Javascript for loading screen -->
+    <script>
+   removeLoadingScreen = () => { // This is a function that will make the div dissapear.
+      document.getElementById('loadingScreen').style.display = "none";} // Grabs the ID from the html with a default display.
+      setTimeout(removeLoadingScreen, 4000); // Use setTimeout to run the loading page when the page loads.
+  
+    </script>
     
 <!-- html for hamburger menu -->
     <div class="hamburger-menu">
@@ -22,12 +34,12 @@
 <ul>
 <li class="has-children"><b>COLOUR</b><span class="icon-arrow"></span>
 <ul class="children" id="theSwitcher" >
-<li><a href="submenu1.html">LIGHT</a></li>
-<li><a href="submenu2.html">DARK</a></li>
-<li><a href="submenu3.html">YELLOW</a></li>
-<li><a href="submenu3.html">BLUE</a></li>
-<li><a href="submenu3.html">LIGHT BLUE</a></li>
-<li><a href="submenu3.html">DARK GREEN</a></li>
+<button class="SwitcherButtons" data-css="lighttheme.css">LIGHT</button>
+<button class="SwitcherButtons" data-css="darktheme.css">DARK</button>
+<button class="SwitcherButtons" data-css="lightbluetheme.css">LIGHT BLUE</button>
+<button class="SwitcherButtons" data-css="lightgreentheme.css">LIGHT GREEN</button>
+<button class="SwitcherButtons" data-css="yellowtheme.css">YELLOW</button>
+<button class="SwitcherButtons" data-css="greentheme.css">GREEN</button>
 </ul>
 </li>
             
@@ -51,42 +63,17 @@
 </ul>
 </li>  
 
-<!-- html for theme switcher -->
-<select id="theSwitcher"><!-- ID of button that is going to be clicked on (smaller ellipse). "Select" element gives a dropdown.-->
-  <option value="lighttheme">LIGHT</option> <!-- Option element has a value and what is displayed (lighttheme).-->
-  <option value="darktheme">DARK</option><!-- Option element has a value and what is displayed (darktheme).-->
-  <option value="yellowtheme">YELLOW</option><!-- Option element has a value and what is displayed (yellowtheme).-->
-  <option value="lightbluetheme">BLUE</option><!-- Option element has a value and what is displayed (lightbluetheme).-->
-  <option value="lightgreentheme">L-GREEN</option><!-- Option element has a value and what is displayed (lightgreentheme).-->
-  <option value="greentheme">D-GREEN</option><!-- Option element has a value and what is displayed (darkgreentheme).-->
-  </select>
+
 </nav>
 
 
-
-
-<!-- html for theme switcher -->
-<select id="theSwitcher"><!-- ID of button that is going to be clicked on (smaller ellipse). "Select" element gives a dropdown.-->
-  <option value="lighttheme">LIGHT</option> <!-- Option element has a value and what is displayed (lighttheme).-->
-  <option value="darktheme">DARK</option><!-- Option element has a value and what is displayed (darktheme).-->
-  <option value="yellowtheme">YELLOW</option><!-- Option element has a value and what is displayed (yellowtheme).-->
-  <option value="lightbluetheme">BLUE</option><!-- Option element has a value and what is displayed (lightbluetheme).-->
-  <option value="lightgreentheme">L-GREEN</option><!-- Option element has a value and what is displayed (lightgreentheme).-->
-  <option value="greentheme">D-GREEN</option><!-- Option element has a value and what is displayed (darkgreentheme).-->
-  </select>
+<div class="overlay" style="position: fixed; height: 200vh; width: 100vw; top: 0; z-index: 1000; opacity: 0.2; pointer-events: none;"></div>
 
 
   
 <!-- Javascript for theme switcher-->
 <script>
-  switchSetting = () => {  // Toggle the theme
-    let gotoTheme = document.getElementById('theSwitcher').value;  // Tells the browser what the current theme is and what value it now has.
-    let styleSheet = document
-    .getElementById('themeStyleSheets') // Collecting ID of all stylesheets.
-    .setAttribute('href', 'css/' + gotoTheme + '.css');// CSS plus adding the value of the target theme then back to CSS.
-  };
 
-   document.getElementById("theSwitcher").addEventListener("change", switchSetting); // Get a reference to ID, add an event listener to it to change whenever the user determines. Run function that toggles the theme.
   </script>
 
 
@@ -107,6 +94,15 @@
        $('.icon-arrow').toggleClass('open');
 	});
 })();
+
+document.querySelectorAll('.SwitcherButtons').forEach(el => {
+  el.addEventListener('click', changeColour)
+})
+
+function changeColour(evt){
+  console.log(evt.target.getAttribute("data-css")); 
+document.getElementById("themeStyleSheets").setAttribute("href" , "CSS/" + evt.target.getAttribute("data-css"));
+}
 </script>
 </header>
 
@@ -135,7 +131,7 @@
       <div class="logocontainer"> <!-- Container for the logo image--> 
           <!-- Reference for bullying logo thats in the website logo: Clipart (2022) NO SMOKING LOGOS. Available at: http://www.clipartbest.com/no-smoking-logos (Accessed: 14 November 2022).*/ --> 
          
-          <button type="button" class="button" id="section1Btn">
+          <button type="button" class="Skipbutton" id="section1Btn">
           <img src="Images/Logo.png" class="logo" alt="Words Always Hurt Logo" /> <!-- Code for logo, image source, styling class, alt is for assessibility just in case image doesn't load and its width--> 
         </button>
       </a>
@@ -164,7 +160,7 @@
  <!-- Div created for the parallax layer --> 
  <!-- What was changed: removed the container as the code worked the same.--> 
  <div class="mobilebg"></div> 
- <div class="parallax-layer"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+ <div class="parallax-layer parallax-layer1"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
  
  <!-- Taken from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). -->
  <div class="cursor"></div> <!-- Div for mouse cursor 1 --> 
@@ -173,12 +169,12 @@
 
 
 
- <section>
-  <div class="parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+ <section class="sec">
+  <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
 <div id="section1"></div><!-- ID for new section so the scroll knows where to go --> 
 
-<img class="NavPaper" src="Images/NavPaper.png" alt="styling for nav" width="100%" height="40%">
+
 <figure class="textover" onclick="speak('Starting school is never easy right? That is exactly how Emma felt on her first day of secondary school. Emma was kind, caring and confident but introverted girl who was keen to study and read. She had beautiful green eyes and very long brunette hair and wore her school uniform with class. As nervous as she was to make friends, she was also very keen. After a few weeks, Emma was very satisfied with the friends she had made.')" data-aos="fade-left" data-aos-duration="900">
   <img src="Images/PaperText.png"/>
   <img class="tts" src="Images/textspeech.png"/>
@@ -187,7 +183,7 @@
 with the friends she had made.</p>
  </figure>
 
- <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('They had formed a little group and would spend time studying together, joining extracurricular classes including Book Club and eating lunch together. One day, Emmas positive school experience changed. She started to notice out the corner of her eye that one popular group of girls in her tutor group kept giving her mean looks from the other side of the classroom. Emma shurgged it off at first and assumed it would stop eventually. But it didnt.')">
+ <figure class="textover" id="tts4" data-aos="fade-right" data-aos-duration="900" onclick="speak('They had formed a little group and would spend time studying together, joining extracurricular classes including Book Club and eating lunch together. One day, Emmas positive school experience changed. She started to notice out the corner of her eye that one popular group of girls in her tutor group kept giving her mean looks from the other side of the classroom. Emma shurgged it off at first and assumed it would stop eventually. But it didnt.')">
   <img  src="Images/PaperText.png"/>
   <img class="tts" src="Images/textspeech.png"/>
   <p>They had formed a little group and would spend time studying together, joining extracurricular classes including Book Club and eating lunch together. <br> <br> One day, Emma's positive school experience changed.
@@ -199,10 +195,10 @@ eventually. But it didn't.</p>
 
 
 
-<section>
-  <div class="parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section2"></div><!-- ID for new section so the scroll knows where to go --> 
+
 
 <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('As the school year went on, it became worse. From teasing her about her clothes, to her looks to even her personality. One girl even spilt a drink on her. One afternoon, Emma was sitting on the bench in school reading one of the non-fictional books she’d borrowed from the library. It was hot therefore she wanted to catch some of the weather. Suddenly, she heard giggling behind her and “Oi, Emms!')">
   <img  src="Images/PaperText.png"/>
@@ -223,11 +219,10 @@ eventually. But it didn't.</p>
 
 
 
-<section>
-  <div class="parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
 
-<div id="section3"></div><!-- ID for new section so the scroll knows where to go --> 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Leave me alone, Lindsay,” Emma said, not looking her in the eye. Lindsay grabbed her book and read the title. “The History of Owls? How boring are you?”  She then ripped the title page off the book and gave it back the Emma. “Whoops. You’re going to have to pay for that now.” Linsday’s friends giggled.')">
   <img src="Images/PaperText.png"/>
   <img class="tts" src="Images/textspeech.png"/>
@@ -243,24 +238,22 @@ eventually. But it didn't.</p>
 
 
 
-<section>
-  <div class="parallax-layer3"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer3"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section3"></div><!-- ID for new section so the scroll knows where to go --> 
-<img class="NavPaper" src="Images/NavPaper.png" alt="styling for nav" width="100%" height="40%">
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('stand up to them. Tap!')">
   <h6>WHAT SHOULD<br>EMMA DO?</h6>
   <img  class="deciderimage2" src="Images/PaperText.png"/>
   <img class="tts3" src="Images/textspeech.png"/>
 
-  <button type="button" class="button" id="section5Btn">
-  <div class="avatar">
-  <img class="decider" src="Images/Logoinstruction.png"/>
-  <p class="deciderinstructions" ><b>TAP!</b></p>
-  </div>
-</button>
 
-  <h5><b>STAND UP <br> TO THEM</b></h5>
+  <div class="avatar">
+  <img class="decider2" class="decider" src="Images/Logoinstruction.png"/>
+  <p class="deciderinstructions2" class="deciderinstructions" ><b>TAP!</b></p>
+  </div>
+
+
+  <h5><b>ALERT THE <br> TEACHER</b></h5>
  </figure>
 
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Alert the teacher. Tap!')">
@@ -268,20 +261,20 @@ eventually. But it didn't.</p>
   <img  class="deciderimage" src="Images/PaperText.png"/>
   <img class="tts2" src="Images/textspeech.png"/>
  
-    <div class="avatar">
+  <button type="button"  class="Skipbutton" id="section5Btn">
+    <div class="avatar avatar2">
       <img class="decider" src="Images/Logoinstruction.png"/>
-      <p class="deciderinstructions"><b>TAP!</b></p>
+      <p class="deciderinstructions" class="instructions"><b>TAP!</b></p>
     </div>
-
-  <h4><b>ALERT THE<br> TEACHER</b></h4>
+  </button>
+  <h4><b>STAND UP<br> TO THEM</b></h4>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section4"></div><!-- ID for new section so the scroll knows where to go --> 
-<img class="NavPaper" src="Images/NavPaper.png" alt="styling for nav" width="100%" height="40%">
+<div id="section2"></div><!-- ID for new section so the scroll knows where to go --> 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma stood up straight and said “No, you’re going to pay for it because you ripped it. Emma stood her ground even though she was shaking inside. Lindsay and her friends looked at each other, shocked to see this. Emma had never stood up to them before. Lindsay took a step closer to her. “What did you just say?” Emma took a step back. “You heard me.”')">
   <img src="Images/PaperText.png"/>
   <img class="tts" src="Images/textspeech.png"/>
@@ -296,10 +289,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section4"></div><!-- ID for new section so the scroll knows where to go --> 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('“You think you’re so it. Just because you wear designer shoes and have long brunette hair.” Emma’s head was still being pulled to the side.  No. I’m not going to cry. She thought. “What have I ever done to you, Lindsay?” Emma genuinely asked. Lindsay let go of Emma’s hair and crosses her arms.')">
   <img src="Images/PaperText.png"/>
   <img class="tts" src="Images/textspeech.png"/>
@@ -313,10 +305,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section4"></div><!-- ID for new section so the scroll knows where to go --> 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma stood there holding back tears as Lindsay and her friends walked away. She began running to class with her friends. “By the way, Emmie, if you open your mouth, you’d be branded a snitch anyway! You’re already the most unpopular cow!”  Emma’s friends told her to ignore Lindsay’s comments and just go to class. “Also, weirdo, I don’t know where you’re ')">
   <img src="Images/PaperText.png"/>
   <img class="tts" src="Images/textspeech.png"/>
@@ -330,19 +321,17 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer3"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer3"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section4"></div><!-- ID for new section so the scroll knows where to go --> 
-<img class="NavPaper" src="Images/NavPaper.png" alt="styling for nav" width="100%" height="40%">
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Skips Class. Tap!')">
   <h6>WHAT SHOULD<br>EMMA DO?</h6>
   <img  class="deciderimage2" src="Images/PaperText.png"/>
   <img class="tts3" src="Images/textspeech.png"/>
 
-  <div class="avatar">
-  <img class="decider" src="Images/Logoinstruction.png"/>
-  <p class="deciderinstructions" ><b>TAP!</b></p>
+  <div class="avatar" >
+  <img class="decider2" class="decider" src="Images/Logoinstruction.png"/>
+  <p class="deciderinstructions2" class="deciderinstructions" ><b>TAP!</b></p>
   </div>
 
   <h5><b>SKIPS <br>CLASS?</b></h5>
@@ -353,8 +342,8 @@ eventually. But it didn't.</p>
   <img  class="deciderimage" src="Images/PaperText.png"/>
   <img class="tts2" src="Images/textspeech.png"/>
  
-  <button type="button" class="button" id="section6Btn">
-    <div class="avatar">
+  <button type="button" class="Skipbutton" id="section6Btn">
+    <div class="avatar avatar2">
       <img class="decider" src="Images/Logoinstruction.png"/>
       <p class="deciderinstructions"><b>TAP!</b></p>
     </div>
@@ -363,11 +352,10 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer4"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer4"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section5"></div><!-- ID for new section so the scroll knows where to go --> 
-<img class="NavPaper" src="Images/NavPaper.png" alt="styling for nav" width="100%" height="40%">
+<div id="section3"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma shook her head. “I’m okay,” she sighed. ‘Lets go.”  Sarah linked arms with Emma as they walked towards their tutor class together. When they got to class, they were surprised to see everyone lining up at the back of the classroom. “What’s going on?” Sarah asked one of the students.')">
   <img src="Images/PaperText.png"/>
@@ -382,10 +370,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer4"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer4"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section5"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('“Hello? Emma?” Mrs Richards waved her hand at Emma. “Away with the fairies I see.”  Emma picked up her bag and sat where she was advised. “Lindsay. Next to Emma please.” Everyone started whispering in excitement as Lindsay sat next to a shaken, scared Emma. Sarah was shocked and tried to get Emma moved which was denied.')">
   <img src="Images/PaperText.png"/>
@@ -400,10 +387,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer5"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer5"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section5"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma went to the common room and realised what she had just done. She knows it’s wrong, but she couldn’t be in that class with Lindsay. She looked at the time. The lesson is only an hour long and after that home time! So, she decided to read the rest of the ripped owl book. After about 20 minutes a security guard peered his head through the door. “She’s here,” he said.')">
   <img src="Images/PaperText.png"/>
@@ -420,43 +406,42 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer3"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer3"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section5"></div><!-- ID for new section so the scroll knows where to go --> 
-<img class="NavPaper" src="Images/NavPaper.png" alt="styling for nav" width="100%" height="40%">
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Keep quiet. Tap!')">
   <h6>WHAT SHOULD<br>EMMA DO?</h6>
   <img  class="deciderimage2" src="Images/PaperText.png"/>
   <img class="tts3" src="Images/textspeech.png"/>
 
-  <button type="button" class="button" id="section7Btn">
+ 
   <div class="avatar">
-  <img class="decider" src="Images/Logoinstruction.png"/>
-  <p class="deciderinstructions" ><b>TAP!</b></p>
+  <img class="decider2" class="decider" src="Images/Logoinstruction.png"/>
+  <p class="deciderinstructions2" class="deciderinstructions" ><b>TAP!</b></p>
   </div>
-</button>
-  <h5><b>KEEP <br>QUIET?</b></h5>
+
+  <h5><b>TELL <br>TEACHER?</b></h5>
  </figure>
 
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Tell teacher. Tap!')">
 
   <img  class="deciderimage" src="Images/PaperText.png"/>
   <img class="tts2" src="Images/textspeech.png"/>
- 
-    <div class="avatar">
+
+  <button type="button" class="Skipbutton" id="section7Btn">
+    <div class="avatar avatar2">
       <img class="decider" src="Images/Logoinstruction.png"/>
       <p class="deciderinstructions"><b>TAP!</b></p>
     </div>
-  <h4><b>TELL<br> TEACHER?</b></h4>
+  </button>
+  <h4><b>KEEP <br> QUIET?</b></h4>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer5"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer5"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
-<img class="NavPaper" src="Images/NavPaper.png" alt="styling for nav" width="100%" height="40%">
+<div id="section4"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('If you open your mouth, you’d be branded a snitch anyway! Emma became teary as she sheepishly said “I’m sorry Miss.”')">
   <img src="Images/PaperText.png"/>
@@ -471,10 +456,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer6"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer6"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('45 minutes later, Emma was home, and her mum was waiting for her. Emma closed the door. “I got the call from the school. What on Earth has brought this on? You’re a star pupil, Emma. This is not like you and you haven’t been yourself for ages.” Her mother ranted. “It’s about time you tell me what is going on. Or you’re grounded.”  Emma sat down with her mum and')">
   <img src="Images/PaperText.png"/>
@@ -491,10 +475,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer6"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer6"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('pick on you. Well, it’s because you’re kind, gentle, pretty, smart. Everything they aren’t. Most bullies are unhappy with themselves, so they try to make others feel how they’re feeling to make themselves feel better.”  Emma dried her eyes and continued to listen “You haven’t done anything wrong. I knew something was wrong, but your father said its teenage girl stuff. I’m surprised the')">
   <img src="Images/PaperText.png"/>
@@ -511,10 +494,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer6"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer6"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('“And if they start this snitch business and its doesn’t get sorted properly. I’m taking you out that school. You’re only in Year 7, you can catch up somewhere else.”')">
   <img src="Images/PaperText.png"/>
@@ -529,11 +511,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
-<img class="NavPaper" src="Images/NavPaper.png" alt="styling for nav" width="100%" height="40%">
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Two Weeks Later. Emma sat in her maths class feeling so much better than she did previously. Since she decided to speak out, Lindsay had been suspended for a week. Even though she knew it was almost time for Lindsay’s return, she wasn’t nervous. Nothing turned out how it did in her head. No one called Emma a snitch, none of Lindsay’s friends were mean to her.')">
   <img src="Images/PaperText.png"/>
@@ -549,10 +529,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Oh no! She thought. What’s happened now. “Emma. Go with him please,” her teacher stated. Emma gathered her things and followed him. Emma was apprehensive as they stopped outside the Head teacher’s office. The security guard opened the door.  Emma looked in horror as Lindsay was sitting on one side of the table, the ')">
   <img src="Images/PaperText.png"/>
@@ -567,10 +546,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Lindsay looked back at Emma. “I’m sorry Emma.”  Emma started to get annoyed. “What are you sorry for?”  Lindsay looked surprised. “Oh! I’m sorry for all the times I’ve been mean to you, hurt you, affected you…yeah.”  Emma, wanting to know, asked “Why Lindsay? What have I ever done to you?”')">
   <img src="Images/PaperText.png"/>
@@ -586,10 +564,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma said, her voice raised.  “Okay guys,” the Head jumped in, seeing an argument brewing. “Lindsay, do you know that what you did was wrong?” Lindsay nodded. “It will never happen again.” The Head sighed, knowing what was coming next.')">
   <img src="Images/PaperText.png"/>
@@ -606,10 +583,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('The Head shook her head. “I’m sorry Lindsay. I’m sure you’re sorry, but you’ve only decided to stop because brave Emma decided to speak out. Also, it’s not just Emma you have bullied. It is multiple girls in this school for a long amount of time and I’ve also heard from witnesses about the many ways you were making their life a misery. Bullying is not tolerated here. Not now, not ever.” Lindsay stood up. “You can’t do this! My')">
   <img src="Images/PaperText.png"/>
@@ -625,11 +601,10 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
-
+=
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('She then turned to Emma. “Emma, in the future, if anything like this happens, you come straight to me, understand?” the Head stated. She looked thoughtful. “I might do an assembly on bullying. It could be happening to others now.” Emma nodded and smiled. “You’re a very brave young woman.')">
   <img src="Images/PaperText.png"/>
   <img class="tts" src="Images/textspeech.png"/>
@@ -644,10 +619,9 @@ eventually. But it didn't.</p>
  </figure>
 </section>
 
-<section>
-  <div class="parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+<section class="sec">
+  <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<div id="section6"></div><!-- ID for new section so the scroll knows where to go --> 
 
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('“Oh! Emma?” Emma turned around. “Everything worked out okay in the end. </p>')">
   <img src="Images/PaperText.png"/>
@@ -660,6 +634,37 @@ eventually. But it didn't.</p>
   <img class="tts" src="Images/textspeech.png"/>
   <p>Just like I promised.” <br> <br> Emma walked out the classroom feeling happy for the first time in ages. She felt the heavy weight her heart was carrying being lifted off. Emma walked back to class, ready to start the first day of the rest of her life.</p>
  </figure>
+</section>
+
+<section class="sec">
+  <div class="parallax-layer parallax-layer8"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
+ <div class="theendcontainer">
+  <b><div class="theend">THE END</div></b>
+</div>
+
+<a href="review.html">
+<div class="speechreviewcontainer">
+  <p class="reviewtext"><b>WAIT! DID YOU <br> LEAVE A REVIEW?</b></p>
+  <p class="reviewtext2"><b>CLICK HERE</b></p>
+<img class="speechreview" src="Images/Speech.png"/>
+</div>
+</a>
+
+<a href="video.html">
+  <div class="speechreviewcontainers">
+    <p class="reviewtext"><b>CLICK HERE TO <br> WATCH A VIDEO </b></p>
+    <p class="reviewtext2"><b>CLICK HERE</b></p>
+  <img class="speechreview" src="Images/Speech.png"/>
+  </div>
+  </a>
+
+  <a href="game.html">
+    <div class="speechreviewcontainerss">
+      <p class="reviewtext"><b>CLICK HERE TO <br> PLAY A GAME </b></p>
+      <p class="reviewtext2"><b>CLICK HERE</b></p>
+    <img class="speechreview" src="Images/Speech.png"/>
+    </div>
+    </a>
 </section>
 
 
@@ -693,7 +698,6 @@ const moveLayer = (e) => { // Used when the mouse is moved.
   //parallaxLayer.style.transform = `translate(${positionX}px, ${positionY}px)`; // Moves the effect in the opposite position to the mouse. Translate determines the amount of movement and changes its position.
 };
 
-//use if and else to complete adding another PARRALLAX LAYER!!!!!
 
 window.addEventListener("mousemove", moveLayer); // This is called everytime the mouse is moved updating the image position and creating the effect.
 
@@ -748,7 +752,7 @@ a.forEach(item => { //  Iterates over all "a" variable elements, executing the c
        <script>
         gsap.registerPlugin(ScrollToPlugin); // Uses the GSAP method with the ScrollTo property to activate scroll.
    
-   document.querySelectorAll("button").forEach((btn, index) => { // Selects the button and loops them. btn, index = callback functions that takes two parametres. Button = current button element. Index = index of current button element
+   document.querySelectorAll(".Skipbutton").forEach((btn, index) => { // Selects the button and loops them. btn, index = callback functions that takes two parametres. Button = current button element. Index = index of current button element
      btn.addEventListener("click", () => { // Adds click event listener to trigger callback function when button is clicked. 
        gsap.to(window, {duration: 2, scrollTo:{y:"#section" + (index + 1), offsetY:0}}); // Uses GSAP method to smoothly scroll to a specific section with specific ID. OffsetY = window will scroll to the top of the section. Duration = Speed of the animation.
      });
