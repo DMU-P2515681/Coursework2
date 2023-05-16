@@ -206,7 +206,7 @@ a:hover {
 
 		loader = new createjs.LoadQueue(false);
 		loader.addEventListener("complete", handleComplete);
-		loader.loadManifest(manifest, true, "/Images/");
+		loader.loadManifest(manifest, true, "./Images/");
 	}
 
 	function handleComplete() {
