@@ -208,7 +208,7 @@ a:hover { /* Styling for when the mouse hovers over the button. */
 	<!-- Taught by Thom Corah-->
 	 <!-- Loading screen-->
      <div id="loadingScreen"><!-- Container for loading screen -->
-		<img  class="spin"src="Images/Logo.png" alt="Logo" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
+		<img  class="spin"src="./Images/Logo.png" alt="Logo" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
 	  <p class="loadingtext1"><b>LOADING...</b></p><!-- Word used on loading screen as the page is an art page-->
 	</div>
 	  <!-- Javascript for loading screen -->
@@ -237,14 +237,14 @@ a:hover { /* Styling for when the mouse hovers over the button. */
 
 		manifest = [ // manifest variable which is assigned t0 an array of objects
 			{src: "./Images/GirlRunning.png", id: "grant"}, // images and source with individual ID's
-            {src: "./Images/Lindsay.png", id: "Lindsay"}, // images and source with individual ID's
-			{src: "./Images/GameWall.png", id: "sky"}, // images and source with individual ID's
-			{src: "./Images/Fence.png", id: "hill"}, // images and source with individual ID's
+            {src: "Lindsay.png", id: "Lindsay"}, // images and source with individual ID's
+			{src: "GameWall.png", id: "sky"}, // images and source with individual ID's
+			{src: "Fence.png", id: "hill"}, // images and source with individual ID's
 		];
 
 		loader = new createjs.LoadQueue(false);  // new instance of the LoadQueue class from the CreateJS library and assigns it to the loader variable. 
 		loader.addEventListener("complete", handleComplete); // adds an event listener to the loader object for the "complete" event. 
-		loader.loadManifest(manifest, true, "/Images/"); //  initiates the loading of the assets specified in the manifest array using the loadManifest method of the loader object.
+		loader.loadManifest(manifest, true, "./Images/"); //  initiates the loading of the assets specified in the manifest array using the loadManifest method of the loader object.
 	}
 
 // Referenced from CreateJS (no date) EaseLJS. Available at: https://createjs.com/demos/easeljs/spritesheet (Accessed: 9 March 2023). 
