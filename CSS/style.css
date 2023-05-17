@@ -1,72 +1,79 @@
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) { /* Mobile version */
 
  
 /*---------------------
 HAMBURGER MENU
 ----------------------*/
 
-
-.hamburger-menu {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  padding-top: 20px;
-  padding-left: 15px;
-  width: 10%;
-  height: 60px;
-  cursor: pointer;
-  z-index: 9998;
-  background:#EBEBEB;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.hamburger-menu { /* Styling for hamburger menu */
+  position: fixed; /* Doesn't scroll with the page */
+  overflow: hidden; /* Hidden text*/
+  top: 0; /* Top not moving */
+  left: 0;/*Left not moving */
+  padding-top: 20px; /* Padding on top of menu bar */
+  padding-left: 15px;/* Padding on left of menu bar */
+  width: 10%; /* width of hamburger icon */
+  height: 60px;/* height of pixels */
+  cursor: pointer; /* Pointer cursor */
+  z-index: 9998; /* Stacking order of hamburger */
+  background:#EBEBEB; /* White background */
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* Highlight colour */
 }
 
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
 .bar,
 .bar:after,
-.bar:before {
-  width: 30px;
-  height: 3px;
+.bar:before { /* Styling for hamburger */
+  width: 30px; /* width pixels */
+  height: 3px;/* height pixels */
 }
 
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
 .bar {
-  position: relative;
-  transform: translateY(10px);
-  background: black;
-  transition: all 0ms 300ms;
+  position: relative; /* positioned relative to its normal position */
+  transform: translateY(10px); /* Translate along the y axis */
+  background: black; /* Background black */
+  transition: all 0ms 300ms; /* 300ms transition */
 }
 
-.bar.animate {
-  background: rgba(255, 255, 255, 0);
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.bar.animate { /* class of animated hamburger bar */
+  background: rgba(255, 255, 255, 0); /* Bakcground colour */
 }
 
-.bar:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 10px;
-  background: black;
-  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.bar:before { /* bar before hamburger bar */
+  content: ""; /* Inside content */
+  position: absolute; /* Removed from the normal flow */
+  left: 0; /* No left adjustment */
+  bottom: 10px; /* 10 pixels bottom adjustment */
+  background: black; /* black background */
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);/* animation transition settings */
 }
 
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
 .bar:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
-  background: black;
-  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  content: "";/* Inside content */
+  position: absolute;/* Removed from the normal flow */
+  left: 0; /* No left adjustment */
+  top: 10px; /* 10 pixels bottom adjustment */
+  background: black;/* black background */
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1); /* animation transition settings */
 }
 
-.bar.animate:after {
-  top: 0;
-  transform: rotate(45deg);
-  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.bar.animate:after {/* bar animated after */
+  top: 0;/* No left adjustment */
+  transform: rotate(45deg);/* 45 degree rotation */
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);/* animation transition settings */
 }
 
-.bar.animate:before {
-  bottom: 0;
-  transform: rotate(-45deg);
-  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.bar.animate:before {/* bar animated before*/
+  bottom: 0;/* No left adjustment */
+  transform: rotate(-45deg);/* 45 degree rotation */
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);/* animation transition settings */
 }
 
 /*---------------------
@@ -76,111 +83,124 @@ Mobiles Menu
 	Mobiles Menu - Design 
 	----------------------*/
 
-.mobile-menu ul {
-  margin: 0;
-  padding: 0;
+  /* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.mobile-menu ul { /* list for menu unordered list */
+  margin: 0;/* margin 0 */
+  padding: 0; /* padding 0 */
 }
 
-.mobile-menu li {
-  font-size: 20px;
-  line-height: 30px;
-  margin: 0;
-  overflow: hidden;
-  padding: 5px;
-  position: relative;
-  text-align: left;
-  text-transform: uppercase;
-  padding-left:15px;
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.mobile-menu li {/* list for menu list */
+  font-size: 20px; /* 20 pixels font size */
+  line-height: 30px; /* 30 pixels high*/
+  margin: 0; /* no margin */
+  overflow: hidden; /* overflow is hidden */
+  padding: 5px;/* padding is 5 pixels */
+  position: relative; /* relative to the nearest ancestor */
+  text-align: left;/* text is aligned to the left */
+  text-transform: uppercase; /* text transformed to uppercase  */
+  padding-left:15px; /* padding is 15 pixels  */
 }
 
-.mobile-menu li:first-child {
-  margin-top: 70px;
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.mobile-menu li:first-child { /* styling for list */
+  margin-top: 70px;  /* margin top is 70 pixels */
 }
 
-.mobile-menu li:hover {
-  background: #CCCCCC;
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.mobile-menu li:hover { /* when list is hovered on */
+  background: #CCCCCC;/* background is white */
 }
 
-.mobile-menu li a {
-  text-decoration: none;
-  color: black;
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.mobile-menu li a { /* list */
+  text-decoration: none; /* no text decoration */
+  color: black; /* colour black */
 }
 
 	/*---------------------
 	Mobiles Menu - Slide IN 
 	----------------------*/
 
+  /* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
 .mobile-menu {
-  top: 0;
-  max-width: 250px;
-  left: -100%;
-  width: 100%;
-  background: #EBEBEB;
-  color: black;
-  height: 100%;
-  position: fixed;
-  z-index: 9997;
-  overflow-y: auto;
-  -webkit-transform: translate3d(0, 0, 205px);
-  -moz-transform: translate3d(0, 0, 205px);
-  transform: translate3d(0, 0, 205px);
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  top: 0; /* no top adjustment*/
+  max-width: 250px; /* 250 pixels  */
+  left: -100%; /* -100% away from left of screen */
+  width: 100%; /* 100% width */
+  background: #EBEBEB; /* white background */
+  color: black; /* black  */
+  height: 100%; /* 100% height */
+  position: fixed; /* menu is fixed to the screen */
+  z-index: 9997; /* stacking order of menu */
+  overflow-y: auto; /* y axis*/
+  -webkit-transform: translate3d(0, 0, 205px); /* 3d translation */
+  -moz-transform: translate3d(0, 0, 205px); /* 3d translation */
+  transform: translate3d(0, 0, 205px); /* 3d translation */
+  -webkit-transition: all 500ms ease-in-out; /* type of animation*/
+  -moz-transition: all 500ms ease-in-out;/* type of animation*/
+  transition: all 500ms ease-in-out;/* type of animation*/
 }
 
-.mobile-menu.active {
-  left: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.mobile-menu.active { /* when open */
+  left: 0;/* no adjustment to the left of the screen */
+  -webkit-transform: translate3d(0, 0, 0);/* 3d translation */
+  -moz-transform: translate3d(0, 0, 0);/* 3d translation */
+  transform: translate3d(0, 0, 0);/* 3d translation */
+  -webkit-transition: all 500ms ease-in-out;/* type of animation*/
+  -moz-transition: all 500ms ease-in-out;/* type of animation*/
+  transition: all 500ms ease-in-out;/* type of animation*/
 }
 
 	/*---------------------
 	Mobiles Menu - Dropdown Submenu
 	----------------------*/
 
-.has-children:hover{
-	cursor:hand;
+  /* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.has-children:hover{ /* hovered */
+	cursor:hand; /* hand cursor */
 }
 
-.children {
-	display:none;	
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.children { /* styling for children */
+	display:none;	/* no display */
 }
 
-.mobile-menu .children li:first-child {
-  margin-top: 0px;
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.mobile-menu .children li:first-child {  /* styling of mobile menu */
+  margin-top: 0px; /* no margin top */
 }
 
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
 .icon-arrow {
-	position: absolute;
-	display: block;
-	font-size: 0.7em;
-	color: black;
-	top: 5px;
-	right: 10px;
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg); 
-	transition: .6s;
-  -webkit-transition: .6s;
-  -moz-transition: .6s;	 
+	position: absolute; /* absolute positioning */
+	display: block; /* displayed as a block element */
+	font-size: 0.7em;/* 7 size */
+	color: black; /* colour is black */
+	top: 5px; /* 5 pixels from top */
+	right: 10px; /* 10 pixels from right  */
+  transform: rotate(0deg);/*no rotation */
+  -webkit-transform: rotate(0deg);/*no rotation */
+  -moz-transform: rotate(0deg); /*no rotation */
+	transition: .6s;/* 6 second transition*/
+  -webkit-transition: .6s; /* 6 second transition*/
+  -moz-transition: .6s;	/* 6 second transition*/
 }
   
-.icon-arrow:after {
-    content: "\25BC";
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.icon-arrow:after { /* arrow after transition */
+    content: "\25BC";/* content of arrow after*/
 }
 
-.icon-arrow.open {
-  transform: rotate(-180deg);
-  -webkit-transform: rotate(-180deg);
-  -moz-transform: rotate(-180deg); 
-  transition: .6s;
-  -webkit-transition: .6s;
-  -moz-transition: .6s; 		
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+.icon-arrow.open {  /* arrow open */
+  transform: rotate(-180deg);/* rotate -180 degrees*/
+  -webkit-transform: rotate(-180deg);/* rotate -180 degrees*/
+  -moz-transform: rotate(-180deg); /* rotate -180 degrees*/
+  transition: .6s;/* 6 second transition*/
+  -webkit-transition: .6s;/* 6 second transition*/
+  -moz-transition: .6s; /* 6 second transition*/
 }
 
   /* Taken from W3docs (no date) How to Create an Overlay Using CSS. Available at: https://www.w3docs.com/snippets/css/how-to-create-an-overlay-using-css.html (Accessed: 7 February 2023). */
@@ -233,73 +253,80 @@ body:after { /* this element will add the overlay after the background image */
   to { transform: rotate(360deg) } /* The animation transforms/rotates 360 degrees */
 }
 
-.theend {
-  font-family: Cabin Sketch;
-  font-size: 10vw;
+.theend { /* end page */
+  font-family: Cabin Sketch; /* styling of font type */
+  font-size: 10vw; /* font size */
 }
 
-.speechreviewcontainer {
+.speechreviewcontainer { /* styling of speech review */
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
   left: 40%;  /* Left position = 82 */
-  top: 2452%;
+  top: 2452%; /* how much from the top */
   padding: 10px;  /* Padding inside the container: 10 pixels */
   z-index: 5; /* sets the z-order of the positioned element */
   
 }
 
-.speechreviewcontainers {
+.speechreviewcontainers {/* styling of speech review */
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
   left: 40%;  /* Left position = 82 */
-  top: 2487%;
+  top: 2487%;/* how much from the top */
   transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
   padding: 10px;  /* Padding inside the container: 10 pixels */
   z-index: 5; /* sets the z-order of the positioned element */
-  margin: 0;
+  margin: 0; /* no margin*/
 }
 
-.speechreviewcontainerss {
+.speechreviewcontainerss {/* styling of speech review */
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
   left: 40%;  /* Left position = 82 */
-  top: 2443%;
+  top: 2443%;/* how much from the top */
   transform: translate(-50%, -50%); /* Transform the cursor to translate, moves based on X and Y, -50% = X and Y values */
   padding: 10px;  /* Padding inside the container: 10 pixels */
   z-index: 1; /* sets the z-order of the positioned element */
-  margin: 0;
+  margin: 0;/* no margin*/
 }
 
-.speechreview {
-  width: 80%;
+.speechreview { /* styling for speech review */
+  width: 80%; /* width 80% */
 }
 
-.reviewtext {
+.reviewtext { /* styling for review text */
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
-font-size: 4vw;
-left: 13%;
-top: 15%;
-text-align: center;
-font-family: Arial, Helvetica, sans-serif;
+font-size: 4vw; /* size of font */
+left: 13%; /* % from the left of the screen */
+top: 15%;/* % from the top of the screen */
+text-align: center; /* text in the center of the page*/
+font-family: Arial, Helvetica, sans-serif; /* font name*/
 z-index: 5; /* sets the z-order of the positioned element */
 
 }
 
-.reviewtext2 {
+.reviewtext2 {/* styling for review text */
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
-  color: white;
-font-size: 5vw;
-left: 10%;
-top: 45%;
-text-align: center;
-font-family: Arial, Helvetica, sans-serif;
+  color: white;/* white */
+font-size: 5vw; /* 5 view width  */
+left: 10%; /* 10% from left */
+top: 45%; /* 45% from top */
+text-align: center; /* aligned in the center */
+font-family: Arial, Helvetica, sans-serif; /* font name*/
 background-color: black; /* Background colour is white */
-padding-left: 6%;
-padding-right: 5%;
+padding-left: 6%; /* Padding left */
+padding-right: 5%; /* Padding right */
 z-index: 5; /* sets the z-order of the positioned element */
 
 }
 
-.sec {
-  height: 100vh !important;
+.sec { /* classs */
+  height: 100vh !important; /* height is 100 view height */
 }
+
+
+
+/* In regards to the background images (parallax-layer) to make sure that there was not any repeated CSS code, any HTML elements
+that this class was applied to featured the overall settings (.parallax-layer) as well as custom settings for each background image (e.g .parallax-layer1).
+This approach was taken to avoid any repeated CSS and it was successful. */
+
 
 
 
@@ -317,7 +344,6 @@ z-index: 5; /* sets the z-order of the positioned element */
    height: 100vh; /* covers the height of the page screen */
   width: 100%; /* covers the width of the page screen */
 
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
   /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
   transform: translateZ(0); /* transforming an element along the Z Axis */
   z-index: -1; /* Puts the overlay layer under the logo */
@@ -402,7 +428,6 @@ z-index: 5; /* sets the z-order of the positioned element */
   background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
 }
   /* Taken and altered from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
-  /* Code explaination referenced from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
   /* CSS for the custom cursor effect */
   * { /* Default styles for the cursor */
   cursor: none; /* Sets default cursor to none */
@@ -500,6 +525,8 @@ h3 {
   appearance: none; /* Removes any platform-specific styling for buttons */
   background-color: inherit; /* Inherets the background colour of parent element */
 }
+
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
 .confetti-button {
    z-index: 1; /* sets the z-order of the positioned element */
   position: absolute;
@@ -514,6 +541,8 @@ h3 {
 }
 .confetti-button:focus { outline: 0; } /* Focus state of the button. Removes the keyboard default outline */
 
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
+
 .confetti-button:before, .confetti-button:after { /* Styles for the before and after pseudo-elements of the button */
   position: absolute; /*positioned relative to the nearest positioned ancestor */
   content: ''; 
@@ -525,6 +554,9 @@ h3 {
   left: 0%; /* Left position = 0 */
   
 }
+
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
+
 .confetti-button:before { /* styles for the before pseudo-element */
   display: none; /* Initially hidden */
   top: -100%; /* positions it off the top edge of the button */
@@ -553,6 +585,8 @@ h3 {
   background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%; /* Multiple radial gradients that create a confetti effect. */
 }
 
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
+
 .confetti-button:active { /* Defines the specific styles for the active state of the button (when it's being clicked or touched) */
   transform: scale(0.9); /* Scales the button down to 90% */
   background-color: #63fe03; /* Background colour of button when clicked */
@@ -563,6 +597,7 @@ h3 {
   display: block; /* for visibility */
   animation: topBubbles ease-in-out 0.75s forwards; /* Moves the background image position to create a confetti effect */
 }
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
 
 .confetti-button.animate:after { /* specific styles for the after pseudo-element when the button has the class "animate" added to it */
   display: block; /* for visibility */
@@ -572,19 +607,21 @@ h3 {
 topBubbles {  0% { /* Three different bubble graphics are positioned along the top of the element */
 /* All bubbles positioned in the same location */
  background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 
- 55% 90%, 70% 90%;
+ 55% 90%, 70% 90%; /* background positions */
 }
+
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
 
 /* move to new positions*/ 
  50% {
  background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 
- 65% 20%, 90% 30%;
+ 65% 20%, 90% 30%;/* background positions */
 }
 
 /* move to new positions*/ 
  100% {
  background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%,
-  65% 10%, 90% 20%;
+  65% 10%, 90% 20%;/* background positions */
  background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; /* All disappear by having their size set to 0 */
 }
 }
@@ -592,66 +629,68 @@ topBubbles {  0% { /* Three different bubble graphics are positioned along the t
 @keyframes
 bottomBubbles {  0% { /* seven different bubble graphics are positioned along the bottom of the element */
   /* All bubbles positioned in the same location */
- background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+ background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;/* background positions */
 }
 
 /* move to new positions*/ 
  50% {
- background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+ background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;/* background positions */
 }
+
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
 
 /* move to new positions*/ 
  100% {
- background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+ background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;/* background positions */
  background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; /* All disappear by having their size set to 0 */
 }
 }
 
-.NavPaper { 
-z-index: 2; 
-position: -webkit-sticky;
-position: sticky;
-top: 0;
+.NavPaper {   /* Styling for nav paper */
+z-index: 2; /* stacking order */
+position: -webkit-sticky; /* position of nav paper*/
+position: sticky; /* Sticky position */
+top: 0; /* no styling */
 }
 
 
-.textover{
-  position: relative;
-width: 90vw;
-margin: auto;
-z-index: 1;
+.textover{ /* stying for textover class */
+  position: relative; /* relative to the nearest ancestor */
+width: 90vw; /* width 90 view width */
+margin: auto; /* Auto margin */
+z-index: 1; /* stacking order */
 }
 
-.textover img {
-  width: 100%;
-  height: 100%;
-  padding-top: 6%;
+.textover img { /* image */
+  width: 100%; /* % of width */
+  height: 100%; /* % of height */
+  padding-top: 6%; /* % from the top */
 }
 
-.textover p {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0; 
-  box-sizing: border-box;
-  width: 100%;
-  padding-top: 13%;
-  padding-left: 10%; 
-  padding-right: 3%;
-  text-align: left;
-  color: black;
-  font-size: 3.8vw;
-  font-family: Arial, Helvetica, sans-serif;
+.textover p { /*styling for text */
+  position: absolute; /* absolute positioning */
+  top: 0;/* % from the top */
+  bottom: 0;/* % from the bottom */
+  left: 0; /* % from the left */
+  box-sizing: border-box; /* border box styling*/
+  width: 100%; /*width of p */
+  padding-top: 13%; /* % from the top */
+  padding-left: 10%; /* % from the left */
+  padding-right: 3%;/* % from the right */
+  text-align: left; /* aligned to the left*/
+  color: black; /* black */
+  font-size: 3.8vw; /* font size */
+  font-family: Arial, Helvetica, sans-serif; /*type of font*/
 }
 
 
 
-.tts {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0; 
-  width: 100% !important;
+.tts { /* text to speech styling */
+  position: absolute; /* position  */
+  top: 0;/*  % from top */
+  bottom: 0;/*  % from bottom */
+  left: 0; /*  left */
+  width: 100% !important;/* width  % */
   height: 102% !important;
   padding-top: 64% !important;
   padding-left: 83%;
@@ -660,12 +699,12 @@ z-index: 1;
   z-index: 1;
 }
 
-.tts2 {
+.tts2 {/* text to speech styling */
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0; 
-  width: 100% !important;
+  width: 100% !important;/* width  % */
   height: 100% !important;
   padding-top: 55% !important;
   padding-left: 83%;
@@ -674,12 +713,12 @@ z-index: 1;
   z-index: 1;
 }
 
-.tts3 {
+.tts3 {/* text to speech styling */
   position: absolute;
   top: 20%;
   bottom: 0;
   left: 0; 
-  width: 102% !important;
+  width: 102% !important;/* width  % */
   height: 75% !important;
   padding-top: 50% !important;
   padding-left: 83%;
@@ -688,39 +727,39 @@ z-index: 1;
   z-index: 1;
 }
 
-h4 {
+h4 {/* heading 4*/
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0; 
   box-sizing: border-box;
-  width: 100%;
+  width: 100%; /* width  % */
   padding-top: 17%;
   padding-left: 15%; 
   padding-right: 10%;
   text-align: center;
   color: black;
   font-size: 13vw;
-  font-family: 'Cabin Sketch';
+  font-family: 'Cabin Sketch';/*type of font*/
 }
 
-h5 {
+h5 {/* heading 5*/
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0; 
   box-sizing: border-box;
-  width: 100%;
+  width: 100%; /* width  % */
   padding-top: 40%;
   padding-left: 15%; 
   padding-right: 10%;
   text-align: center;
   color: black;
   font-size: 13vw;
-  font-family: 'Cabin Sketch';
+  font-family: 'Cabin Sketch';/*type of font*/
 }
 
-h6 {
+h6 {/* heading 6 */
 font-family: 'Cabin Sketch';
 text-align: center;
 font-size: 8vw;
@@ -728,127 +767,130 @@ padding: 0%;
 margin: 0%;
 }
 
-.decider {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  top: -170% !important;
-  bottom: 0;
-  left: 25%;
-  width: 60% !important;
-  height: 250% !important;
-  color: black;
-  font-size: 4.2vw;
-  z-index: 1;
-  padding: 0%;
+.decider { /* decider text */
+  align-items: center;/* content is centered */
+  display: flex; /* flex display */
+  justify-content: center; /* content is centered */
+  margin: 0;/* margin 0 */
+  top: -170% !important;/* padding top */
+  bottom: 0;/* padding bottom */
+  left: 25%;/* padding left */
+  width: 60% !important; /* width  % */
+  height: 250% !important; /* height  % */
+  color: black; /* black colour  % */
+  font-size: 4.2vw; /* size 4% */
+  z-index: 1; /* stacking */
+  padding: 0%; /* padding % */
 }
 
-.deciderinstructions {
+.deciderinstructions { /* decider instructions text */
   position: absolute;
   top: -200% !important;
   left: 0; 
-  padding-left: 40% !important;
-  padding-bottom: -30%;
+  padding-left: 40% !important;/* padding left */
+  padding-bottom: -30%;/* padding bottom */
   color: black;
   font-size: 8vw !important;
   z-index: 2;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif; /*type of font*/
 }
 
-.deciderimage {
-  width: 90% !important;
-  margin: auto;
- padding-left: 10vw;
- padding-top: 5vw !important;
+.deciderimage { /* decider image picture */
+  width: 90% !important;/* width  % */
+  margin: auto; /* auto margin */
+ padding-left: 10vw; /* padding left */
+ padding-top: 5vw !important; /* padding top */
 }
 
-.deciderimage2 {
-  width: 90% !important;
-  margin: auto;
- padding-left: 10vw;
- padding-top: 4vw !important;
+.deciderimage2 {/* decider image picture */
+  width: 90% !important; /* width  % */
+  margin: auto; /* auto margin */
+ padding-left: 10vw; /* padding left */
+ padding-top: 4vw !important;/* padding top */
 }
 
-html {
-  height: 100%;
+html { /* html*/
+  height: 100%; /* height %  */
 }
 
+/* Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */
 
-.avatar {
+.avatar {/* pulsating animation*/
   height: 7vw;
-  position: relative;
-  width: 55vw;
-  left: 18%;
-  right: 20%;
-  bottom: 0%;
-  margin: 0%;
-  margin-top: 0%;
-  margin-left: 0%;
-  padding: 0%;
-  margin-bottom: 0px;
+  position: relative;/* position relative */
+  width: 55vw; /* width view width*/
+  left: 18%;  /* % from the left */
+  right: 20%; /* % from the right */
+  bottom: 0%;  /* % from the bottom */
+  margin: 0%;  /* margin % */
+  margin-top: 0%;  /* % from the top */
+  margin-left: 0%;/* % from the left */
+  padding: 0%; /* 0 padding */
+  margin-bottom: 0px; /* 0 pixels*/
 }
 
-.avatar img {
+/* Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */
+.avatar img { /* pulsating animation image */
   border-radius: 9999px;
   height: 100%;
-  position: relative;
+  position: relative; /* position relative */
   width: 100%;
   z-index: 2;
   margin: 0%;
 }
 
-@keyframes cycle-colors {
-  0% { border-color: hsl(0, 100%, 50%); }
-  25% { border-color: hsl(90, 100%, 50%); }
-  50% { border-color: hsl(180, 100%, 50%); }
-  75% { border-color: hsl(270, 100%, 50%); }
-  100% { border-color: hsl(360, 100%, 50%); }
+@keyframes cycle-colors { /* animation colours */
+  0% { border-color: hsl(0, 100%, 50%); } /* border colour */
+  25% { border-color: hsl(90, 100%, 50%); } /* border colour */
+  50% { border-color: hsl(180, 100%, 50%); } /* border colour */
+  75% { border-color: hsl(270, 100%, 50%); } /* border colour */
+  100% { border-color: hsl(360, 100%, 50%); } /* border colour */
 }
-
-@keyframes pulse {
+/* Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */
+@keyframes pulse { /* pulsating animation */
   to {
-    opacity: 0;
-    transform: scale(1);
+    opacity: 0;/* opacity */
+    transform: scale(1); /* transform scale */
   }
 }
 
 .avatar::before,
-.avatar::after {
-  animation: pulse 2s linear infinite;
-  border: #ff0000 solid 8px;
-  border-radius: 9999px;
-  box-sizing: border-box;
-  content: ' ';
-  height: 250%;
-  left: -20%;
-  opacity: .6;
-  position: absolute;
-  top: -160%;
-  transform: scale(0.714);
-  width: 140%;
-  z-index: 1;
-  margin: 0%; 
+.avatar::after { /* before and after animation*/
+  animation: pulse 2s linear infinite; /* animation settings */
+  border: #ff0000 solid 8px; /* colour, solid, 8 pixels */
+  border-radius: 9999px; /*  rounded edges */
+  box-sizing: border-box; /* box */
+  content: ' '; /* content*/
+  height: 250%; /* height */
+  left: -20%;/* % from the left */
+  opacity: .6; /* opacity .6 */
+  position: absolute; /* absolute positioning */
+  top: -160%; /* % from the top */
+  transform: scale(0.714); /* transform scale */
+  width: 140%; /* % width */
+  z-index: 1;/* stacking order */
+  margin: 0%;  /* no margin */
+}
+/* Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */
+.avatar::after { /* after animation*/
+  animation-delay: 1s;/* animation settings */
+  margin: 0%;/* no margin */
 }
 
-.avatar::after {
-  animation-delay: 1s;
-  margin: 0%;
-}
-
-.avatar:hover img {
-  margin: 0%;
+.avatar:hover img {/* after animation on image */
+  margin: 0%;/* no margin */
 }
 
 .avatar:hover::before,
-.avatar:hover::after {
-  animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
-  margin: 0%;
+.avatar:hover::after {/* before and after animation*/
+  animation: pulse 1s linear infinite, cycle-colors 6s linear infinite; /* animation settings */
+  margin: 0%;/* no margin */
 }
 
-.avatar:hover::after {
-  animation-delay: .5s;
-  margin: 0%;
+/* Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */
+.avatar:hover::after {/* before and after animation*/
+  animation-delay: .5s; /* animation delay */
+  margin: 0%; /* no margin */
 }
 
 /* Styling for the text to speech container */
@@ -890,16 +932,16 @@ html {
       
       /* Styling for heart image */
       .spin {
-        height: 26vh; /* Height of heart image */
-        max-width: 40vw; /* Width of heart image */
-        margin-top: 7vh; /* Margin top of heart image */
-        margin-left: 30vw; /* Margin left of heart image */
-        margin-right: 30vw;  /* Margin right of heart image */
-        animation-name: spinning;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
+        height: 26vh; /* Height of logo image */
+        max-width: 40vw; /* Width of logo image */
+        margin-top: 7vh; /* Margin top of logo image */
+        margin-left: 30vw; /* Margin left of logo image */
+        margin-right: 30vw;  /* Margin right of logo image */
+        animation-name: spinning; /* animation type */
+        animation-duration: 3s; /* 3 seconds */
+        animation-iteration-count: infinite; /* infinate time */
         /* linear | ease | ease-in | ease-out | ease-in-out */
-        animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out; /* ease in out type*/
       }
       
       
@@ -933,7 +975,7 @@ html {
 
 
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 900px) { /* desktop version */
 
 /* Taken from W3docs (no date) How to Create an Overlay Using CSS. Available at: https://www.w3docs.com/snippets/css/how-to-create-an-overlay-using-css.html (Accessed: 7 February 2023). */
 /* Adds an overlay to the background image */
@@ -950,7 +992,7 @@ body:after { /* this element will add the overlay after the background image */
   z-index: 0; /* Puts the overlay layer under the logo */
 }
 
-
+/* stying for textover class */
  .textover{
   position: relative;
 width: 74vw;
@@ -958,13 +1000,14 @@ height: 20vw;
 margin: auto;
 z-index: 1;
 }
-
+/* stying for textover image */
 .textover img {
   width: 75vw;
   height: 20vw;
   padding-top: 6%;
 }
 
+/* stying for textover image and class */
 .textover p {
   position: absolute;
   top: 0;
@@ -980,11 +1023,12 @@ z-index: 1;
   font-size: 1.2vw;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+/* stying for  ID */
 #id {
 padding-bottom: 7vw!important;
 }
 
+/* text to speech styling*/
 .tts {
   position: absolute;
   top: 0;
@@ -998,7 +1042,7 @@ padding-left: 95%;
   font-size: 4.2vw;
   z-index: 1;
 }
-
+/* text to speech styling*/
 .tts2 {
   position: absolute;
   top: 25% !important;
@@ -1011,7 +1055,7 @@ padding-left: 95%;
   font-size: 4.2vw;
   z-index: 1;
 }
-
+/* text to speech styling*/
 .tts3 {
   position: absolute;
   top: 125%;
@@ -1021,7 +1065,7 @@ left: 90%;
   font-size: 4.2vw;
   z-index: 1;
 }
-
+/* decider image styling*/
 .decider {
   position: absolute;
   top: -190%;
@@ -1031,7 +1075,7 @@ left: 5%;
   font-size: 4.2vw;
   z-index: 1;
 }
-
+/* decider image styling*/
 .decider2 {
   position: absolute;
   top: -200%;
@@ -1041,7 +1085,7 @@ left: 5%;
   font-size: 4.2vw;
   z-index: 1;
 }
-
+/* decider instructions styling*/
 .deciderinstructions {
   top: -180% !important;
   left: 25% !important;
@@ -1052,6 +1096,7 @@ left: 5%;
   float: right;
 }
 
+/* decider instructions 2 styling*/
 .deciderinstructions2 {
   left: 18% !important;
   top: -180% !important;
@@ -1062,6 +1107,7 @@ left: 5%;
   float: right;
 }
 
+/* decider image styling*/
 .deciderimage2 {
   top: 0.3vw !important;
   width: 45% !important;
@@ -1073,15 +1119,19 @@ left: 5%;
   position: relative;
 }
 
+/* decider image styling*/
 .deciderimage {
   top: -10vw !important;
   width: 45% !important;
   height: 120% !important;
   position: relative;
 }
+/* height of container*/
 .sec {
   height: 100vh !important;
 }
+
+/* styling of heading */
 h4 {
   position: absolute;
   top: -15% !important;
@@ -1096,7 +1146,7 @@ h4 {
   font-size: 6vw;
   font-family: 'Cabin Sketch';
 }
-
+/* styling of heading */
 h5 {
   position: absolute;
   top: 85% !important;
@@ -1111,7 +1161,7 @@ h5 {
   font-size: 6vw;
   font-family: 'Cabin Sketch';
 }
-
+/* styling of heading */
 h6 {
 font-family: 'Cabin Sketch';
 text-align: center;
@@ -1130,12 +1180,12 @@ margin: 0%;
   padding: 10px;  /* Padding inside the container: 10 pixels */
   z-index: 1; /* sets the z-order of the positioned element */
 }
-
+/* end page */
 .theend {
   font-family: Cabin Sketch;
   font-size: 10vw;
 }
-
+ /* speech review */
 .speechreviewcontainer {
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
   right: -9%;  /* Left position = 82 */
@@ -1145,6 +1195,7 @@ margin: 0%;
   z-index: 1; /* sets the z-order of the positioned element */
 }
 
+ /* speech review containers */
 .speechreviewcontainers {
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
   right: -35%;  /* Left position = 82 */
@@ -1154,7 +1205,7 @@ margin: 0%;
   z-index: 1; /* sets the z-order of the positioned element */
   margin: 0;
 }
-
+ /* speech review containers */
 .speechreviewcontainerss {
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
   right: -22%;  /* Left position = 82 */
@@ -1165,10 +1216,12 @@ margin: 0%;
   margin: 0;
 }
 
+ /* speech review  */
 .speechreview {
   width: 40%;
 }
 
+ /* text styling for review */
 .reviewtext {
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
 font-size: 2vw;
@@ -1177,7 +1230,7 @@ top: 10%;
 text-align: center;
 font-family: Arial, Helvetica, sans-serif;
 }
-
+ /* text styling for review */
 .reviewtext2 {
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
   color: white;
@@ -1191,6 +1244,8 @@ padding-left: 6%;
 padding-right: 5%;
 }
 
+/* Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */
+ /* pulsating image  */
 .avatar {
   top: 10%;
   height: 3vw;
@@ -1206,6 +1261,7 @@ padding-right: 5%;
   margin-bottom: 0px;
 }
 
+ /* pulsating image  */
 .avatar2 {
   height: 3vw;
   position: relative;
@@ -1220,6 +1276,7 @@ padding-right: 5%;
   margin-bottom: 0px;
 }
 
+/* Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */
 .avatar img {
   border-radius: 9999px;
   height: 100%;
@@ -1228,7 +1285,7 @@ padding-right: 5%;
   z-index: 2;
   margin: 0%;
 }
-
+ /* pulsating image  animtion*/
 @keyframes cycle-colors {
   0% { border-color: hsl(0, 100%, 50%); }
   25% { border-color: hsl(90, 100%, 50%); }
@@ -1237,6 +1294,7 @@ padding-right: 5%;
   100% { border-color: hsl(360, 100%, 50%); }
 }
 
+ /* pulsating image  animtion*/
 @keyframes pulse {
   to {
     opacity: 0;
@@ -1244,8 +1302,9 @@ padding-right: 5%;
   }
 }
 
+/* Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */
 .avatar::before,
-.avatar::after {
+.avatar::after { /* pulsating image  before and afteranimtion*/
   animation: pulse 2s linear infinite;
   border: #ff0000 solid 8px;
   border-radius: 9999px;
@@ -1261,22 +1320,24 @@ padding-right: 5%;
   z-index: 1;
   margin: 0%; 
 }
-
+ /* pulsating image after animtion*/
 .avatar::after {
   animation-delay: 1s;
   margin: 0%;
 }
-
+ /* pulsating image  ahovernimtion*/
 .avatar:hover img {
   margin: 0%;
 }
 
+/* Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */
 .avatar:hover::before,
 .avatar:hover::after {
   animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
   margin: 0%;
 }
 
+/* Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */
 .avatar:hover::after {
   animation-delay: .5s;
   margin: 0%;
@@ -1285,7 +1346,8 @@ padding-right: 5%;
 HAMBURGER MENU
 ----------------------*/
 
-
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+ /* hamburger menu */
 .hamburger-menu {
   position: fixed;
   overflow: hidden;
@@ -1300,14 +1362,15 @@ HAMBURGER MENU
   background:#EBEBEB;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-
+ /* hamburger menu */
 .bar,
 .bar:after,
 .bar:before {
   width: 30px;
   height: 3px;
 }
-
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+ /* hamburger menu */
 .bar {
   position: relative;
   transform: translateY(10px);
@@ -1318,7 +1381,7 @@ HAMBURGER MENU
 .bar.animate {
   background: rgba(255, 255, 255, 0);
 }
-
+ /* hamburger menu */
 .bar:before {
   content: "";
   position: absolute;
@@ -1327,7 +1390,8 @@ HAMBURGER MENU
   background: black;
   transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
-
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+ /* hamburger menu */
 .bar:after {
   content: "";
   position: absolute;
@@ -1336,13 +1400,14 @@ HAMBURGER MENU
   background: black;
   transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
-
+ /* hamburger menu */
 .bar.animate:after {
   top: 0;
   transform: rotate(45deg);
   transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
-
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+ /* hamburger menu */
 .bar.animate:before {
   bottom: 0;
   transform: rotate(-45deg);
@@ -1355,12 +1420,13 @@ Mobiles Menu
 	/*---------------------
 	Mobiles Menu - Design 
 	----------------------*/
-
+ /* hamburger menu */
 .mobile-menu ul {
   margin: 0;
   padding: 0;
 }
-
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+ /* hamburger menu */
 .mobile-menu li {
   font-size: 20px;
   line-height: 30px;
@@ -1372,7 +1438,7 @@ Mobiles Menu
   text-transform: uppercase;
   padding-left:15px;
 }
-
+ /* hamburger menu */
 .mobile-menu li:first-child {
   margin-top: 70px;
 }
@@ -1380,7 +1446,7 @@ Mobiles Menu
 .mobile-menu li:hover {
   background: #CCCCCC;
 }
-
+ /* hamburger menu */
 .mobile-menu li a {
   text-decoration: none;
   color: black;
@@ -1389,7 +1455,8 @@ Mobiles Menu
 	/*---------------------
 	Mobiles Menu - Slide IN 
 	----------------------*/
-
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+ /* hamburger menu */
 .mobile-menu {
   top: 0;
   max-width: 250px;
@@ -1408,7 +1475,7 @@ Mobiles Menu
   -moz-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
 }
-
+ /* hamburger menu */
 .mobile-menu.active {
   left: 0;
   -webkit-transform: translate3d(0, 0, 0);
@@ -1422,19 +1489,20 @@ Mobiles Menu
 	/*---------------------
 	Mobiles Menu - Dropdown Submenu
 	----------------------*/
-
+ /* hamburger menu */
 .has-children:hover{
 	cursor:hand;
 }
-
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+ /* hamburger menu */
 .children {
 	display:none;	
 }
-
+ /* hamburger menu */
 .mobile-menu .children li:first-child {
   margin-top: 0px;
 }
-
+ /* hamburger menu */
 .icon-arrow {
 	position: absolute;
 	display: block;
@@ -1450,10 +1518,12 @@ Mobiles Menu
   -moz-transition: .6s;	 
 }
   
+/* Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). */
+ /* hamburger menu */
 .icon-arrow:after {
     content: "\25BC";
 }
-
+ /* hamburger menu */
 .icon-arrow.open {
   transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
@@ -1471,7 +1541,7 @@ Mobiles Menu
 .logocontainer {  /* Container for the logo */
   position: absolute; /* This keeps the logo in the centre of the page */
   top: 50%; /* adjusts the vertical position of the image */
-  left: 50%; /* adjusts the horizontal position of the image */
+  left: 54%; /* adjusts the horizontal position of the image */
   /* bring your own prefixes */
   transform: translate(-50%, -50%); /* moves the container along the x and y axis */
   z-index: 1;
@@ -1479,8 +1549,8 @@ Mobiles Menu
 
 /* Code for positioning the logo and to animate it. */
 .logo {
-  height: 100%; /* height of the logo */
-  width: 100%; /* width of the logo */
+  height: 80%; /* height of the logo */
+  width: 80%; /* width of the logo */
   text-align: center; /*aligns logo in the centre*/
   display: block; /* block element, fills the width of the screen */
   /* Taken and altered from CodeBoxx (2022) Rotate & Spin An Image In HTML CSS (Simple Examples). Available at: https://code-boxx.com/rotate-spin-image-html-css/ (Accessed: 9 February 2023). */
@@ -1665,6 +1735,8 @@ h3 {
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
 }
 
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
+
 /* Styling of the 'button' logo */
 .button {
   border: none; /* Removes borders from around the button */
@@ -1672,6 +1744,8 @@ h3 {
   appearance: none; /* Removes any platform-specific styling for buttons */
   background-color: inherit; /* Inherets the background colour of parent element */
 }
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
+
 .confetti-button {
    z-index: 1; /* sets the z-order of the positioned element */
   position: absolute;
@@ -1698,6 +1772,8 @@ h3 {
   left: 0%; /* Left position = 0 */
   
 }
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
+
 .confetti-button:before { /* styles for the before pseudo-element */
   display: none; /* Initially hidden */
   top: -100%; /* positions it off the top edge of the button */
@@ -1726,6 +1802,8 @@ h3 {
   background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%; /* Multiple radial gradients that create a confetti effect. */
 }
 
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
+
 .confetti-button:active { /* Defines the specific styles for the active state of the button (when it's being clicked or touched) */
   transform: scale(0.9); /* Scales the button down to 90% */
   background-color: #63fe03; /* Background colour of button when clicked */
@@ -1753,6 +1831,7 @@ topBubbles {  0% { /* Three different bubble graphics are positioned along the t
  background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 
  65% 20%, 90% 30%;
 }
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
 
 /* move to new positions*/ 
  100% {
@@ -1772,6 +1851,8 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
  50% {
  background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
 }
+
+/* Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). */
 
 /* move to new positions*/ 
  100% {
@@ -1799,7 +1880,6 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
    height: 100vh; /* covers the height of the page screen */
   width: 100%; /* covers the width of the page screen */
 
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
   /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
   transform: translateZ(0); /* transforming an element along the Z Axis */
   z-index: -1; /* Puts the overlay layer under the logo */
@@ -1813,7 +1893,7 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
   /* Instructions for making the background image move upon mouse movement */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
-  background-image: url(../Images/playground.jpg); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-image: url(../Images/playground.jpg); /* Taylor, M (2022) Mary Taylor. Available at: https://www.pexels.com/photo/empty-sports-ground-near-school- 5896843/ (Accessed: 14 November 2022). */
 
 
   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
@@ -1825,7 +1905,7 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
     /* Instructions for making the background image move upon mouse movement */
     margin: 0; /* No margin on the 0 */
     /* background image for parallax layer*/
-   background-image: url(../Images/Pencils.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+   background-image: url(../Images/Pencils.png); /* Bailey, J. (2017) Jess Bailey. Available at: https://unsplash.com/photos/l3N9Q27zULw (Accessed: 15 November 2022).*/
  
    
    /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
@@ -1838,7 +1918,7 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
   /* Instructions for making the background image move upon mouse movement */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
-  background-image: url(../Images/Classroom.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-image: url(../Images/Classroom.png); /* Monk, M (2022) M. Monk. Available at: https://unsplash.com/photos/E813FON0wDQ (Accessed: 14 November 2022). */
    /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
    position: absolute; /* positioning the image relative to the nearest positioned ancestor */
    background-position: center; /* Centres the image */
@@ -1849,7 +1929,7 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
   /* Instructions for making the background image move upon mouse movement */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
-  background-image: url(../Images/CommonRoom.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-image: url(../Images/CommonRoom.png); /* Adams, C. (2022) Communal Area Interior Design. Available at: https://www.pexels.com/search/common%20room/ (Accessed: 14 November 2022). */
   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
   background-position: center; /* Centres the image */
@@ -1871,7 +1951,7 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
   /* Instructions for making the background image move upon mouse movement */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
-  background-image: url(../Images/TeacherOffice.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-image: url(../Images/TeacherOffice.png); /* Kopezhanov, D (2022) Damir Kopezhanov. Available at: https://unsplash.com/photos/luseu9GtYzM (Accessed: 14 November 2022). */
   /* Referenced from W3Schools (2023) CSS Layout - The position Property. Available at: https://www.w3schools.com/css/css_positioning.asp (Accessed: 9 February 2023). */
   position: absolute; /* positioning the image relative to the nearest positioned ancestor */
   background-position: center; /* Centres the image */
@@ -1890,7 +1970,7 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
 
        /* Taught by Thom Corah */
        #loadingScreen {
-        background-image: url(../Images/School3.png); 
+        background-image: url(../Images/School3.png); /* Unsplash (2022) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 14 November 2022).*/
         background-color: white; /* Background colour */
         position: fixed; /* Fixed on top of everything else */
         top: 0; /* default for top*/
@@ -1902,7 +1982,7 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
         background-position: center;
       }
       
-      
+          /* Taught by Thom Corah */
       /* Styling of "loading" */
       .loadingtext1 {
         font-family: Cabin Sketch;  /* Type of font */
@@ -1912,19 +1992,19 @@ bottomBubbles {  0% { /* seven different bubble graphics are positioned along th
         margin-top: 7vh; /* Margin top for text */
         padding: 0; /* No padding for text */
       }
-      
-      /* Styling for heart image */
+          /* Taught by Thom Corah */
+      /* Styling forlogo image */
       .spin {
-        height: 70vh; /* Height of heart image */
-        max-width: 40vw; /* Width of heart image */
-        margin-top: 7vh; /* Margin top of heart image */
-        margin-left: 30vw; /* Margin left of heart image */
-        margin-right: 30vw;  /* Margin right of heart image */
-        animation-name: spinning;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
+        height: 70vh; /* Height of logoimage */
+        max-width: 40vw; /* Width of logo image */
+        margin-top: 7vh; /* Margin top of logoimage */
+        margin-left: 30vw; /* Margin left of logo image */
+        margin-right: 30vw;  /* Margin right oflogo image */
+        animation-name: spinning;  /* animation type */
+        animation-duration: 3s; /* animation time */
+        animation-iteration-count: infinite; /* animation length */
         /* linear | ease | ease-in | ease-out | ease-in-out */
-        animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;/* animation type*/
       }
       
       

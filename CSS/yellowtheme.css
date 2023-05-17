@@ -1,4 +1,4 @@
-.overlay {
-    background-color: yellow;
-    color: black;
+.overlay { /* Class for overlay for theme switcher */
+    background-color: yellow; /* Colour of the page theme */
+    color: black; /* Colour of the text */
   }
