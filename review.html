@@ -42,7 +42,7 @@ body {
   /* Instructions for making the background image move upon mouse movement */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
-  background-image: url(./Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
   background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
   background-size: 103% 102%; /* Image will cover the entire page element */
   background-position: center;
@@ -103,7 +103,7 @@ body:after { /* this element will add the overlay after the background image */
 /* Taught by Thom Corah */
 /* Styling for loading screen */
 #loadingScreen {
-  background-image: url(./Images/School3.png); /* Loading screen image */
+  background-image: url(../Images/School3.png); /* Loading screen image *//* Unsplash (2022) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 14 November 2022).*/
   background-color: white; /* Background colour */
   position: fixed; /* Fixed on top of everything else */
   top: 0; /* default for top*/
@@ -151,173 +151,209 @@ body:after { /* this element will add the overlay after the background image */
 }
 
 
-
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
 a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
+  text-decoration: none; /* no decoration for the text */
+  display: inline-block; /* The width and height of the button can be set. */
+  padding: 8px 16px; /* Padding for the button. */
 }
 
-a:hover {
-  background-color: red;
-  color: black;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+a:hover { /* Styling for when the mouse hovers over the button. */
+  background-color: red; /* Background colour changes to red when mouse hovers over it. */
+  color: black; /* Colour of "<" */
 }
 
-.previous {
-  background-color: white;
-  border: 6px solid red; /* solid black border, slightly thick */
-  color: black;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+.previous { /* Styling for button without hover. */
+  background-color: white; /* Background colour is white. */
+  border: 6px solid red; /* solid red border, 6 pixels, slightly thick */
+  color: black; /* '<' is black. */
 }
 
-
-.round {
-  border-radius: 50%;
-  width: 3vw;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+.round { /* Styling for the button shape */
+  border-radius: 50%; /* The shape is 50% round. */
+  width: 3vw; /* The view width is 3. */
   
 }
 
-.adjustment {
-  padding-left: 9vw !important;
-  padding-bottom: 2vw !important;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+/* This was added for extra settings. */
+.adjustment { /* Styling of the button container */
+  padding-left: 9vw !important; /* Styling of the button container */
+  padding-bottom: 2vw !important; /* The padding botton is 2 view width */
 
 }
 
-.hex {
- font-size: 3vw;
- padding-left: 30% !important;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+/* This was added for extra settings. */
+.hex { /* Styling for the '<' button */
+ font-size: 3vw; /* Size of the '<' */
+ padding-left: 30% !important; /* Padding on the left of '<" is 30%. */
 }
 
+/* Class for reviews */
 .ments {
-  text-align: center;
+  text-align: center;/* Align reviews in the center */
 }
 
-#nameofuser {
-  font-size: 5vw;
-  text-align: center;
-  border: 6px solid black; /* solid black border, slightly thick */
+/* Taught by Thom Corah */
+#nameofuser {/* ID for the reviews name */
+  font-size: 5vw;/* FOnt size */
+  text-align: center; /* Text is aligned in the center */
+  border: 6px solid black; /* solid black border, slightly thick, 6 pixels */
 
 }
 
-#reviewtext {
-  text-align: center;
-  font-size: 2vw;
-  border: 6px solid black; /* solid black border, slightly thick */
-  font-family: Arial, Helvetica, sans-serif;
+/* Taught by Thom Corah */
+#reviewtext { /* ID for review text */
+  text-align: center; /* Aligned in the center */
+  font-size: 2vw; /* Font sixe 2 view width */
+  border: 6px solid black; /* solid black border, slightly thick, 6 pixels */
+  font-family: Arial, Helvetica, sans-serif; /* Set to Ariel font. */
 }
 
-.revcon {
-  padding: 2vw;
+/* Taught by Thom Corah */
+.revcon { /* Container for review text */
+  padding: 2vw; /* 2 view width for padding. */
 }
 
-#reviewbutton {
-  background-color: black;
-  border: none;
-  color: white;
-  padding: 35px 42px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+/* Taught by Thom Corah */
+#reviewbutton {/* Styling for review button */
+  background-color: black; /* Background colour is black */
+  border: none; /* no border*/
+  color: white; /* Colour is white */
+  padding: 35px 42px; /* Padding for button */
+  text-align: center; /* Button is centered */
+  text-decoration: none; /* No decoration for text. */
+  display: inline-block; /* Width and height of element */
+  font-size: 16px; /* Font size of 16 pixels */
+  margin: 4px 2px; /* margin around button */
+  cursor: pointer; /* The cursor is a pointer */
 }
 
-.button {
-  padding: 15px 25px;
-  font-size: 24px;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #04AA6D;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+/* Referenced from W3Schools (2023) Animated Buttons - "Pressed Effect". Available at: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate3 (Accessed: 22 March 2023) */
+.button {/* Styling for review button animation */
+  padding: 15px 25px;/* Padding for button */
+  font-size: 24px; /* Font size of 24 pixels */
+  text-align: center; /* Text is aligned in the center */
+  cursor: pointer; /* The cursor is a pointer */
+  outline: none;/* no button outline */
+  color: #fff; /* Colour: whtie */
+  background-color: #04AA6D; /* Background colour: green. */
+  border: none; /* No border */
+  border-radius: 15px; /* Border radius 15 pixels */
+  box-shadow: 0 9px #999; /* Shadow around button is grey */
 }
 
-.button:hover {background-color: #3e8e41}
+/* Referenced from W3Schools (2023) Animated Buttons - "Pressed Effect". Available at: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate3 (Accessed: 22 March 2023) */
+.button:hover {background-color: #3e8e41} /* Colour for when button is hovered on */
 
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-.buttondiv {
-  padding-bottom: 2vw;
+/* Referenced from W3Schools (2023) Animated Buttons - "Pressed Effect". Available at: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate3 (Accessed: 22 March 2023) */
+.button:active { /* Background when clicked */
+  background-color: #3e8e41; /* Background colour when clicked */
+  box-shadow: 0 5px #666; /* Grey shadow, 5 pixels */
+  transform: translateY(4px); /* Transforms 4 pixels along the Y axis */
 }
 
-#reviews{
-  font-family: Arial, Helvetica, sans-serif;
+/* Taught by Thom Corah */
+.buttondiv { /* Container for the button. */
+  padding-bottom: 2vw; /* Padding bottom of the container */
 }
 
+/* Taught by Thom Corah */
+#reviews{ /* ID styling for reviews overall */
+  font-family: Arial, Helvetica, sans-serif; /* The reviews have Ariel font family */
+} 
 
 
-.wrapper {
-  font-size: 1.2ee;
-  width: 25em;
-  position: relative;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 20%;
-  background-color: #ffffff;
-  border-radius: 0.5em;
-  padding: 4em 2em;
-  box-shadow: 0 1.25em 2.5em rgba(18, 0, 76, 0.15);
-  border: 6px solid green; /* solid black border, slightly thick */
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
+.wrapper {/* Main container of the stars */
+  font-size: 1.2ee; /* Font size of the container */
+  width: 25em; /* Width of the container */
+  position: relative;/* Positioned next to its nearest positioned ancestor */
+  transform: translate(-50%, -50%); /* Horizontal and vertical directions */
+  left: 50%; /* 50% away from the left of the screen */
+  top: 20%; /* 20% away from the top of the screen */
+  background-color: #ffffff; /* white background colour */
+  border-radius: 0.5em; /* Border is 0.5em */
+  padding: 4em 2em; /* padding for container */
+  box-shadow: 0 1.25em 2.5em rgba(18, 0, 76, 0.15); /* Box shadow for star review with a black shadow */
+  border: 6px solid green; /* solid black border, slightly thick */ /* 6 pixels, green border */
 }
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
+.container { /* Styling of all the stars */
+  width: 100%; /* 100% width of container */
+  display: flex; /* Displayed as a flex */
+  justify-content: space-around; /* Space between the stars. */
 }
-.fa-star {
-  font-size: 1.5em;
-  color: #ffd700;
+
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
+.fa-star {/* Styling for each star */
+  font-size: 1.5em; /* Size of star */
+  color: #ffd700; /* Colour of stars */
 }
-.number {
-  display: block;
-  text-align: center;
+
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
+.number { /* Styling of number */
+  display: block; /* Display as a block element */
+  text-align: center; /* Text align in the center */
 }
-#submit {
-  display: block;
-  position: relative;
-  background: linear-gradient(#fe3b5a, #fd7914);
-  border: none;
-  padding: 0.8em 2em;
-  color: #ffffff;
-  font-size: 1.2em;
-  border-radius: 2em;
-  margin: 1em auto 0 auto;
-  cursor: pointer;
+
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
+/* Styling for the submit button */
+#submit { /* Text align in the center */
+  display: block; /* Display as a block element */
+  position: relative; /* Positioned next to its nearest positioned ancestor */
+  background: linear-gradient(#fe3b5a, #fd7914); /* Red and orange gradient for the sumbit button */
+  border: none; /* no border */
+  padding: 0.8em 2em; /* Padding for button */
+  color: #ffffff; /* Button text is white */
+  font-size: 1.2em; /* Font size for submit button */
+  border-radius: 2em; /* Curves around the edges of button */
+  margin: 1em auto 0 auto; /* Margin is applied to the button */
+  cursor: pointer; /* Cursor is pointing */
 }
-#submit:disabled {
-  cursor: not-allowed;
+
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
+#submit:disabled { /* When submitted, certain elements are disabled. */
+  cursor: not-allowed; /* When submitted, cursor is disabled. */
 }
-#message {
-  text-align: center;
-  margin-bottom: 2em;
+
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
+#message { /* Styling of the message that appears after the button is submitted. */
+  text-align: center; /* Text is aligned to the center */
+  margin-bottom: 2em; /* Bottom margin. */
 }
+
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
 #submit-section {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #ffffff;
-  top: 0;
-  left: 0;
-  place-items: center;
-  border-radius: 0.5em;
-}
-.hide {
-  display: none;
-}
-.show {
-  display: grid;
+  position: absolute; /* The element is positioned relative to its first positioned ancestor element. */
+  height: 100%; /* Height of submit section */
+  width: 100%; /* Width of submit section */
+  background-color: #ffffff; /* Background colour for the submit section */
+  top: 0; /* no top adjustment */
+  left: 0; /* no left adjustment */
+  place-items: center; /* Items center */
+  border-radius: 0.5em; /* Border radius 5 rounded corners. */
 }
 
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
+.hide {
+  display: none; /* Hides the review once submitted */
+}
+
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
+.show {
+  display: grid; /* Displayed as a grid after submitted */
+}
+
+/* Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). */
 #submit-message {
-font-family: Arial, Helvetica, sans-serif;
-text-align: center;
+font-family: Arial, Helvetica, sans-serif; /* Font family for the submission message */
+text-align: center; /* text aligned in the center. */
 }
     </style>
 </head>
@@ -332,18 +368,18 @@ text-align: center;
 
 <body>
 
-  
+  <!-- Taught by Thom Corah -->
      <!-- Loading screen-->
-     <div id="loadingScreen">
+     <div id="loadingScreen"><!-- Container for loading screen -->
       <img  class="spin"src="Images/Logo.png" alt="Logo" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
     <p class="loadingtext1"><b>LOADING...</b></p><!-- Word used on loading screen as the page is an art page-->
   </div>
+    <!-- Taught by Thom Corah -->
     <!-- Javascript for loading screen -->
   <script>
  removeLoadingScreen = () => { // This is a function that will make the div dissapear.
     document.getElementById('loadingScreen').style.display = "none";} // Grabs the ID from the html with a default display.
     setTimeout(removeLoadingScreen, 4000); // Use setTimeout to run the loading page when the page loads.
-
   </script>
 
 
@@ -378,12 +414,15 @@ text-align: center;
   </div>
 </div>
 
-
-<div class="adjustment">
-<a href="frontcover.html" class="previous round"><span class="hex">&#8249;</span></a>
+ <!-- Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023)-->
+ <!-- Back button -->
+<div class="adjustment"> <!-- Class to style the button-->
+<a href="frontcover.html" class="previous round"><span class="hex">&#8249;</span></a><!-- Link to where the button goes to. Classes for the button styling and hex codes for the '<' sign. -->
 </div>
 
+
  <!-- Taught by Thom Corah. -->
+  <!-- Added classes to add styling to the reviews -->
 <div class="ments" id="reviewsContainer"> <!-- ID in a div called reviewsContainer and a class called 'ments' for the div  -->
     <input type="text" id="nameofuser" name="username" value="Insert Name Here."><!-- An input was created for text with an ID. The value that will be shown on screen is "Insert Name Here." The name logged is the username. -->
 
@@ -400,6 +439,15 @@ text-align: center;
  <!-- Taught by Thom Corah from lectures -->
 <div id="reviews"></div> <!-- ID for the reviews -->
 
+
+<!-- Insight into its development: 
+The review layout has now changed from how it was supposed to look originally. What was supposed to be achieved is a hidden review input which pops up on the screen when
+the user clicks a button on the top right hand of the screen. The user would then be able to enter the review and then the review would appear on the screen in a horizontal
+layout with the data stored on the database. The majority of this was achieved besides the hidden input and horizontal layout. Instead, the reviews show as a grid layout instead.
+This review page method was done by first, linking this page to PouchDB. Two inputs were created to contain text which was specified using the type="text." A button was then added
+for the user to submit. Classes and ID's were added for CSS and JavaScript. Javascript techniques including adding a 'click' event was added to the button to add the review to the 
+browser when the review button is clicked on. PouchDB was assigned to the variable; connecting it and making it run. CSS was added to the HTML and ID classes to style the review. 
+Although the original outcome was not achieved, the alternative outcome was successful. -->
 
  <!-- Taught by Thom Corah from lectures -->
  <!-- Taken from PouchDB (no date) Download. Available at: https://pouchdb.com/download.html (Accessed: 22 March 2023)-->
@@ -452,6 +500,7 @@ function showReviews(err, docs) { // A function that has two parameters.
 
 
 <!-- Script -->
+<!-- Taken from Coding Artist (2022) Star Rating Javascript. Available at: https://codingartistweb.com/2022/12/star-rating-javascrip/ (Accessed: 22 March 2023). -->
 <script>
     let starContainer = document.querySelectorAll(".star-container");// Selects all the elements with the star-container class name and assigns them to the variable.
 const submitButton = document.querySelector("#submit");// The submit ID is assigned to the variable.
@@ -468,7 +517,7 @@ over: "touchstart", // Event type.
 };
 
 let deviceType = "";// Empty string variable used to store the type of device detected.
-//Detect touch device
+//Detect touch device. 
 const isTouchDevice = () => { // Defining a function.
 try {
 //We try to create TouchEvent (it would fail for desktops and throw error)
@@ -480,63 +529,63 @@ deviceType = "mouse"; // Sets device type to mouse.
 return false; // Returns if false.
 }
 };
-isTouchDevice();
-starContainer.forEach((element, index) => {
-element.addEventListener(events[deviceType].over, () => {
-submitButton.disabled = false;
-if (element.classList.contains("inactive")) {
+isTouchDevice(); // Function isTouchDevice().
+starContainer.forEach((element, index) => { // For each method starContainer array-like object.
+element.addEventListener(events[deviceType].over, () => { //  The specific event being listened to depends on the detected deviceType.
+submitButton.disabled = false;// When the event is triggered, it sets it to false.
+if (element.classList.contains("inactive")) { // It then checks if the clicked element has the "inactive" CSS class.
   //Fill Star
-  ratingUpdate(0, index, true);
+  ratingUpdate(0, index, true); // function with three arguments.
 } else {
   //Regular stars (remove color)
-  ratingUpdate(index, starContainer.length - 1, false);
+  ratingUpdate(index, starContainer.length - 1, false); // calls the ratingUpdate function with three arguments.
 }
 });
 });
-const ratingUpdate = (start, end, active) => {
-for (let i = start; i <= end; i++) {
-if (active) {
-  starContainer[i].classList.add("active");
-  starContainer[i].classList.remove("inactive");
-  starContainer[i].firstElementChild.className = "fa-star fa-solid";
+const ratingUpdate = (start, end, active) => { // ratingUpdate function, based on the provided parameters.
+for (let i = start; i <= end; i++) { // iterate over the star elements in the starContainer.
+if (active) { // This adds or removes CSS classes; contrilling ther star styling.
+  starContainer[i].classList.add("active"); // Controls star styling (active).
+  starContainer[i].classList.remove("inactive"); // Controls star styling (inactive).
+  starContainer[i].firstElementChild.className = "fa-star fa-solid"; // Changes the class name of the first child element.
 } else {
-  starContainer[i].classList.remove("active");
-  starContainer[i].classList.add("inactive");
-  starContainer[i].firstElementChild.className = "fa-star fa-regular";
+  starContainer[i].classList.remove("active"); // Controls star styling (active).
+  starContainer[i].classList.add("inactive"); // Controls star styling (inactive).
+  starContainer[i].firstElementChild.className = "fa-star fa-regular"; // Changes the class name of the first child element.
 }
 }
 //Message
-let activeElements = document.getElementsByClassName("active");
-if (activeElements.length > 0) {
-switch (activeElements.length) {
-  case 1:
-    message.innerText = "Terrible";
-    break;
-  case 2:
-    message.innerText = "Bad";
-    break;
-  case 3:
-    message.innerText = "Satisfied";
-    break;
-  case 4:
-    message.innerText = "Good";
-    break;
-  case 5:
-    message.innerText = "Excellent";
-    break;
+let activeElements = document.getElementsByClassName("active"); // Check for elements with the class active.
+if (activeElements.length > 0) { // If activeElements have a length greater than zero.
+switch (activeElements.length) { // Switch statement based on the length of the activeElements array.
+  case 1: // One star.
+    message.innerText = "Terrible"; // Switches to statement 'terrible.'
+    break; // Breaks between elements.
+  case 2: // Two stars.
+    message.innerText = "Bad"; // Switches to statement 'bad.'
+    break; // Breaks between elements.
+  case 3: // Three stars.
+    message.innerText = "Satisfied"; // Switches to statement 'Satisfied.'
+    break; // Breaks between elements.
+  case 4: // Four stars.
+    message.innerText = "Good";// Switches to statement 'good.'
+    break; // Breaks between elements.
+  case 5: // Five stars.
+    message.innerText = "Excellent";// Switches to statement 'excellent.'
+    break; // Breaks between elements.
 }
-} else {
-message.innerText = "";
+} else {  // Otherwise.
+message.innerText = ""; // Effectively clears the text content of the message element.
 }
 };
-submitButton.addEventListener("click", () => {
-submitSection.classList.remove("hide");
-submitSection.classList.add("show");
-submitButton.disabled = true;
+submitButton.addEventListener("click", () => { // Attaches an event listener to the submitButton element for the "click" event. 
+submitSection.classList.remove("hide"); // Removes: CSS class "hide" 
+submitSection.classList.add("show"); // adds the CSS class "show"
+submitButton.disabled = true; // It also disables the submitButton by setting its disabled property to true.
 });
-window.onload = () => {
-submitButton.disabled = true;
-submitSection.classList.add("hide");
+window.onload = () => { // Sets up an event listener for the "load" event of the window object. 
+submitButton.disabled = true; // It sets the disabled property of the submitButton to true.
+submitSection.classList.add("hide"); // Adds the CSS class "hide" to the submitSection element.
 };
 </script>
 </body>

@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><!-- HTML 5 doctype -->
+<html lang="en"><!-- The language for the HTML5 is English -->
+<head><!-- Head section: non visible elements -->
+    <meta charset="UTF-8"><!-- Encoding characters -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Compatible for internet explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Viewport properties. Ensures that the page is rendered properly on different devices. -->
     
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Document</title><!-- Title of HTML page which will be displayed in the browser. -->
+    <!-- Referenced from CodingNepal (2022) Build A Custom Video Player in HTML CSS & JavaScript. Available at: https://www.codingnepalweb.com/custom-video-player-html-css-javascript/ (Accessed: 22 March 2023).-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> <!-- This line includes the Font Awesome stylesheet.-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> <!-- Google Fonts stylesheet -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!-- Google Fonts, "Material Icons" font family.-->
     <style>
 
 body {
   /* Instructions for making the background image move upon mouse movement */
   margin: 0; /* No margin on the 0 */
    /* background image for parallax layer*/
-  background-image: url(./Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
+  background-image: url(../Images/School.png); /* Univofmobile (2021) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 20 October 2022). */
   background-repeat: no-repeat; /* Stops the image from repeating on the page if it's too small */
   background-size: 103% 102%; /* Image will cover the entire page element */
   background-position: center;
@@ -29,7 +30,7 @@ body {
    height: 100vh; /* covers the height of the page screen */
   width: 100%; /* covers the width of the page screen */
 
-  /* Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023). */
+
   /* What was changed: Did not apply the top, left, right, bottom elements. A container was also not added.  */
   transform: translateZ(0); /* transforming an element along the Z Axis */
   z-index: -1; /* Puts the overlay layer under the logo */
@@ -53,7 +54,7 @@ body:after { /* this element will add the overlay after the background image */
 
        /* Taught by Thom Corah */
 #loadingScreen {
-  background-image: url(../Images/School3.png); 
+  background-image: url(../Images/School3.png); /* Unsplash (2022) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 14 November 2022).*/
   background-color: white; /* Background colour */
   position: fixed; /* Fixed on top of everything else */
   top: 0; /* default for top*/
@@ -100,311 +101,330 @@ body:after { /* this element will add the overlay after the background image */
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+/* Referenced from CodingNepal (2022) Build A Custom Video Player in HTML CSS & JavaScript. Available at: https://www.codingnepalweb.com/custom-video-player-html-css-javascript/ (Accessed: 22 March 2023).*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');/* Google fonts */
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* No margins */
+  padding: 0; /* No paddings */
+  box-sizing: border-box; /* Border box setting */
 }
 
-body, .container, .video-controls, .video-timer, .options{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body, .container, .video-controls, .video-timer, .options{ /* styling for these select classes */
+  display: flex; /* Displayed as a flex*/
+  align-items: center; /* Items aligned in the center */
+  justify-content: center; /* Content in the center */
 }
-.container{
-  width: 98%;
-  user-select: none;
-  overflow: hidden;
-  max-width: 900px;
-  border-radius: 5px;
-  background: #000;
-  aspect-ratio: 16 / 9;
-  position: relative;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+.container{/* Video container */
+  width: 98%; /* How wide the video is*/
+  user-select: none; /* The user can't select anything */
+  overflow: hidden; /* Overflow of content is hidden */
+  max-width: 900px; /* Width is 900 pixels */
+  border-radius: 5px; /* How rounded the video is */
+  background: #000;/* Background colour is black */
+  aspect-ratio: 16 / 9; /* Aspect of video */
+  position: relative; /* Nearest positioned ancestor. */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9); /* Shadow around video */
 }
-.container.fullscreen{
-  max-width: 100%;
-  width: 100%;
-  height: 100vh;
-  border-radius: 0px;
+.container.fullscreen{ /* Container of the video and full screen settings  */
+  max-width: 100%;/* Maximum width of the container and fullscreen */
+  width: 100%; /* Width of these clases */
+  height: 100vh; /* height of these classes */
+  border-radius: 0px; /* no curved edges */
 }
-.wrapper{
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  opacity: 0;
-  bottom: -15px;
-  transition: all 0.08s ease;
+.wrapper{/* Class for video player */
+  position: absolute; /* Place element anywhere */
+  left: 0; /* No shift in left position */
+  right: 0; /* No shift in right position */
+  z-index: 1; /* Stack order 1 */
+  opacity: 0; /* No opacity */
+  bottom: -15px; /* Bottom is raised -15 pixels*/
+  transition: all 0.08s ease; /* Transitions at 0.08 seconds with ease animation. */
 }
-.container.show-controls .wrapper{
-  opacity: 1;
-  bottom: 0;
-  transition: all 0.13s ease;
+.container.show-controls .wrapper{ /* Styling of multiple classes. */
+  opacity: 1; /* Opacity is at q*/
+  bottom: 0; /* No shift at the bottom*/
+  transition: all 0.13s ease;/* Transitions at 0.13 seconds with ease animation. */
 }
-.wrapper::before{
-  content: "";
-  bottom: 0;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: calc(100% + 35px);
-  pointer-events: none;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+.wrapper::before{ /* Before activated */
+  content: "";/* Insert generated content*/
+  bottom: 0; /* No bottom */
+  width: 100%; /* 100% width */
+  z-index: -1; /* -1 stacking order. */
+  position: absolute; /* Place element anywhere */
+  height: calc(100% + 35px);/* 100% add 35 pixels equals height */
+  pointer-events: none; /* No pointer events */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); /* Black, transparent gradient on wrapper container */
 }
-.video-timeline{
-  height: 7px;
-  width: 100%;
-  cursor: pointer;
+.video-timeline{/* Styling for the video timeline*/
+  height: 7px; /* 7 pixels height */
+  width: 100%; /* 100% width of timeline */
+  cursor: pointer; /*Pointer cursor. */
 }
-.video-timeline .progress-area{
-  height: 3px;
-  position: relative;
-  background: rgba(255, 255, 255, 0.6);
+.video-timeline .progress-area{ /* Styling for video timeline and the progress area */
+  height: 3px; /* Height of these classes */
+  position: relative; /* Nearest positioned ancestor. */
+  background: rgba(255, 255, 255, 0.6);/* Background colour is light grey. */
 }
-.progress-area span{
-  position: absolute;
-  left: 50%;
-  top: -25px;
-  font-size: 13px;
-  color: #fff;
-  pointer-events: none;
-  transform: translateX(-50%);
+.progress-area span{/* Styling for video timeline and the progress area */
+  position: absolute;/* Place element anywhere */
+  left: 50%;/* area is left from the screen */
+  top: -25px; /* area is top from the screen */
+  font-size: 13px; /* 13 pixels font size */
+  color: #fff; /* Colour white */
+  pointer-events: none; /* No pointer events */
+  transform: translateX(-50%); /* Translates along the X axis */
 }
-.progress-area .progress-bar{
-  width: 0%;
-  height: 100%;
-  position: relative;
-  background: #2289ff;
+.progress-area .progress-bar{ /* Styling for progress area and progress bar */
+  width: 0%; /* No width */
+  height: 100%; /* Height 100% */
+  position: relative; /* Nearest positioned ancestor. */
+  background: #2289ff; /* Blue background */
 }
-.progress-bar::before{
-  content: "";
-  right: 0;
-  top: 50%;
-  height: 13px;
-  width: 13px;
-  position: absolute;
-  border-radius: 50%;
-  background: #2289ff;
-  transform: translateY(-50%);
+.progress-bar::before{ /* Before activated */
+  content: ""; /* Insert generated content*/
+  right: 0;/* No right adjustment */
+  top: 50%; /* Top adjusted to 50%. */
+  height: 13px; /* Height 13 pixels */
+  width: 13px; /* Width 13 pixels */
+  position: absolute; /* Place element anywhere */
+  border-radius: 50%;/* 50 percent rounded edges */
+  background: #2289ff; /* Background colour is blue */
+  transform: translateY(-50%);/* Translates along the Y axis */
 }
-.progress-bar::before, .progress-area span{
-  display: none;
+.progress-bar::before, .progress-area span{ /* Styling for classes */
+  display: none; /* No display*/
 }
 .video-timeline:hover .progress-bar::before,
-.video-timeline:hover .progress-area span{
-  display: block;
+.video-timeline:hover .progress-area span{ /* Styling for classes */
+  display: block; /* Displayed as a block */
 }
-.wrapper .video-controls{
-  padding: 5px 20px 10px;
+.wrapper .video-controls{/* Styling for wrapper container and video controls */
+  padding: 5px 20px 10px; /* Padding */
 }
-.video-controls .options{
-  width: 100%;
+.video-controls .options{ /* video controls and options */
+  width: 100%; /* 100% width */
 }
-.video-controls .options:first-child{
-  justify-content: flex-start;
+.video-controls .options:first-child{ /* video controls and options */
+  justify-content: flex-start; /* justified as a flex start */
 }
-.video-controls .options:last-child{
-  justify-content: flex-end;
+.video-controls .options:last-child{  /* video controls and options */
+  justify-content: flex-end; /* justified as a flex end */
 }
-.options button{
-  height: 40px;
-  width: 40px;
-  font-size: 19px;
-  border: none;
-  cursor: pointer;
-  background: none;
-  color: #efefef;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+.options button{  /* styling for options and button */
+  height: 40px;  /* height 40 pixels */
+  width: 40px; /* width 40 pixels */
+  font-size: 19px; /* font size 19 pixels */
+  border: none; /* no border */
+  cursor: pointer; /* pointed cursor */
+  background: none; /* no background */
+  color: #efefef; /* options and button are white */
+  border-radius: 3px; /* curved edges by 3 pixels*/
+  transition: all 0.3s ease; /* 0.3 seconds with an ease animation */
 }
-.options button :where(i, span) {
-  height: 100%;
-  width: 100%;
-  line-height: 40px;
+.options button :where(i, span) { /*  targets the <i> and <span> elements inside <button> elements within elements with the class "options". */
+  height: 100%; /* 100% height */
+  width: 100%; /* 100% width */
+  line-height: 40px; /* line height is 40 pixels */
 }
-.options button:hover :where(i, span){
-  color: #fff;
+.options button:hover :where(i, span){  /* Hover on button */
+  color: #fff; /* Colour is white when hovered */
 }
-.options button:active :where(i, span){
-  transform: scale(0.9);
+.options button:active :where(i, span){ /* After button is clicked */
+  transform: scale(0.9); /* Scales to 0.9 */
 }
-.options button span{
-  font-size: 23px;
+.options button span{ /* Option button */
+  font-size: 23px; /* Font size */
 }
-.options input{
-  height: 4px;
-  margin-left: 3px;
-  max-width: 75px;
-  accent-color: #0078FF;
+.options input{  /* Styling for the options and the input */
+  height: 4px; /* Height is 4 pixels */
+  margin-left: 3px; /* Margin left is 3 pixels */
+  max-width: 75px; /* Max-width is 75 pixels */
+  accent-color: #0078FF; /* accent colour for user interface: blue */
 }
-.options .video-timer{
-  color: #efefef;
-  margin-left: 15px;
-  font-size: 14px;
+.options .video-timer{ /* Timer for video */
+  color: #efefef; /* Colour is white */
+  margin-left: 15px; /* Margin left is 15 pixels */
+  font-size: 14px; /* Font size is 14 pixels */
 }
-.video-timer .separator{
-  margin: 0 5px;
-  font-size: 16px;
-  font-family: "Open sans";
+.video-timer .separator{ /* Video timer */
+  margin: 0 5px; /* 5 pixels */
+  font-size: 16px; /* 16 pixels */
+  font-family: "Open sans"; /* Font family is open sans */
 }
-.playback-content{
-  display: flex;
-  position: relative;
+.playback-content{ /* Playback content  */
+  display: flex; /* Displayed as flex */
+  position: relative; /* Nearest positioned ancestor. */
 }
-.playback-content .speed-options{
-  position: absolute;
-  list-style: none;
-  left: -40px;
-  bottom: 40px;
-  width: 95px;
-  overflow: hidden;
-  opacity: 0;
-  border-radius: 4px;
-  pointer-events: none;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.13s ease;
+.playback-content .speed-options{ /* styling for classes */
+  position: absolute; /* Place element anywhere */
+  list-style: none; /* position of the list item markers. */
+  left: -40px; /* Left -40 pexels from the screen. */
+  bottom: 40px; /* bottom 40 pexels from the screen. */
+  width: 95px; /* Width 95pexels from the screen. */
+  overflow: hidden; /* Hidden overflow */
+  opacity: 0; /*No opacity*/
+  border-radius: 4px; /* Slightly curved edges. 4 pexels. */
+  pointer-events: none; /* No position events */
+  background: rgba(255, 255, 255, 0.9); /* White background */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Shadow that is 10/20 pexels long. Black. */
+  transition: opacity 0.13s ease; /* Opacity 0.13 seconds with the ease transition */
 }
-.playback-content .speed-options.show{
-  opacity: 1;
-  pointer-events: auto;
+.playback-content .speed-options.show{ /* styling for classes */
+  opacity: 1; /* opacity 1 */
+  pointer-events: auto; /* pointer events auto*/
 }
-.speed-options li{
-  cursor: pointer;
-  color: #000;
-  font-size: 14px;
-  margin: 2px 0;
-  padding: 5px 0 5px 15px;
-  transition: all 0.1s ease;
+.speed-options li{ /* Styling speed options */
+  cursor: pointer; /* pointed cursor */
+  color: #000; /* black colour */
+  font-size: 14px; /* font size is 14 */
+  margin: 2px 0; /* margin is 2px */
+  padding: 5px 0 5px 15px; /* padding is 5px */
+  transition: all 0.1s ease; /* 0.1 second with an ease animation */
 }
-.speed-options li:where(:first-child, :last-child){
-  margin: 0px;
+.speed-options li:where(:first-child, :last-child){ /* Speed option style*/
+  margin: 0px; /* no margin */
 }
-.speed-options li:hover{
-  background: #dfdfdf;
+.speed-options li:hover{ /* styling for when hovered */
+  background: #dfdfdf; /* background colour is white*/
 }
-.speed-options li.active{
-  color: #fff;
-  background: #3e97fd;
+.speed-options li.active{ /* when active */
+  color: #fff;/* colour is white */
+  background: #3e97fd; /* background colour is blue */
 }
-.container video{
-  width: 100%;
+.container video{ /* container, video styling */
+  width: 100%; /* width is 100%. */
 }
-@media screen and (max-width: 540px) {
-  .wrapper .video-controls{
-    padding: 3px 10px 7px;
+@media screen and (max-width: 540px) { /* Maximum width is 540 pixels */
+  .wrapper .video-controls{ /* classes for wrapper and video controls*/
+    padding: 3px 10px 7px; /* 3, 10 and 7 pixels padding around controls */
   }
-  .options input, .progress-area span{
-    display: none!important;
+  .options input, .progress-area span{ /* Maximum width is 540 pixels */
+    display: none!important; /* No display*/
   }
-  .options button{
-    height: 30px;
-    width: 30px;
-    font-size: 17px;
+  .options button{ /* Button and options for classes */
+    height: 30px; /* 30 pixel height */
+    width: 30px; /* 30 pixel width */
+    font-size: 17px; /* 12 pexels font size */
   }
-  .options .video-timer{
-    margin-left: 5px;
+  .options .video-timer{ /* options, video timer classes */
+    margin-left: 5px; /* margin left 5 pixels */
   }
-  .video-timer .separator{
-    font-size: 14px;
-    margin: 0 2px;
+  .video-timer .separator{ /* video timer, separator */
+    font-size: 14px; /* 14 pixels font size */
+    margin: 0 2px; /* 2 pixels margin */
   }
-  .options button :where(i, span) {
-    line-height: 30px;
+  .options button :where(i, span) { /* options, button */
+    line-height: 30px; /* 30 pixels height */
   }
-  .options button span{
-    font-size: 21px;
+  .options button span{ /* options span classes */
+    font-size: 21px; /* 21 pixels font size */
   }
-  .options .video-timer, .progress-area span, .speed-options li{
-    font-size: 12px;
+  .options .video-timer, .progress-area span, .speed-options li{ /* styles for classes */
+    font-size: 12px;  /* 12 pixels size */
   }
-  .playback-content .speed-options{
-    width: 75px;
-    left: -30px;
-    bottom: 30px;
+  .playback-content .speed-options{ /* playback content, speed options classes */
+    width: 75px; /* width pixels 75 */
+    left: -30px; /* left -30 pixels */
+    bottom: 30px; /* bottom 30 pixels */
   }
-  .speed-options li{
-    margin: 1px 0;
-    padding: 3px 0 3px 10px;
+  .speed-options li{ /* speed-options list */
+    margin: 1px 0; /* margin 1 pixels */
+    padding: 3px 0 3px 10px; /* padding 3, 3, 10 pixels */
   }
-  .right .pic-in-pic{
-    display: none;
+  .right .pic-in-pic{ /* classes */
+    display: none; /* no display */
   }
 }
 
-h1 {
-    position: absolute;
-    top: 6vw;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 5vw;
+
+
+
+
+
+
+
+
+
+h1 {  /* Heading one */
+    position: absolute; /* The element is positioned relative to its first positioned ancestor element. */
+    top: 6vw; /* 6 from the top*/
+font-family: Arial, Helvetica, sans-serif; /* Ariel font */
+font-size: 5vw; /* Font size*/
 }
 
-#stroke{
-	color: black;
-	-webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: white;
+#stroke{  /* Settings for text stroke */
+	color: black; /* Colour is black  */
+	-webkit-text-stroke-width: 4px; /* Width is 4 pixels  */
+    -webkit-text-stroke-color: white; /*Stroke is white */
 }
 
-.div1 {
-    top: 780px;
-  width: 500px;
-  height: 100px;
-  background-color: #fff;
-  position: absolute;
-  border-radius: 25px;
-  padding: 1vw;
-  font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+.div1 { /* Styling for secondary text */
+    top: 780px; /* text away from top pixels */
+  width: 500px; /* 500 pixels wide */
+  height: 100px; /* 1000 pixels height */
+  background-color: #fff; /* white background colour */
+  position: absolute;/* The element is positioned relative to its first positioned ancestor element. */
+  border-radius: 25px; /* rounded corners 25 pixels */
+  padding: 1vw; /* padding 1 */
+  font-size: 25px; /* font size 25 pixels */
+  font-family: Arial, Helvetica, sans-serif; /* Ariel font family */
+  text-align: center; /* Text aligned in the center */
 }
 
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
 a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 10px 16px;
+  text-decoration: none;/* no decoration for the text */
+  display: inline-block;/* The width and height of the button can be set. */
+  padding: 10px 16px; /* Padding for the button. */
 }
 
-a:hover {
-  background-color: red;
-  color: black;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+a:hover { /* Styling for when the mouse hovers over the button. */
+  background-color: red; /* Background colour changes to red when mouse hovers over it. */
+  color: black; /* '<' is black. */
 }
 
-.previous {
-  background-color: white;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+.previous { /* Styling for button without hover. */
+  background-color: white; /* Background colour is white. */
   border: 6px solid red; /* solid black border, slightly thick */
   color: black;
 }
 
-
-.round {
-  border-radius: 50%;
-  width: 5vw;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+.round { /* Styling for the button shape */
+  border-radius: 50%; /* The shape is 50% round. */
+  width: 5vw;/* The view width is 3. */
   
 }
 
-.adjustment {
-  padding-left: 9vw !important;
-  padding-bottom: 2vw !important;
-  position: absolute;
-  left: 2%;
-  top: 4%;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+/* This was added for extra settings. */
+.adjustment { /* Styling of the button container */
+  padding-left: 9vw !important;/* Styling of the button container */
+  padding-bottom: 2vw !important;/* The padding botton is 2 view width */
+  position: absolute; /* positioning the image relative to the nearest positioned ancestor */
+  left: 2%; /* 2% from the left of the screen */
+  top: 4%; /* 4% from the top of the screen */
 
 }
 
-.hex {
- font-size: 3vw;
- padding-left: 30% !important;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+/* This was added for extra settings. */
+.hex {/* Styling for the '<' button */
+ font-size: 3vw; /* Size of the '<' */
+ padding-left: 30% !important;/* Padding on the left of '<" is 30%. */
 }
   </style>
 </head>
 
 
 <body>
-  
+   <!-- Taught by Thom Corah -->
      <!-- Loading screen-->
-     <div id="loadingScreen">
+     <div id="loadingScreen"><!-- Container for loading screen -->
       <img  class="spin"src="Images/Logo.png" alt="Logo" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
     <p class="loadingtext1"><b>LOADING...</b></p><!-- Word used on loading screen as the page is an art page-->
   </div>
@@ -416,178 +436,193 @@ a:hover {
 
   </script>
 
-<div class="adjustment">
-    <a href="frontcover.html" class="previous round"><span class="hex">&#8249;</span></a>
-    </div>
+ <!-- Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023)-->
+ <!-- Back button -->
+ <div class="adjustment"> <!-- Class to style the button-->
+  <a href="frontcover.html" class="previous round"><span class="hex">&#8249;</span></a><!-- Link to where the button goes to. Classes for the button styling and hex codes for the '<' sign. -->
+  </div>
 
-<h1 id="stroke">ANTI-BULLYING VIDEO</h1>
+<h1 id="stroke">ANTI-BULLYING VIDEO</h1>  <!-- Heading for page with an ID of stroke. -->
 
-<div class="div1">Here is a video about bullying and how it can be prevented, dealt with and handled.</div>
+<div class="div1">Here is a video about bullying and how it can be prevented, dealt with and handled.</div><!-- Div with text included with a class name. -->
     
-    <div class="container show-controls">
-        <div class="wrapper">
-            <div class="video-timeline">
-                <div class="progress-area">
-                    <span>00:00</span>
-                    <div class="progress-bar"></div>
+
+<!-- For this code referenced from CodingNepal (2022), this approach was chosen because this code has many adjustable/user control features including a video speed 
+adjustment option, a volume option and screen minimising. It also helped develop new skills as this is something advanced and in depth coding that could be practiced in the future instead
+of creating default video code and simply styling it. An alternative way of achieving this include W3School (2023) technique of using the <source> attribute and adding a poster image which,
+though achieves a similar result, does not expand skills. -->
+ <!-- Referenced from W3Schools(2023) HTML Video. Available at: https://www.w3schools.com/html/html5_video.asp (Accessed: 22 March 2023)-->
+
+
+ <!-- Referenced from CodingNepal (2022) Build A Custom Video Player in HTML CSS & JavaScript. Available at: https://www.codingnepalweb.com/custom-video-player-html-css-javascript/ (Accessed: 22 March 2023)-->
+    <div class="container show-controls"><!-- Container for the videos and its controls. -->
+        <div class="wrapper"><!-- Wrapper for the video player -->
+            <div class="video-timeline"><!-- DIV for the video timeline -->
+                <div class="progress-area"><!-- DIV element for the progress bar -->
+                    <span>00:00</span> <!-- Video set to 0. -->
+                    <div class="progress-bar"></div> <!-- Progress of the video -->
                 </div>
             </div>
-            <ul class="video-controls">
-                <li class="options left">
-                    <button class="volume"><i class="fa-solid fa-volume-high"></i></button>
-                    <input type="range" min="0" max="1" step="any">
-                    <div class="video-timer">
-                        <p class="current-time">00:00</p>
-                        <p class="separator"> / </p>
-                        <p class="video-duration">00:00</p>
+            <ul class="video-controls"><!-- Container for the video controls button. -->
+                <li class="options left"><!-- Container for the video controls button. -->
+                    <button class="volume"><i class="fa-solid fa-volume-high"></i></button> <!--It represents a button for controlling the volume of the video. Font Awesome library -->
+                    <input type="range" min="0" max="1" step="any"><!--It represents a slider input that allows the user to adjust the volume of the video.  -->
+                    <div class="video-timer"><!--It represents a container for displaying the current time and duration of the video.-->
+                        <p class="current-time">00:00</p><!-- It displays the current time of the video. -->
+                        <p class="separator"> / </p><!-- It displays a separator between the current time and the video duration. -->
+                        <p class="video-duration">00:00</p> <!--total duration of the video. The initial value is set to "00:00". -->
                     </div>
                 </li>
-                <li class="options center">
-                    <button class="skip-backward"><i class="fas fa-backward"></i></button>
-                    <button class="play-pause"><i class="fas fa-play"></i></button>
-                    <button class="skip-forward"><i class="fas fa-forward"></i></button>
+                <li class="options center"><!-- It represents a list item that contains controls positioned in the center of the video player. -->
+                    <button class="skip-backward"><i class="fas fa-backward"></i></button><!--It represents a button for skipping backward in the video. -->
+                    <button class="play-pause"><i class="fas fa-play"></i></button><!--It represents a button for playing or pausing the video. -->
+                    <button class="skip-forward"><i class="fas fa-forward"></i></button><!--  button for skipping forward in the video. Inside the button -->
                 </li>
-                <li class="options right">
-                    <div class="playback-content">
-                        <button class="playback-speed"><span class="material-symbols-rounded">slow_motion_video</span></button>
-                        <ul class="speed-options">
-                            <li data-speed="2">2x</li>
-                            <li data-speed="1.5">1.5x</li>
-                            <li data-speed="1" class="active">Normal</li>
-                            <li data-speed="0.75">0.75x</li>
-                            <li data-speed="0.5">0.5x</li>
+                <li class="options right"><!--   It represents a list item that contains controls positioned on the right side of the video player. -->
+                    <div class="playback-content"><!--  It represents a container for playback-related controls. -->
+                        <button class="playback-speed"><span class="material-symbols-rounded">slow_motion_video</span></button><!-- It represents a button for changing the playback speed of the video-->
+                        <ul class="speed-options"><!--  It represents a list for displaying different playback speed options. -->
+                            <li data-speed="2">2x</li><!--represents a speed option in the playback speed control. Speed set to 2, playback speed of 2x-->
+                            <li data-speed="1.5">1.5x</li><!--represents a speed option in the playback speed control. Speed set to 1.5, playback speed of 1.5x-->
+                            <li data-speed="1" class="active">Normal</li><!--represents a speed option in the playback speed control. Speed set to 1, Attribute set to active -->
+                            <li data-speed="0.75">0.75x</li><!--represents a speed option in the playback speed control. Speed set to 0.75, playback speed of 0.75x-->
+                            <li data-speed="0.5">0.5x</li><!--represents a speed option in the playback speed control. Speed set to 0.5, playback speed of 0.5x-->
                         </ul>
                     </div>
-                    <button class="pic-in-pic"><span class="material-icons">picture_in_picture_alt</span></button>
-                    <button class="fullscreen"><i class="fa-solid fa-expand"></i></button>
+                    <!-- fullscreen mode buttons in video player -->
+                    <button class="pic-in-pic"><span class="material-icons">picture_in_picture_alt</span></button><!--It represents a button for enabling picture-in-picture mode. Custom icon font is included -->
+                    <button class="fullscreen"><i class="fa-solid fa-expand"></i></button><!--It represents a button for entering fullscreen mode. -->
                 </li>
             </ul>
         </div>
-        <video src="Videos/1.mp4" poster="Images/Thumbnail.png">
-            <source src="Videos/1.mp4" type="video/mp4"/>
-            <source src="Videos/1.webm" type="video/webm">
-            Sorry, your browser does not support the video tag. Download the video.
-            <a href="Videos/1.mp4">Download the video here if your browser does not support the video tag.</a>
+        <video src="Videos/12.mp4" poster="Images/Thumbnail.png"><!-- Video link to mp4 version. Poster image for video. -->
+            <source src="Videos/12.mp4" type="video/mp4"/><!-- Video link to mp4 version. Type video mp4 -->
+            <source src="Videos/12.webm" type="video/webm"><!-- Video link to webm version. Type video webm -->
+            Sorry, your browser does not support the video tag. Download the video. <!-- This will appear if the video does not load. -->
+            <a href="Videos/12.mp4">Download the video here if your browser does not support the video tag.</a> <!-- Video link to mp4 version. Type video mp4. Option for video download if it doesn't load. -->
         </video>
 
     </div>
-    
+
+ <!-- Referenced from CodingNepal (2022) Build A Custom Video Player in HTML CSS & JavaScript. Available at: https://www.codingnepalweb.com/custom-video-player-html-css-javascript/ (Accessed: 22 March 2023)-->
     <script>
-        const container = document.querySelector(".container"),
-mainVideo = container.querySelector("video"),
-videoTimeline = container.querySelector(".video-timeline"),
-progressBar = container.querySelector(".progress-bar"),
-volumeBtn = container.querySelector(".volume i"),
-volumeSlider = container.querySelector(".left input");
-currentVidTime = container.querySelector(".current-time"),
-videoDuration = container.querySelector(".video-duration"),
-skipBackward = container.querySelector(".skip-backward i"),
-skipForward = container.querySelector(".skip-forward i"),
-playPauseBtn = container.querySelector(".play-pause i"),
-speedBtn = container.querySelector(".playback-speed span"),
-speedOptions = container.querySelector(".speed-options"),
-pipBtn = container.querySelector(".pic-in-pic span"),
-fullScreenBtn = container.querySelector(".fullscreen i");
-let timer;
-const hideControls = () => {
-    if(mainVideo.paused) return;
-    timer = setTimeout(() => {
-        container.classList.remove("show-controls");
-    }, 3000);
+        const container = document.querySelector(".container"), // This line declares a constant variable container and assigns it the reference to the first element in the document that has the class "container".
+mainVideo = container.querySelector("video"), // Assigns the constant variable and assigns it the reference to the first video element within the container.
+videoTimeline = container.querySelector(".video-timeline"), // represents the timeline or progress area of the video player.
+progressBar = container.querySelector(".progress-bar"), // This element represents the progress bar that visually shows the current progress of the video.
+volumeBtn = container.querySelector(".volume i"),//  volumeBtn is assigned to the element within the container that is a child of an element with the class "volume".
+volumeSlider = container.querySelector(".left input"); // volume slider control.
+currentVidTime = container.querySelector(".current-time"), // represents the current time of the video, variable currentVidTime is assigned to the element that has the class "current-time."
+videoDuration = container.querySelector(".video-duration"),// represents the total duration of the video.
+skipBackward = container.querySelector(".skip-backward i"),// skip backward button with an icon, variable and assigns it the reference to the <i> within the container with the class "skip-backward". 
+skipForward = container.querySelector(".skip-forward i"), // skip forward button with an icon.
+playPauseBtn = container.querySelector(".play-pause i"), //constant variable playPauseBtn and assigns it the reference to the <i>. Represents a play/pause button with an icon.
+speedBtn = container.querySelector(".playback-speed span"), //represents a button for changing the playback speed and has some text or icon representing. 
+speedOptions = container.querySelector(".speed-options"), // This element likely represents a list of speed options for the video playback.
+pipBtn = container.querySelector(".pic-in-pic span"), //  pipBtn and assigns it the reference to the <span> element within the 'container.'
+fullScreenBtn = container.querySelector(".fullscreen i"); // represents a button or icon for entering fullscreen mode.
+let timer; // timer without a value.
+const hideControls = () => { // defines a function hideControls.
+    if(mainVideo.paused) return; // The function checks if the mainVideo is paused. the function returns early.
+    timer = setTimeout(() => { // it sets a timer using setTimeout
+        container.classList.remove("show-controls"); //remove the "show-controls" class from the container 
+    }, 3000); // delay of 3000 milliseconds (3 seconds).
 }
-hideControls();
-container.addEventListener("mousemove", () => {
-    container.classList.add("show-controls");
-    clearTimeout(timer);
-    hideControls();   
+hideControls(); // calls the hideControls function to initiate the hiding of controls.
+container.addEventListener("mousemove", () => { //  event listener on the container element for the "mousemove" event. 
+    container.classList.add("show-controls"); //  it adds the "show-controls" class to the container element.
+    clearTimeout(timer); //  cancels the previously set timer.
+    hideControls(); // calls the hideControls function again to reset the timer for hiding the controls.
 });
-const formatTime = time => {
-    let seconds = Math.floor(time % 60),
-    minutes = Math.floor(time / 60) % 60,
-    hours = Math.floor(time / 3600);
-    seconds = seconds < 10 ? `0${seconds}` : seconds;
-    minutes = minutes < 10 ? `0${minutes}` : minutes;
-    hours = hours < 10 ? `0${hours}` : hours;
-    if(hours == 0) {
-        return `${minutes}:${seconds}`
+const formatTime = time => { // function formatTime that takes a time parameter.
+    let seconds = Math.floor(time % 60), // calculates the seconds.
+    minutes = Math.floor(time / 60) % 60, //calculates the minutes.
+    hours = Math.floor(time / 3600); // calculates the hours.
+    seconds = seconds < 10 ? `0${seconds}` : seconds; //formats the seconds.
+    minutes = minutes < 10 ? `0${minutes}` : minutes; //formats the minutes.
+    hours = hours < 10 ? `0${hours}` : hours;// formats the hours.
+    if(hours == 0) { // leading zeros if they are less than 10. 
+        return `${minutes}:${seconds}` // returns the formatted time as a string.
     }
-    return `${hours}:${minutes}:${seconds}`;
+    return `${hours}:${minutes}:${seconds}`; //returns the formatted time as a string.
 }
-videoTimeline.addEventListener("mousemove", e => {
-    let timelineWidth = videoTimeline.clientWidth;
-    let offsetX = e.offsetX;
-    let percent = Math.floor((offsetX / timelineWidth) * mainVideo.duration);
-    const progressTime = videoTimeline.querySelector("span");
-    offsetX = offsetX < 20 ? 20 : (offsetX > timelineWidth - 20) ? timelineWidth - 20 : offsetX;
-    progressTime.style.left = `${offsetX}px`;
-    progressTime.innerText = formatTime(percent);
+
+// Referenced from CodingNepal (2022) Build A Custom Video Player in HTML CSS & JavaScript. Available at: https://www.codingnepalweb.com/custom-video-player-html-css-javascript/ (Accessed: 22 March 2023).
+videoTimeline.addEventListener("mousemove", e => { // event listener for the mousemove.
+    let timelineWidth = videoTimeline.clientWidth; // This line retrieves the width of the videoTimeline element and assigns it to the timelineWidth variable.
+    let offsetX = e.offsetX; // line retrieves the X-coordinate of the mouse pointer and assigns it to the offsetX variable.
+    let percent = Math.floor((offsetX / timelineWidth) * mainVideo.duration); // This line calculates the percentage of the video duration that corresponds to the current mouse position within the videoTimeline. 
+    const progressTime = videoTimeline.querySelector("span"); // This line retrieves the <span> element within the videoTimeline element and assigns it to the progressTime constant.
+    offsetX = offsetX < 20 ? 20 : (offsetX > timelineWidth - 20) ? timelineWidth - 20 : offsetX; // This line checks if the offsetX value is less than 20. If it is, it sets offsetX to 20.
+    progressTime.style.left = `${offsetX}px`; //  This line sets the left CSS property of the progressTime element to the offsetX value.
+    progressTime.innerText = formatTime(percent); //  This line sets the text content of the progressTime element to the formatted time value.
 });
-videoTimeline.addEventListener("click", e => {
-    let timelineWidth = videoTimeline.clientWidth;
-    mainVideo.currentTime = (e.offsetX / timelineWidth) * mainVideo.duration;
+videoTimeline.addEventListener("click", e => { // This code sets up another event listener on the videoTimeline element, this time for the "click" event.
+    let timelineWidth = videoTimeline.clientWidth; // This line retrieves the width of the videoTimeline element and assigns it to the timelineWidth variable.
+    mainVideo.currentTime = (e.offsetX / timelineWidth) * mainVideo.duration;  // This line calculates the desired current time of the video based on the mouse click position within the videoTimeline.
 });
-mainVideo.addEventListener("timeupdate", e => {
-    let {currentTime, duration} = e.target;
-    let percent = (currentTime / duration) * 100;
-    progressBar.style.width = `${percent}%`;
-    currentVidTime.innerText = formatTime(currentTime);
+mainVideo.addEventListener("timeupdate", e => { // Adds an event listener to the mainVideo element for the "timeupdate" event. 
+    let {currentTime, duration} = e.target; // e.target refers to the element that triggered the event, which in this case is the mainVideo element.
+    let percent = (currentTime / duration) * 100; // It divides the currentTime by the duration and multiplies it by 100 to get the percentage.
+    progressBar.style.width = `${percent}%`; // This line sets the width of the progressBar element to the calculated percentage, visually indicating the progress of the video.
+    currentVidTime.innerText = formatTime(currentTime); // This line sets the text content of the currentVidTime element to the formatted time value of the currentTime using the formatTime function.
 });
-mainVideo.addEventListener("loadeddata", () => {
-    videoDuration.innerText = formatTime(mainVideo.duration);
+mainVideo.addEventListener("loadeddata", () => { // This code adds an event listener to the mainVideo element for the "loadeddata" event.
+    videoDuration.innerText = formatTime(mainVideo.duration); // ets the text content of the videoDuration element to the formatted time value of the duration property of the mainVideo element using the formatTime function. 
 });
-const draggableProgressBar = e => {
-    let timelineWidth = videoTimeline.clientWidth;
-    progressBar.style.width = `${e.offsetX}px`;
-    mainVideo.currentTime = (e.offsetX / timelineWidth) * mainVideo.duration;
-    currentVidTime.innerText = formatTime(mainVideo.currentTime);
+const draggableProgressBar = e => { // This code defines a function draggableProgressBar that takes an event object e as a parameter.
+    let timelineWidth = videoTimeline.clientWidth; // This line retrieves the width of the videoTimeline element and assigns it to the timelineWidth variable.
+    progressBar.style.width = `${e.offsetX}px`; // This line sets the width of the progressBar element to the current X-coordinate of the mouse pointer, indicating the new position of the progress bar.
+    mainVideo.currentTime = (e.offsetX / timelineWidth) * mainVideo.duration; //  This line calculates the desired current time of the video based on the mouse position within the videoTimeline
+    currentVidTime.innerText = formatTime(mainVideo.currentTime); //  This line sets the text content of the currentVidTime element to the formatted time value.
 }
-volumeBtn.addEventListener("click", () => {
-    if(!volumeBtn.classList.contains("fa-volume-high")) {
-        mainVideo.volume = 0.5;
-        volumeBtn.classList.replace("fa-volume-xmark", "fa-volume-high");
-    } else {
-        mainVideo.volume = 0.0;
-        volumeBtn.classList.replace("fa-volume-high", "fa-volume-xmark");
+volumeBtn.addEventListener("click", () => { // This code adds an event listener to the volumeBtn element for the "click" event.
+    if(!volumeBtn.classList.contains("fa-volume-high")) { // If the volume button does not have the "fa-volume-high" class
+        mainVideo.volume = 0.5; // This line sets the volume of the mainVideo element to 0.5 (50% volume).
+        volumeBtn.classList.replace("fa-volume-xmark", "fa-volume-high"); // changes the icon to indicate high volume.
+    } else { // f the volume button has the "fa-volume-high" class 
+        mainVideo.volume = 0.0; //This line sets the volume of the mainVideo element to 0.0 (muted).
+        volumeBtn.classList.replace("fa-volume-high", "fa-volume-xmark"); //changes the icon to indicate muted volume.
     }
-    volumeSlider.value = mainVideo.volume;
+    volumeSlider.value = mainVideo.volume; // This line sets the value of the volumeSlider element to the current volume of the mainVideo element.
 });
-volumeSlider.addEventListener("input", e => {
-    mainVideo.volume = e.target.value;
-    if(e.target.value == 0) {
-        return volumeBtn.classList.replace("fa-volume-high", "fa-volume-xmark");
+volumeSlider.addEventListener("input", e => { // This code adds an event listener to the volumeSlider element for the "input" event. 
+    mainVideo.volume = e.target.value; // This line sets the volume of the mainVideo element to the current value of the volumeSlider.
+    if(e.target.value == 0) { // If the value of the volumeSlider is 0 
+        return volumeBtn.classList.replace("fa-volume-high", "fa-volume-xmark"); // changes the icon to indicate muted volume.
     }
-    volumeBtn.classList.replace("fa-volume-xmark", "fa-volume-high");
+    volumeBtn.classList.replace("fa-volume-xmark", "fa-volume-high"); // changes the icon to indicate high volume.
 });
-speedOptions.querySelectorAll("li").forEach(option => {
-    option.addEventListener("click", () => {
-        mainVideo.playbackRate = option.dataset.speed;
-        speedOptions.querySelector(".active").classList.remove("active");
-        option.classList.add("active");
+speedOptions.querySelectorAll("li").forEach(option => { // This code selects all the <li> elements within the speedOptions element and adds an event listener to each of them for the "click" event.
+    option.addEventListener("click", () => { // When a speed option is clicked, the event handler function is triggered. 
+        mainVideo.playbackRate = option.dataset.speed; // It adjusts the playback speed of the video.
+        speedOptions.querySelector(".active").classList.remove("active"); // This line selects the currently active speed option.
+        option.classList.add("active"); // This line adds the "active" class to the clicked speed option, marking it as the active option.
     });
 });
-document.addEventListener("click", e => {
-    if(e.target.tagName !== "SPAN" || e.target.className !== "material-symbols-rounded") {
-        speedOptions.classList.remove("show");
+document.addEventListener("click", e => { // This code adds an event listener to the document object for the "click" event.
+    if(e.target.tagName !== "SPAN" || e.target.className !== "material-symbols-rounded") { // If the clicked element's tag name is not "SPAN"
+        speedOptions.classList.remove("show"); // This line removes the "show" class from the speedOptions element, hiding the speed options.
     }
 });
-fullScreenBtn.addEventListener("click", () => {
-    container.classList.toggle("fullscreen");
-    if(document.fullscreenElement) {
-        fullScreenBtn.classList.replace("fa-compress", "fa-expand");
-        return document.exitFullscreen();
+fullScreenBtn.addEventListener("click", () => { // adds an event listener to the fullScreenBtn element for the "click" event. 
+    container.classList.toggle("fullscreen"); //  toggles the presence of the "fullscreen" class on the container element.
+    if(document.fullscreenElement) { //If the document is currently in fullscreen mode
+        fullScreenBtn.classList.replace("fa-compress", "fa-expand"); //  changes the icon to indicate entering fullscreen mode.
+        return document.exitFullscreen(); // This line exits the fullscreen mode.
     }
-    fullScreenBtn.classList.replace("fa-expand", "fa-compress");
-    container.requestFullscreen();
+    fullScreenBtn.classList.replace("fa-expand", "fa-compress"); // changes the icon to indicate exiting fullscreen mode.
+    container.requestFullscreen(); // This line requests the container element to enter fullscreen mode.
 });
-speedBtn.addEventListener("click", () => speedOptions.classList.toggle("show"));
-pipBtn.addEventListener("click", () => mainVideo.requestPictureInPicture());
-skipBackward.addEventListener("click", () => mainVideo.currentTime -= 5);
-skipForward.addEventListener("click", () => mainVideo.currentTime += 5);
-mainVideo.addEventListener("play", () => playPauseBtn.classList.replace("fa-play", "fa-pause"));
-mainVideo.addEventListener("pause", () => playPauseBtn.classList.replace("fa-pause", "fa-play"));
-playPauseBtn.addEventListener("click", () => mainVideo.paused ? mainVideo.play() : mainVideo.pause());
-videoTimeline.addEventListener("mousedown", () => videoTimeline.addEventListener("mousemove", draggableProgressBar));
-document.addEventListener("mouseup", () => videoTimeline.removeEventListener("mousemove", draggableProgressBar));
+speedBtn.addEventListener("click", () => speedOptions.classList.toggle("show")); // adds an event listener to the speedBtn element for the "click" event. When the button is clicked, it activates 'show'
+pipBtn.addEventListener("click", () => mainVideo.requestPictureInPicture()); // This code adds an event listener to the pipBtn element for the "click" event.
+skipBackward.addEventListener("click", () => mainVideo.currentTime -= 5); // This code adds an event listener to the skipBackward element for the "click" event.
+skipForward.addEventListener("click", () => mainVideo.currentTime += 5); // This code adds an event listener to the skipForward element for the "click" event.
+mainVideo.addEventListener("play", () => playPauseBtn.classList.replace("fa-play", "fa-pause")); // This code adds an event listener to the mainVideo element for the "play" event.
+mainVideo.addEventListener("pause", () => playPauseBtn.classList.replace("fa-pause", "fa-play")); // This code adds an event listener to the mainVideo element for the "pause" event. 
+playPauseBtn.addEventListener("click", () => mainVideo.paused ? mainVideo.play() : mainVideo.pause()); // This code adds an event listener to the playPauseBtn element for the "click" event. 
+videoTimeline.addEventListener("mousedown", () => videoTimeline.addEventListener("mousemove", draggableProgressBar)); // This code adds an event listener to the videoTimeline element for the "mousedown" event. 
+document.addEventListener("mouseup", () => videoTimeline.removeEventListener("mousemove", draggableProgressBar)); // This code adds an event listener to the document for the "mouseup" event. 
     </script>
 </body>
 </html>

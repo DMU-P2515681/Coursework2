@@ -1,19 +1,31 @@
 <!DOCTYPE html><!-- HTML Document --> 
-<html lang="en">
+<html lang="en"><!-- Language is English --> 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"><!-- Encoding characters -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Compatible for internet explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Viewport properties. Ensures that the page is rendered properly on different devices. -->
     <link href="CSS/style.css" rel="stylesheet" type="text/css" />  <!-- Links the HTML document to the CSS stylesheet --> 
     <title>Words Always Hurt (Interactive Story)</title> <!-- Title of web page which will be shown on the browser--> 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /><!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
+    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script><!-- Link to JQuery file-->
+    <!-- Taught by Thom Corah -->
     <link id="themeStyleSheets" href='CSS/lighttheme.css' rel='stylesheet' type='text/css' /> <!-- Link and id for Light/dark mode for assessibility -->
 </head>
 <body>
   <header> 
+
+
+    <!-- To create the loading screen, first a container was made and an image of choice was added and adjusted. Text was also included in the container. 
+    JavaScript was then added for example, a function was created to make the loading screen dissapear when the animation process was completed. Get element by ID
+  was added to grab the loading screen ID so the JavaScript knows what to display. The time was set to 4 seconds (4000) which is the timer of how long the screen 
+is shown for. Animation such as animation-duration, animation-iteration-count and animation-timing-function was added to style the type of animation (ease-in-out) and if
+it ends or is infinate. The outcome planned was achieved. This approach was chosen because it was quite simple and effective (completed the idea) and can be applied to
+any page as demonstrated. Alternativly, an approach could include embedding the visuals as CSS body images and a setVisible function to  select this and display is as a
+block when triggered and use true and false methods so that the code knows when to display: page = true, loading = false (Mr. Polywhirl, 2021) -->
+<!--Mr. Polywhirl (2021) JavaScript Loading Screen while page loads. Available at: https://stackoverflow.com/questions/25253391/javascript-loading-screen-while-page-loads (Accessed: 15 May 2023).-->
+
       <!-- Loading screen-->
-      <div id="loadingScreen">
+      <div id="loadingScreen"><!-- Container for loading screen -->
         <img  class="spin"src="Images/Logo.png" alt="Logo" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
       <p class="loadingtext1"><b>LOADING...</b></p><!-- Word used on loading screen as the page is an art page-->
     </div>
@@ -24,84 +36,70 @@
       setTimeout(removeLoadingScreen, 4000); // Use setTimeout to run the loading page when the page loads.
   
     </script>
-    
+
+<!--Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). -->
 <!-- html for hamburger menu -->
-    <div class="hamburger-menu">
-      <div class="bar"></div>	
+    <div class="hamburger-menu"><!-- container hamburger menu -->
+      <div class="bar"></div>	<!-- DIV for the nav bar -->
   </div>
     
-<nav class="mobile-menu">
-<ul>
-<li class="has-children"><b>COLOUR</b><span class="icon-arrow"></span>
-<ul class="children" id="theSwitcher" >
-<button class="SwitcherButtons" data-css="lighttheme.css">LIGHT</button>
-<button class="SwitcherButtons" data-css="darktheme.css">DARK</button>
-<button class="SwitcherButtons" data-css="lightbluetheme.css">LIGHT BLUE</button>
-<button class="SwitcherButtons" data-css="lightgreentheme.css">LIGHT GREEN</button>
-<button class="SwitcherButtons" data-css="yellowtheme.css">YELLOW</button>
-<button class="SwitcherButtons" data-css="greentheme.css">GREEN</button>
-</ul>
-</li>
-            
-          
-<li class="has-children"><b>TEXT</b><span class="icon-arrow"></span>
-<ul class="children">
-<li><a href="submenu1.html">TINY</a></li>
-<li><a href="submenu2.html">SMALL</a></li>
-<li><a href="submenu3.html">NORMAL</a></li>
-<li><a href="submenu3.html">LARGE</a></li>
-<li><a href="submenu3.html">MASSIVE</a></li>
-</ul>
-</li>
-  
-  
-<li class="has-children"><b>CHAPTERS</b><span class="icon-arrow"></span>
-<ul class="children">
-<li><a href="submenu1.html">DECISION ONE</a></li>
-<li><a href="submenu2.html">DECISION TWO</a></li>
-<li><a href="submenu3.html">DECISION THREE</a></li>
-</ul>
-</li>  
-
-
+<!--Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). -->
+<nav class="mobile-menu"><!-- NAV container for mobile meu-->
+<ul><!-- unordered list -->
+<li class="has-children"><b>COLOUR</b><span class="icon-arrow"></span><!-- HTML for dropdown menu with arrow -->
+<ul class="children" id="theSwitcher" > <!-- DIV for the buttons that will be inside the 'colour' dropdown menu -->
+<button class="SwitcherButtons" data-css="lighttheme.css">LIGHT</button><!-- Button number one with the light theme called 'light' -->
+<button class="SwitcherButtons" data-css="darktheme.css">DARK</button><!-- Button number two with the dark theme called 'dark' -->
+<button class="SwitcherButtons" data-css="lightbluetheme.css">LIGHT BLUE</button><!-- Button number three with the light blue theme called 'light blue' -->
+<button class="SwitcherButtons" data-css="lightgreentheme.css">LIGHT GREEN</button><!-- Button number four with the light green theme called 'light green' -->
+<button class="SwitcherButtons" data-css="yellowtheme.css">YELLOW</button><!-- Button number five with the yellow theme called 'yellow' -->
+<button class="SwitcherButtons" data-css="greentheme.css">GREEN</button><!-- Button number six with the green theme called 'green' -->
+</ul><!-- unordered list -->
+</li><!-- list -->
 </nav>
 
-
+<!-- Taught by Thom Corah -->
+<!-- this overlay element is the styling for the themeswitcher colours-->
 <div class="overlay" style="position: fixed; height: 200vh; width: 100vw; top: 0; z-index: 1000; opacity: 0.2; pointer-events: none;"></div>
 
 
-  
-<!-- Javascript for theme switcher-->
-<script>
-
-  </script>
-
-
-
-
+<!-- For the accessible colour theme switcher, it was originally plansed to only change the colour of the text background. Through research and thinking it through,
+this was changed so that the entire screen became another colour instead. This was achieved by creating CSS stylesheets for each colour. A link to each of these
+was created in the form of a button. Javascript was then added to select all buttons (as all buttons had the same class name) and a click event listener with the change
+colour function was added so that when the button is clicked the theme stylesheets (that all have the same ID) are changed to users preference. This was successful and
+was also integrated with the hamburger menu code (Elderflower, no date). Alternativly, this can be achieved by only using light and dark mode which only requires a button
+with an onclick function and JavaScript that toggles a classList (css) to dark mode.-->
+<!--Reference for theme switcher alternative: W3Schools (2023) How TO - Toggle Dark Mode. Available at: https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp (Accessed: 28 March 2023). -->
 
 
+
+
+
+
+<!--Reference for hamburger menu: Elderflower, C. (no date) Mobile Menu with Hamburger. Available at: https://codepen.io/cateelderflower/pen/jwVPGd (Accessed: 28 March 2023). -->
 <!-- Javascript for hamburger menu-->
   <script>
-  (function () {
-	$('.hamburger-menu').on('click', function() {
-		$('.bar').toggleClass('animate');
-    $('.mobile-menu').toggleClass('active');
-    return false;
+  (function () { // This starts a function. 
+	$('.hamburger-menu').on('click', function() { //click event handler is attatched to the elements with the class hamburger menu.
+		$('.bar').toggleClass('animate'); // Toggles the animate class with the bar class. If present = removes. If not = adds.
+    $('.mobile-menu').toggleClass('active'); // Presence of active class with the mobile menu class. If present = removes. If not = adds.
+    return false; // prevents the default behavior of the clicked element (false).
 	})
-  $('.has-children').on ('click', function() {
-		   $(this).children('ul').slideToggle('slow', 'swing');
-       $('.icon-arrow').toggleClass('open');
+  $('.has-children').on ('click', function() {// function on click is attatched to the has-children class.
+		   $(this).children('ul').slideToggle('slow', 'swing'); // <ul> element of the clicked element and toggles its visibility using a sliding animation.
+       $('.icon-arrow').toggleClass('open'); // toggles the presence of the "open" class on elements with the class "icon-arrow". If present = removes. If not = adds.
 	});
 })();
 
-document.querySelectorAll('.SwitcherButtons').forEach(el => {
-  el.addEventListener('click', changeColour)
+// Taught by Thom Corah
+// Javascript for theme switcher
+document.querySelectorAll('.SwitcherButtons').forEach(el => { // Selects all documents with the class .SwitcherButtons.
+  el.addEventListener('click', changeColour) // Added a click event listener which when clicked, changes colour.
 })
 
-function changeColour(evt){
-  console.log(evt.target.getAttribute("data-css")); 
-document.getElementById("themeStyleSheets").setAttribute("href" , "CSS/" + evt.target.getAttribute("data-css"));
+function changeColour(evt){ // function called changeColour
+  console.log(evt.target.getAttribute("data-css")); // logs the value of the "data-css" attribute of the target element to the console.
+document.getElementById("themeStyleSheets").setAttribute("href" , "CSS/" + evt.target.getAttribute("data-css")); //  sets the "href" attribute of the element with the ID "themeStyleSheets" to a new value.
 }
 </script>
 </header>
@@ -131,13 +129,15 @@ document.getElementById("themeStyleSheets").setAttribute("href" , "CSS/" + evt.t
       <div class="logocontainer"> <!-- Container for the logo image--> 
           <!-- Reference for bullying logo thats in the website logo: Clipart (2022) NO SMOKING LOGOS. Available at: http://www.clipartbest.com/no-smoking-logos (Accessed: 14 November 2022).*/ --> 
          
-          <button type="button" class="Skipbutton" id="section1Btn">
+          <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
+          <button type="button" class="Skipbutton" id="section1Btn"><!-- The image is a button--> 
+            <!-- Clipart (2022) NO SMOKING LOGOS. Available at: http://www.clipartbest.com/no-smoking-logos (Accessed: 14 November 2022) -->
           <img src="Images/Logo.png" class="logo" alt="Words Always Hurt Logo" /> <!-- Code for logo, image source, styling class, alt is for assessibility just in case image doesn't load and its width--> 
         </button>
       </a>
         </div>
       
-
+        <!-- Taken from Joshi, S (no date) bubble button click effect. Available at: https://codepen.io/spandanjoshi/pen/YzypZRz (Accessed: 12 March 2023). -->
     <!-- HTML code for the text to speech section--> 
     <button class="confetti-button" class="textspeechcontainer" onclick="speak('Text To Speech Available. Click To Try')"> <!-- Container for the text to speech image--> 
        <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
@@ -152,11 +152,12 @@ document.getElementById("themeStyleSheets").setAttribute("href" , "CSS/" + evt.t
   <h3><b>BETTER WITH <br> VOLUME ON </b></h3><!-- Heading (instruction) for the volume container. Bold and line spaces--> 
 </button>
 
-<div class="logoinstructioncontainer" onclick="speak('Click the logo to begin reeding')"> 
+<div class="logoinstructioncontainer" onclick="speak('Click the logo to begin reeding')"> <!-- Container for the logo instruction and text-to-speech--> 
+  <!-- Lumos SP (2022) white paper ripped message background. Available at: https://stock.adobe.com/cy_en/search?k=ripped+paper+texture&asset_id=77311773 (Accessed: 14 November 2022). -->
   <img src="Images/Logoinstruction.png" class="Logoinstruction" alt="volume on icon" width="50%"/> <!-- Code for logo instruction, image source, styling class, alt is for assessibility just in case image doesn't load and its width--> 
   <p class="maininstruction">CLICK THE <b>LOGO </b> TO <br> BEGIN READING</p><!-- Heading (instruction) for the logo instruction container. Bold and line spaces--> 
   </div>
- <!-- Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023) --> 
+
  <!-- Div created for the parallax layer --> 
  <!-- What was changed: removed the container as the code worked the same.--> 
  <div class="mobilebg"></div> 
@@ -169,49 +170,59 @@ document.getElementById("themeStyleSheets").setAttribute("href" , "CSS/" + evt.t
 
 
 
- <section class="sec">
+ <section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
 <div id="section1"></div><!-- ID for new section so the scroll knows where to go --> 
 
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" onclick="speak('Starting school is never easy right? That is exactly how Emma felt on her first day of secondary school. Emma was kind, caring and confident but introverted girl who was keen to study and read. She had beautiful green eyes and very long brunette hair and wore her school uniform with class. As nervous as she was to make friends, she was also very keen. After a few weeks, Emma was very satisfied with the friends she had made.')" data-aos="fade-left" data-aos-duration="900">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/> <!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+         <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>Starting school is never easy right? That is exactly how Emma felt on her first day of secondary school. Emma was kind, caring and confident but introverted girl who was keen to study and read.
   She had beautiful green eyes and very long brunette hair and wore her school uniform with class. As nervous as she was to make friends, she was also very keen. After a few weeks, Emma was very satisfied 
-with the friends she had made.</p>
+with the friends she had made.</p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" id="tts4" data-aos="fade-right" data-aos-duration="900" onclick="speak('They had formed a little group and would spend time studying together, joining extracurricular classes including Book Club and eating lunch together. One day, Emmas positive school experience changed. She started to notice out the corner of her eye that one popular group of girls in her tutor group kept giving her mean looks from the other side of the classroom. Emma shurgged it off at first and assumed it would stop eventually. But it didnt.')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+           <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>They had formed a little group and would spend time studying together, joining extracurricular classes including Book Club and eating lunch together. <br> <br> One day, Emma's positive school experience changed.
   She started to notice out the corner of her eye that one popular group of girls in her tutor group kept giving her mean looks from the other side of the classroom. Emma shurgged it off at first and assumed it would stop 
-eventually. But it didn't.</p>
+eventually. But it didn't.</p><!-- Text for story --> 
  </figure>
 </section>    
 
 
 
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
 
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('As the school year went on, it became worse. From teasing her about her clothes, to her looks to even her personality. One girl even spilt a drink on her. One afternoon, Emma was sitting on the bench in school reading one of the non-fictional books she’d borrowed from the library. It was hot therefore she wanted to catch some of the weather. Suddenly, she heard giggling behind her and “Oi, Emms!')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+             <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>As the school year went on, it became worse. From teasing her about her clothes, to her looks to even her personality. One girl even spilt a drink on her. <br> <br> One afternoon, Emma was sitting on the bench in school reading one of the non-fictional books she’d borrowed from the library. It was hot therefore she wanted to catch
-    some of the weather. Suddenly, she heard giggling behind her and “Oi, Emms!’</p>
+    some of the weather. Suddenly, she heard giggling behind her and “Oi, Emms!’</p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma turned around and saw the girls. Terrified, she closed her book and began to walk fast towards the school building, with her book held close to her chest. “Aww Emma! Don’t walk away from us!”  Emma kept walking. ')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+             <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>Emma turned around and saw the girls. Terrified, she closed her book and began to walk fast towards the school building, with her book held close to her chest. <br> <br> 
-    “Aww Emma! Don’t walk away from us!” <br> <br> Emma kept walking. <br> <br> “C’mon Emma! Don’t be rude.” The girls ran up to her and surrounded her, stopping her in her tracks.</p>
+    “Aww Emma! Don’t walk away from us!” <br> <br> Emma kept walking. <br> <br> “C’mon Emma! Don’t be rude.” The girls ran up to her and surrounded her, stopping her in her tracks.</p><!-- Text for story --> 
  </figure>
 </section>
 
@@ -219,460 +230,568 @@ eventually. But it didn't.</p>
 
 
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
 
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Leave me alone, Lindsay,” Emma said, not looking her in the eye. Lindsay grabbed her book and read the title. “The History of Owls? How boring are you?”  She then ripped the title page off the book and gave it back the Emma. “Whoops. You’re going to have to pay for that now.” Linsday’s friends giggled.')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>“Leave me alone, Lindsay,” Emma said, not looking her in the eye. <br> <br> Lindsay grabbed her book and read the title. “The History of Owls? How boring are you?” <br> <br> She then ripped the title page off the book and gave it back the Emma. “Whoops. You’re going to have to pay for that now.” <br> <br> Linsday’s friends giggled. </p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+               <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>“Leave me alone, Lindsay,” Emma said, not looking her in the eye. <br> <br> Lindsay grabbed her book and read the title. “The History of Owls? How boring are you?” <br> <br> She then ripped the title page off the book and gave it back the Emma. “Whoops. You’re going to have to pay for that now.” <br> <br> Linsday’s friends giggled. </p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Emma was so scared as she wasn’t sure what Lindsay and her friends were going to do next. She saw one of the teachers on duty watching the all the students outside.')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>Emma was so scared as she wasn’t sure what Lindsay and her friends were going to do next. <br> <br> She saw one of the teachers on duty watching the all the students outside. </p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>Emma was so scared as she wasn’t sure what Lindsay and her friends were going to do next. <br> <br> She saw one of the teachers on duty watching the all the students outside. </p><!-- Text for story --> 
  </figure>
 </section>
 
 
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer3"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-<figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('stand up to them. Tap!')">
+<figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('stand up to them. Tap!')"><!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
   <h6>WHAT SHOULD<br>EMMA DO?</h6>
-  <img  class="deciderimage2" src="Images/PaperText.png"/>
-  <img class="tts3" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img  class="deciderimage2" src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts3" src="Images/textspeech.png"/><!-- Text speech icon source --> 
 
-
-  <div class="avatar">
-  <img class="decider2" class="decider" src="Images/Logoinstruction.png"/>
+<!-- Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */ -->
+  <div class="avatar"><!-- Container for pulse effect --> 
+  <img class="decider2" class="decider" src="Images/Logoinstruction.png"/>  <!-- Lumos SP (2022) white paper ripped message background. Available at: https://stock.adobe.com/cy_en/search?k=ripped+paper+texture&asset_id=77311773 (Accessed: 14 November 2022). -->
   <p class="deciderinstructions2" class="deciderinstructions" ><b>TAP!</b></p>
   </div>
 
 
-  <h5><b>ALERT THE <br> TEACHER</b></h5>
+  <h5><b>ALERT THE <br> TEACHER</b></h5> <!-- decision one -->
  </figure>
 
- <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Alert the teacher. Tap!')">
-
-  <img  class="deciderimage" src="Images/PaperText.png"/>
-  <img class="tts2" src="Images/textspeech.png"/>
+ <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Alert the teacher. Tap!')"><!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
+ <!-- Paper text background --> 
+  <img  class="deciderimage" src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts2" src="Images/textspeech.png"/><!-- Text speech icon source --> 
  
+  <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
   <button type="button"  class="Skipbutton" id="section5Btn">
-    <div class="avatar avatar2">
-      <img class="decider" src="Images/Logoinstruction.png"/>
-      <p class="deciderinstructions" class="instructions"><b>TAP!</b></p>
+    <!-- Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */ -->
+    <div class="avatar avatar2"><!-- Container for bubble button effect --> 
+      <img class="decider" src="Images/Logoinstruction.png"/>  <!-- Lumos SP (2022) white paper ripped message background. Available at: https://stock.adobe.com/cy_en/search?k=ripped+paper+texture&asset_id=77311773 (Accessed: 14 November 2022). -->
+      <p class="deciderinstructions" class="instructions"><b>TAP!</b></p> <!-- tap instruction -->
     </div>
   </button>
-  <h4><b>STAND UP<br> TO THEM</b></h4>
+  <h4><b>STAND UP<br> TO THEM</b></h4><!-- Stand up to them heading-->
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
 <div id="section2"></div><!-- ID for new section so the scroll knows where to go --> 
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma stood up straight and said “No, you’re going to pay for it because you ripped it. Emma stood her ground even though she was shaking inside. Lindsay and her friends looked at each other, shocked to see this. Emma had never stood up to them before. Lindsay took a step closer to her. “What did you just say?” Emma took a step back. “You heard me.”')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>Emma stood up straight and said “No, you’re going to pay for it because you ripped it.” <br> <br> Emma stood her ground even though she was shaking inside. Lindsay and her friends looked at each other, shocked to see this. Emma had never stood up to them before.
-  <br> <br> Lindsay took a step closer to her. “What did you just say?” <br> <br> Emma took a step back. “You heard me.”</p>
+  <br> <br> Lindsay took a step closer to her. “What did you just say?” <br> <br> Emma took a step back. “You heard me.”</p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Emma was so scared as she wasn’t sure what Lindsay and her friends were going to do next. She saw one of the teachers on duty watching the all the students outside.')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>The girls started giggling and chanting at Lindsay. <br> <br> “You’re not going to take that are you Linds?” <br> <br> “She deserves a slap!” <br> <br> Lindsay grabs Emma’s hair, the book falls and Emma winces in pain. <br> <br> “Don’t you ever speak to me like that again.” Lindsay sneered. </p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>The girls started giggling and chanting at Lindsay. <br> <br> “You’re not going to take that are you Linds?” <br> <br> “She deserves a slap!” <br> <br> Lindsay grabs Emma’s hair, the book falls and Emma winces in pain. <br> <br> “Don’t you ever speak to me like that again.” Lindsay sneered. </p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('“You think you’re so it. Just because you wear designer shoes and have long brunette hair.” Emma’s head was still being pulled to the side.  No. I’m not going to cry. She thought. “What have I ever done to you, Lindsay?” Emma genuinely asked. Lindsay let go of Emma’s hair and crosses her arms.')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>“You think you’re so it. Just because you wear designer shoes and have long brunette hair.” <br> <br> Emma’s head was still being pulled to the side. <br> <br> <em> No. I’m not going to cry. She thought.</em> <br> <br> “What have I ever done to you, Lindsay?” Emma genuinely asked. <br> <br> Lindsay let go of Emma’s hair and crosses her arms.</p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>“You think you’re so it. Just because you wear designer shoes and have long brunette hair.” <br> <br> Emma’s head was still being pulled to the side. <br> <br> <em> No. I’m not going to cry. She thought.</em> <br> <br> “What have I ever done to you, Lindsay?” Emma genuinely asked. <br> <br> Lindsay let go of Emma’s hair and crosses her arms.</p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Your presence Emm. I’m just drawn to you. Like a moth to a light.” “Leave Emma alone!” Sarah and the rest of Emma’s friends ran up to them. “Back off Lindsay!”  Lindsay looked at all of them and scoffed. “Bunch of geeks the lot of you.” She signalled to the rest of her friends to leave and they did.')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>Your presence Emm. I’m just drawn to you. Like a moth to a light.” <br> <br> “Leave Emma alone!” Sarah and the rest of Emma’s friends ran up to them. “Back off Lindsay!” <br> <br> Lindsay looked at all of them and scoffed. “Bunch of geeks the lot of you.” <br> <br> She signalled to the rest of her friends to leave and they did. </p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>Your presence Emm. I’m just drawn to you. Like a moth to a light.” <br> <br> “Leave Emma alone!” Sarah and the rest of Emma’s friends ran up to them. “Back off Lindsay!” <br> <br> Lindsay looked at all of them and scoffed. “Bunch of geeks the lot of you.” <br> <br> She signalled to the rest of her friends to leave and they did. </p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer2"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma stood there holding back tears as Lindsay and her friends walked away. She began running to class with her friends. “By the way, Emmie, if you open your mouth, you’d be branded a snitch anyway! You’re already the most unpopular cow!”  Emma’s friends told her to ignore Lindsay’s comments and just go to class. “Also, weirdo, I don’t know where you’re ')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p> Emma stood there holding back tears as Lindsay and her friends walked away. She began running to class with her friends. <br> <br> “By the way, Emmie, if you open your mouth, you’d be branded a snitch anyway! You’re already the most unpopular cow!” <br> <br> Emma’s friends told her to ignore Lindsay’s comments and just go to class. <br> <br> “Also, weirdo, I don’t know where you’re </p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p> Emma stood there holding back tears as Lindsay and her friends walked away. She began running to class with her friends. <br> <br> “By the way, Emmie, if you open your mouth, you’d be branded a snitch anyway! You’re already the most unpopular cow!” <br> <br> Emma’s friends told her to ignore Lindsay’s comments and just go to class. <br> <br> “Also, weirdo, I don’t know where you’re </p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('running to! It’s tutor class next so we’re in the same lesson!” Emma stops dead in her tracks. In no way, shape or form does she want to be in the same class as that girl. It’s a two-hour lesson! She could tell the teachers… If you open your mouth, you’d be branded a snitch anyway! “Em?” Sarah asks. “Why’ve you stopped?”')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>running to! It’s tutor class next so we’re in the same lesson!” <br> <br> Emma stops dead in her tracks. In no way, shape or form does she want to be in the same class as that girl. It’s a two-hour lesson! <br> <br> She could tell the teachers… <br> <br> If you open your mouth, you’d be branded a snitch anyway! <br> <br> “Em?” Sarah asks. “Why’ve you stopped?”</p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>running to! It’s tutor class next so we’re in the same lesson!” <br> <br> Emma stops dead in her tracks. In no way, shape or form does she want to be in the same class as that girl. It’s a two-hour lesson! <br> <br> She could tell the teachers… <br> <br> If you open your mouth, you’d be branded a snitch anyway! <br> <br> “Em?” Sarah asks. “Why’ve you stopped?”</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer3"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Skips Class. Tap!')">
-  <h6>WHAT SHOULD<br>EMMA DO?</h6>
-  <img  class="deciderimage2" src="Images/PaperText.png"/>
-  <img class="tts3" src="Images/textspeech.png"/>
-
-  <div class="avatar" >
-  <img class="decider2" class="decider" src="Images/Logoinstruction.png"/>
-  <p class="deciderinstructions2" class="deciderinstructions" ><b>TAP!</b></p>
+  <h6>WHAT SHOULD<br>EMMA DO?</h6><!-- Decider question heading-->
+   <!-- Paper text background --> 
+  <img  class="deciderimage2" src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts3" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+<!-- Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */ -->
+  <div class="avatar" ><!-- Container for bubble button effect --> 
+  <img class="decider2" class="decider" src="Images/Logoinstruction.png"/>  <!-- Lumos SP (2022) white paper ripped message background. Available at: https://stock.adobe.com/cy_en/search?k=ripped+paper+texture&asset_id=77311773 (Accessed: 14 November 2022). -->
+  <p class="deciderinstructions2" class="deciderinstructions" ><b>TAP!</b></p> <!-- Tap instruction -->
   </div>
 
-  <h5><b>SKIPS <br>CLASS?</b></h5>
+  <h5><b>SKIPS <br>CLASS?</b></h5> <!-- Option one story alternative -->
  </figure>
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Go To Class. Tap!')">
-
-  <img  class="deciderimage" src="Images/PaperText.png"/>
-  <img class="tts2" src="Images/textspeech.png"/>
+ <!-- Paper text background --> 
+  <img  class="deciderimage" src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts2" src="Images/textspeech.png"/><!-- Text speech icon source --> 
  
-  <button type="button" class="Skipbutton" id="section6Btn">
-    <div class="avatar avatar2">
-      <img class="decider" src="Images/Logoinstruction.png"/>
-      <p class="deciderinstructions"><b>TAP!</b></p>
+  <button type="button" class="Skipbutton" id="section6Btn"><!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
+    <!-- Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */ -->
+    <div class="avatar avatar2"><!-- Container for bubble button effect --> 
+      <img class="decider" src="Images/Logoinstruction.png"/>  <!-- Lumos SP (2022) white paper ripped message background. Available at: https://stock.adobe.com/cy_en/search?k=ripped+paper+texture&asset_id=77311773 (Accessed: 14 November 2022). -->
+      <p class="deciderinstructions"><b>TAP!</b></p><!-- Tap instruction -->
     </div>
   </button>
-  <h4><b>GO TO<br> CLASS?</b></h4>
+  <h4><b>GO TO<br> CLASS?</b></h4><!-- Option 2 story alternative -->
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer4"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
 <div id="section3"></div><!-- ID for new section so the scroll knows where to go --> 
 
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma shook her head. “I’m okay,” she sighed. ‘Lets go.”  Sarah linked arms with Emma as they walked towards their tutor class together. When they got to class, they were surprised to see everyone lining up at the back of the classroom. “What’s going on?” Sarah asked one of the students.')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>Emma shook her head. <br> <br> “I’m okay,” she sighed. ‘Lets go.” <br> <br> Sarah linked arms with Emma as they walked towards their tutor class together. When they got to class, they were surprised to see everyone lining up at the back of the classroom. <br> <br> “What’s going on?” Sarah asked one of the students.</p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>Emma shook her head. <br> <br> “I’m okay,” she sighed. ‘Lets go.” <br> <br> Sarah linked arms with Emma as they walked towards their tutor class together. When they got to class, they were surprised to see everyone lining up at the back of the classroom. <br> <br> “What’s going on?” Sarah asked one of the students.</p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('“New seating plan again. Leanne and Chloe’s fault for chatting. Miss doesn’t want us sitting next to our friends now.”  “Okay class,” Mrs Richards started, looking at her notepad. “From the front left to right, we’ll have…”  Emma watched as the students sat in their new seats. She zoned out thinking about the lunch menu when…')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>“New seating plan again. Leanne and Chloe’s fault for chatting. Miss doesn’t want us sitting next to our friends now.” <br> <br> “Okay class,” Mrs Richards started, looking at her notepad. “From the front left to right, we’ll have…” <br> <br> Emma watched as the students sat in their new seats. She zoned out thinking about the lunch menu when…</p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>“New seating plan again. Leanne and Chloe’s fault for chatting. Miss doesn’t want us sitting next to our friends now.” <br> <br> “Okay class,” Mrs Richards started, looking at her notepad. “From the front left to right, we’ll have…” <br> <br> Emma watched as the students sat in their new seats. She zoned out thinking about the lunch menu when…</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer4"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('“Hello? Emma?” Mrs Richards waved her hand at Emma. “Away with the fairies I see.”  Emma picked up her bag and sat where she was advised. “Lindsay. Next to Emma please.” Everyone started whispering in excitement as Lindsay sat next to a shaken, scared Emma. Sarah was shocked and tried to get Emma moved which was denied.')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p> “Hello? Emma?” Mrs Richards waved her hand at Emma. “Away with the fairies I see.” <br> <br> Emma picked up her bag and sat where she was advised. <br> <br> “Lindsay. Next to Emma please.” <br> <br> Everyone started whispering in excitement as Lindsay sat next to a shaken, scared Emma. Sarah was shocked and tried to get Emma moved which was denied.</p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p> “Hello? Emma?” Mrs Richards waved her hand at Emma. “Away with the fairies I see.” <br> <br> Emma picked up her bag and sat where she was advised. <br> <br> “Lindsay. Next to Emma please.” <br> <br> Everyone started whispering in excitement as Lindsay sat next to a shaken, scared Emma. Sarah was shocked and tried to get Emma moved which was denied.</p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('“I’ll enjoy this, ugly.” Lindsay whispered.  Emma suddenly stood up and picked up her bag. “Sorry Miss, I can’t do this.”  She ran out the class and didn’t look back.')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>“I’ll enjoy this, ugly.” Lindsay whispered. <br> <br> Emma suddenly stood up and picked up her bag. “Sorry Miss, I can’t do this.” <br> <br> She ran out the class and didn’t look back.</p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>“I’ll enjoy this, ugly.” Lindsay whispered. <br> <br> Emma suddenly stood up and picked up her bag. “Sorry Miss, I can’t do this.” <br> <br> She ran out the class and didn’t look back.</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer5"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
 
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma went to the common room and realised what she had just done. She knows it’s wrong, but she couldn’t be in that class with Lindsay. She looked at the time. The lesson is only an hour long and after that home time! So, she decided to read the rest of the ripped owl book. After about 20 minutes a security guard peered his head through the door. “She’s here,” he said.')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>Emma went to the common room and realised what she had just done. She knows it’s wrong, but she couldn’t be in that class with Lindsay. She looked at the time. The lesson is only an hour long and after that home time! So, she decided to read the rest of the ripped owl book. 
-    <br> <br> After about 20 minutes a security guard peered his head through the door. <br> <br> “She’s here,” he said.</p>
+    <br> <br> After about 20 minutes a security guard peered his head through the door. <br> <br> “She’s here,” he said.</p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Emma looked in horror as the Head of Year came in. “Emma Hardley?” the Head looked sternly at her. “I am issuing with you with a red card for purposely not being in your lesson. I’ll be informing your parents. Go home and tomorrow come straight to my office to discuss whether this calls for a detention or a more serious punishment of a short suspension.” Emma looked horrified.')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p> Emma looked in horror as the Head of Year came in. <br> <br> “Emma Hardley?” the Head looked sternly at her. “I am issuing with you with a red card for purposely not being in your lesson. I’ll be informing your parents. Go home and tomorrow come straight to my office to discuss whether this calls for a detention or a more serious punishment of a short suspension.” 
-  <br> <br> Emma looked horrified.</p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p> Emma looked in horror as the Head of Year came in. <br> <br> “Emma Hardley?” the Head looked sternly at her. “I am issuing with you with a red card for purposely not being in your lesson. I’ll be informing your parents. Go home and tomorrow come straight to my office to discuss whether this calls for a detention or a more serious punishment of a short suspension.” <!-- Text for story --> 
+  <br> <br> Emma looked horrified.</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer3"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Keep quiet. Tap!')">
   <h6>WHAT SHOULD<br>EMMA DO?</h6>
-  <img  class="deciderimage2" src="Images/PaperText.png"/>
-  <img class="tts3" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img  class="deciderimage2" src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts3" src="Images/textspeech.png"/><!-- Text speech icon source --> 
 
- 
-  <div class="avatar">
-  <img class="decider2" class="decider" src="Images/Logoinstruction.png"/>
-  <p class="deciderinstructions2" class="deciderinstructions" ><b>TAP!</b></p>
+ <!-- Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */ -->
+  <div class="avatar"><!-- Container for bubble button effect --> 
+  <img class="decider2" class="decider" src="Images/Logoinstruction.png"/>  <!-- Lumos SP (2022) white paper ripped message background. Available at: https://stock.adobe.com/cy_en/search?k=ripped+paper+texture&asset_id=77311773 (Accessed: 14 November 2022). -->
+  <p class="deciderinstructions2" class="deciderinstructions" ><b>TAP!</b></p><!-- Tap instruction -->
   </div>
 
-  <h5><b>TELL <br>TEACHER?</b></h5>
+  <h5><b>TELL <br>TEACHER?</b></h5><!-- Option 1 story alternative -->
  </figure>
 
- <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Tell teacher. Tap!')">
-
-  <img  class="deciderimage" src="Images/PaperText.png"/>
-  <img class="tts2" src="Images/textspeech.png"/>
+ <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Tell teacher. Tap!')"><!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
+ <!-- Paper text background --> 
+  <img  class="deciderimage" src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts2" src="Images/textspeech.png"/><!-- Text speech icon source --> 
 
   <button type="button" class="Skipbutton" id="section7Btn">
-    <div class="avatar avatar2">
-      <img class="decider" src="Images/Logoinstruction.png"/>
-      <p class="deciderinstructions"><b>TAP!</b></p>
+    <!-- Taken from Vincent, H. (no date) Pure CSS Pulsating Avatar Image Effect. Available at: https://codemyui.com/pure-css-pulsating-avatar-image-effect/ (Accessed: 12 March 2023). */ -->
+    <div class="avatar avatar2"><!-- Container for bubble button effect --> 
+      <img class="decider" src="Images/Logoinstruction.png"/>  <!-- Lumos SP (2022) white paper ripped message background. Available at: https://stock.adobe.com/cy_en/search?k=ripped+paper+texture&asset_id=77311773 (Accessed: 14 November 2022). -->
+      <p class="deciderinstructions"><b>TAP!</b></p><!-- Tap instruction -->
     </div>
   </button>
-  <h4><b>KEEP <br> QUIET?</b></h4>
+  <h4><b>KEEP <br> QUIET?</b></h4><!-- Option 2 story alternative -->
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer5"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
 <div id="section4"></div><!-- ID for new section so the scroll knows where to go --> 
 
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('If you open your mouth, you’d be branded a snitch anyway! Emma became teary as she sheepishly said “I’m sorry Miss.”')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p><em>If you open your mouth, you’d be branded a snitch anyway!</em> <br> <br> Emma became teary as she sheepishly said “I’m sorry Miss.”</p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p><em>If you open your mouth, you’d be branded a snitch anyway!</em> <br> <br> Emma became teary as she sheepishly said “I’m sorry Miss.”</p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('No. I’m not going to cry. She thought. The Head of Year shook her head. “I expected better from you, Emma.”')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p><em>No. I’m not going to cry. She thought.</em> <br> <br> The Head of Year shook her head. “I expected better from you, Emma.”</p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                 <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p><em>No. I’m not going to cry. She thought.</em> <br> <br> The Head of Year shook her head. “I expected better from you, Emma.”</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer6"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
 
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('45 minutes later, Emma was home, and her mum was waiting for her. Emma closed the door. “I got the call from the school. What on Earth has brought this on? You’re a star pupil, Emma. This is not like you and you haven’t been yourself for ages.” Her mother ranted. “It’s about time you tell me what is going on. Or you’re grounded.”  Emma sat down with her mum and')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                  <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>45 minutes later, Emma was home, and her mum was waiting for her. <br> <br> Emma closed the door. <br> <br> “I got the call from the school. What on Earth has brought this on? 
-  You’re a star pupil, Emma. This is not like you and you haven’t been yourself for ages.” Her mother ranted. “It’s about time you tell me what is going on. Or you’re grounded.” <br> <br> Emma sat down with her mum and </p>
+  You’re a star pupil, Emma. This is not like you and you haven’t been yourself for ages.” Her mother ranted. “It’s about time you tell me what is going on. Or you’re grounded.” <br> <br> Emma sat down with her mum and </p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('finally explained everything. How the bullying had been going on for months, how she’d kept quiet because she didn’t want to be branded a snitch. How she thought it would all go away in the end, but it never did. A tear ran down her mother’s eye as she hugged Emma tightly.  “Emma,” her mum began. “These girls are nothing but jealous bullies. You said you didn’t know why they have decided to ')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>finally explained everything. How the bullying had been going on for months, how she’d kept quiet because she didn’t want to be branded a snitch. How she thought it would all go away in the end, but it never did. 
-  <br> <br> A tear ran down her mother’s eye as she hugged Emma tightly. <br> <br> “Emma,” her mum began. “These girls are nothing but jealous bullies. You said you didn’t know why they have decided to </p>
+  <br> <br> A tear ran down her mother’s eye as she hugged Emma tightly. <br> <br> “Emma,” her mum began. “These girls are nothing but jealous bullies. You said you didn’t know why they have decided to </p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer6"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('pick on you. Well, it’s because you’re kind, gentle, pretty, smart. Everything they aren’t. Most bullies are unhappy with themselves, so they try to make others feel how they’re feeling to make themselves feel better.”  Emma dried her eyes and continued to listen “You haven’t done anything wrong. I knew something was wrong, but your father said its teenage girl stuff. I’m surprised the')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p> pick on you. Well, it’s because you’re kind, gentle, pretty, smart. Everything they aren’t. Most bullies are unhappy with themselves, so they try to make others feel how they’re feeling to make themselves feel better.” <br> <br> Emma dried her eyes and continued to listen
-  <br> <br> “You haven’t done anything wrong. I knew something was wrong, but your father said its teenage girl stuff. I’m surprised the </p>
+  <br> <br> “You haven’t done anything wrong. I knew something was wrong, but your father said its teenage girl stuff. I’m surprised the </p><!-- Text for story --> 
  </figure>
 
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('school hasn’t noticed nor has anyone spoken up for you.” “Lindsay’s popular so, no one would say.” ‘Is that right? Well,” her mother sat up. “Tomorrow, I’m going to come to your school and sort this out, once and for all. Your reputation and grades will suffer no longer.” Emma panicked. “But…”')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p> school hasn’t noticed nor has anyone spoken up for you.” <br> <br> “Lindsay’s popular so, no one would say.” <br> <br> ‘Is that right? Well,” her mother sat up. “Tomorrow, I’m going to come to your school and sort this out, once and for all. Your reputation and grades will suffer no longer.”
-  <br> <br> Emma panicked. “But…”</p>
+  <br> <br> Emma panicked. “But…”</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer6"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('“And if they start this snitch business and its doesn’t get sorted properly. I’m taking you out that school. You’re only in Year 7, you can catch up somewhere else.”')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p> “And if they start this snitch business and its doesn’t get sorted properly. <br> <br> I’m taking you out that school. You’re only in Year 7, you can catch up somewhere else.”</p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p> “And if they start this snitch business and its doesn’t get sorted properly. <br> <br> I’m taking you out that school. You’re only in Year 7, you can catch up somewhere else.”</p><!-- Text for story --> 
  </figure>
 
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Emma complied reluctantly. “Don’t worry Emma,” her mum reassured her. “Everything will be okay. I promise.”')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p> Emma complied reluctantly. <br> <br> “Don’t worry Emma,” her mum reassured her. “Everything will be okay. I promise.” </p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p> Emma complied reluctantly. <br> <br> “Don’t worry Emma,” her mum reassured her. “Everything will be okay. I promise.” </p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Two Weeks Later. Emma sat in her maths class feeling so much better than she did previously. Since she decided to speak out, Lindsay had been suspended for a week. Even though she knew it was almost time for Lindsay’s return, she wasn’t nervous. Nothing turned out how it did in her head. No one called Emma a snitch, none of Lindsay’s friends were mean to her.')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p><em>Two Weeks Later</em> <br> <br> Emma sat in her maths class feeling so much better than she did previously. Since she decided to speak out, Lindsay had been suspended for a week. Even though she knew it was almost time for Lindsay’s return, she wasn’t nervous. Nothing turned out how it did in her head. No one called Emma a snitch, none of Lindsay’s friends were mean to her. </p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p><em>Two Weeks Later</em> <br> <br> Emma sat in her maths class feeling so much better than she did previously. Since she decided to speak out, Lindsay had been suspended for a week. Even though she knew it was almost time for Lindsay’s return, she wasn’t nervous. Nothing turned out how it did in her head. No one called Emma a snitch, none of Lindsay’s friends were mean to her. </p><!-- Text for story --> 
  </figure>
 
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('In fact, Lindsay’s friends, as well as many other people, spoke up after Emma did about how Lindsay had been bullying them. Lindsay’s friends got suspended too however, they’re now back and have apologised to Emma. “Hi. Sorry to interrupt your lesson. Can I please borrow Emma please?” A security guard asked. Everyone turned to look at her.')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p> In fact, Lindsay’s friends, as well as many other people, spoke up after Emma did about how Lindsay had been bullying them. Lindsay’s friends got suspended too however, they’re now back and have apologised to Emma. <br> <br> 
-    “Hi. Sorry to interrupt your lesson. Can I please borrow Emma please?” A security guard asked. <br> <br> Everyone turned to look at her.  </p>
+    “Hi. Sorry to interrupt your lesson. Can I please borrow Emma please?” A security guard asked. <br> <br> Everyone turned to look at her.  </p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Oh no! She thought. What’s happened now. “Emma. Go with him please,” her teacher stated. Emma gathered her things and followed him. Emma was apprehensive as they stopped outside the Head teacher’s office. The security guard opened the door.  Emma looked in horror as Lindsay was sitting on one side of the table, the ')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-<p><em>Oh no! She thought. What’s happened now.</em> <br> <br> “Emma. Go with him please,” her teacher stated. <br> <br> Emma gathered her things and followed him. Emma was apprehensive as they stopped outside the Head teacher’s office. The security guard opened the door. <br> <br> Emma looked in horror as Lindsay was sitting on one side of the table, the </p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+<p><em>Oh no! She thought. What’s happened now.</em> <br> <br> “Emma. Go with him please,” her teacher stated. <br> <br> Emma gathered her things and followed him. Emma was apprehensive as they stopped outside the Head teacher’s office. The security guard opened the door. <br> <br> Emma looked in horror as Lindsay was sitting on one side of the table, the </p><!-- Text for story --> 
  </figure>
 
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('the teacher in the middle and an empty chair opposite Lindsay.  “Emma. Sit down please,” the Head Teacher gestured to her. Emma sat opposite Lindsay, staring straight at her, trying to read her facial expression. “Lindsay, do you have anything to say to Emma?” the Head asked.')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>the teacher in the middle and an empty chair opposite Lindsay. <br> <br> “Emma. Sit down please,” the Head Teacher gestured to her. <br> <br> Emma sat opposite Lindsay, staring straight at her, trying to read her facial expression. <br> <br> “Lindsay, do you have anything to say to Emma?” the Head asked.</p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>the teacher in the middle and an empty chair opposite Lindsay. <br> <br> “Emma. Sit down please,” the Head Teacher gestured to her. <br> <br> Emma sat opposite Lindsay, staring straight at her, trying to read her facial expression. <br> <br> “Lindsay, do you have anything to say to Emma?” the Head asked.</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Lindsay looked back at Emma. “I’m sorry Emma.”  Emma started to get annoyed. “What are you sorry for?”  Lindsay looked surprised. “Oh! I’m sorry for all the times I’ve been mean to you, hurt you, affected you…yeah.”  Emma, wanting to know, asked “Why Lindsay? What have I ever done to you?”')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>Lindsay looked back at Emma. “I’m sorry Emma.” <br> <br> Emma started to get annoyed. “What are you sorry for?” <br> <br> Lindsay looked surprised. “Oh! I’m sorry for all the times I’ve been mean to you, hurt you, affected you…yeah.” <br> <br> Emma, wanting to know, asked “Why Lindsay? What have I ever done to you?”</p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>Lindsay looked back at Emma. “I’m sorry Emma.” <br> <br> Emma started to get annoyed. “What are you sorry for?” <br> <br> Lindsay looked surprised. “Oh! I’m sorry for all the times I’ve been mean to you, hurt you, affected you…yeah.” <br> <br> Emma, wanting to know, asked “Why Lindsay? What have I ever done to you?”</p><!-- Text for story --> 
  </figure>
-
+ <!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Lindsay shrugged and said “I was slightly jealous. You’re pretty, smart, liked. It wasn’t fair. You were confident and I felt threatened.”  Emma looked at her. She didn’t see a bully. She saw a girl with low self-esteem who was clearly troubled. She was no longer scared. In fact she pitied her. “Thanks to you, Lindsay, I have no confidence now so mission accomplished,”')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>Lindsay shrugged and said “I was slightly jealous. You’re pretty, smart, liked. It wasn’t fair. You were confident and I felt threatened.” <br> <br> Emma looked at her. She didn’t see a bully. She saw a girl with low self-esteem who was clearly troubled. She was no longer scared. In fact she pitied her.
-  <br> <br> “Thanks to you, Lindsay, I have no confidence now so mission accomplished,” </p>
+  <br> <br> “Thanks to you, Lindsay, I have no confidence now so mission accomplished,” </p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('Emma said, her voice raised.  “Okay guys,” the Head jumped in, seeing an argument brewing. “Lindsay, do you know that what you did was wrong?” Lindsay nodded. “It will never happen again.” The Head sighed, knowing what was coming next.')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                  <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>Emma said, her voice raised. <br> <br> “Okay guys,” the Head jumped in, seeing an argument brewing. “Lindsay, do you know that what you did was wrong?” <br> <br> Lindsay nodded. “It will never happen again.”
-  <br> <br> The Head sighed, knowing what was coming next.</p>
+  <br> <br> The Head sighed, knowing what was coming next.</p><!-- Text for story --> 
  </figure>
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('“I can see you’re sorry, Lindsay. Even so, you won’t get the chance to do this again. The board and I had a long discussion about this, and a decision has been made. Lindsay, you are now expelled from this school. A letter will be sent home to your parents.” Emma felt delighted inside. The blood drained from Lindsay’s face. “Whaa?” Lindsay started. “I said sorry! I’ll leave her alone now! Miss, please!”')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>“I can see you’re sorry, Lindsay. Even so, you won’t get the chance to do this again. The board and I had a long discussion about this, and a decision has been made. Lindsay, you are now expelled from this school. A letter will be sent home to your parents.” 
-    <br> <br> Emma felt delighted inside. The blood drained from Lindsay’s face. <br> <br> “Whaa?” Lindsay started. “I said sorry! I’ll leave her alone now! Miss, please!”</p>
+    <br> <br> Emma felt delighted inside. The blood drained from Lindsay’s face. <br> <br> “Whaa?” Lindsay started. “I said sorry! I’ll leave her alone now! Miss, please!”</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('The Head shook her head. “I’m sorry Lindsay. I’m sure you’re sorry, but you’ve only decided to stop because brave Emma decided to speak out. Also, it’s not just Emma you have bullied. It is multiple girls in this school for a long amount of time and I’ve also heard from witnesses about the many ways you were making their life a misery. Bullying is not tolerated here. Not now, not ever.” Lindsay stood up. “You can’t do this! My')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>The Head shook her head. “I’m sorry Lindsay. I’m sure you’re sorry, but you’ve only decided to stop because brave Emma decided to speak out. Also, it’s not just Emma you have bullied. It is multiple girls in this school for a long amount of time and I’ve also heard from witnesses about the many ways you were making their life a misery. Bullying is not tolerated here. Not now, not ever.”
-    <br> <br> Lindsay stood up. “You can’t do this! My </p>
+    <br> <br> Lindsay stood up. “You can’t do this! My </p><!-- Text for story --> 
  </figure>
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('friends are here!” The Head shook her head. “Fine!” Lindsay grabbed her bag. “I can do better than this rubbish school anyway.”  Emma felt like the whole corridor could hear the slam of the door as Lindsay stormed out. The Head sighed. “What a bad way to go.”')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>friends are here!” <br> <br> The Head shook her head. <br> <br> “Fine!” Lindsay grabbed her bag. “I can do better than this rubbish school anyway.” <br> <br> Emma felt like the whole corridor could hear the slam of the door as Lindsay stormed out. <br> <br> The Head sighed. “What a bad way to go.”</p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>friends are here!” <br> <br> The Head shook her head. <br> <br> “Fine!” Lindsay grabbed her bag. “I can do better than this rubbish school anyway.” <br> <br> Emma felt like the whole corridor could hear the slam of the door as Lindsay stormed out. <br> <br> The Head sighed. “What a bad way to go.”</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-=
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('She then turned to Emma. “Emma, in the future, if anything like this happens, you come straight to me, understand?” the Head stated. She looked thoughtful. “I might do an assembly on bullying. It could be happening to others now.” Emma nodded and smiled. “You’re a very brave young woman.')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
   <p>She then turned to Emma. <br> <br> “Emma, in the future, if anything like this happens, you come straight to me, understand?” the Head stated. She looked thoughtful. “I might do an assembly on bullying. It could be happening to others now.”
-  <br> <br> Emma nodded and smiled. <br> <br> “You’re a very brave young woman. </p>
+  <br> <br> Emma nodded and smiled. <br> <br> “You’re a very brave young woman. </p><!-- Text for story --> 
  </figure>
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('You have a bright future ahead of you. Go on then, back to class please,” the Head smiled at a beaming Emma. <br> <br> Emma got up and opened the door.')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>You have a bright future ahead of you. Go on then, back to class please,” the Head smiled at a beaming Emma. <br> <br> Emma got up and opened the door.</p>
+   <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>You have a bright future ahead of you. Go on then, back to class please,” the Head smiled at a beaming Emma. <br> <br> Emma got up and opened the door.</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer7"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
 <!-- Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */ -->
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
 <figure class="textover" data-aos="fade-left" data-aos-duration="900" onclick="speak('“Oh! Emma?” Emma turned around. “Everything worked out okay in the end. </p>')">
-  <img src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>“Oh! Emma?” <br> <br> Emma turned around. <br> <br> “Everything worked out okay in the end. </p>
+   <!-- Paper text background --> 
+  <img src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>“Oh! Emma?” <br> <br> Emma turned around. <br> <br> “Everything worked out okay in the end. </p><!-- Text for story --> 
  </figure>
-
+<!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <figure class="textover" data-aos="fade-right" data-aos-duration="900" onclick="speak('Just like I promised.” Emma walked out the classroom feeling happy for the first time in ages. She felt the heavy weight her heart was carrying being lifted off. Emma walked back to class, ready to start the first day of the rest of her life.')">
-  <img  src="Images/PaperText.png"/>
-  <img class="tts" src="Images/textspeech.png"/>
-  <p>Just like I promised.” <br> <br> Emma walked out the classroom feeling happy for the first time in ages. She felt the heavy weight her heart was carrying being lifted off. Emma walked back to class, ready to start the first day of the rest of her life.</p>
+  <!-- Paper text background --> 
+  <img  src="Images/PaperText.png"/><!-- Thomas, T. (2019) Paper Black And White Picture Frame Pattern - Paper, HD Png Download. Available at: https://www.pngitem.com/middle/JTTxmm_paper-black-and-white-picture-frame-pattern-paper/ (Accessed: 15 November 2022). -->
+                   <!-- Reference for text to speech icon: CPoms (2022) speech-icon-2797263_1280. Available at: https://www.cpoms.co.uk/speech-icon-2797263_1280/ (Accessed: 12 November 2022).--> 
+  <img class="tts" src="Images/textspeech.png"/><!-- Text speech icon source --> 
+  <p>Just like I promised.” <br> <br> Emma walked out the classroom feeling happy for the first time in ages. She felt the heavy weight her heart was carrying being lifted off. Emma walked back to class, ready to start the first day of the rest of her life.</p><!-- Text for story --> 
  </figure>
 </section>
 
-<section class="sec">
+<section class="sec"><!-- Class for the section --> 
   <div class="parallax-layer parallax-layer8"></div>  <!-- A class was added to the div to connect to CSS and Javascript effects --> 
- <div class="theendcontainer">
-  <b><div class="theend">THE END</div></b>
+ <div class="theendcontainer"><!-- The end container -->
+  <b><div class="theend">THE END</div></b><!-- The end text -->
 </div>
 
-<a href="review.html">
-<div class="speechreviewcontainer">
-  <p class="reviewtext"><b>WAIT! DID YOU <br> LEAVE A REVIEW?</b></p>
-  <p class="reviewtext2"><b>CLICK HERE</b></p>
-<img class="speechreview" src="Images/Speech.png"/>
+<a href="review.html"><!-- Link to review page -->
+<div class="speechreviewcontainer"><!-- Review content container-->
+  <p class="reviewtext"><b>WAIT! DID YOU <br> LEAVE A REVIEW?</b></p><!-- Review text -->
+  <p class="reviewtext2"><b>CLICK HERE</b></p><!-- More review text -->
+        <!-- Flaticon (2022) Speech Bubble free icon. Available at: https://www.flaticon.com/free-icon/speech- bubble_2598848 (Accessed: 15 November 2022).-->
+<img class="speechreview" src="Images/Speech.png"/><!-- Speech bubble source -->
 </div>
 </a>
 
-<a href="video.html">
-  <div class="speechreviewcontainers">
-    <p class="reviewtext"><b>CLICK HERE TO <br> WATCH A VIDEO </b></p>
-    <p class="reviewtext2"><b>CLICK HERE</b></p>
-  <img class="speechreview" src="Images/Speech.png"/>
+<a href="video.html"><!-- Link to video page -->
+  <div class="speechreviewcontainers"><!-- Video content container-->
+    <p class="reviewtext"><b>CLICK HERE TO <br> WATCH A VIDEO </b></p><!-- Video text -->
+    <p class="reviewtext2"><b>CLICK HERE</b></p><!-- More video text -->
+          <!-- Flaticon (2022) Speech Bubble free icon. Available at: https://www.flaticon.com/free-icon/speech- bubble_2598848 (Accessed: 15 November 2022).-->
+  <img class="speechreview" src="Images/Speech.png"/><!-- Speech bubble source -->
   </div>
   </a>
 
-  <a href="game.html">
-    <div class="speechreviewcontainerss">
-      <p class="reviewtext"><b>CLICK HERE TO <br> PLAY A GAME </b></p>
-      <p class="reviewtext2"><b>CLICK HERE</b></p>
-    <img class="speechreview" src="Images/Speech.png"/>
+  <a href="game.html"><!-- Link to game page -->
+    <div class="speechreviewcontainerss"><!-- Game content container-->
+      <p class="reviewtext"><b>CLICK HERE TO <br> PLAY A GAME </b></p><!-- Game text -->
+      <p class="reviewtext2"><b>CLICK HERE</b></p><!-- More game text -->
+      <!-- Flaticon (2022) Speech Bubble free icon. Available at: https://www.flaticon.com/free-icon/speech- bubble_2598848 (Accessed: 15 November 2022).-->
+    <img class="speechreview" src="Images/Speech.png"/><!-- Speech bubble source -->
     </div>
     </a>
 </section>
 
 
 
-
+<!--Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). -->
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
         <script>
-// Taken and altered from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023).
+
 // Code for the Parallax effect (background image).
 // What was changed: The position difference was changed from 20 to 90; making the effect more centred and covering more of the screen.
 const parallaxLayer = document.querySelector(".parallax-layer"); // Selects the image by using its class name.
@@ -704,7 +823,7 @@ window.addEventListener("mousemove", moveLayer); // This is called everytime the
 
 
 // Taken from Nick (no date) Custom Cursor Using Vanilla JS. Available at: https://codepen.io/ntenebruso/pen/QWLzVjY (Accessed: 12 February 2023). */
-// Code explaination referenced from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023).
+
 // JavaScript code for the cursor.
 var cursor = document.querySelector('.cursor'); // Selects the class for the first cursor and assigned it to the variable.
 var cursorinner = document.querySelector('.cursor2'); // Selects the class for the second cursor and assigned it to the variable.
@@ -744,7 +863,6 @@ a.forEach(item => { //  Iterates over all "a" variable elements, executing the c
 })
 
 // Taken from GreenSock (2023) ScrollToPlugin. Available at: https://greensock.com/docs/v3/Plugins/ScrollToPlugin (Accessed: 12 March 2023). */
-// Code explaination referenced from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 13 March 2023).
 // JavaScript code for the scrolling animation.
     </script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script> <!-- loads two external JavaScript files (GSAP)--> 
@@ -760,7 +878,6 @@ a.forEach(item => { //  Iterates over all "a" variable elements, executing the c
     </script>
 
 <!-- JavaScript for Speech Synthesis API --> 
-<!-- Code explaination referenced from ChatGPT (no date) ChatGPT. Available at: https://chat.openai.com/auth/login (Accessed: 11 February 2023).-->
 <script>
   function speak(message) { // Speak function taking parameter message. 
       const utterance = new SpeechSynthesisUtterance(); // Represents a speech request.
@@ -790,9 +907,9 @@ for (var i = 0; i < classname.length; i++) { // Creates a for loop over the elem
 classname[i].addEventListener('click', animateButton, false); // Adds a click event listener to the i element. When element is clicked the function will be called; animating the button. False = specifies that the event listener should be executed in bubbling phase.
 }
   </script>
- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script><!--Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022). -->
  <script>
-   AOS.init();
+   AOS.init(); // Reference for fade in and out animation: michalsnik (2018) AOS - Animate on scroll library. Available at: https://github.com/michalsnik/aos (Accessed: 12 November 2022).
  </script>
   </body>
 </html>

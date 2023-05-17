@@ -1,80 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><!-- HTML 5 doctype -->
+<html lang="en"><!-- The language for the HTML5 is English -->
+<head><!-- Head section: non visible elements -->
+    <meta charset="UTF-8"><!-- Encoding characters -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Compatible for internet explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Viewport properties. Ensures that the page is rendered properly on different devices. -->
     <title>Document</title>
+
+	
+<!-- The creation of this game is uncompleted as it was a hurdle that was ran into and not fully understood. What was supposed to be achieved was a on click, jumping
+game. The character was supposed to jump over hurdles; running away from another character and everytime the user clicked or tapped. When this happened, a live score counter would increate the number of 
+hurdles that were jumped over. There would also be sound effects. If the user missed a hurdle, another character would catch up to the first character and the game
+would be over. This was not achieved because the idea was very complex and even through research could not fund any solutions. A game on Create JS was similar therefore
+tried to understand and adjust the code for example, replacing the spritesheet with png images to try and replace the visuals. This did not work however, animated the character and bush
+to float across the top or bottom of the screen. This approach was taken as it was the closest code to the original idea and the idea was also to try using a plugin such as CreateJS
+to try something new. Though this was not achieved, this could be code to explore in the future to become more advanced in the field and create the original idea.  -->
+
+
+
+
+
     <style>
-   body {
-	margin: 0;
+	/* Taken from gskinner (2014) EaselJS. Available at: https://github.com/CreateJS/EaselJS/blob/master/_assets/css/examples.css (Accessed: 20 March 2023). */
+
+   body { /* styling of the entire body */
+	margin: 0; /* no margin */
    }
 
-   #sky {
-	height: 50px;
+   #sky {/* ID for sky  */
+	height: 50px; /* 50 pixel height */
    }
 
-header {
-	margin-bottom: 1rem;
+header { /* Header image */
+	margin-bottom: 1rem; /* bottom of margin */
 }
 
-h1 {
-	font-weight: 200;
-	margin-bottom: 1rem;
+h1 { /* Stying for title */
+	font-weight: 200; /* Weight of font*/
+	margin-bottom: 1rem; /* Margin bottom */
 }
 
-h1:before {
-	content:"EASELJS ";
-	font-weight: bold;
+h1:before { /* Before triggered */
+	content:"EASELJS "; /* Content from third party, EASELJS */
+	font-weight: bold; /* Bold font */
 }
 
-header p {
-	margin: 0;
-	padding: 1em;
-	background: rgba(250, 252, 255, 0.7);
+header p { /* Styling for p */
+	margin: 0; /* No margin */
+	padding: 1em; /* Padding 1 */
+	background: rgba(250, 252, 255, 0.7); /* Grey background */
 }
 
-.content, canvas {
-	background: white;
+.content, canvas { /* Styling for content and canvas */
+	background: white; /* White background */
 }
 
-.content {
-	width: 960px;
-	height: 400px;
-	overflow: hidden;
+.content { /* Styling for content */
+	width: 960px; /* Width in pixels */
+	height: 400px; /* height in pixels */
+	overflow: hidden; /* no overflow */
 }
 
-.loading {
-	position: relative;
+.loading { /* Styling for loading */
+	position: relative; /* Positioned next to its nearest positioned ancestor */
+}
+
+
+#error { /* ID for error */
+	display:none; /*no display */
+	width: 960px; /* width 960 pixels */
+	text-align: left; /* text is aligned to the left */
+	padding: 10px; /* padding is 10 pixels */
+}
+
+#mobile { /* ID for mobile */
+    display:none;  /* No display */
+    width: 960px;/* width 960 pixels */
+    text-align: left; /* text is aligned to the left */
+    padding: 10px; /* padding is 10 pixels */
+}
+
+body.embedded header { /* styling for header */
+	display: none; /* no display */
+}
+
+body.embedded { /* styling for body */
+	margin: 0;/* no margin */
 }
 
 
 
-#error {
-	display:none;
-	width: 960px;
-	text-align: left;
-	padding: 10px;
-}
 
-#mobile {
-    display:none;
-    width: 960px;
-    text-align: left;
-    padding: 10px;
-}
 
-body.embedded header {
-	display: none;
-}
 
-body.embedded {
-	margin: 0;
-}
+
 
        /* Taught by Thom Corah */
 	   #loadingScreen {
-background-image: url(./Images/School3.png); 
+  background-image: url(../Images/School3.png); /* Unsplash (2022) University of Mobile. Available at: https://unsplash.com/photos/ZPkG0EdWQa8 (Accessed: 14 November 2022).*/
   background-color: white; /* Background colour */
   position: fixed; /* Fixed on top of everything else */
   top: 0; /* default for top*/
@@ -104,11 +126,11 @@ background-image: url(./Images/School3.png);
   margin-top: 7vh; /* Margin top of heart image */
   margin-left: 30vw; /* Margin left of heart image */
   margin-right: 30vw;  /* Margin right of heart image */
-  animation-name: spinning;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
+  animation-name: spinning; /* Name of animation */
+  animation-duration: 3s; /* 3 seconds animation */
+  animation-iteration-count: infinite; /*Animation is infinate */
   /* linear | ease | ease-in | ease-out | ease-in-out */
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out; /* Type of animation */
 }
 
 
@@ -119,60 +141,74 @@ background-image: url(./Images/School3.png);
   to { transform: rotate(360deg) } /* The animation transforms/rotates 360 degrees */
 }
 
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
 a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 10px 16px;
+  text-decoration: none; /* no decoration for the text */
+  display: inline-block; /* The width and height of the button can be set. */
+  padding: 10px 16px; /* Padding for the button. */
 }
 
-a:hover {
-  background-color: red;
-  color: black;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+a:hover { /* Styling for when the mouse hovers over the button. */
+  background-color: red; /* Background colour changes to red when mouse hovers over it. */
+  color: black; /* Colour of "<" */
 }
 
-.previous {
-  background-color: white;
-  border: 6px solid red; /* solid black border, slightly thick */
-  color: black;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+.previous { /* Styling for button without hover. */
+  background-color: white; /* Background colour is white. */
+  border: 6px solid red; /* solid red border, 6 pixels, slightly thick */
+  color: black; /* '<' is black. */
 }
 
 
-.round {
-  border-radius: 50%;
-  width: 5vw;
+
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+.round { /* Styling for the button shape */
+  border-radius: 50%; /* The shape is 50% round. */
+  width: 5vw; /* The view width is 3. */
   
 }
 
-.adjustment {
-  padding-left: 9vw !important;
-  padding-bottom: 2vw !important;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+/* This was added for extra settings. */
+.adjustment {/* Styling of the button container */
+  padding-left: 9vw !important;/* Styling of the button container */
+  padding-bottom: 2vw !important; /* The padding botton is 2 view width */
   position: absolute;
   left: 2%;
   top: 4%;
 
 }
 
-.hex {
- font-size: 3vw;
- padding-left: 30% !important;
+/* Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023) */
+/* This was added for extra settings. */
+.hex { /* Styling for the '<' button */
+ font-size: 3vw; /* Size of the '<' */
+ padding-left: 30% !important; /* Padding on the left of '<" is 30%. */
 }
     </style>
 </head>
 
-<div class="adjustment">
-    <a href="frontcover.html" class="previous round"><span class="hex">&#8249;</span></a>
-    </div>
+ <!-- Referenced from W3Schools (2023) How TO - Next and Previous Buttons. Available at: https://www.w3schools.com/howto/howto_css_next_prev.asp (Accessed: 22 March 2023)-->
+ <!-- Back button -->
+ <div class="adjustment"> <!-- Class to style the button-->
+	<a href="frontcover.html" class="previous round"><span class="hex">&#8249;</span></a><!-- Link to where the button goes to. Classes for the button styling and hex codes for the '<' sign. -->
+	</div>
 
-<body onload="init();">
-    <div class="Canvas" width="0%"> 
-    <canvas id="testCanvas" width="1680" height="980">
+	<!-- Referenced from CreateJS (no date) EaseLJS. Available at: https://createjs.com/demos/easeljs/spritesheet (Accessed: 9 March 2023). -->
+<!-- Referenced from lannymcnie (2017) EaselJS SpriteSheet.html. Available at: https://github.com/CreateJS/EaselJS/blob/master/examples/SpriteSheet.html (Accessed: 9 March 2023). -->
+<body onload="init();"> <!-- This sets the onload event handler for the <body> element. -->
+    <div class="Canvas" width="0%"> <!-- This is a <div> element with a class of "Canvas". -->
+    <canvas id="testCanvas" width="1680" height="980"><!-- This is a <canvas> element with an id of "testCanvas".-->
 
     </canvas>  
     </div>
 
+	<!-- Taught by Thom Corah-->
 	 <!-- Loading screen-->
-     <div id="loadingScreen">
-		<img  class="spin"src="./Images/Logo.png" alt="Logo" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
+     <div id="loadingScreen"><!-- Container for loading screen -->
+		<img  class="spin"src="Images/Logo.png" alt="Logo" style="width:100%"> <!-- Heart is an image that that I created on Photoshop -->
 	  <p class="loadingtext1"><b>LOADING...</b></p><!-- Word used on loading screen as the page is an art page-->
 	</div>
 	  <!-- Javascript for loading screen -->
@@ -184,94 +220,103 @@ a:hover {
 	</script>
 </body >
 
-<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-<script id="editable">
-	var stage, w, h, loader;
-	var sky, grant, ground, hill, hill2;
+<!-- Referenced from CreateJS (no date) EaseLJS. Available at: https://createjs.com/demos/easeljs/spritesheet (Accessed: 9 March 2023). -->
+<!-- Referenced from lannymcnie (2017) EaselJS SpriteSheet.html. Available at: https://github.com/CreateJS/EaselJS/blob/master/examples/SpriteSheet.html (Accessed: 9 March 2023). -->
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script> <!-- External CreateJS file-->
+<script id="editable"> // ID for JavaScript code.
+	var stage, w, h, loader; // This line declares multiple variables stage, w, h, and loader using the var keyword. 
+	var sky, grant, ground, hill, hill2; // declares multiple variables.
 
-	function init() {
-		examples.showDistractor();
-		stage = new createjs.StageGL("testCanvas");
+	function init() { // defines JavaScript function. 
+		examples.showDistractor(); // function named "showDistractor" from something called examples.
+		stage = new createjs.StageGL("testCanvas"); // StageGL class from the CreateJS library and assigns it to the stage variable.
 
 		// grab canvas width and height for later calculations:
-		w = stage.canvas.width;
-		h = stage.canvas.height;
+		w = stage.canvas.width; // width of the canvas 
+		h = stage.canvas.height; // height of the canvas 
 
-		manifest = [
-			{src: "./Images/GirlRunning.png", id: "grant"},
-            {src: "Lindsay.png", id: "Lindsay"},
-			{src: "GameWall.png", id: "sky"},
-			{src: "Fence.png", id: "hill"},
+		manifest = [ // manifest variable which is assigned t0 an array of objects
+			{src: "GirlRunning.png", id: "grant"}, // images and source with individual ID's
+            {src: "Lindsay.png", id: "Lindsay"}, // images and source with individual ID's
+			{src: "GameWall.png", id: "sky"}, // images and source with individual ID's
+			{src: "Fence.png", id: "hill"}, // images and source with individual ID's
 		];
 
-		loader = new createjs.LoadQueue(false);
-		loader.addEventListener("complete", handleComplete);
-		loader.loadManifest(manifest, true, "./Images/");
+		loader = new createjs.LoadQueue(false);  // new instance of the LoadQueue class from the CreateJS library and assigns it to the loader variable. 
+		loader.addEventListener("complete", handleComplete); // adds an event listener to the loader object for the "complete" event. 
+		loader.loadManifest(manifest, true, "/Images/"); //  initiates the loading of the assets specified in the manifest array using the loadManifest method of the loader object.
 	}
 
-	function handleComplete() {
-		examples.hideDistractor();
+// Referenced from CreateJS (no date) EaseLJS. Available at: https://createjs.com/demos/easeljs/spritesheet (Accessed: 9 March 2023). 
+// Referenced from lannymcnie (2017) EaselJS SpriteSheet.html. Available at: https://github.com/CreateJS/EaselJS/blob/master/examples/SpriteSheet.html (Accessed: 9 March 2023). 
+	function handleComplete() { // function called handleComplete. 
+		examples.hideDistractor(); // larger codebase function 
 
-		sky = new createjs.Shape();
-		sky.graphics.beginBitmapFill(loader.getResult("sky")).drawRect(0, 0, w, h);
+		sky = new createjs.Shape(); // reates a new Shape object called sky. 
+		sky.graphics.beginBitmapFill(loader.getResult("sky")).drawRect(0, 0, w, h); //sets the fill of the sky shape to a bitmap image loaded from the specified URL using the loader.
 		//By default swapping between Stage for StageGL will not allow for vector drawing operation such as BitmapFill, useless you cache your shape.
-		sky.cache(0, 0, w, h);
+		sky.cache(0, 0, w, h); // It caches the sky shape.
 
 
-		hill = new createjs.Bitmap(loader.getResult("hill"));
-		hill.setTransform(Math.random() * w, h - hill.image.height, 4, 4);
-		hill.alpha = 0.5;
+		hill = new createjs.Bitmap(loader.getResult("hill")); // creates a new Bitmap object called hill using the loaded image with the ID "hill".
+		hill.setTransform(Math.random() * w, h - hill.image.height, 4, 4); // It sets the transformation properties (position, scale) for the hill bitmap. 
+		hill.alpha = 0.5; // It sets the transparency (alpha) of the hill bitmap to 0.5, making it partially transparent.
 
-		grant = new createjs.Bitmap(loader.getResult("grant"));
+		grant = new createjs.Bitmap(loader.getResult("grant")); // It creates a new Bitmap object called grant.
 
 
-		stage.addChild(sky, hill, grant);
-		stage.addEventListener("stagemousedown", handleJumpStart);
+		stage.addChild(sky, hill, grant); // It adds the sky, hill, and grant objects to the stage to be rendered.
+		stage.addEventListener("stagemousedown", handleJumpStart); // : It adds an event listener to the stage.
 
-		createjs.Ticker.timingMode = createjs.Ticker.RAF;
-		createjs.Ticker.addEventListener("tick", tick);
+		createjs.Ticker.timingMode = createjs.Ticker.RAF; //  It sets the timing mode for the Ticker to use requestAnimationFrame.
+		createjs.Ticker.addEventListener("tick", tick); // adds an event listener to the Ticker that listens for the "tick" event.
 	}
 
-	function handleJumpStart() {
+	// Referenced from CreateJS (no date) EaseLJS. Available at: https://createjs.com/demos/easeljs/spritesheet (Accessed: 9 March 2023). 
+// Referenced from lannymcnie (2017) EaselJS SpriteSheet.html. Available at: https://github.com/CreateJS/EaselJS/blob/master/examples/SpriteSheet.html (Accessed: 9 March 2023).
+	function handleJumpStart() { // definition of the handleJumpStart function.
 		
 	}
 
-	function tick(event) {
-		var deltaS = event.delta / 1000;
-		var position = grant.x + 150 * deltaS;
+	// Referenced from CreateJS (no date) EaseLJS. Available at: https://createjs.com/demos/easeljs/spritesheet (Accessed: 9 March 2023). 
+// Referenced from lannymcnie (2017) EaselJS SpriteSheet.html. Available at: https://github.com/CreateJS/EaselJS/blob/master/examples/SpriteSheet.html (Accessed: 9 March 2023).
+	function tick(event) { // This line begins the definition of the tick function.
+		var deltaS = event.delta / 1000; // It calculates the time difference between frames (delta) and divides it by 1000 to convert it into seconds. The result is stored in the deltaS variable.
+		var position = grant.x + 150 * deltaS; // It calculates the new position of the grant object.
 
-		var grantW = grant.getBounds().width * grant.scaleX;
-		grant.x = (position >= w + grantW) ? -grantW : position;
+		var grantW = grant.getBounds().width * grant.scaleX; // It calculates the new position of the grant object.
+		grant.x = (position >= w + grantW) ? -grantW : position; // It calculates the width of the grant object.
 
-		hill.x = (hill.x - deltaS * 30);
-		if (hill.x + hill.image.width * hill.scaleX <= 0) {
-			hill.x = w;
+		hill.x = (hill.x - deltaS * 30); //  This line updates the x-coordinate of the hill object 
+		if (hill.x + hill.image.width * hill.scaleX <= 0) { // his conditional statement checks if the right edge of the hill object
+			hill.x = w; //  If the previous condition is true, the hill.x is set to w
 		}
 		
-
-		stage.update(event);
+// Referenced from CreateJS (no date) EaseLJS. Available at: https://createjs.com/demos/easeljs/spritesheet (Accessed: 9 March 2023). 
+// Referenced from lannymcnie (2017) EaselJS SpriteSheet.html. Available at: https://github.com/CreateJS/EaselJS/blob/master/examples/SpriteSheet.html (Accessed: 9 March 2023).
+		stage.update(event); // This line updates the stage and applies any changes made to the display objects.
 	}
 </script>
 <script>
-    (function() {
-	if (document.body) { setupEmbed(); }
-	else { document.addEventListener("DOMContentLoaded", setupEmbed); }
+    (function() { // This is the start of an immediately invoked function expression.
+	if (document.body) { setupEmbed(); } //  This condition checks if the document.body element exists.
+	else { document.addEventListener("DOMContentLoaded", setupEmbed); } // If the document.body element does not exist at the time the code is executed, this else block adds an event listener 
 	
-	function setupEmbed() {
-		if (window.top != window) {
-			document.body.className += " embedded";
+	function setupEmbed() { // This is the declaration of the setupEmbed() function.
+		if (window.top != window) { // If this condition is true, the following code block is executed.
+			document.body.className += " embedded"; // appends the string " embedded" to the className property of the document.body element. 
 		}
 	}
 	
-	var o = window.examples = {};
-	o.showDistractor = function(id) {
-		var div = id ? document.getElementById(id) : document.querySelector("div canvas").parentNode;
-		div.className += " loading";
+	var o = window.examples = {}; //  creates an object o and assigns it to the window.examples property. 
+	o.showDistractor = function(id) { // This is the declaration of the showDistractor method on the o object. 
+		var div = id ? document.getElementById(id) : document.querySelector("div canvas").parentNode; //  declares a variable div and assigns it either the element with the specified id
+		div.className += " loading"; // appends the string " loading" to the className property of the div element. 
 	};
 	
-	o.hideDistractor = function() {
-		var div = document.querySelector(".loading");
-		div.className = div.className.replace(/\bloading\b/);
+	o.hideDistractor = function() { // This is the declaration of the hideDistractor method on the o object.
+		var div = document.querySelector(".loading"); // This line selects the first element in the document
+		div.className = div.className.replace(/\bloading\b/); // This line replaces the occurrence of the word "loading" in the className property of the div element with an empty string. 
 	};
 })();
 </script>
